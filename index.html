@@ -123,11 +123,11 @@
       <article class="settings-card">
         <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Remises & Prix</h3>
         <div class="setting-group">
-          <label>Remise fournisseur globale</label>
+          <label for="globalDiscount">Remise fournisseur globale</label>
           <div class="slider-row"><input type="range" id="globalDiscount" min="0" max="30" value="10" step="1"><span id="globalDiscountVal">10%</span></div>
         </div>
         <div class="setting-group">
-          <label>Marge cible par défaut</label>
+          <label for="targetMargin">Marge cible par défaut</label>
           <div class="slider-row"><input type="range" id="targetMargin" min="10" max="100" value="35" step="5"><span id="targetMarginVal">35%</span></div>
         </div>
         <div class="setting-group">
@@ -149,7 +149,7 @@
           <button class="btn-secondary" id="exportJSON">Exporter catalogue (JSON)</button>
           <button class="btn-secondary" id="importCSV">Importer CSV</button>
         </div>
-        <input type="file" id="csvImportInput" accept=".csv" hidden>
+        <input type="file" id="csvImportInput" accept=".csv" hidden aria-label="Importer un fichier CSV">
       </article>
     </div>
   </section>
