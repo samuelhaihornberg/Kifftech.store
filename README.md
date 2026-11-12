@@ -1,48 +1,48 @@
 # KiffTech
 
-Catalogue bioluminescent dropshipping international — Abonnements 1€/sem et Trésor 3,35€/sem. PWA (Progressive Web App).
+Catalogue de démonstration en PWA (Progressive Web App) : objets connectés et gadgets, abonnements, panier.
 
-## Aperçu
+## Adresse de publication
 
-Catalogue de smart devices & gadgets avec promotions automatiques (-10% à -25%), livraison gratuite, remboursement douanes/taxes. Interface PWA avec service worker, icônes, mode hors-ligne et installation sur écran d'accueil.
+- GitHub Pages : https://samuelhaihornberg.github.io/Kifftech.store/
+- Domaine personnalisé : non configuré à ce jour (voir « Domaine »).
 
-## Stack
+## Fonctionnement
 
-- HTML5, CSS3, JavaScript (ES modules)
-- Service Worker (`sw.js`) + Web App Manifest (`manifest.json`)
-- Génération d'icônes via `generate-icons.js` (dépendance `canvas` uniquement pour la génération, pas pour l'exécution)
-- GitHub Pages (statique)
+- HTML, CSS et JavaScript sans framework ni étape de build. Tous les chemins sont relatifs (`./`).
+- Service worker `sw.js` : le code (HTML, JS, CSS) passe toujours par le réseau d'abord ; les icônes sont mises en cache.
+- Données : catalogue **de démonstration**, généré de façon déterministe dans `app.js`. Produits, prix et stocks sont fictifs.
+- Panier et abonnements : enregistrés dans le navigateur (`localStorage`). Aucun paiement n'est traité.
+- Aucune dépendance à un service externe pour fonctionner.
 
-## Utilisation
-
-```bash
-git clone https://github.com/samuelhaihornberg/Kiff-Tech.git
-cd Kiff-Tech
-# Ouvrir index.html directement dans le navigateur, ou servir avec un serveur HTTP :
-# python3 -m http.server 8000
-# npx http-server -p 8000
-```
-
-> `node_modules/` n'est requis que pour `generate-icons.js` (paquet `canvas`). Il n'est pas nécessaire pour exécuter l'application.
-
-## Scripts
+## Lancer en local
 
 ```bash
-npm install          # installe canvas (pour generate-icons.js uniquement)
-node generate-icons.js  # régénère les icônes PWA
+python3 -m http.server 8000
 ```
 
-## Déploiement
+Puis ouvrir http://localhost:8000/. Le service worker ne fonctionne qu'en HTTPS ou sur localhost : ouvrir `index.html` directement ne suffit pas.
 
-GitHub Pages activé, site servi depuis la branche `main`.
+## Publier une mise à jour
 
-GitHub Pages : https://samuelhaihornberg.github.io/Kiff-Tech/
+1. Modifier les fichiers.
+2. Si un fichier pré-caché change (liste `PRECACHE_ASSETS` ou code), incrémenter `CACHE_NAME` dans `sw.js`.
+3. Pousser sur `main` : GitHub Pages reconstruit le site (le dépôt ne contient aucun workflow de déploiement).
 
-## Sécurité
+## Domaine
 
-- Pas de paiement réel
-- Pas de secrets en dur (les clés API utilisent des variables d'environnement)
-- CSP ready, HTTPS requis pour le PWA
+- kiftech.store n'est pas enregistré au moment de la vérification (registre RDAP : « available for registration »). Aucune redirection n'est définie dans ce dépôt.
+- Pour utiliser un domaine : l'enregistrer ou le restaurer chez le registrar, configurer les DNS, puis renseigner le domaine dans Settings → Pages → Custom domain.
+- Ne pas ajouter de fichier `CNAME` avant que le DNS soit prêt : l'URL GitHub Pages pourrait être redirigée vers un domaine injoignable.
+
+## Icônes
+
+```bash
+npm install
+node generate-icons.js
+```
+
+Le paquet `canvas` n'est requis que pour générer les icônes, pas pour exécuter l'application.
 
 ## Licence
 

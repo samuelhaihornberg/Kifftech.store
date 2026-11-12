@@ -8,7 +8,8 @@
   window.addEventListener('appinstalled',()=>{deferredPrompt=null;});
 
   if('serviceWorker' in navigator){
-    navigator.serviceWorker.addEventListener('controllerchange',()=>{if(window.swUpdated) return;window.swUpdated=true;showUpdateBanner();});
+    const hadController=!!navigator.serviceWorker.controller;
+    navigator.serviceWorker.addEventListener('controllerchange',()=>{if(!hadController||window.swUpdated) return;window.swUpdated=true;showUpdateBanner();});
     navigator.serviceWorker.register('./sw.js').then(reg=>{reg.addEventListener('updatefound',()=>{const nw=reg.installing;nw?.addEventListener('statechange',()=>{if(nw.state==='installed'&&navigator.serviceWorker.controller) showUpdateBanner();});});});
   }
 

@@ -1,6 +1,6 @@
 # PROGRESSION KiffTech — Dropshipping Bioluminescent
 
-**Dernière MAJ** : 2026-10-26
+**Dernière MAJ** : 2026-11-12
 **Objectif** : SPA PWA dropshipping international, catalogue bioluminescent, abonnements, import auto
 
 ## État global : 85%
@@ -118,3 +118,19 @@
 - **Design** : Bioluminescent sci-fi, #03050a bg, #00ffc8 accent, glassmorphism, particules, glow subtils
 - **Sécurité** : Pas de paiement réel, pas de secrets en dur, CSP ready, HTTPS requis pour PWA
 - **Accessibilité** : ARIA labels, roles, focus-visible, contrastes, reduced-motion, sémantique HTML5
+## Audit et corrections (2026-11-12)
+
+Corrigé dans `app.js` :
+- Le démarrage échouait (`this.mainTabs` et plusieurs boutons jamais affectés) : l'écran de chargement restait bloqué.
+- Fonctions référencées mais absentes, ajoutées : panier (`cartManager`, persisté en `localStorage`), `addToCart`, `subscribe` / annulation, export CSV/JSON, lecture CSV.
+- Le catalogue de démonstration est déterministe (plus de prix ni de stocks aléatoires à chaque chargement). Vidéos factices supprimées.
+- Navigation : onglets Abonnements, Import et Réglages ajoutés ; barre inférieure remplie ; panneaux non actifs masqués.
+
+Corrigé dans `sw.js` (v2) : le code applicatif passe par le réseau d'abord ; le cache est nommé `kifftech-v2` (à incrémenter à chaque modification pré-cachée).
+
+Restant à faire avant mise en vitrine :
+- Catalogue réel (le catalogue actuel est fictif, images picsum.photos sans rapport avec les produits).
+- Paiement et abonnements réels (aucun paiement n'est traité aujourd'hui).
+- Textes marketing à valider : « Catalogue 5000+ produits », « Prix de référence vérifiés », « API REST + Webhooks », « Sync fournisseurs temps réel » ne sont pas implémentés.
+- Doublons de méthodes à nettoyer (`applyFilters`, `openModal`, `closeModal`, `bindCartEvents`, `updateCartDisplay`) : seule la dernière définition est active.
+- Domaine personnalisé non configuré (voir README).

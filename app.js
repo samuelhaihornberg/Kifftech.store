@@ -35,7 +35,27 @@ const BRANDS_BY_RAYON = {
 };
 
 // ---------- GÉNÉRATION PRODUITS PAR RAYON ----------
+function hashString(str) {
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+
+// Générateur pseudo-aléatoire déterministe : mêmes produits à chaque chargement
+function seededRandom(seed) {
+  let a = hashString(String(seed));
+  return function () {
+    a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
 function generateProductsForRayon(rayonId, count = 8) {
+  const rnd = seededRandom(rayonId);
   const brands = BRANDS_BY_RAYON[rayonId] || ['Generic'];
   const products = [];
   
@@ -125,11 +145,11 @@ function generateProductsForRayon(rayonId, count = 8) {
     const suffix = template.suffix[i % template.suffix.length];
     const title = `${brand} ${template.prefix} ${suffix}`;
     
-    const basePrice = Math.round((30 + Math.random() * 800) * 100) / 100;
-    const officialPrice = Math.round(basePrice * (1.15 + Math.random() * 0.25) * 100) / 100;
-    const promoPercent = 10 + Math.floor(Math.random() * 11);
+    const basePrice = Math.round((30 + rnd() * 800) * 100) / 100;
+    const officialPrice = Math.round(basePrice * (1.15 + rnd() * 0.25) * 100) / 100;
+    const promoPercent = 10 + Math.floor(rnd() * 11);
     const promoPrice = Math.round(officialPrice * (1 - promoPercent / 100) * 100) / 100;
-    const stock = Math.random() > 0.1 ? Math.floor(Math.random() * 200) : 0;
+    const stock = rnd() > 0.1 ? Math.floor(rnd() * 200) : 0;
     
     const rayon = RAYONS.find(r => r.id === rayonId);
     
@@ -150,88 +170,87 @@ function generateProductsForRayon(rayonId, count = 8) {
         `https://picsum.photos/seed/${encodeURIComponent(brand + title + i + 'c')}/600/600.jpg`,
         `https://picsum.photos/seed/${encodeURIComponent(brand + title + i + 'd')}/600/600.jpg`
       ],
-      videoUrl: `https://cdn.pixabay.com/video/2023/01/01/00-00-00-${Math.floor(Math.random()*1000).toString().padStart(4,'0')}_medium.mp4`,
-      specs: generateSpecs(rayonId, brand),
+      specs: generateSpecs(rayonId, brand, rnd),
       tags: promoPercent >= 15 ? ['promo'] : stock === 0 ? ['rupture'] : i < 2 ? ['nouveau'] : [],
       description: `${title} — ${rayon?.desc || 'Produit tech'}. Prix officiel barré, promotion ${promoPercent}%.`,
-      reference: `REF-${rayonId.toUpperCase()}-${String(Math.floor(Math.random()*10000)).padStart(4,'0')}`,
-      gtin: String(Math.floor(Math.random()*1e13)).padStart(13,'0')
+      reference: `REF-${rayonId.toUpperCase()}-${String(Math.floor(rnd()*10000)).padStart(4,'0')}`,
+      gtin: String(Math.floor(rnd()*1e13)).padStart(13,'0')
     });
   }
   return products;
 }
 
-function generateSpecs(rayonId, brand) {
+function generateSpecs(rayonId, brand, rnd) {
   const baseSpecs = {};
   
   switch(rayonId) {
     case 'smartphones':
-      baseSpecs['Écran'] = ['6.1"', '6.5"', '6.7"', '6.9"'][Math.floor(Math.random()*4)];
-      baseSpecs['Stockage'] = ['128GB', '256GB', '512GB', '1TB'][Math.floor(Math.random()*4)];
-      baseSpecs['RAM'] = ['6GB', '8GB', '12GB', '16GB'][Math.floor(Math.random()*4)];
-      baseSpecs['Processeur'] = ['Snapdragon 8 Gen 3', 'Dimensity 9300', 'A17 Pro', 'Tensor G3', 'Snapdragon 7 Gen 3'][Math.floor(Math.random()*5)];
-      baseSpecs['Batterie'] = ['4500mAh', '5000mAh', '5500mAh'][Math.floor(Math.random()*3)];
+      baseSpecs['Écran'] = ['6.1"', '6.5"', '6.7"', '6.9"'][Math.floor(rnd()*4)];
+      baseSpecs['Stockage'] = ['128GB', '256GB', '512GB', '1TB'][Math.floor(rnd()*4)];
+      baseSpecs['RAM'] = ['6GB', '8GB', '12GB', '16GB'][Math.floor(rnd()*4)];
+      baseSpecs['Processeur'] = ['Snapdragon 8 Gen 3', 'Dimensity 9300', 'A17 Pro', 'Tensor G3', 'Snapdragon 7 Gen 3'][Math.floor(rnd()*5)];
+      baseSpecs['Batterie'] = ['4500mAh', '5000mAh', '5500mAh'][Math.floor(rnd()*3)];
       break;
     case 'montres':
-      baseSpecs['Écran'] = ['1.3"', '1.4"', '1.5"', '1.75"'][Math.floor(Math.random()*4)];
-      baseSpecs['Autonomie'] = ['18h', '24h', '36h', '48h', '72h'][Math.floor(Math.random()*5)];
-      baseSpecs['GPS'] = ['Intégré', 'Intégré + GLONASS', 'Multi-bandes'][Math.floor(Math.random()*3)];
-      baseSpecs['Étanchéité'] = ['5 ATM', '10 ATM', 'IP68'][Math.floor(Math.random()*3)];
+      baseSpecs['Écran'] = ['1.3"', '1.4"', '1.5"', '1.75"'][Math.floor(rnd()*4)];
+      baseSpecs['Autonomie'] = ['18h', '24h', '36h', '48h', '72h'][Math.floor(rnd()*5)];
+      baseSpecs['GPS'] = ['Intégré', 'Intégré + GLONASS', 'Multi-bandes'][Math.floor(rnd()*3)];
+      baseSpecs['Étanchéité'] = ['5 ATM', '10 ATM', 'IP68'][Math.floor(rnd()*3)];
       break;
     case 'audio':
-      baseSpecs['Type'] = ['True Wireless', 'Casque circum-aural', 'Supra-aural'][Math.floor(Math.random()*3)];
-      baseSpecs['ANC'] = ['Hybride 50dB', 'Adaptatif 45dB', 'Passif', 'Aucun'][Math.floor(Math.random()*4)];
-      baseSpecs['Autonomie'] = ['6h+24h', '8h+30h', '20h', '40h', '60h'][Math.floor(Math.random()*5)];
-      baseSpecs['Codec'] = ['LDAC', 'aptX Adaptive', 'AAC', 'SBC'][Math.floor(Math.random()*4)];
+      baseSpecs['Type'] = ['True Wireless', 'Casque circum-aural', 'Supra-aural'][Math.floor(rnd()*3)];
+      baseSpecs['ANC'] = ['Hybride 50dB', 'Adaptatif 45dB', 'Passif', 'Aucun'][Math.floor(rnd()*4)];
+      baseSpecs['Autonomie'] = ['6h+24h', '8h+30h', '20h', '40h', '60h'][Math.floor(rnd()*5)];
+      baseSpecs['Codec'] = ['LDAC', 'aptX Adaptive', 'AAC', 'SBC'][Math.floor(rnd()*4)];
       break;
     case 'maison':
-      baseSpecs['Protocole'] = ['Matter', 'Zigbee', 'Wi-Fi', 'Bluetooth', 'Thread'][Math.floor(Math.random()*5)];
-      baseSpecs['Alimentation'] = ['Secteur', 'Pile', 'Batterie rechargeable', 'Solaire'][Math.floor(Math.random()*4)];
-      baseSpecs['Compatibilité'] = ['Home Assistant', 'HomeKit', 'Google Home', 'Alexa', 'SmartThings'][Math.floor(Math.random()*5)];
+      baseSpecs['Protocole'] = ['Matter', 'Zigbee', 'Wi-Fi', 'Bluetooth', 'Thread'][Math.floor(rnd()*5)];
+      baseSpecs['Alimentation'] = ['Secteur', 'Pile', 'Batterie rechargeable', 'Solaire'][Math.floor(rnd()*4)];
+      baseSpecs['Compatibilité'] = ['Home Assistant', 'HomeKit', 'Google Home', 'Alexa', 'SmartThings'][Math.floor(rnd()*5)];
       break;
     case 'securite':
-      baseSpecs['Résolution'] = ['2K', '4K', '1080p'][Math.floor(Math.random()*3)];
-      baseSpecs['Vision nocturne'] = ['Couleur', 'Infrarouge', 'Projecteur'][Math.floor(Math.random()*3)];
-      baseSpecs['Alimentation'] = ['Secteur', 'Batterie', 'Solaire', 'PoE'][Math.floor(Math.random()*4)];
-      baseSpecs['Stockage'] = ['Cloud', 'Locale (SD)', 'NVR', 'Les deux'][Math.floor(Math.random()*4)];
+      baseSpecs['Résolution'] = ['2K', '4K', '1080p'][Math.floor(rnd()*3)];
+      baseSpecs['Vision nocturne'] = ['Couleur', 'Infrarouge', 'Projecteur'][Math.floor(rnd()*3)];
+      baseSpecs['Alimentation'] = ['Secteur', 'Batterie', 'Solaire', 'PoE'][Math.floor(rnd()*4)];
+      baseSpecs['Stockage'] = ['Cloud', 'Locale (SD)', 'NVR', 'Les deux'][Math.floor(rnd()*4)];
       break;
     case 'gaming':
-      baseSpecs['Connexion'] = ['Sans fil 2.4GHz', 'Bluetooth', 'Filaire USB-C', 'Multi-mode'][Math.floor(Math.random()*4)];
-      baseSpecs['Autonomie'] = ['50h', '70h', '100h', '150h'][Math.floor(Math.random()*4)];
-      baseSpecs['Poids'] = ['45g', '55g', '65g', '85g'][Math.floor(Math.random()*4)];
+      baseSpecs['Connexion'] = ['Sans fil 2.4GHz', 'Bluetooth', 'Filaire USB-C', 'Multi-mode'][Math.floor(rnd()*4)];
+      baseSpecs['Autonomie'] = ['50h', '70h', '100h', '150h'][Math.floor(rnd()*4)];
+      baseSpecs['Poids'] = ['45g', '55g', '65g', '85g'][Math.floor(rnd()*4)];
       break;
     case 'robots':
-      baseSpecs['Navigation'] = ['LiDAR', 'vSLAM', 'Caméra AI', 'Gyroscope'][Math.floor(Math.random()*4)];
-      baseSpecs['Aspiration'] = ['5000 Pa', '6000 Pa', '7000 Pa', '8000 Pa', '10000 Pa'][Math.floor(Math.random()*5)];
-      baseSpecs['Autonomie'] = ['120min', '180min', '240min', '300min'][Math.floor(Math.random()*4)];
-      baseSpecs['Station'] = ['Auto-vidange', 'Lavage serpillère', 'Séchage', 'Base simple'][Math.floor(Math.random()*4)];
+      baseSpecs['Navigation'] = ['LiDAR', 'vSLAM', 'Caméra AI', 'Gyroscope'][Math.floor(rnd()*4)];
+      baseSpecs['Aspiration'] = ['5000 Pa', '6000 Pa', '7000 Pa', '8000 Pa', '10000 Pa'][Math.floor(rnd()*5)];
+      baseSpecs['Autonomie'] = ['120min', '180min', '240min', '300min'][Math.floor(rnd()*4)];
+      baseSpecs['Station'] = ['Auto-vidange', 'Lavage serpillère', 'Séchage', 'Base simple'][Math.floor(rnd()*4)];
       break;
     case 'drones':
-      baseSpecs['Caméra'] = ['4K/60fps', '4K/120fps', '5.1K/50fps', '6K/30fps'][Math.floor(Math.random()*4)];
-      baseSpecs['Autonomie'] = ['28min', '34min', '40min', '46min'][Math.floor(Math.random()*4)];
-      baseSpecs['Transmission'] = ['O3/O4', 'OcuSync', 'SkyLink', 'WiFi'][Math.floor(Math.random()*4)];
-      baseSpecs['Poids'] = ['<250g', '~500g', '~900g', '>1kg'][Math.floor(Math.random()*4)];
+      baseSpecs['Caméra'] = ['4K/60fps', '4K/120fps', '5.1K/50fps', '6K/30fps'][Math.floor(rnd()*4)];
+      baseSpecs['Autonomie'] = ['28min', '34min', '40min', '46min'][Math.floor(rnd()*4)];
+      baseSpecs['Transmission'] = ['O3/O4', 'OcuSync', 'SkyLink', 'WiFi'][Math.floor(rnd()*4)];
+      baseSpecs['Poids'] = ['<250g', '~500g', '~900g', '>1kg'][Math.floor(rnd()*4)];
       break;
     case 'informatique':
-      baseSpecs['Type'] = ['Clavier mécanique', 'Souris gaming', 'Hub USB-C', 'Dock Thunderbolt', 'Écran portable'][Math.floor(Math.random()*5)];
-      baseSpecs['Switch'] = ['Red', 'Brown', 'Blue', 'Silver', 'Low Profile'][Math.floor(Math.random()*5)];
-      baseSpecs['Connexion'] = ['USB-C', 'Bluetooth', '2.4GHz', 'Filaire'][Math.floor(Math.random()*4)];
+      baseSpecs['Type'] = ['Clavier mécanique', 'Souris gaming', 'Hub USB-C', 'Dock Thunderbolt', 'Écran portable'][Math.floor(rnd()*5)];
+      baseSpecs['Switch'] = ['Red', 'Brown', 'Blue', 'Silver', 'Low Profile'][Math.floor(rnd()*5)];
+      baseSpecs['Connexion'] = ['USB-C', 'Bluetooth', '2.4GHz', 'Filaire'][Math.floor(rnd()*4)];
       break;
     case 'energie':
-      baseSpecs['Capacité'] = ['5000mAh', '10000mAh', '20000mAh', '24000mAh', '256Wh'][Math.floor(Math.random()*5)];
-      baseSpecs['Puissance max'] = ['30W', '65W', '100W', '140W', '240W'][Math.floor(Math.random()*5)];
-      baseSpecs['Ports'] = ['USB-C x2', 'USB-C + USB-A', 'USB-C x3', 'AC + USB-C'][Math.floor(Math.random()*4)];
+      baseSpecs['Capacité'] = ['5000mAh', '10000mAh', '20000mAh', '24000mAh', '256Wh'][Math.floor(rnd()*5)];
+      baseSpecs['Puissance max'] = ['30W', '65W', '100W', '140W', '240W'][Math.floor(rnd()*5)];
+      baseSpecs['Ports'] = ['USB-C x2', 'USB-C + USB-A', 'USB-C x3', 'AC + USB-C'][Math.floor(rnd()*4)];
       break;
     case 'auto':
-      baseSpecs['Type'] = ['Dashcam', 'Chargeur', 'Démarreur', 'Purificateur', 'Support'][Math.floor(Math.random()*5)];
-      baseSpecs['Résolution'] = ['4K', '2K', '1080p'][Math.floor(Math.random()*3)];
-      baseSpecs['Alimentation'] = ['Allume-cigare', 'Batterie', 'OBD-II', 'Solaire'][Math.floor(Math.random()*4)];
+      baseSpecs['Type'] = ['Dashcam', 'Chargeur', 'Démarreur', 'Purificateur', 'Support'][Math.floor(rnd()*5)];
+      baseSpecs['Résolution'] = ['4K', '2K', '1080p'][Math.floor(rnd()*3)];
+      baseSpecs['Alimentation'] = ['Allume-cigare', 'Batterie', 'OBD-II', 'Solaire'][Math.floor(rnd()*4)];
       break;
     case 'vr':
-      baseSpecs['Type'] = ['Autonome', 'PC VR', 'Hybride', 'AR'][Math.floor(Math.random()*4)];
-      baseSpecs['Résolution'] = ['2K/œil', '4K/œil', 'Micro-OLED'][Math.floor(Math.random()*3)];
-      baseSpecs['FOV'] = ['90°', '100°', '110°', '120°'][Math.floor(Math.random()*4)];
-      baseSpecs['Tracking'] = ['Inside-out', 'Outside-in', 'Eye-tracking', 'Hand-tracking'][Math.floor(Math.random()*4)];
+      baseSpecs['Type'] = ['Autonome', 'PC VR', 'Hybride', 'AR'][Math.floor(rnd()*4)];
+      baseSpecs['Résolution'] = ['2K/œil', '4K/œil', 'Micro-OLED'][Math.floor(rnd()*3)];
+      baseSpecs['FOV'] = ['90°', '100°', '110°', '120°'][Math.floor(rnd()*4)];
+      baseSpecs['Tracking'] = ['Inside-out', 'Outside-in', 'Eye-tracking', 'Hand-tracking'][Math.floor(rnd()*4)];
       break;
     default:
       baseSpecs['Caractéristique'] = 'Standard';
@@ -247,7 +266,7 @@ RAYONS.forEach(rayon => {
 });
 
 // Mélanger pour variété
-DEMO_PRODUCTS = DEMO_PRODUCTS.sort(() => Math.random() - 0.5);
+DEMO_PRODUCTS = DEMO_PRODUCTS.sort((a, b) => hashString(a.id) - hashString(b.id));
 
 const FALLBACK_PRODUCTS = DEMO_PRODUCTS;
 
@@ -258,6 +277,25 @@ function formatDiscount(pct){return pct>0?`-${pct}%`:'';}
 function debounce(fn,ms){let t;return(...args)=>{clearTimeout(t);t=setTimeout(()=>fn(...args),ms);};}
 
 // ---------- STATE ----------
+const STORE_KEYS = { cart: 'kifftech-cart-v1', subscription: 'kifftech-subscription-v1' };
+
+function readJSON(key, fallback) {
+  try {
+    const value = JSON.parse(localStorage.getItem(key));
+    return value ?? fallback;
+  } catch (e) {
+    return fallback;
+  }
+}
+
+function writeJSON(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch (e) {
+    /* stockage indisponible : l'état reste en mémoire */
+  }
+}
+
 const state = {
   products: DEMO_PRODUCTS,
   productsMap: new Map(),
@@ -269,20 +307,72 @@ const state = {
   visibleCount: 24,
   currentProduct: null,
   currentTab: 'catalog',
-  subscription: null,
+  subscription: readJSON(STORE_KEYS.subscription, null),
   sortBy: 'featured',
   importSources: [],
   schedules: [],
   mappings: {globalDiscount:10,targetMargin:35,autoPriceUpdate:true,verifyRefPrice:true},
-  cart: [],
+  cart: readJSON(STORE_KEYS.cart, []).filter(i => i && i.productId && i.quantity > 0),
   toastQueue: [],
+};
+
+// ---------- PANIER (persistant, démonstration) ----------
+const cartManager = {
+  getItems() {
+    return state.cart;
+  },
+  save() {
+    writeJSON(STORE_KEYS.cart, state.cart);
+    window.dispatchEvent(new Event('cart:change'));
+  },
+  add(productId, qty = 1) {
+    const item = state.cart.find(i => i.productId === productId);
+    if (item) item.quantity = Math.min(item.quantity + qty, 99);
+    else state.cart.push({ productId, quantity: qty });
+    this.save();
+  },
+  updateQuantity(productId, quantity) {
+    if (quantity <= 0) return this.remove(productId);
+    const item = state.cart.find(i => i.productId === productId);
+    if (item) {
+      item.quantity = Math.min(quantity, 99);
+      this.save();
+    }
+  },
+  remove(productId) {
+    state.cart = state.cart.filter(i => i.productId !== productId);
+    this.save();
+  },
+  calculateTotals(productsMap) {
+    let totalItems = 0, uniqueItems = 0, subtotal = 0;
+    for (const item of state.cart) {
+      const p = productsMap.get(item.productId);
+      if (!p) continue;
+      totalItems += item.quantity;
+      uniqueItems += 1;
+      subtotal += p.price * item.quantity;
+    }
+    subtotal = Math.round(subtotal * 100) / 100;
+    const shipping = 0;
+    return { totalItems, uniqueItems, subtotal, shipping, finalTotal: subtotal + shipping, details: [] };
+  }
+};
+
+// ---------- SOURCES DE CATALOGUE ----------
+// Aucune source réelle connectée : le catalogue de démonstration est utilisé.
+function getCachedProducts() { return null; }
+function setCachedProducts() {}
+const productAgent = {
+  async syncAllProducts() {
+    throw new Error('aucune source de catalogue connectée (démonstration)');
+  }
 };
 
 // ---------- MAIN CLASS ----------
 class KiffTech{
   constructor(){
-    this.tabs = ['catalog'];
-    this.tabLabels = {catalog:'Catalogue'};
+    this.tabs = ['catalog', 'subscriptions', 'import', 'settings'];
+    this.tabLabels = {catalog:'Catalogue', subscriptions:'Abonnements', import:'Import', settings:'Réglages'};
     this.tabIcons = {
       catalog:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/><line x1="4" y1="6" x2="4" y2="18"/><line x1="20" y1="6" x2="20" y2="18"/></svg>'
     };
@@ -299,6 +389,14 @@ class KiffTech{
     this.toastContainer = document.getElementById('toastContainer');
     this.splashBar = document.getElementById('splashBar');
     this.splashText = document.getElementById('splashText');
+    this.mainTabs = document.getElementById('mainTabs');
+    this.bottomTabs = document.getElementById('bottomTabs');
+    this.addSourceBtn = document.getElementById('addSourceBtn');
+    this.addScheduleBtn = document.getElementById('addScheduleBtn');
+    this.exportCSV = document.getElementById('exportCSV');
+    this.exportJSON = document.getElementById('exportJSON');
+    this.importCSV = document.getElementById('importCSV');
+    this.csvImportInput = document.getElementById('csvImportInput');
 
     this.currentRayon = null;
     this.currentRayonProducts = [];
@@ -323,6 +421,89 @@ class KiffTech{
 
     if(document.readyState==='complete') this.onLoaded();
     else window.addEventListener('load',()=>this.onLoaded());
+  }
+
+  addToCart(productId) {
+    const p = state.productsMap.get(productId) || state.products.find(x => x.id === productId);
+    if (!p) return;
+    if (p.stock === 0) {
+      this.showToast('Produit en rupture', 'error');
+      return;
+    }
+    cartManager.add(productId, 1);
+    this.showToast(`${p.title} ajouté au panier`);
+  }
+
+  exportCatalog(format) {
+    const products = state.products || [];
+    let content;
+    let type;
+    let name;
+    if (format === 'json') {
+      content = JSON.stringify(products, null, 2);
+      type = 'application/json';
+      name = 'kifftech-catalogue.json';
+    } else {
+      const cols = ['id', 'title', 'brand', 'category', 'price', 'officialPrice', 'promoPercent', 'stock', 'reference'];
+      const cell = v => `"${String(v ?? '').replace(/"/g, '""')}"`;
+      content = [cols.join(';'), ...products.map(p => cols.map(c => cell(p[c])).join(';'))].join('\n');
+      type = 'text/csv;charset=utf-8';
+      name = 'kifftech-catalogue.csv';
+    }
+    const url = URL.createObjectURL(new Blob([content], { type }));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = name;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    this.showToast(`Catalogue exporté (${products.length} produits de démonstration)`);
+  }
+
+  handleCSVImport(e) {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const lines = String(reader.result || '').split(/\r?\n/).filter(l => l.trim());
+      const rows = Math.max(0, lines.length - 1);
+      this.showToast(`${rows} ligne(s) lue(s) — démonstration : rien n'est ajouté au catalogue`, rows ? 'success' : 'error');
+    };
+    reader.onerror = () => this.showToast('Lecture du fichier impossible', 'error');
+    reader.readAsText(file);
+    e.target.value = '';
+  }
+
+  subscribe(tier) {
+    const names = { basic: 'KiffTech Basic', tresor: 'KiffTech Trésor' };
+    if (!names[tier]) return;
+    state.subscription = { tier, since: new Date().toISOString() };
+    writeJSON(STORE_KEYS.subscription, state.subscription);
+    this.renderSubscription();
+    this.showToast(`${names[tier]} activé (démonstration : aucun paiement)`);
+  }
+
+  cancelSubscription() {
+    state.subscription = null;
+    writeJSON(STORE_KEYS.subscription, null);
+    this.renderSubscription();
+    this.showToast('Abonnement annulé');
+  }
+
+  renderSubscription() {
+    const label = document.getElementById('currentSub');
+    const actions = document.getElementById('subActions');
+    if (!label || !actions) return;
+    if (!state.subscription) {
+      label.textContent = 'Aucun abonnement actif';
+      actions.innerHTML = '';
+      return;
+    }
+    const name = state.subscription.tier === 'tresor' ? 'KiffTech Trésor' : 'KiffTech Basic';
+    label.textContent = `${name} — actif (démonstration)`;
+    actions.innerHTML = '<button type="button" class="btn-secondary" id="cancelSubBtn">Annuler l’abonnement</button>';
+    document.getElementById('cancelSubBtn').addEventListener('click', () => this.cancelSubscription());
   }
 
   async loadProducts() {
@@ -371,11 +552,14 @@ class KiffTech{
   buildTabs(){
     const tabsHTML=this.tabs.map((t,i)=>`<button class="main-tab" role="tab" aria-selected="${i===0}" data-tab="${t}">${this.tabLabels[t]}</button>`).join('');
     this.mainTabs.innerHTML=tabsHTML;
-    this.mainTabs.querySelectorAll('.main-tab').forEach(btn=>btn.addEventListener('click',()=>this.switchTab(btn.dataset.tab)));
+    this.bottomTabs.innerHTML=tabsHTML;
+    [this.mainTabs,this.bottomTabs].forEach(nav=>nav.querySelectorAll('.main-tab').forEach(btn=>btn.addEventListener('click',()=>this.switchTab(btn.dataset.tab))));
+    this.switchTab(this.tabs[0]);
   }
 
   switchTab(tab){
     state.currentTab=tab;
+    if(tab==='cart') this.renderCartPanel();
     document.querySelectorAll('.panel').forEach(p=>p.hidden=true);
     document.getElementById(`panel-${tab}`).hidden=false;
     document.querySelectorAll('[role="tab"]').forEach(btn=>{btn.setAttribute('aria-selected',btn.dataset.tab===tab);});
@@ -674,10 +858,6 @@ class KiffTech{
           <div class="detail-ref">Réf: ${sanitizeHTML(p.reference)} | GTIN: ${sanitizeHTML(p.gtin)}</div>
         </div>
       </div>
-      <div class="detail-video" style="margin:1rem 0;">
-        <video controls src="${p.videoUrl}" style="width:100%;border-radius:var(--radius-md);background:#000;"></video>
-        <p style="font-size:.7rem;color:var(--fg-muted);margin-top:.5rem;">Vidéo démo produit (source: réseaux sociaux / site officiel)</p>
-      </div>
       <p class="detail-desc">${sanitizeHTML(p.description)}</p>
       <div class="detail-specs">
         <h4>Caractéristiques principales</h4>
@@ -929,4 +1109,4 @@ class KiffTech{
   }
 }
 
-document.addEventListener('DOMContentLoaded',()=>{window.keffTech=new KiffTech();});
+document.addEventListener('DOMContentLoaded',()=>{window.keffTech=new KiffTech();window.keffTech.renderSubscription();window.keffTech.updateCartDisplay();});
