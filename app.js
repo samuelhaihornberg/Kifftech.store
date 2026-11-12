@@ -822,7 +822,10 @@ class KiffTech{
 
   openProduct(id){
     state.currentProduct = state.products.find(p => p.id === id);
-    if(state.currentProduct) this.switchTab('product');
+    if(state.currentProduct){
+      this.renderProductDetail();
+      this.switchTab('product');
+    }
   }
 
   openProductLink(id){

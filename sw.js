@@ -1,9 +1,9 @@
-/* ===== KiffTech Service Worker v2 =====
+/* ===== KiffTech Service Worker v3 =====
    Règle : incrémenter CACHE_NAME à chaque modification des fichiers pré-cachés.
    Le code (HTML, JS, CSS) passe toujours par le réseau d'abord : une ancienne
    version ne peut pas rester affichée depuis le cache après une mise en ligne. */
 
-const CACHE_NAME='kifftech-v2';
+const CACHE_NAME='kifftech-v3';
 const PRECACHE_ASSETS=[
   './','./index.html','./promotions.html','./style.css','./app.js','./install.js','./manifest.json',
   './icons/icon-192.png','./icons/icon-512.png','./icons/maskable-512.png','./icons/apple-touch-icon.png'
