@@ -108,6 +108,33 @@
     </div>
   </section>
 
+  <section class="panel" id="panel-bilan" role="tabpanel" aria-labelledby="titre-bilan" hidden>
+    <div class="panel-header">
+      <h2 id="titre-bilan">Bilan des ventes &amp; bénéfices</h2>
+    </div>
+    <div class="bilan-layout">
+      <p class="bilan-intro">Accès libre, sans abonnement. Clients et ventes fictifs (démonstration).</p>
+      <div class="bilan-kpis" id="bilanKpis"></div>
+      <article class="settings-card">
+        <h3>Produits vendus</h3>
+        <div class="bilan-tirage" id="bilanTirage" aria-live="polite"></div>
+        <button type="button" class="btn-secondary bilan-tirage-btn" id="bilanTirageBtn">Nouveau tirage</button>
+      </article>
+      <article class="settings-card">
+        <h3>Détail par client</h3>
+        <div class="bilan-table-wrap">
+          <table class="bilan-table" aria-label="Montants par client">
+            <thead>
+              <tr><th scope="col">Client</th><th scope="col">Articles</th><th scope="col" class="bilan-num">Montant</th></tr>
+            </thead>
+            <tbody id="bilanClients"></tbody>
+            <tfoot id="bilanTotal"></tfoot>
+          </table>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <section class="panel" id="panel-import" role="tabpanel" aria-labelledby="tab-import">
     <div class="import-layout">
       <article class="import-card">
@@ -198,5 +225,6 @@
 
 <script type="module" src="./app.js"></script>
 <script src="./install.js"></script>
+<script src="./bilan.js"></script>
 </body>
 </html>

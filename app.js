@@ -371,8 +371,8 @@ const productAgent = {
 // ---------- MAIN CLASS ----------
 class KiffTech{
   constructor(){
-    this.tabs = ['catalog', 'subscriptions', 'import', 'settings'];
-    this.tabLabels = {catalog:'Catalogue', subscriptions:'Abonnements', import:'Import', settings:'Réglages'};
+    this.tabs = ['catalog', 'subscriptions', 'bilan', 'import', 'settings'];
+    this.tabLabels = {catalog:'Catalogue', subscriptions:'Abonnements', bilan:'Bilan', import:'Import', settings:'Réglages'};
     this.tabIcons = {
       catalog:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/><line x1="4" y1="6" x2="4" y2="18"/><line x1="20" y1="6" x2="20" y2="18"/></svg>'
     };
