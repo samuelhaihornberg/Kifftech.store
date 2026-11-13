@@ -853,6 +853,7 @@ class KiffTech{
           <h2 class="detail-title">${sanitizeHTML(p.title)}</h2>
           <span class="detail-brand" style="background:${this.getBrandColor(p.brand)}20;color:${this.getBrandColor(p.brand)};border-color:${this.getBrandColor(p.brand)}40;padding:.2rem .6rem;border-radius:999px;font-size:.7rem;font-weight:600;">${sanitizeHTML(p.brand)}</span>
           <span class="detail-category">${sanitizeHTML(RAYONS_MAP[p.category]?.label || p.category)}</span>
+          ${p.stock === 0 ? '<span class="rupture-badge">Rupture de stock</span>' : ''}
           <div class="detail-price-row">
             <span class="detail-price">${formatPrice(p.price)}</span>
             <span class="detail-official-price">${formatPrice(p.officialPrice)}</span>
@@ -876,28 +877,10 @@ class KiffTech{
         </div>
       </div>
       <div class="detail-actions">
-        <button class="btn-primary" onclick="window.keffTech.addToCart('${p.id}')" style="flex:1;padding:.8rem;font-size:.9rem;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:.5rem;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg> Ajouter au panier (${formatPrice(p.price)})</button>
+        <button class="btn-primary" onclick="window.keffTech.addToCart('${p.id}')" ${p.stock === 0 ? 'disabled' : ''} style="flex:1;padding:.8rem;font-size:.9rem;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:.5rem;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg> ${p.stock === 0 ? 'Rupture de stock' : `Ajouter au panier (${formatPrice(p.price)})`}</button>
         <button class="btn-secondary" onclick="window.keffTech.openModal('${p.id}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Plus de détails</button>
       </div>`;
   }
-
-  openModal(id){
-    const p = state.products.find(x => x.id === id);
-    if(!p) return;
-    this.modalBody.innerHTML = `
-      <h3>${sanitizeHTML(p.title)}</h3>
-      <p class="detail-desc">${sanitizeHTML(p.description)}</p>
-      <div class="detail-specs" style="margin-top:1rem">
-        <h4>Spécifications complètes</h4>
-        <div class="specs-grid">${Object.entries(p.specs).map(([k,v]) => `<div class="spec-item"><div class="spec-label">${sanitizeHTML(k)}</div><div class="spec-value">${sanitizeHTML(v)}</div></div>`).join('')}</div>
-      </div>
-      <div class="detail-actions" style="margin-top:1.5rem">
-        <button class="btn-primary" onclick="window.keffTech.addToCart('${p.id}');window.keffTech.closeModal()">${p.stock===0?'Rupture':'Ajouter au panier'}</button>
-      </div>`;
-    this.modal.hidden = false;
-    document.body.style.overflow = 'hidden';
-  }
-  closeModal(){this.modal.hidden=true;document.body.style.overflow='';}
 
   bindCartEvents() {
     window.addEventListener('cart:change', () => this.updateCartDisplay());
@@ -1013,13 +996,14 @@ class KiffTech{
     if(!p) return;
     this.modalBody.innerHTML = `
       <h3>${sanitizeHTML(p.title)}</h3>
+      ${p.stock === 0 ? '<p><span class="rupture-badge">Rupture de stock</span></p>' : ''}
       <p class="detail-desc">${sanitizeHTML(p.description)}</p>
       <div class="detail-specs" style="margin-top:1rem">
         <h4>Spécifications complètes</h4>
         <div class="specs-grid">${Object.entries(p.specs).map(([k,v]) => `<div class="spec-item"><div class="spec-label">${sanitizeHTML(k)}</div><div class="spec-value">${sanitizeHTML(v)}</div></div>`).join('')}</div>
       </div>
       <div class="detail-actions" style="margin-top:1.5rem">
-        <button class="btn-primary" onclick="window.keffTech.addToCart('${p.id}');window.keffTech.closeModal()">${p.stock===0?'Rupture':'Ajouter au panier'}</button>
+        <button class="btn-primary" onclick="window.keffTech.addToCart('${p.id}');window.keffTech.closeModal()" ${p.stock === 0 ? 'disabled' : ''}>${p.stock === 0 ? 'Rupture de stock' : 'Ajouter au panier'}</button>
       </div>`;
     this.modal.hidden = false;
     document.body.style.overflow = 'hidden';
