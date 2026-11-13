@@ -11,7 +11,8 @@ Catalogue de démonstration en PWA (Progressive Web App) : objets connectés et 
 
 - HTML, CSS et JavaScript sans framework ni étape de build. Tous les chemins sont relatifs (`./`).
 - Service worker `sw.js` : le code (HTML, JS, CSS) passe toujours par le réseau d'abord ; les icônes sont mises en cache.
-- Données : catalogue **de démonstration**, généré de façon déterministe dans `app.js`. Produits, prix et stocks sont fictifs.
+- Données : catalogue dans `data/catalogue.js` — produits sortis entre 2023 et 2026, caractéristiques et prix vérifiés auprès des sources fabricant (Valve, Nintendo, Sony), chaque fiche listant ses sources et sa date de vérification. L'app reste en **démonstration** : aucune commande ni paiement n'est possible ; les informations non confirmées sont affichées « Information à confirmer » (badge « Fiche incomplète »).
+- Médias : photographies sous licence libre (Wikimedia Commons, auteur et licence vérifiés, attribution affichée sous chaque image) et vidéos officielles fabricant intégrées via YouTube (embed `youtube-nocookie.com`).
 - Panier et abonnements : enregistrés dans le navigateur (`localStorage`). Aucun paiement n'est traité.
 - Aucune dépendance à un service externe pour fonctionner.
 

@@ -1,6 +1,6 @@
 # PROGRESSION KiffTech — Dropshipping Bioluminescent
 
-**Dernière MAJ** : 2026-11-12
+**Dernière MAJ** : 2026-11-13
 **Objectif** : SPA PWA dropshipping international, catalogue bioluminescent, abonnements, import auto
 
 ## État global : 85%
@@ -134,3 +134,29 @@ Restant à faire avant mise en vitrine :
 - Textes marketing à valider : « Catalogue 5000+ produits », « Prix de référence vérifiés », « API REST + Webhooks », « Sync fournisseurs temps réel » ne sont pas implémentés.
 - Doublons de méthodes à nettoyer (`applyFilters`, `openModal`, `closeModal`, `bindCartEvents`, `updateCartDisplay`) : seule la dernière définition est active.
 - Domaine personnalisé non configuré (voir README).
+
+## Catalogue vérifié fabricant (2026-11-13)
+
+Le catalogue de démonstration généré est remplacé par un catalogue éditorial dans `data/catalogue.js` : 6 produits sortis entre 2023 et 2026, fiches construites uniquement à partir de sources fabricant ou de pages produit officielles, avec date de vérification sur chaque source.
+
+- **Nouveautés 2026 (3)** : Steam Machine (Valve, lancée 22/06/2026, 1 039–1 428 € TTC), Steam Frame (Valve, 14/09/2026, 1 049–1 279 € TTC), Steam Controller (Valve, 04/05/2026, 99 € — rupture de stock, achat par réservation, bouton WhatsApp Business sur la variante).
+- **2025** : Nintendo Switch 2 (05/06/2025 ; deux variantes de batterie confirmées sur la fiche officielle ; prix public actuel non re-confirmable → `null`, « Information à confirmer »).
+- **2024** : PlayStation 5 Pro (07/11/2024 ; prix `null`, 1 photo sous licence libre → badge « Fiche incomplète »).
+- **2023** : Steam Deck OLED (16/11/2023 ; prix vérifié 779 € / 919 € TTC depuis l'annonce Valve du 27/05/2026 ; 0 photo du modèle OLED sous licence libre vérifiée → badge « Fiche incomplète »).
+
+Règles appliquées :
+
+- Prix = prix public officiel uniquement (TTC, marché France/UE), source + date ; aucune remise ni promotion ; rien d'inventé (prix, références, stock, contenu de boîte, bundles, compatibilités).
+- Chaque fiche : 10–20 situations d'utilisation, bloc « Bundles et accessoires compatibles » (ex. accessoires Steam Frame d'origine 39/59/69 €, ajout panier à l'achat du casque uniquement), tableau technique, variantes réelles, médias crédités (Wikimedia Commons, licences CC0/CC BY/CC BY-SA vérifiées) et vidéo officielle fabricant (embed YouTube vérifié via oembed).
+- `manquants` explicites par produit (SKU non publiés, prix non re-confirmables, photos sous licence libre insuffisantes) → badge « Fiche incomplète ».
+- WhatsApp Business : numéro « 05 48 38 52 69 » dans `data/config.js`, bouton sur variante indisponible ; lien `wa.me` volontairement désactivé (`whatsappLienUrl: null`) tant que pays/numéro/activation ne sont pas confirmés.
+- État de démonstration affiché ; bilan panneau dédié (`bilan.js`) conservé, devise €.
+
+Vérifications du 13/11/2026 :
+
+- [x] Validateur catalogue (`validate-catalogue.mjs`) : 0 erreur, 11 alertes attendues (SKU non publiés, prix non re-confirmables Switch 2 / PS5 Pro, images < 3 pour Machine / PS5 Pro / Deck OLED)
+- [x] `node --check` sur `data/catalogue.js` (copie `.mjs`) ✅
+- [x] Smoke test DOM factice (`/tmp/opencode/smoke-app.mjs`) : import réel d'`app.js`, rendu catalogue, 3 badges « Nouveauté 2026 », fiches détaillées (prix `null` → « Information à confirmer », vidéo embed `youtube-nocookie`), 14 images référencées toutes présentes ✅
+- [x] Crédits médias à jour (`/tmp/opencode/media-credits.json`, 16 entrées)
+- [ ] `node tools/check-pwa.js` : non exécutable dans cet environnement (module npm `canvas` absent, pas de npm) — à relancer sur un poste avec npm
+- [ ] Tests manuels téléphone / navigateur réel (rendu, SW, installation)

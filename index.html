@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#03050a">
-<meta name="description" content="Démonstration de boutique high-tech : smartphones, audio, objets connectés et réalité virtuelle. Produits et prix fictifs, sans paiement ni commande réelle.">
+<meta name="description" content="Démonstration de boutique high-tech : fiches produits 2020-2026 basées sur des sources fabricant, prix publics officiels. Sans paiement ni commande réelle.">
 <meta name="keywords" content="KiffTech, kifftech.store, kefftech, kiff, keff, keffstation, boutique high-tech en ligne, catalogue high-tech, produits technologiques, smartphones et accessoires, audio et objets connectés, réalité virtuelle et accessoires gaming">
 <link rel="canonical" href="https://samuelhaihornberg.github.io/Kifftech.store/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KiffTech">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:title" content="KiffTech — boutique high-tech en ligne (démonstration)">
-<meta property="og:description" content="Démonstration de boutique high-tech : smartphones, audio, objets connectés et réalité virtuelle. Produits et prix fictifs, sans paiement ni commande réelle.">
+<meta property="og:description" content="Démonstration de boutique high-tech : fiches produits 2020-2026 basées sur des sources fabricant, prix publics officiels. Sans paiement ni commande réelle.">
 <meta property="og:url" content="https://samuelhaihornberg.github.io/Kifftech.store/">
 <meta property="og:image" content="https://samuelhaihornberg.github.io/Kifftech.store/icons/icon-512.png">
 <meta name="twitter:card" content="summary">
@@ -47,7 +47,7 @@
 </header>
 
 <main class="main-content" id="mainContent" role="main">
-  <p class="demo-notice" role="note">Catalogue en démonstration : produits, prix, réductions, stocks et abonnements fictifs. Aucun paiement ni commande réelle.</p>
+  <p class="demo-notice" role="note">Catalogue en démonstration : fiches basées sur des sources fabricant vérifiées, prix publics officiels. Stocks, commandes et paiements non connectés : aucun paiement ni commande réelle.</p>
   <section class="panel" id="panel-catalog" role="tabpanel" aria-labelledby="tab-catalog">
     <div class="panel-header">
       <h2>Catalogue</h2>
@@ -57,6 +57,13 @@
         <input type="search" id="searchInput" placeholder="Rechercher produits..." aria-label="Recherche">
       </div>
     </div>
+    <section class="novelties" id="noveltiesSection" aria-labelledby="noveltiesTitle" hidden>
+      <div class="novelties-head">
+        <h3 id="noveltiesTitle">Nouveautés 2026</h3>
+        <p>Produits officiellement sortis en 2026, avec leurs accessoires compatibles.</p>
+      </div>
+      <div class="novelties-grid" id="noveltiesGrid"></div>
+    </section>
     <div class="products-grid" id="productsGrid" role="list"></div>
     <div class="load-more" id="loadMore" hidden><button type="button" class="btn-primary">Charger plus</button></div>
   </section>
@@ -103,7 +110,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Rapports marge/ROI</li>
         </ul>
         <button class="btn-subscribe btn-featured" data-tier="tresor">Activer Trésor</button>
-        <p class="sub-note">Économisez jusqu'à 25% sur chaque commande</p>
+        <p class="sub-note">Démonstration : aucun abonnement n'est facturé</p>
       </article>
     </div>
   </section>

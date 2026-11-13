@@ -30,7 +30,7 @@
 
   const cent = (valeur) => Math.round(valeur * 100);
   const formatNombre = new Intl.NumberFormat('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  const formatMontant = (centimes) => formatNombre.format(centimes / 100) + '\u00a0₪';
+  const formatMontant = (centimes) => formatNombre.format(centimes / 100) + '\u00a0€';
   const byId = (id) => document.getElementById(id);
 
   const lignesClients = CLIENTS.map((client) => {

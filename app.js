@@ -1,4 +1,6 @@
-/* ===== KiffTech — Catalogue Smart Devices & Gadgets ===== */
+/* ===== KiffTech — Catalogue (démonstration, données vérifiées) ===== */
+import { CATALOGUE } from './data/catalogue.js';
+import { CONTACT } from './data/config.js';
 
 // ---------- RAYONS (Catégories de produits) ----------
 const RAYONS = [
@@ -7,10 +9,10 @@ const RAYONS = [
   { id: 'audio', label: 'Audio', icon: '🎧', color: '#ff2d95', desc: 'Écouteurs, casques et enceintes' },
   { id: 'maison', label: 'Maison connectée', icon: '🏠', color: '#ff6b00', desc: 'Objets connectés pour la maison' },
   { id: 'securite', label: 'Sécurité', icon: '🔒', color: '#b84dff', desc: 'Caméras, alarmes et serrures connectées' },
-  { id: 'gaming', label: 'Gaming', icon: '🎮', color: '#ff6b00', desc: 'Accessoires et périphériques gaming' },
-  { id: 'robots', label: 'Robots', icon: '🤖', color: '#00ffc8', desc: 'Robots aspirateurs et assistants' },
-  { id: 'drones', label: 'Drones', icon: '🚁', color: '#ffd23f', desc: 'Drones et gadgets télécommandés' },
-  { id: 'informatique', label: 'Informatique', icon: '💻', color: '#0066ff', desc: 'Claviers, souris, hubs et écrans' },
+  { id: 'gaming', label: 'Gaming', icon: '🎮', color: '#ff6b00', desc: 'Consoles, consoles portables et périphériques gaming' },
+  { id: 'robots', label: 'Robots', icon: '🤖', color: '#00ffc8', desc: 'Robots aspirateurs, assistants et robots à pattes' },
+  { id: 'drones', label: 'Drones', icon: '🚁', color: '#ffd23f', desc: 'Drones et caméras d’action ou de poche' },
+  { id: 'informatique', label: 'Informatique', icon: '💻', color: '#0066ff', desc: 'Ordinateurs, tablettes, claviers, souris et hubs' },
   { id: 'energie', label: 'Énergie', icon: '🔋', color: '#00ff88', desc: 'Chargeurs, batteries et énergie portable' },
   { id: 'auto', label: 'Auto', icon: '🚗', color: '#ff6b00', desc: 'Gadgets et accessoires auto' },
   { id: 'vr', label: 'Réalité Virtuelle', icon: '🥽', color: '#b84dff', desc: 'Casques VR et lunettes AR' }
@@ -18,263 +20,41 @@ const RAYONS = [
 
 const RAYONS_MAP = Object.fromEntries(RAYONS.map(r => [r.id, r]));
 
-// ---------- MARQUES PAR RAYON (mélangées) ----------
-const BRANDS_BY_RAYON = {
-  smartphones: ['Samsung', 'Xiaomi', 'Apple', 'Google', 'OnePlus', 'Nothing', 'Motorola', 'OPPO', 'Realme', 'POCO'],
-  montres: ['Apple', 'Samsung', 'Garmin', 'Xiaomi', 'Huawei', 'Amazfit', 'Withings', 'Fossil', 'Mobvoi'],
-  audio: ['Sony', 'Bose', 'Sennheiser', 'JBL', 'Anker', 'Nothing', 'Samsung', 'Apple', 'Jabra', 'Beats', 'Marshall'],
-  maison: ['Philips Hue', 'Xiaomi', 'Aqara', 'Sonoff', 'Shelly', 'Meross', 'TP-Link', 'Google', 'Amazon', 'IKEA'],
-  securite: ['Arlo', 'Ring', 'Eufy', 'Reolink', 'TP-Link', 'Xiaomi', 'Blink', 'Google Nest', 'Yale', 'Nuki'],
-  gaming: ['Logitech', 'Razer', 'SteelSeries', 'Corsair', 'HyperX', 'Roccat', 'GameSir', '8BitDo', 'Xbox', 'PlayStation'],
-  robots: ['iRobot', 'Roborock', 'Ecovacs', 'Dreame', 'Xiaomi', 'Eufy', 'Neato', 'Mammotion', 'Segway'],
-  drones: ['DJI', 'Autel', 'Skydio', 'Parrot', 'BetaFPV', 'iFlight', 'GEPRC', 'Holy Stone', 'Potensic'],
-  informatique: ['Logitech', 'Keychron', 'Razer', 'SteelSeries', 'Corsair', 'Anker', 'CalDigit', 'Belkin', 'Satechi', 'HyperX'],
-  energie: ['Anker', 'Baseus', 'UGREEN', 'Xiaomi', 'EcoFlow', 'Jackery', 'Bluetti', 'Nitecore', 'Nekteck', 'INIU'],
-  auto: ['Baseus', 'Anker', 'UGREEN', '70mai', 'Nextbase', 'Vantrue', 'Cobra', 'OBDLink', 'Nonda'],
-  vr: ['Meta', 'Apple', 'HTC', 'Valve', 'Pico', 'DPVR', 'XREAL', 'Rokid', 'Viture', 'RayNeo']
-};
+// ---------- PRODUITS (données vérifiées : data/catalogue.js) ----------
+const ANNEE_MIN = 2020;
+const ANNEE_MAX = 2026;
 
-// ---------- GÉNÉRATION PRODUITS PAR RAYON ----------
-function hashString(str) {
-  let h = 2166136261;
-  for (let i = 0; i < str.length; i++) {
-    h ^= str.charCodeAt(i);
-    h = Math.imul(h, 16777619);
-  }
-  return h >>> 0;
-}
-
-// Générateur pseudo-aléatoire déterministe : mêmes produits à chaque chargement
-function seededRandom(seed) {
-  let a = hashString(String(seed));
-  return function () {
-    a = (a + 0x6D2B79F5) | 0;
-    let t = Math.imul(a ^ (a >>> 15), 1 | a);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+function normalizeProduct(raw) {
+  const prix = raw.prix || null;
+  return {
+    ...raw,
+    title: `${raw.marque} ${raw.modele}`,
+    brand: raw.marque,
+    category: raw.rayon,
+    price: prix ? prix.montant : null,
+    images: (raw.medias?.images || []).map(m => m.fichier),
+    isNew: raw.annee === 2026,
+    incomplete: (raw.manquants || []).length > 0
   };
 }
-function generateProductsForRayon(rayonId, count = 8) {
-  const rnd = seededRandom(rayonId);
-  const brands = BRANDS_BY_RAYON[rayonId] || ['Generic'];
-  const products = [];
-  
-  const templates = {
-    smartphones: [
-      { prefix: 'Galaxy S', suffix: ['24 Ultra', '24+', '24', '23 FE'], brand: 'Samsung' },
-      { prefix: 'iPhone', suffix: ['15 Pro Max', '15 Pro', '15', '15 Plus', '14', '13'], brand: 'Apple' },
-      { prefix: 'Redmi Note', suffix: ['13 Pro+', '13 Pro', '13', '12 Pro'], brand: 'Xiaomi' },
-      { prefix: 'Pixel', suffix: ['8 Pro', '8', '8a', '7a'], brand: 'Google' },
-      { prefix: 'Nothing Phone', suffix: ['2a', '2', '1'], brand: 'Nothing' }
-    ],
-    montres: [
-      { prefix: 'Apple Watch', suffix: ['Series 9', 'Ultra 2', 'SE 2023'], brand: 'Apple' },
-      { prefix: 'Galaxy Watch', suffix: ['6 Classic', '6', '5 Pro', 'FE'], brand: 'Samsung' },
-      { prefix: 'Garmin', suffix: ['Forerunner 965', '265', '165', 'Venu 3'], brand: 'Garmin' },
-      { prefix: 'Xiaomi Watch', suffix: ['S3', '2 Pro', '2 Lite'], brand: 'Xiaomi' },
-      { prefix: 'Amazfit', suffix: ['GTR 4', 'GTS 4', 'T-Rex Ultra', 'Active'], brand: 'Amazfit' }
-    ],
-    audio: [
-      { prefix: 'WF-1000XM', suffix: ['5', '4'], brand: 'Sony' },
-      { prefix: 'AirPods', suffix: ['Pro 2', '3', 'Max'], brand: 'Apple' },
-      { prefix: 'WH-1000XM', suffix: ['5', '4'], brand: 'Sony' },
-      { prefix: 'QuietComfort', suffix: ['Ultra', '45', 'Earbuds II'], brand: 'Bose' },
-      { prefix: 'Galaxy Buds', suffix: ['2 Pro', '2', 'FE', 'Live'], brand: 'Samsung' },
-      { prefix: 'Soundcore', suffix: ['Liberty 4', 'Space A40', 'Life P3'], brand: 'Anker' }
-    ],
-    maison: [
-      { prefix: 'Hue', suffix: ['White & Color', 'White', 'Play', 'Go', 'Strip'], brand: 'Philips Hue' },
-      { prefix: 'Mi Smart', suffix: ['Plug', 'Bulb', 'Sensor', 'Gateway', 'Switch'], brand: 'Xiaomi' },
-      { prefix: 'Aqara', suffix: ['Hub M2', 'Sensor', 'Switch', 'Curtain', 'Valve'], brand: 'Aqara' },
-      { prefix: 'Sonoff', suffix: ['Mini R4', 'Basic R4', 'SwitchMan', 'THR320D'], brand: 'Sonoff' }
-    ],
-    securite: [
-      { prefix: 'Arlo', suffix: ['Pro 5', 'Pro 4', 'Essential', 'Go 2'], brand: 'Arlo' },
-      { prefix: 'Ring', suffix: ['Video Doorbell Pro 2', 'Battery Doorbell', 'Stick Up Cam Pro'], brand: 'Ring' },
-      { prefix: 'Eufy', suffix: ['Cam 3', 'SoloCam S340', 'Video Doorbell E340'], brand: 'Eufy' },
-      { prefix: 'Reolink', suffix: ['Argus 4 Pro', 'TrackMix', 'Duo 3 PoE', 'Altas PT Ultra'], brand: 'Reolink' }
-    ],
-    gaming: [
-      { prefix: 'G Pro X', suffix: ['Superlight 2', 'Superlight', 'Wireless'], brand: 'Logitech' },
-      { prefix: 'DeathAdder', suffix: ['V3 Pro', 'V3', 'V2'], brand: 'Razer' },
-      { prefix: 'BlackShark', suffix: ['V2 Pro', 'V2', 'X'], brand: 'Razer' },
-      { prefix: 'Apex Pro', suffix: ['TKL', 'Mini', 'Gen 3'], brand: 'SteelSeries' },
-      { prefix: 'Cloud', suffix: ['III', 'II Wireless', 'Alpha'], brand: 'HyperX' }
-    ],
-    robots: [
-      { prefix: 'Roomba', suffix: ['j9+', 'j7+', 'i7+', 'Combo j9+'], brand: 'iRobot' },
-      { prefix: 'Roborock', suffix: ['S8 Pro Ultra', 'S8 MaxV Ultra', 'Q Revo', 'Q8 Max+'], brand: 'Roborock' },
-      { prefix: 'Deebot', suffix: ['X2 Omni', 'T20 Omni', 'N8 Pro+'], brand: 'Ecovacs' },
-      { prefix: 'Dreame', suffix: ['L20 Ultra', 'L10s Ultra', 'X30 Ultra'], brand: 'Dreame' }
-    ],
-    drones: [
-      { prefix: 'DJI', suffix: ['Air 3', 'Mini 4 Pro', 'Mavic 3 Pro', 'Avata 2', 'FPV'], brand: 'DJI' },
-      { prefix: 'Autel', suffix: ['EVO II Pro V3', 'EVO Lite+', 'Dragonfish'], brand: 'Autel' },
-      { prefix: 'BetaFPV', suffix: ['Cetus Pro', 'Pavo Pico', 'Meteor 75'], brand: 'BetaFPV' }
-    ],
-    informatique: [
-      { prefix: 'MX Keys', suffix: ['S', 'Mini', 'Full'], brand: 'Logitech' },
-      { prefix: 'MX Master', suffix: ['3S', '3', '2S'], brand: 'Logitech' },
-      { prefix: 'Keychron', suffix: ['K2 Pro', 'V1', 'Q1 Pro', 'Q3 Pro'], brand: 'Keychron' },
-      { prefix: 'Huntsman', suffix: ['V3 Pro', 'V2', 'Mini'], brand: 'Razer' }
-    ],
-    energie: [
-      { prefix: 'PowerCore', suffix: ['24K', '20K', '10K', '5K'], brand: 'Anker' },
-      { prefix: 'Prime', suffix: ['20000', '10000', '67W GaN'], brand: 'UGREEN' },
-      { prefix: 'RIVER', suffix: ['2 Pro', '2 Max', '2'], brand: 'EcoFlow' },
-      { prefix: 'Explorer', suffix: ['1000', '500', '300', '240'], brand: 'Jackery' }
-    ],
-    auto: [
-      { prefix: '70mai', suffix: ['A800', 'A500S', 'M500', 'Omni'], brand: '70mai' },
-      { prefix: 'Anker', suffix: ['Roav DashCam', 'Roav Jump Starter', 'Car Charger'], brand: 'Anker' },
-      { prefix: 'Baseus', suffix: ['Car Charger', 'Jump Starter', 'Dash Cam'], brand: 'Baseus' }
-    ],
-    vr: [
-      { prefix: 'Quest', suffix: ['3', 'Pro', '2'], brand: 'Meta' },
-      { prefix: 'Vision Pro', suffix: ['256GB', '512GB', '1TB'], brand: 'Apple' },
-      { prefix: 'Pico', suffix: ['4', '4 Pro', '4 Enterprise'], brand: 'Pico' },
-      { prefix: 'XREAL', suffix: ['Air 2 Pro', 'Air 2', 'Air'], brand: 'XREAL' }
-    ]
-  };
 
-  const rayTemplates = templates[rayonId] || [{ prefix: 'Produit', suffix: ['1', '2', '3'], brand: 'Generic' }];
-  
-  for (let i = 0; i < count; i++) {
-    const template = rayTemplates[i % rayTemplates.length];
-    const brand = template.brand;
-    const suffix = template.suffix[i % template.suffix.length];
-    const title = `${brand} ${template.prefix} ${suffix}`;
-    
-    const basePrice = Math.round((30 + rnd() * 800) * 100) / 100;
-    const officialPrice = Math.round(basePrice * (1.15 + rnd() * 0.25) * 100) / 100;
-    const promoPercent = 10 + Math.floor(rnd() * 11);
-    const promoPrice = Math.round(officialPrice * (1 - promoPercent / 100) * 100) / 100;
-    const stock = rnd() > 0.1 ? Math.floor(rnd() * 200) : 0;
-    
-    const rayon = RAYONS.find(r => r.id === rayonId);
-    
-    products.push({
-      id: `KT-${rayonId.toUpperCase()}-${String(i+1).padStart(3,'0')}`,
-      title,
-      category: rayonId,
-      brand,
-      supplier: 'kifftech',
-      supplierName: 'KiffTech Official',
-      price: promoPrice,
-      officialPrice,
-      promoPercent,
-      stock,
-      images: [
-        `https://picsum.photos/seed/${encodeURIComponent(brand + title + i + 'a')}/600/600.jpg`,
-        `https://picsum.photos/seed/${encodeURIComponent(brand + title + i + 'b')}/600/600.jpg`,
-        `https://picsum.photos/seed/${encodeURIComponent(brand + title + i + 'c')}/600/600.jpg`,
-        `https://picsum.photos/seed/${encodeURIComponent(brand + title + i + 'd')}/600/600.jpg`
-      ],
-      specs: generateSpecs(rayonId, brand, rnd),
-      tags: promoPercent >= 15 ? ['promo'] : stock === 0 ? ['rupture'] : i < 2 ? ['nouveau'] : [],
-      description: `${title} — ${rayon?.desc || 'Produit tech'}. Prix officiel barré, promotion ${promoPercent}%.`,
-      reference: `REF-${rayonId.toUpperCase()}-${String(Math.floor(rnd()*10000)).padStart(4,'0')}`,
-      gtin: String(Math.floor(rnd()*1e13)).padStart(13,'0')
-    });
-  }
-  return products;
-}
-
-function generateSpecs(rayonId, brand, rnd) {
-  const baseSpecs = {};
-  
-  switch(rayonId) {
-    case 'smartphones':
-      baseSpecs['Écran'] = ['6.1"', '6.5"', '6.7"', '6.9"'][Math.floor(rnd()*4)];
-      baseSpecs['Stockage'] = ['128GB', '256GB', '512GB', '1TB'][Math.floor(rnd()*4)];
-      baseSpecs['RAM'] = ['6GB', '8GB', '12GB', '16GB'][Math.floor(rnd()*4)];
-      baseSpecs['Processeur'] = ['Snapdragon 8 Gen 3', 'Dimensity 9300', 'A17 Pro', 'Tensor G3', 'Snapdragon 7 Gen 3'][Math.floor(rnd()*5)];
-      baseSpecs['Batterie'] = ['4500mAh', '5000mAh', '5500mAh'][Math.floor(rnd()*3)];
-      break;
-    case 'montres':
-      baseSpecs['Écran'] = ['1.3"', '1.4"', '1.5"', '1.75"'][Math.floor(rnd()*4)];
-      baseSpecs['Autonomie'] = ['18h', '24h', '36h', '48h', '72h'][Math.floor(rnd()*5)];
-      baseSpecs['GPS'] = ['Intégré', 'Intégré + GLONASS', 'Multi-bandes'][Math.floor(rnd()*3)];
-      baseSpecs['Étanchéité'] = ['5 ATM', '10 ATM', 'IP68'][Math.floor(rnd()*3)];
-      break;
-    case 'audio':
-      baseSpecs['Type'] = ['True Wireless', 'Casque circum-aural', 'Supra-aural'][Math.floor(rnd()*3)];
-      baseSpecs['ANC'] = ['Hybride 50dB', 'Adaptatif 45dB', 'Passif', 'Aucun'][Math.floor(rnd()*4)];
-      baseSpecs['Autonomie'] = ['6h+24h', '8h+30h', '20h', '40h', '60h'][Math.floor(rnd()*5)];
-      baseSpecs['Codec'] = ['LDAC', 'aptX Adaptive', 'AAC', 'SBC'][Math.floor(rnd()*4)];
-      break;
-    case 'maison':
-      baseSpecs['Protocole'] = ['Matter', 'Zigbee', 'Wi-Fi', 'Bluetooth', 'Thread'][Math.floor(rnd()*5)];
-      baseSpecs['Alimentation'] = ['Secteur', 'Pile', 'Batterie rechargeable', 'Solaire'][Math.floor(rnd()*4)];
-      baseSpecs['Compatibilité'] = ['Home Assistant', 'HomeKit', 'Google Home', 'Alexa', 'SmartThings'][Math.floor(rnd()*5)];
-      break;
-    case 'securite':
-      baseSpecs['Résolution'] = ['2K', '4K', '1080p'][Math.floor(rnd()*3)];
-      baseSpecs['Vision nocturne'] = ['Couleur', 'Infrarouge', 'Projecteur'][Math.floor(rnd()*3)];
-      baseSpecs['Alimentation'] = ['Secteur', 'Batterie', 'Solaire', 'PoE'][Math.floor(rnd()*4)];
-      baseSpecs['Stockage'] = ['Cloud', 'Locale (SD)', 'NVR', 'Les deux'][Math.floor(rnd()*4)];
-      break;
-    case 'gaming':
-      baseSpecs['Connexion'] = ['Sans fil 2.4GHz', 'Bluetooth', 'Filaire USB-C', 'Multi-mode'][Math.floor(rnd()*4)];
-      baseSpecs['Autonomie'] = ['50h', '70h', '100h', '150h'][Math.floor(rnd()*4)];
-      baseSpecs['Poids'] = ['45g', '55g', '65g', '85g'][Math.floor(rnd()*4)];
-      break;
-    case 'robots':
-      baseSpecs['Navigation'] = ['LiDAR', 'vSLAM', 'Caméra AI', 'Gyroscope'][Math.floor(rnd()*4)];
-      baseSpecs['Aspiration'] = ['5000 Pa', '6000 Pa', '7000 Pa', '8000 Pa', '10000 Pa'][Math.floor(rnd()*5)];
-      baseSpecs['Autonomie'] = ['120min', '180min', '240min', '300min'][Math.floor(rnd()*4)];
-      baseSpecs['Station'] = ['Auto-vidange', 'Lavage serpillère', 'Séchage', 'Base simple'][Math.floor(rnd()*4)];
-      break;
-    case 'drones':
-      baseSpecs['Caméra'] = ['4K/60fps', '4K/120fps', '5.1K/50fps', '6K/30fps'][Math.floor(rnd()*4)];
-      baseSpecs['Autonomie'] = ['28min', '34min', '40min', '46min'][Math.floor(rnd()*4)];
-      baseSpecs['Transmission'] = ['O3/O4', 'OcuSync', 'SkyLink', 'WiFi'][Math.floor(rnd()*4)];
-      baseSpecs['Poids'] = ['<250g', '~500g', '~900g', '>1kg'][Math.floor(rnd()*4)];
-      break;
-    case 'informatique':
-      baseSpecs['Type'] = ['Clavier mécanique', 'Souris gaming', 'Hub USB-C', 'Dock Thunderbolt', 'Écran portable'][Math.floor(rnd()*5)];
-      baseSpecs['Switch'] = ['Red', 'Brown', 'Blue', 'Silver', 'Low Profile'][Math.floor(rnd()*5)];
-      baseSpecs['Connexion'] = ['USB-C', 'Bluetooth', '2.4GHz', 'Filaire'][Math.floor(rnd()*4)];
-      break;
-    case 'energie':
-      baseSpecs['Capacité'] = ['5000mAh', '10000mAh', '20000mAh', '24000mAh', '256Wh'][Math.floor(rnd()*5)];
-      baseSpecs['Puissance max'] = ['30W', '65W', '100W', '140W', '240W'][Math.floor(rnd()*5)];
-      baseSpecs['Ports'] = ['USB-C x2', 'USB-C + USB-A', 'USB-C x3', 'AC + USB-C'][Math.floor(rnd()*4)];
-      break;
-    case 'auto':
-      baseSpecs['Type'] = ['Dashcam', 'Chargeur', 'Démarreur', 'Purificateur', 'Support'][Math.floor(rnd()*5)];
-      baseSpecs['Résolution'] = ['4K', '2K', '1080p'][Math.floor(rnd()*3)];
-      baseSpecs['Alimentation'] = ['Allume-cigare', 'Batterie', 'OBD-II', 'Solaire'][Math.floor(rnd()*4)];
-      break;
-    case 'vr':
-      baseSpecs['Type'] = ['Autonome', 'PC VR', 'Hybride', 'AR'][Math.floor(rnd()*4)];
-      baseSpecs['Résolution'] = ['2K/œil', '4K/œil', 'Micro-OLED'][Math.floor(rnd()*3)];
-      baseSpecs['FOV'] = ['90°', '100°', '110°', '120°'][Math.floor(rnd()*4)];
-      baseSpecs['Tracking'] = ['Inside-out', 'Outside-in', 'Eye-tracking', 'Hand-tracking'][Math.floor(rnd()*4)];
-      break;
-    default:
-      baseSpecs['Caractéristique'] = 'Standard';
-  }
-  
-  return baseSpecs;
-}
-
-// Générer tous les produits (fallback)
-let DEMO_PRODUCTS = [];
-RAYONS.forEach(rayon => {
-  DEMO_PRODUCTS = DEMO_PRODUCTS.concat(generateProductsForRayon(rayon.id, 8));
-});
-
-// Mélanger pour variété
-DEMO_PRODUCTS = DEMO_PRODUCTS.sort((a, b) => hashString(a.id) - hashString(b.id));
+const DEMO_PRODUCTS = CATALOGUE.produits
+  .filter(p => p.annee >= ANNEE_MIN && p.annee <= ANNEE_MAX && RAYONS_MAP[p.rayon])
+  .map(normalizeProduct);
 
 const FALLBACK_PRODUCTS = DEMO_PRODUCTS;
 
 // ---------- UTILITIES ----------
-function sanitizeHTML(str){const div=document.createElement('div');div.textContent=str;return div.innerHTML;}
+function sanitizeHTML(str){return String(str ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function formatPrice(val,currency='€'){return val.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})+' '+currency;}
-function formatDiscount(pct){return pct>0?`-${pct}%`:'';}
 function debounce(fn,ms){let t;return(...args)=>{clearTimeout(t);t=setTimeout(()=>fn(...args),ms);};}
+function whatsappHTML(){
+  const label = 'Contacter via WhatsApp Business';
+  return CONTACT.whatsappLienUrl
+    ? `<a class="btn-secondary btn-whatsapp" href="${sanitizeHTML(CONTACT.whatsappLienUrl)}" target="_blank" rel="noopener">${label}</a>`
+    : `<button type="button" class="btn-secondary btn-whatsapp" disabled>${label}</button>
+        <p class="wa-note">Numéro professionnel : <strong>${sanitizeHTML(CONTACT.whatsappBusiness)}</strong></p>`;
+}
 
 // ---------- STATE ----------
 const STORE_KEYS = { cart: 'kifftech-cart-v1', subscription: 'kifftech-subscription-v1' };
@@ -312,7 +92,11 @@ const state = {
   importSources: [],
   schedules: [],
   mappings: {globalDiscount:10,targetMargin:35,autoPriceUpdate:true,verifyRefPrice:true},
-  cart: readJSON(STORE_KEYS.cart, []).filter(i => i && i.productId && i.quantity > 0),
+  cart: readJSON(STORE_KEYS.cart, [])
+    .filter(i => i && i.productId && i.quantity > 0 && DEMO_PRODUCTS.some(p => p.id === i.productId))
+    .map(i => ({ productId: i.productId, variant: i.variant || '', quantity: i.quantity })),
+  variantChoice: {},
+  imageIndex: 0,
   toastQueue: [],
 };
 
@@ -325,22 +109,22 @@ const cartManager = {
     writeJSON(STORE_KEYS.cart, state.cart);
     window.dispatchEvent(new Event('cart:change'));
   },
-  add(productId, qty = 1) {
-    const item = state.cart.find(i => i.productId === productId);
+  add(productId, variant = '', prix = null, qty = 1) {
+    const item = state.cart.find(i => i.productId === productId && i.variant === variant);
     if (item) item.quantity = Math.min(item.quantity + qty, 99);
-    else state.cart.push({ productId, quantity: qty });
+    else state.cart.push({ productId, variant, prix, quantity: qty });
     this.save();
   },
-  updateQuantity(productId, quantity) {
-    if (quantity <= 0) return this.remove(productId);
-    const item = state.cart.find(i => i.productId === productId);
+  updateQuantity(index, quantity) {
+    if (quantity <= 0) return this.remove(index);
+    const item = state.cart[index];
     if (item) {
       item.quantity = Math.min(quantity, 99);
       this.save();
     }
   },
-  remove(productId) {
-    state.cart = state.cart.filter(i => i.productId !== productId);
+  remove(index) {
+    state.cart.splice(index, 1);
     this.save();
   },
   calculateTotals(productsMap) {
@@ -350,11 +134,10 @@ const cartManager = {
       if (!p) continue;
       totalItems += item.quantity;
       uniqueItems += 1;
-      subtotal += p.price * item.quantity;
+      subtotal += (item.prix ?? p.price ?? 0) * item.quantity;
     }
     subtotal = Math.round(subtotal * 100) / 100;
-    const shipping = 0;
-    return { totalItems, uniqueItems, subtotal, shipping, finalTotal: subtotal + shipping, details: [] };
+    return { totalItems, uniqueItems, subtotal, shipping: null, finalTotal: subtotal, details: [] };
   }
 };
 
@@ -397,6 +180,8 @@ class KiffTech{
     this.exportJSON = document.getElementById('exportJSON');
     this.importCSV = document.getElementById('importCSV');
     this.csvImportInput = document.getElementById('csvImportInput');
+    this.noveltiesSection = document.getElementById('noveltiesSection');
+    this.noveltiesGrid = document.getElementById('noveltiesGrid');
 
     this.currentRayon = null;
     this.currentRayonProducts = [];
@@ -426,12 +211,32 @@ class KiffTech{
   addToCart(productId) {
     const p = state.productsMap.get(productId) || state.products.find(x => x.id === productId);
     if (!p) return;
-    if (p.stock === 0) {
-      this.showToast('Produit en rupture', 'error');
+    const sel = this.selectedVariant(p);
+    if (sel.prix === null) {
+      this.showToast('Prix public officiel à confirmer : ajout impossible', 'error');
       return;
     }
-    cartManager.add(productId, 1);
-    this.showToast(`${p.title} ajouté au panier`);
+    if (!sel.disponible) {
+      this.showToast('Variante non disponible : contacter via WhatsApp Business', 'error');
+      return;
+    }
+    cartManager.add(productId, sel.label, sel.prix, 1);
+    this.showToast(`${p.title} ajouté au panier (démonstration)`);
+  }
+
+  selectedVariant(p) {
+    const choice = state.variantChoice[p.id] || [];
+    const labels = [];
+    let prix = p.price;
+    let disponible = true;
+    (p.variantes || []).forEach((groupe, g) => {
+      const option = groupe.options[choice[g] ?? 0];
+      if (!option) return;
+      labels.push(option.libelle);
+      if (option.prix != null) prix = option.prix;
+      if (option.dispo === false) disponible = false;
+    });
+    return { label: labels.join(' · '), prix, disponible };
   }
 
   exportCatalog(format) {
@@ -444,7 +249,7 @@ class KiffTech{
       type = 'application/json';
       name = 'kifftech-catalogue.json';
     } else {
-      const cols = ['id', 'title', 'brand', 'category', 'price', 'officialPrice', 'promoPercent', 'stock', 'reference'];
+      const cols = ['id', 'title', 'brand', 'category', 'annee', 'price', 'reference'];
       const cell = v => `"${String(v ?? '').replace(/"/g, '""')}"`;
       content = [cols.join(';'), ...products.map(p => cols.map(c => cell(p[c])).join(';'))].join('\n');
       type = 'text/csv;charset=utf-8';
@@ -573,7 +378,7 @@ class KiffTech{
   applyFilters=debounce(()=>{
     state.currentCategory=this.categoryFilter.value;
     state.currentSupplier=this.supplierFilter.value;
-    state.currentSearch=this.searchInput.value.toLowerCase();
+    state.currentSearch=(this.searchInput?.value || '').toLowerCase();
     state.visibleCount=24;
 
     let baseProducts = state.products;
@@ -606,23 +411,40 @@ class KiffTech{
     if(this.currentRayon){
       const toShow = this.currentRayonProducts.slice(0, state.visibleCount);
       grid.innerHTML = toShow.map(p => this.catalogProductHTML(p)).join('');
+      this.renderNovelties([]);
     } else {
       grid.innerHTML = RAYONS.map(r => this.rayonCardHTML(r)).join('');
       this.bindRayonCards();
+      this.renderNovelties(state.products.filter(p => p.isNew));
     }
     
     this.loadMore.hidden = state.visibleCount >= state.filteredProducts.length;
 
-    grid.querySelectorAll('.catalog-product').forEach(card=>{
+    this.bindProductCards(grid);
+  }
+
+  bindProductCards(container){
+    container.querySelectorAll('.catalog-product').forEach(card=>{
       card.addEventListener('click',(e)=>{
-        if(e.target.closest('a, button')) return;
+        if(e.target.closest('a')) return;
         this.openProduct(card.dataset.id);
       });
-      const btn = card.querySelector('.btn-catalog:not(.secondary)');
-      if(btn) btn.addEventListener('click',(e)=>{e.stopPropagation();e.preventDefault();this.openProductLink(card.dataset.id);});
-      const btnDetail = card.querySelector('.btn-catalog.secondary');
-      if(btnDetail) btnDetail.addEventListener('click',(e)=>{e.stopPropagation();this.openProduct(card.dataset.id);});
     });
+  }
+
+  renderNovelties(list){
+    if(!this.noveltiesSection || !this.noveltiesGrid) return;
+    this.noveltiesSection.hidden = list.length === 0;
+    this.noveltiesGrid.innerHTML = list.map(p => this.noveltyCardHTML(p)).join('');
+    this.bindProductCards(this.noveltiesGrid);
+  }
+
+  noveltyCardHTML(p){
+    const names = (p.accessoires || []).map(a => a.nom);
+    const access = names.length
+      ? `<div class="novelty-access"><span class="novelty-access-label">Accessoires compatibles</span><span>${names.map(sanitizeHTML).join(' · ')}</span></div>`
+      : `<div class="novelty-access"><span class="novelty-access-label">Accessoires compatibles</span><span>Information à confirmer</span></div>`;
+    return this.catalogProductHTML(p, access);
   }
 
   rayonCardHTML(r){
@@ -658,6 +480,7 @@ class KiffTech{
   showRayonHeader(rayonId){
     const rayon = RAYONS_MAP[rayonId];
     if(!rayon) return;
+    this.searchInput = null;
     
     const header = this.productsGrid.parentElement.querySelector('.panel-header');
     if(header){
@@ -680,11 +503,10 @@ class KiffTech{
               <option value="price-asc">Prix croissant</option>
               <option value="price-desc">Prix décroissant</option>
               <option value="newest">Nouveautés</option>
-              <option value="discount">Promos</option>
             </select>
             <select id="rayonBrandFilter" onchange="window.keffTech.setRayonBrandFilter(this.value)" style="padding:.4rem .75rem;font-size:.75rem;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--fg);min-width:140px;">
               <option value="">Toutes marques</option>
-              ${RAYONS_MAP[this.currentRayon]?.brands?.map(b=>`<option value="${b}">${b}</option>`).join('') || ''}
+              ${[...new Set(state.products.filter(p => p.category === this.currentRayon).map(p => p.brand))].sort().map(b=>`<option value="${sanitizeHTML(b)}">${sanitizeHTML(b)}</option>`).join('')}
             </select>
           </div>
         `;
@@ -703,6 +525,8 @@ class KiffTech{
           <input type="search" id="searchInput" placeholder="Rechercher produits..." aria-label="Recherche">
         </div>
       `;
+      this.searchInput = document.getElementById('searchInput');
+      this.searchInput.addEventListener('input',this.applyFilters);
       this.populateFilters();
       this.renderProducts();
     }
@@ -722,10 +546,9 @@ class KiffTech{
   sortRayonProducts(){
     if(!this.currentRayon) return;
     switch(this.rayonSort){
-      case 'price-asc': this.currentRayonProducts.sort((a,b)=>a.price-b.price); break;
-      case 'price-desc': this.currentRayonProducts.sort((a,b)=>b.price-a.price); break;
-      case 'newest': this.currentRayonProducts.sort((a,b)=>b.id.localeCompare(a.id)); break;
-      case 'discount': this.currentRayonProducts.sort((a,b)=>b.promoPercent-a.promoPercent); break;
+      case 'price-asc': this.currentRayonProducts.sort((a,b)=>(a.price ?? Number.MAX_SAFE_INTEGER)-(b.price ?? Number.MAX_SAFE_INTEGER)); break;
+      case 'price-desc': this.currentRayonProducts.sort((a,b)=>(b.price ?? -1)-(a.price ?? -1)); break;
+      case 'newest': this.currentRayonProducts.sort((a,b)=>(b.annee-a.annee)||String(b.dateSortie||'').localeCompare(String(a.dateSortie||''))); break;
       default: break;
     }
   }
@@ -733,7 +556,7 @@ class KiffTech{
   applyFilters=debounce(()=>{
     state.currentCategory=this.categoryFilter.value;
     state.currentSupplier=this.supplierFilter.value;
-    state.currentSearch=this.searchInput.value.toLowerCase();
+    state.currentSearch=(this.searchInput?.value || '').toLowerCase();
     state.visibleCount=24;
 
     let baseProducts = state.products;
@@ -760,35 +583,32 @@ class KiffTech{
     this.renderProducts();
   },150);
 
-  catalogProductHTML(p){
+  catalogProductHTML(p, extra = ''){
     const color = RAYONS_MAP[p.category]?.color || '#00ffc8';
-    const verified = p.supplier === 'clickwise' || p.supplier === 'kifftech';
+    const brandColor = this.getBrandColor(p.brand);
+    const img = p.images[0];
     return `
-      <article class="catalog-product" data-id="${p.id}" style="--rayon-color:${p.category ? RAYONS_MAP[p.category]?.color || '#00ffc8' : '#00ffc8'};">
-        <div class="product-thumb" style="background-image:url('${p.images?.[0] || `https://picsum.photos/seed/${encodeURIComponent(p.title)}/600/600.jpg`}')" aria-hidden="true">
-          ${p.supplier === 'clickwise' ? '<span class="verified-badge">✓ Vérifié</span>' : ''}
-          ${p.promoPercent >= 15 ? `<span class="promo-badge">${p.promoPercent}%</span>` : ''}
-          ${p.stock === 0 ? '<span class="rupture-badge">Rupture</span>' : ''}
+      <article class="catalog-product" data-id="${sanitizeHTML(p.id)}" style="--rayon-color:${color};">
+        <div class="product-thumb${img ? '' : ' product-thumb--empty'}"${img ? ` style="background-image:url('${sanitizeHTML(img)}')"` : ''} aria-hidden="true">
+          ${p.isNew ? '<span class="product-badge badge-new">Nouveauté 2026</span>' : ''}
+          ${p.incomplete ? '<span class="product-badge badge-info">Fiche incomplète</span>' : ''}
+          ${img ? '' : '<span class="thumb-missing">Image à confirmer</span>'}
         </div>
         <div class="product-info">
           <div class="product-meta">
-            <span class="product-brand" style="background:${this.getBrandColor(p.brand)}20;color:${this.getBrandColor(p.brand)};border-color:${this.getBrandColor(p.brand)}40;">${sanitizeHTML(p.brand)}</span>
-            <span class="product-category">${sanitizeHTML(p.category)}</span>
-            ${p.reference ? `<span class="product-ref">${sanitizeHTML(p.reference)}</span>` : ''}
+            <span class="product-brand" style="background:${brandColor}20;color:${brandColor};border-color:${brandColor}40;">${sanitizeHTML(p.brand)}</span>
+            <span class="product-category">${sanitizeHTML(RAYONS_MAP[p.category]?.label || p.category)}</span>
+            <span class="product-year">${p.annee}</span>
           </div>
           <h3 class="product-title">${sanitizeHTML(p.title)}</h3>
           <div class="product-price-row">
-            <span class="product-price">${formatPrice(p.price)}</span>
-            <span class="product-official-price">${formatPrice(p.officialPrice)}</span>
-            <span class="product-discount">${p.promoPercent}%</span>
+            <span class="product-price">${p.price !== null ? formatPrice(p.price) : 'Prix à confirmer'}</span>
+            <span class="product-price-note">Prix public officiel (France)</span>
           </div>
+          ${extra}
           <div class="product-actions">
-            <a href="${sanitizeHTML(p.clickwiseTrackingUrl || '#')}" target="_blank" rel="noopener" class="btn-catalog" style="flex:1;padding:.5rem;font-size:.7rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--blue));color:#03050a;border:none;border-radius:var(--radius-sm);text-align:center;text-decoration:none;min-height:36px;">Voir le produit</a>
-            <button class="btn-catalog secondary" onclick="window.keffTech.openProduct('${p.id}')" style="padding:.5rem .75rem;font-size:.7rem;background:var(--glass);color:var(--fg);border:1px solid var(--border);border-radius:var(--radius-sm);min-height:36px;">Détails</button>
-          </div>
-          <div class="product-meta" style="margin-top:.5rem;font-size:.6rem;color:var(--fg-muted);display:flex;gap:1rem;flex-wrap:wrap;">
-            ${p.reference ? `<span>Réf: ${sanitizeHTML(p.reference)}</span>` : ''}
-            ${p.gtin ? `<span>GTIN: ${sanitizeHTML(p.gtin)}</span>` : ''}
+            ${p.ficheFabricant ? `<a href="${sanitizeHTML(p.ficheFabricant)}" target="_blank" rel="noopener" class="btn-catalog">Fiche fabricant</a>` : ''}
+            <button type="button" class="btn-catalog secondary">Détails</button>
           </div>
         </div>
       </article>`;
@@ -823,63 +643,192 @@ class KiffTech{
   openProduct(id){
     state.currentProduct = state.products.find(p => p.id === id);
     if(state.currentProduct){
+      state.imageIndex = 0;
       this.renderProductDetail();
       this.switchTab('product');
+      this.productDetail.scrollTop = 0;
     }
   }
 
-  openProductLink(id){
-    const p = state.products.find(p => p.id === id);
-    if (p && p.clickwiseTrackingUrl) {
-      window.open(p.clickwiseTrackingUrl, '_blank', 'noopener');
-    } else if (p && p.affiliateUrl) {
-      window.open(p.affiliateUrl, '_blank', 'noopener');
-    }
+  formatDate(iso){
+    if(!iso) return 'date à confirmer';
+    return new Date(`${iso}T00:00:00`).toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'});
+  }
+
+  sourceLink(url){
+    return url ? `<a href="${sanitizeHTML(url)}" target="_blank" rel="noopener">source</a>` : '';
   }
 
   renderProductDetail(){
     if(!state.currentProduct){this.productDetail.innerHTML='<p class="empty">Aucun produit sélectionné</p>';return;}
     const p = state.currentProduct;
-    const color = RAYONS_MAP[p.category]?.color || '#00ffc8';
-    
+    const rayon = RAYONS_MAP[p.category];
+    const color = rayon?.color || '#00ffc8';
+    const brandColor = this.getBrandColor(p.brand);
+
     this.productDetail.innerHTML = `
       <div class="detail-header" style="--rayon-color:${color};">
-        <div class="detail-gallery">
-          <div class="main-image" style="background-image:url('${p.images?.[0] || `https://picsum.photos/seed/${encodeURIComponent(p.title)}/600/600.jpg`}')"></div>
-          <div class="thumbnails">${p.images?.slice(0,4).map((img, i) => `<img src="${img}" alt="${p.title} ${i+1}" onclick="document.querySelector('.main-image').style.backgroundImage='url(${img})'" style="width:60px;height:60px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid ${i===0?'var(--accent)':'transparent'};">`).join('')}</div>
-        </div>
-        ${p.videoUrl ? `<div class="product-video"><video controls src="${p.videoUrl}" style="width:100%;border-radius:var(--radius-md);background:#000;"></video></div>` : ''}
+        <div class="detail-gallery">${this.galleryHTML(p)}</div>
         <div class="detail-meta">
-          <h2 class="detail-title">${sanitizeHTML(p.title)}</h2>
-          <span class="detail-brand" style="background:${this.getBrandColor(p.brand)}20;color:${this.getBrandColor(p.brand)};border-color:${this.getBrandColor(p.brand)}40;padding:.2rem .6rem;border-radius:999px;font-size:.7rem;font-weight:600;">${sanitizeHTML(p.brand)}</span>
-          <span class="detail-category">${sanitizeHTML(RAYONS_MAP[p.category]?.label || p.category)}</span>
-          ${p.stock === 0 ? '<span class="rupture-badge">Rupture de stock</span>' : ''}
-          <div class="detail-price-row">
-            <span class="detail-price">${formatPrice(p.price)}</span>
-            <span class="detail-official-price">${formatPrice(p.officialPrice)}</span>
-            <span class="detail-discount">${p.promoPercent}% PROMO</span>
+          <div class="detail-badges">
+            <span class="detail-brand" style="background:${brandColor}20;color:${brandColor};border-color:${brandColor}40;">${sanitizeHTML(p.brand)}</span>
+            <span class="detail-category">${sanitizeHTML(rayon?.label || p.category)}</span>
+            ${p.isNew ? '<span class="product-badge badge-new">Nouveauté 2026</span>' : ''}
+            ${p.incomplete ? '<span class="product-badge badge-info">Fiche incomplète</span>' : ''}
           </div>
-          <div class="detail-ref">Réf: ${sanitizeHTML(p.reference)} | GTIN: ${sanitizeHTML(p.gtin)}</div>
+          <h2 class="detail-title">${sanitizeHTML(p.title)}</h2>
+          <div class="detail-ref">Modèle : ${sanitizeHTML(p.reference || 'Information à confirmer')}</div>
+          <div class="detail-ref">Sortie officielle : ${sanitizeHTML(p.dateSortie ? this.formatDate(p.dateSortie) : String(p.annee))}</div>
         </div>
       </div>
       <p class="detail-desc">${sanitizeHTML(p.description)}</p>
-      <div class="detail-specs">
-        <h4>Caractéristiques principales</h4>
-        <div class="specs-grid">${Object.entries(p.specs).map(([k,v]) => `<div class="spec-item"><div class="spec-label">${sanitizeHTML(k)}</div><div class="spec-value">${sanitizeHTML(v)}</div></div>`).join('')}</div>
-      </div>
-      <div class="detail-price-breakdown" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1rem;margin:1rem 0;">
-        <h4>Détail du prix</h4>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;font-size:.85rem;">
-          <div><span style="color:var(--fg-muted);">Prix officiel :</span> <span style="text-decoration:line-through;color:var(--fg-muted);">${formatPrice(p.officialPrice)}</span></div>
-          <div><span style="color:var(--accent);font-weight:700;">Promotion ${p.promoPercent}% :</span> <span style="color:var(--accent);font-weight:700;">-${p.promoPercent}%</span></div>
-          <div><span style="color:var(--fg-muted);">Votre prix :</span> <span style="color:var(--accent);font-weight:800;font-size:1.1rem;">${formatPrice(p.price)}</span></div>
-          <div><span style="color:var(--green);font-weight:700;">Économie :</span> <span style="color:var(--green);font-weight:700;">${formatPrice(p.officialPrice - p.price)}</span></div>
+      <div id="variantBox">${this.variantBoxHTML(p)}</div>
+      <section class="detail-block">
+        <h4>Caractéristiques</h4>
+        ${this.specsTableHTML(p)}
+      </section>
+      <section class="detail-block">
+        <h4>Bundles et accessoires compatibles</h4>
+        ${this.bundlesHTML(p)}
+      </section>
+      <section class="detail-block">
+        <h4>Situations d’utilisation</h4>
+        ${this.usagesHTML(p)}
+      </section>
+      <section class="detail-block">
+        <h4>Prix et disponibilité</h4>
+        ${this.priceBlockHTML(p)}
+      </section>
+      <section class="detail-block">
+        <h4>Médias</h4>
+        ${this.mediaHTML(p)}
+      </section>
+      <section class="detail-block">
+        <h4>Sources et informations manquantes</h4>
+        ${this.sourcesHTML(p)}
+      </section>`;
+  }
+
+  galleryHTML(p){
+    if(!p.images.length){
+      return '<div class="main-image main-image--empty" role="img" aria-label="Image à confirmer">Image à confirmer</div>';
+    }
+    const i = Math.min(state.imageIndex, p.images.length - 1);
+    const media = p.medias.images[i];
+    return `
+      <img class="main-image" src="${sanitizeHTML(media.fichier)}" alt="${sanitizeHTML(media.alt)}" loading="lazy">
+      <div class="thumbnails">${p.medias.images.map((m, k) => `<button type="button" class="thumb-btn${k === i ? ' is-active' : ''}" data-image-index="${k}" aria-label="Image ${k + 1}"><img src="${sanitizeHTML(m.fichier)}" alt="" loading="lazy"></button>`).join('')}</div>
+      <p class="media-credit">${sanitizeHTML(media.auteur)} · ${sanitizeHTML(media.licence)} · ${this.sourceLink(media.source)}</p>`;
+  }
+
+  variantBoxHTML(p){
+    const sel = this.selectedVariant(p);
+    const choice = state.variantChoice[p.id] || [];
+    const groups = (p.variantes || []).map((groupe, g) => `
+        <div class="variant-group">
+          <span class="variant-label">${sanitizeHTML(groupe.groupe)}</span>
+          <div class="variant-options">${groupe.options.map((o, k) => `<button type="button" class="variant-chip${k === (choice[g] ?? 0) ? ' is-selected' : ''}${o.dispo === false ? ' is-unavailable' : ''}" data-variant-group="${g}" data-variant-option="${k}" aria-pressed="${k === (choice[g] ?? 0)}">${sanitizeHTML(o.libelle)}${o.dispo === false ? ' (indisponible)' : ''}</button>`).join('')}</div>
+        </div>`).join('');
+    const addLabel = sel.prix === null ? 'Prix à confirmer' : !sel.disponible ? 'Variante indisponible' : 'Ajouter au panier (démonstration)';
+    return `
+      <div class="variant-box">
+        ${groups}
+        <div class="variant-price">
+          <span class="variant-price-value">${sel.prix !== null ? formatPrice(sel.prix) : 'Information à confirmer'}</span>
+          <span class="variant-price-note">${sanitizeHTML(sel.label)}${sel.label ? ' · ' : ''}Prix public officiel (France)</span>
         </div>
-      </div>
-      <div class="detail-actions">
-        <button class="btn-primary" onclick="window.keffTech.addToCart('${p.id}')" ${p.stock === 0 ? 'disabled' : ''} style="flex:1;padding:.8rem;font-size:.9rem;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:.5rem;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg> ${p.stock === 0 ? 'Rupture de stock' : `Ajouter au panier (${formatPrice(p.price)})`}</button>
-        <button class="btn-secondary" onclick="window.keffTech.openModal('${p.id}')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Plus de détails</button>
+        <div class="detail-actions">
+          <button type="button" class="btn-primary" data-action="add" ${sel.prix === null || !sel.disponible ? 'disabled' : ''}>${addLabel}</button>
+          ${sel.disponible ? '' : whatsappHTML()}
+        </div>
       </div>`;
+  }
+
+  specsTableHTML(p){
+    const rows = (p.caracteristiques || []).map(c => `<tr><th scope="row">${sanitizeHTML(c.libelle)}</th><td>${sanitizeHTML(c.valeur)}</td></tr>`).join('');
+    const boite = p.contenuBoite ? `<tr><th scope="row">Contenu de la boîte</th><td>${sanitizeHTML(p.contenuBoite)}</td></tr>` : '';
+    return rows || boite
+      ? `<div class="table-wrap"><table class="specs-table"><tbody>${rows}${boite}</tbody></table></div>`
+      : '<p class="empty-note">Information à confirmer</p>';
+  }
+
+  bundlesHTML(p){
+    const bundles = p.bundles || [];
+    const acc = p.accessoires || [];
+    const bundleHTML = bundles.length
+      ? `<h5>Bundles vendus ensemble (officiels)</h5><ul class="link-list">${bundles.map(b => `<li><strong>${sanitizeHTML(b.nom)}</strong> — ${sanitizeHTML(b.contenu)} ${this.sourceLink(b.source)}</li>`).join('')}</ul>`
+      : '<h5>Bundles vendus ensemble (officiels)</h5><p class="empty-note">Aucun bundle officiel confirmé : Information à confirmer.</p>';
+    const accHTML = acc.length
+      ? `<h5>Accessoires vendus séparément</h5><ul class="link-list">${acc.map(a => `<li><strong>${sanitizeHTML(a.nom)}</strong> — compatible : ${sanitizeHTML(a.compatibilite)} ${this.sourceLink(a.source)}</li>`).join('')}</ul>`
+      : '<h5>Accessoires vendus séparément</h5><p class="empty-note">Aucun accessoire officiel confirmé : Information à confirmer.</p>';
+    return bundleHTML + accHTML;
+  }
+
+  usagesHTML(p){
+    const items = p.usages || [];
+    return items.length
+      ? `<ul class="usage-list">${items.map(u => `<li>${sanitizeHTML(u)}</li>`).join('')}</ul>`
+      : '<p class="empty-note">Information à confirmer</p>';
+  }
+
+  priceBlockHTML(p){
+    const prix = p.prix;
+    const dispo = p.disponibilite;
+    const prixLigne = prix
+      ? `<div><span class="price-label">Prix public officiel</span> <strong>${formatPrice(prix.montant)}</strong> (${sanitizeHTML(prix.marche)}, ${sanitizeHTML(prix.libelle)}), vérifié le ${this.formatDate(prix.date)} ${this.sourceLink(prix.source)}</div>`
+      : '<div><span class="price-label">Prix public officiel</span> Information à confirmer</div>';
+    const dispoLigne = dispo && dispo.statut === 'disponible'
+      ? `<div><span class="price-label">Disponibilité officielle</span> ${sanitizeHTML(dispo.libelle)}, vérifiée le ${this.formatDate(dispo.date)} ${this.sourceLink(dispo.source)}</div>`
+      : '<div><span class="price-label">Disponibilité officielle</span> Information à confirmer</div>';
+    return `
+      <div class="price-block">
+        ${prixLigne}
+        ${dispoLigne}
+        <div><span class="price-label">Prix KiffTech</span> non publié : démonstration, aucune commande ni aucun paiement possible.</div>
+      </div>`;
+  }
+
+  mediaHTML(p){
+    const imgs = p.medias?.images || [];
+    const video = p.medias?.video;
+    const videoHTML = video
+      ? `<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/${sanitizeHTML(video.id)}" title="${sanitizeHTML(video.titre)}" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <p class="media-credit">Vidéo officielle : ${sanitizeHTML(video.titre)}, ${sanitizeHTML(video.chaine)} · <a href="${sanitizeHTML(video.url)}" target="_blank" rel="noopener">YouTube</a></p>`
+      : '<p class="empty-note">Vidéo officielle : Information à confirmer.</p>';
+    const imgHTML = imgs.length
+      ? `<ul class="media-list">${imgs.map((m, k) => `<li><strong>Image ${k + 1}</strong> : ${sanitizeHTML(m.alt)}<span class="media-credit">${sanitizeHTML(m.attribution)} · ${this.sourceLink(m.source)}</span></li>`).join('')}</ul>`
+      : '<p class="empty-note">Image à confirmer : aucun média autorisé vérifié.</p>';
+    return videoHTML + imgHTML;
+  }
+
+  sourcesHTML(p){
+    const sources = (p.sourcesVerifiees || []).map(s => `<li>${sanitizeHTML(s.libelle)} : <a href="${sanitizeHTML(s.url)}" target="_blank" rel="noopener">${sanitizeHTML(s.url)}</a> (vérifié le ${this.formatDate(s.date)})</li>`).join('');
+    const manquants = (p.manquants || []).map(m => `<li>${sanitizeHTML(m)}</li>`).join('');
+    return `
+      <h5>Sources officielles consultées</h5>
+      <ul class="link-list">${sources || '<li>Information à confirmer</li>'}</ul>
+      <p class="media-credit">Année de sortie officielle : ${p.annee}${p.sourceAnnee ? ` · ${this.sourceLink(p.sourceAnnee.url)}` : ''}</p>
+      ${manquants ? `<h5>Informations manquantes</h5><ul class="link-list">${manquants}</ul>` : ''}`;
+  }
+
+  onDetailClick(e){
+    const p = state.currentProduct;
+    if(!p) return;
+    const chip = e.target.closest('[data-variant-group]');
+    if(chip){
+      const choice = state.variantChoice[p.id] || [];
+      choice[Number(chip.dataset.variantGroup)] = Number(chip.dataset.variantOption);
+      state.variantChoice[p.id] = choice;
+      this.productDetail.querySelector('#variantBox').innerHTML = this.variantBoxHTML(p);
+      return;
+    }
+    const thumb = e.target.closest('[data-image-index]');
+    if(thumb){
+      state.imageIndex = Number(thumb.dataset.imageIndex);
+      this.productDetail.querySelector('.detail-gallery').innerHTML = this.galleryHTML(p);
+      return;
+    }
+    if(e.target.closest('[data-action="add"]')) this.addToCart(p.id);
   }
 
   bindCartEvents() {
@@ -911,34 +860,29 @@ class KiffTech{
     }
 
     const totals = cartManager.calculateTotals(state.productsMap);
-    const itemsHTML = cartManager.getItems().map(item => {
+    const itemsHTML = items.map((item, index) => {
       const product = state.productsMap.get(item.productId);
       if (!product) return '';
-      const lineTotal = product.price * item.quantity;
+      const unit = item.prix ?? product.price ?? 0;
+      const thumb = product.images[0];
       return `
         <article class="cart-item" style="display:flex;gap:1rem;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:.75rem;align-items:center;">
-          <img src="${product.images?.[0] || `https://picsum.photos/seed/${encodeURIComponent(product.title)}/120/120.jpg`}" alt="${product.title}" style="width:80px;height:80px;object-fit:cover;border-radius:var(--radius-md);">
+          ${thumb ? `<img src="${sanitizeHTML(thumb)}" alt="" style="width:80px;height:80px;object-fit:cover;border-radius:var(--radius-md);">` : '<div class="cart-thumb-empty" aria-hidden="true">Image à confirmer</div>'}
           <div style="flex:1;min-width:0;">
             <h4 style="font-size:.9rem;font-weight:600;margin-bottom:.25rem;">${sanitizeHTML(product.title)}</h4>
-            <p style="font-size:.7rem;color:var(--fg-muted);">${sanitizeHTML(product.brand)} • ${formatPrice(product.price)} x ${item.quantity}</p>
+            ${item.variant ? `<p style="font-size:.7rem;color:var(--fg-muted);">${sanitizeHTML(item.variant)}</p>` : ''}
+            <p style="font-size:.7rem;color:var(--fg-muted);">${sanitizeHTML(product.brand)} • ${formatPrice(unit)} x ${item.quantity}</p>
             <div style="display:flex;align-items:center;gap:.5rem;margin-top:.5rem;">
-              <button onclick="window.keffTech.updateCartQty('${product.id}', ${item.quantity - 1})" class="icon-btn-sm" style="width:32px;height:32px;">−</button>
+              <button onclick="window.keffTech.updateCartQty(${index}, ${item.quantity - 1})" class="icon-btn-sm" style="width:32px;height:32px;">−</button>
               <span style="min-width:2rem;text-align:center;font-weight:600;">${item.quantity}</span>
-              <button onclick="window.keffTech.updateCartQty('${product.id}', ${item.quantity + 1})" class="icon-btn-sm" style="width:32px;height:32px;">+</button>
-              <span style="margin-left:auto;font-weight:700;color:var(--accent);">${formatPrice(product.price * item.quantity)}</span>
-              <button onclick="window.keffTech.removeFromCart('${product.id}')" class="icon-btn-sm" style="color:var(--danger);" aria-label="Supprimer">🗑️</button>
+              <button onclick="window.keffTech.updateCartQty(${index}, ${item.quantity + 1})" class="icon-btn-sm" style="width:32px;height:32px;">+</button>
+              <span style="margin-left:auto;font-weight:700;color:var(--accent);">${formatPrice(unit * item.quantity)}</span>
+              <button onclick="window.keffTech.removeFromCart(${index})" class="icon-btn-sm" style="color:var(--danger);" aria-label="Supprimer">🗑️</button>
             </div>
           </div>
         </article>
       `;
     }).join('');
-
-    const promoDetails = totals.details.map(d => `
-      <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.8rem;">
-        <span>${d.label}</span>
-        <span style="color:var(--green);font-weight:700;">-${formatPrice(d.discount)}</span>
-      </div>
-    `).join('');
 
     const content = panel.querySelector('.panel-content');
     content.innerHTML = `
@@ -949,40 +893,34 @@ class KiffTech{
       <div class="cart-items">${itemsHTML}</div>
       <div class="cart-summary" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:1.5rem;margin-top:1.5rem;">
         <div style="display:flex;justify-content:space-between;padding:.5rem 0;">
-          <span>Sous-total</span>
+          <span>Sous-total (prix publics officiels)</span>
           <span>${formatPrice(totals.subtotal)}</span>
         </div>
-        ${totals.details.length > 0 ? `
-          <div style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:1rem 0;padding:1rem 0;">
-            <h4 style="margin-bottom:.75rem;font-size:.9rem;">Promotions appliquées</h4>
-            ${promoDetails}
-          </div>
-        ` : ''}
         <div style="display:flex;justify-content:space-between;padding:.5rem 0;">
           <span>Livraison</span>
-          <span style="color:${totals.shipping === 0 ? 'var(--green)' : 'var(--fg)'};font-weight:700;">${totals.shipping === 0 ? 'GRATUITE' : formatPrice(totals.shipping)}</span>
+          <span style="color:var(--fg-muted);font-weight:700;">Information à confirmer</span>
         </div>
         <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-top:2px solid var(--accent);margin-top:1rem;font-size:1.1rem;font-weight:800;">
-          <span>TOTAL</span>
+          <span>TOTAL indicatif</span>
           <span style="color:var(--accent);">${formatPrice(totals.finalTotal)}</span>
         </div>
         <div style="margin-top:1rem;padding:1rem;background:rgba(0,255,200,.05);border:1px solid var(--accent);border-radius:var(--radius-md);font-size:.75rem;color:var(--accent);">
-          💡 <strong>Rappel promos :</strong> -5% par 10 articles (douanes/taxes/livraison) • Livraison gratuite 20+ articles • <strong>25% promo + livraison/douanes/taxes gratuites à 25 articles</strong> (même non abonné)
+          Démonstration : aucune commande ni aucun paiement n’est possible. Les montants sont les prix publics officiels, sans remise.
         </div>
         <div style="display:flex;gap:.75rem;margin-top:1.5rem;">
           <button class="btn-secondary" onclick="window.keffTech.switchTab('catalog')" style="flex:1;">Continuer mes achats</button>
-          <button class="btn-primary" onclick="window.keffTech.checkout()" style="flex:2;padding:1rem;font-size:1rem;">Commander - ${formatPrice(totals.finalTotal)}</button>
+          <button class="btn-primary" onclick="window.keffTech.checkout()" style="flex:2;padding:1rem;font-size:1rem;">Commander (démonstration) - ${formatPrice(totals.finalTotal)}</button>
         </div>
       `;
   }
 
-  updateCartQty(productId, quantity) {
-    cartManager.updateQuantity(productId, quantity);
+  updateCartQty(index, quantity) {
+    cartManager.updateQuantity(index, quantity);
     if (state.currentTab === 'cart') this.renderCartPanel();
   }
 
-  removeFromCart(productId) {
-    cartManager.remove(productId);
+  removeFromCart(index) {
+    cartManager.remove(index);
     if (state.currentTab === 'cart') this.renderCartPanel();
   }
 
@@ -991,23 +929,6 @@ class KiffTech{
     this.showToast(`Commande de ${totals.totalItems} articles pour ${formatPrice(totals.finalTotal)} - Démo seulement`, 'success');
   }
 
-  openModal(id){
-    const p = state.products.find(x => x.id === id);
-    if(!p) return;
-    this.modalBody.innerHTML = `
-      <h3>${sanitizeHTML(p.title)}</h3>
-      ${p.stock === 0 ? '<p><span class="rupture-badge">Rupture de stock</span></p>' : ''}
-      <p class="detail-desc">${sanitizeHTML(p.description)}</p>
-      <div class="detail-specs" style="margin-top:1rem">
-        <h4>Spécifications complètes</h4>
-        <div class="specs-grid">${Object.entries(p.specs).map(([k,v]) => `<div class="spec-item"><div class="spec-label">${sanitizeHTML(k)}</div><div class="spec-value">${sanitizeHTML(v)}</div></div>`).join('')}</div>
-      </div>
-      <div class="detail-actions" style="margin-top:1.5rem">
-        <button class="btn-primary" onclick="window.keffTech.addToCart('${p.id}');window.keffTech.closeModal()" ${p.stock === 0 ? 'disabled' : ''}>${p.stock === 0 ? 'Rupture de stock' : 'Ajouter au panier'}</button>
-      </div>`;
-    this.modal.hidden = false;
-    document.body.style.overflow = 'hidden';
-  }
   closeModal(){this.modal.hidden=true;document.body.style.overflow='';}
 
   bindCartEvents() {
@@ -1039,7 +960,8 @@ class KiffTech{
 
     document.getElementById('cartBtn').addEventListener('click',()=>this.switchTab('cart'));
     document.getElementById('userBtn').addEventListener('click',()=>this.switchTab('settings'));
-    document.getElementById('searchBtn').addEventListener('click',()=>{this.searchInput.focus();});
+    document.getElementById('searchBtn').addEventListener('click',()=>{this.searchInput?.focus();});
+    this.productDetail.addEventListener('click',(e)=>this.onDetailClick(e));
   }
 
   initBioParticles(){
