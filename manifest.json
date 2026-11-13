@@ -1,7 +1,7 @@
 {
   "name": "KiffTech",
   "short_name": "KiffTech",
-  "description": "Catalogue bioluminescent dropshipping international — Abonnements 1€/sem et Trésor 3,35€/sem",
+  "description": "Démonstration de boutique high-tech : catalogue fictif, sans paiement ni commande réelle.",
   "start_url": "./",
   "scope": "./",
   "id": "./",
