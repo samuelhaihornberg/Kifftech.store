@@ -703,6 +703,13 @@ body{display:flex;flex-direction:column;min-height:100dvh;overflow-x:hidden}
 .variant-box .detail-actions{flex-wrap:wrap;margin-top:.75rem;padding-top:.75rem;}
 .variant-box .detail-actions .btn-primary{flex:1 1 220px;}
 .variant-box .detail-actions .btn-whatsapp{flex:1 1 220px;}
+/* Lien officiel du fabricant (par configuration sélectionnée) */
+.lien-official{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .75rem;margin-top:.75rem;}
+.btn-official{display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:.55rem 1.1rem;background:var(--glass);border:1px solid color-mix(in srgb, var(--accent) 45%, transparent);border-radius:999px;color:var(--accent);font-size:.8rem;font-weight:700;text-decoration:none;transition:border-color .2s ease, background .2s ease;}
+.btn-official:hover,.btn-official:focus-visible{border-color:var(--accent);background:color-mix(in srgb, var(--accent) 10%, transparent);}
+.btn-official-arrow{font-size:.9em;line-height:1;}
+.btn-official--off{color:var(--fg-muted);border-color:var(--border);cursor:not-allowed;opacity:.75;}
+.lien-official-note{flex-basis:100%;font-size:.72rem;line-height:1.45;color:var(--fg-muted);}
 .btn-secondary:disabled{opacity:.6;cursor:not-allowed;}
 .btn-secondary:disabled:hover{border-color:var(--border);background:var(--bg-card);}
 .wa-note{flex-basis:100%;font-size:.75rem;color:var(--fg-muted);}

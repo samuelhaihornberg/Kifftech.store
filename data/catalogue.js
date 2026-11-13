@@ -26,10 +26,10 @@ export const CATALOGUE = {
         {
           groupe: "Modèle",
           options: [
-            { libelle: "512 Go", prix: 1039, dispo: true },
-            { libelle: "512 Go + Steam Controller", prix: 1108, dispo: true },
-            { libelle: "2 To", prix: 1359, dispo: true },
-            { libelle: "2 To + Steam Controller", prix: 1428, dispo: true }
+            { libelle: "512 Go", prix: 1039, dispo: true, lienOfficiel: { url: "https://store.steampowered.com/hardware/steammachine", precision: "Configuration sélectionnée sur la page officielle Valve (le fabricant ne fournit pas d'URL distincte par configuration)", verifie: "2026-11-13" } },
+            { libelle: "512 Go + Steam Controller", prix: 1108, dispo: true, lienOfficiel: { url: "https://store.steampowered.com/hardware/steammachine", precision: "Configuration sélectionnée sur la page officielle Valve (le fabricant ne fournit pas d'URL distincte par configuration)", verifie: "2026-11-13" } },
+            { libelle: "2 To", prix: 1359, dispo: true, lienOfficiel: { url: "https://store.steampowered.com/hardware/steammachine", precision: "Configuration sélectionnée sur la page officielle Valve (le fabricant ne fournit pas d'URL distincte par configuration)", verifie: "2026-11-13" } },
+            { libelle: "2 To + Steam Controller", prix: 1428, dispo: true, lienOfficiel: { url: "https://store.steampowered.com/hardware/steammachine", precision: "Configuration sélectionnée sur la page officielle Valve (le fabricant ne fournit pas d'URL distincte par configuration)", verifie: "2026-11-13" } }
           ]
         }
       ],
@@ -157,8 +157,8 @@ export const CATALOGUE = {
         {
           groupe: "Stockage",
           options: [
-            { libelle: "256 Go", prix: 1049, dispo: true },
-            { libelle: "1 To", prix: 1279, dispo: true }
+            { libelle: "256 Go", prix: 1049, dispo: true, lienOfficiel: { url: "https://store.steampowered.com/hardware/steamframe", precision: "Configuration sélectionnée sur la page officielle Valve (le fabricant ne fournit pas d'URL distincte par configuration)", verifie: "2026-11-13" } },
+            { libelle: "1 To", prix: 1279, dispo: true, lienOfficiel: { url: "https://store.steampowered.com/hardware/steamframe", precision: "Configuration sélectionnée sur la page officielle Valve (le fabricant ne fournit pas d'URL distincte par configuration)", verifie: "2026-11-13" } }
           ]
         }
       ],
@@ -310,7 +310,7 @@ export const CATALOGUE = {
         {
           groupe: "Modèle",
           options: [
-            { libelle: "Steam Controller (Puck inclus)", prix: 99, dispo: false }
+            { libelle: "Steam Controller (Puck inclus)", prix: 99, dispo: false, lienOfficiel: { url: "https://store.steampowered.com/hardware/steamcontroller", precision: "Page produit officielle Valve (achat par réservation)", verifie: "2026-11-13" } }
           ]
         }
       ],
@@ -439,8 +439,8 @@ export const CATALOGUE = {
         {
           groupe: "Édition",
           options: [
-            { libelle: "Console seule", prix: null, dispo: true },
-            { libelle: "Pack Mario Kart World (code de téléchargement inclus)", prix: null, dispo: true }
+            { libelle: "Console seule", prix: null, dispo: true, lienOfficiel: { url: "https://www.nintendo.com/fr-fr/Hardware/Nintendo-Switch-2/Nintendo-Switch-2-2785301.html", precision: "Page produit officielle Nintendo France du modèle exact ; la boutique en ligne Nintendo (store.nintendo.com) n'est pas vérifiable (file d'attente anti-bot) et Nintendo ne publie pas d'URL d'achat directe en France", verifie: "2026-11-13" } },
+            { libelle: "Pack Mario Kart World (code de téléchargement inclus)", prix: null, dispo: true, lienOfficiel: null }
           ]
         },
         {
@@ -567,7 +567,8 @@ export const CATALOGUE = {
       manquants: [
         "Prix public officiel actuel non re-vérifiable le 13/11/2026 (pages tarifaires non statiques) : prix de lancement 469,99 € console seule et 509,99 € pack Mario Kart World (vérifiés via Wikipédia FR/BFM TV), puis hausse de prix annoncée par Nintendo en 2026 — chiffre actuel à confirmer",
         "Référence/SKU non confirmée",
-        "Contenu de la boîte exact non confirmé sur les sources officielles consultées"
+        "Contenu de la boîte exact non confirmé sur les sources officielles consultées",
+        "Lien officiel précis introuvable pour le pack Mario Kart World et pour les deux variantes de batterie (aucune page officielle dédiée ; boutique en ligne Nintendo, store.nintendo.com, non vérifiable : file d'attente anti-bot)"
       ]
     },
     {
@@ -588,7 +589,7 @@ export const CATALOGUE = {
         {
           groupe: "Édition",
           options: [
-            { libelle: "Sans lecteur de disque", prix: null, dispo: true }
+            { libelle: "Sans lecteur de disque", prix: null, dispo: true, lienOfficiel: { url: "https://direct.playstation.com/fr-fr/buy-consoles/playstation5-pro-console-2-tb", precision: "URL d'achat directe par configuration publiée par Sony sur la page « PS5 Pro — Buy now » (CTA « Acheter sur PS Direct ») ; PS Direct France, éditeur 2 To sans lecteur", verifie: "2026-11-13" } }
           ]
         }
       ],
@@ -644,6 +645,7 @@ export const CATALOGUE = {
       },
       sourcesVerifiees: [
         { libelle: "Wikipédia FR « PlayStation 5 » (PS5 Pro annoncée le 10/09/2024, sortie mondiale le 07/11/2024 ; tableau comparatif PS5 Slim / PS5 Pro)", url: "https://fr.wikipedia.org/wiki/PlayStation_5", date: "2026-11-13" },
+        { libelle: "Page Sony France « PS5 Pro — Buy now » (CTA « Acheter sur PS Direct » pointant vers la fiche PS Direct par configuration, 2 To sans lecteur)", url: "https://www.playstation.com/fr-fr/ps5/ps5-pro/buy-now/", date: "2026-11-13" },
         { libelle: "Page Sony France officielle (PSSR, ray-tracing, performances)", url: "https://www.playstation.com/fr-fr/ps5/ps5-pro/", date: "2026-11-13" }
       ],
       manquants: [
@@ -671,8 +673,8 @@ export const CATALOGUE = {
         {
           groupe: "Stockage",
           options: [
-            { libelle: "512 Go", prix: 779, dispo: true },
-            { libelle: "1 To (verre antireflet)", prix: 919, dispo: true }
+            { libelle: "512 Go", prix: 779, dispo: true, lienOfficiel: { url: "https://store.steampowered.com/hardware/steamdeck", precision: "Configuration OLED (512 Go ou 1 To) sélectionnée sur la page officielle Steam Deck (le fabricant ne fournit pas d'URL distincte par configuration)", verifie: "2026-11-13" } },
+            { libelle: "1 To (verre antireflet)", prix: 919, dispo: true, lienOfficiel: { url: "https://store.steampowered.com/hardware/steamdeck", precision: "Configuration OLED (512 Go ou 1 To) sélectionnée sur la page officielle Steam Deck (le fabricant ne fournit pas d'URL distincte par configuration)", verifie: "2026-11-13" } }
           ]
         }
       ],

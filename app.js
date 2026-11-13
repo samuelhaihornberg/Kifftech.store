@@ -229,14 +229,23 @@ class KiffTech{
     const labels = [];
     let prix = p.price;
     let disponible = true;
+    let lien = null;
+    let lienManquant = false;
+    let lienDefini = false;
     (p.variantes || []).forEach((groupe, g) => {
       const option = groupe.options[choice[g] ?? 0];
       if (!option) return;
       labels.push(option.libelle);
       if (option.prix != null) prix = option.prix;
       if (option.dispo === false) disponible = false;
+      if ('lienOfficiel' in option) {
+        lienDefini = true;
+        if (option.lienOfficiel === null) lienManquant = true;
+        else if (option.lienOfficiel && option.lienOfficiel.url && !lien) lien = option.lienOfficiel;
+      }
     });
-    return { label: labels.join(' · '), prix, disponible };
+    const lienOfficiel = lienManquant ? null : lien;
+    return { label: labels.join(' · '), prix, disponible, lienOfficiel, lienManquant, lienDefini };
   }
 
   exportCatalog(format) {
@@ -730,6 +739,13 @@ class KiffTech{
           <div class="variant-options">${groupe.options.map((o, k) => `<button type="button" class="variant-chip${k === (choice[g] ?? 0) ? ' is-selected' : ''}${o.dispo === false ? ' is-unavailable' : ''}" data-variant-group="${g}" data-variant-option="${k}" aria-pressed="${k === (choice[g] ?? 0)}">${sanitizeHTML(o.libelle)}${o.dispo === false ? ' (indisponible)' : ''}</button>`).join('')}</div>
         </div>`).join('');
     const addLabel = sel.prix === null ? 'Prix à confirmer' : !sel.disponible ? 'Variante indisponible' : 'Ajouter au panier (démonstration)';
+    const lien = sel.lienOfficiel;
+    const lienHTML = sel.lienDefini
+      ? (lien
+        ? `<a class="btn-official" href="${sanitizeHTML(lien.url)}" target="_blank" rel="noopener" aria-label="Ouvrir la page officielle du fabricant pour ${sanitizeHTML(sel.label)} (nouvelle fenêtre)">Boutique officielle du fabricant<span class="btn-official-arrow" aria-hidden="true">↗</span></a>
+           <span class="lien-official-note">Vérifié le ${sanitizeHTML(lien.verifie || '')} · ${sanitizeHTML(lien.precision || '')}</span>`
+        : '<button type="button" class="btn-official btn-official--off" disabled>Lien officiel précis introuvable pour cette configuration</button>')
+      : '';
     return `
       <div class="variant-box">
         ${groups}
@@ -741,6 +757,7 @@ class KiffTech{
           <button type="button" class="btn-primary" data-action="add" ${sel.prix === null || !sel.disponible ? 'disabled' : ''}>${addLabel}</button>
           ${sel.disponible ? '' : whatsappHTML()}
         </div>
+        ${lienHTML ? `<div class="lien-official">${lienHTML}</div>` : ''}
       </div>`;
   }
 

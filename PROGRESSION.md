@@ -158,5 +158,10 @@ Vérifications du 13/11/2026 :
 - [x] `node --check` sur `data/catalogue.js` (copie `.mjs`) ✅
 - [x] Smoke test DOM factice (`/tmp/opencode/smoke-app.mjs`) : import réel d'`app.js`, rendu catalogue, 3 badges « Nouveauté 2026 », fiches détaillées (prix `null` → « Information à confirmer », vidéo embed `youtube-nocookie`), 14 images référencées toutes présentes ✅
 - [x] Crédits médias à jour (`/tmp/opencode/media-credits.json`, 16 entrées)
+- [x] Lien officiel par configuration (13/11/2026, 2e passe) : bouton « Boutique officielle du fabricant » dans la fiche, piloté par la configuration sélectionnée ; URL vérifiées le même jour :
+  - Steam Machine / Frame / Controller / Deck OLED : pages produit officielles Valve (`store.steampowered.com/hardware/...`, 200), la configuration se sélectionne sur la page (Valve ne fournit pas d'URL distincte par configuration)
+  - PS5 Pro : URL d'achat directe par configuration publiée par Sony (`direct.playstation.com/fr-fr/buy-consoles/playstation5-pro-console-2-tb`, extraite du CTA « Acheter sur PS Direct » de la page buy-now officielle)
+  - Switch 2 : page produit officielle Nintendo France pour la console seule ; **désactivé** pour le pack Mario Kart World et les variantes de batterie (aucune page officielle dédiée, boutique Nintendo non vérifiable : file d'attente anti-bot) → bouton « Lien officiel précis introuvable »
+  - Aucun URL fabriqué : chaque paramètre vient d'une page officielle du fabricant
 - [ ] `node tools/check-pwa.js` : non exécutable dans cet environnement (module npm `canvas` absent, pas de npm) — à relancer sur un poste avec npm
 - [ ] Tests manuels téléphone / navigateur réel (rendu, SW, installation)
