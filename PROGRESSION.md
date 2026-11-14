@@ -1,6 +1,6 @@
 # PROGRESSION KiffTech — Dropshipping Bioluminescent
 
-**Dernière MAJ** : 2026-11-13
+**Dernière MAJ** : 2026-11-14
 **Objectif** : SPA PWA dropshipping international, catalogue bioluminescent, abonnements, import auto
 
 ## État global : 85%
@@ -24,6 +24,9 @@
 - [x] Shortcuts : Catalogue, Abonnements
 
 ## Fonctionnalités implémentées (Étape 1 - Démo)
+
+> Section historique. Le catalogue généré de 120 produits a depuis été remplacé
+> par le catalogue éditorial vérifié de `data/catalogue.js` (voir plus bas).
 
 ### Catalogue Bioluminescent
 - [x] 120 produits démo générés (pas de vraies données) — marques, catégories, fournisseurs réalistes
@@ -98,6 +101,46 @@
 - [ ] Particules désactivées si `prefers-reduced-motion`
 - [ ] Mise à jour SW : banner « Nouvelle version disponible » + rechargement
 
+## Cahier des charges contenu produit (2026-11-14)
+
+Référence : **`data/CONTENU.md`**. Contrôle : `node tools/check-contenu.js` (`--strict` pour bloquer).
+
+### Minimum par fiche
+- [x] **3 à 5 images** (minimum 3), licence libre vérifiée, attribution visible — 12 fiches sur 15
+- [x] **1 à 2 vidéos** (minimum 1), officielles fabricant, embed `youtube-nocookie` — 13 fiches sur 15
+- [x] **1 tableau de caractéristiques** vérifiées — 15 fiches sur 15
+- [x] **1 article** rédigé (`article: { titre, contenu }`) — 9 fiches sur 15
+- [x] **10 à 20 occasions d'utilisation** (minimum 10) — 15 fiches sur 15
+- [ ] Atteindre les minimums sur **toutes** les fiches (6 fiches encore incomplètes)
+
+### Couverture
+- [ ] **Une fiche par marque et par année**, 2020 → 2026 : **63 fiches** (9 × 7)
+- [x] Marques représentées : **Samsung, Apple, Linux, Microsoft, Steam, Meta, HP, Alienware, MSI** (toutes présentes en 2020)
+- [ ] Chaque couple marque × année confirmé par une source fabricant datée — 11 couples sur 63
+
+### État au 2026-11-14
+- **15 fiches** au catalogue : 9 nouvelles fiches 2020 + 6 fiches historiques (2023–2026).
+- Couverture marque × année : **11 couples sur 63** (les 9 marques en 2020,
+  Steam 2023 et Steam 2026).
+- **6 fiches complètes sur 15** : Samsung Galaxy S20 5G, Apple iPhone 12,
+  Raspberry Pi 400, Microsoft Xbox Series X, Meta Quest 2, MSI Bravo 17.
+- Fiches 2020 incomplètes et raisons :
+  - **Valve Half-Life: Alyx** — 0/3 images : aucune photo du jeu sous licence
+    libre sur Commons (logo seul), vidéo officielle présente, article rédigé.
+  - **HP Reverb G2** — 0/3 images et 0/1 vidéo : aucune photo libre du modèle,
+    aucune vidéo officielle HP de 2020 retrouvée ; article rédigé.
+  - **Alienware m15 R3** — 0/3 images et 0/1 vidéo : aucune photo libre du
+    modèle, aucune vidéo officielle Dell/Alienware retrouvée ; article rédigé.
+- Fiches historiques (2023–2026) : article absent, et images insuffisantes pour
+  Steam Machine (2/3), PS5 Pro (1/3) et Steam Deck OLED (0/3).
+- Les prix sont affichés dans la devise publiée par le fabricant (souvent USD) ;
+  l'absence de prix EUR officiel est documentée dans `manquants[]`.
+- `medias.videos[]` et `article` sont désormais rendus par la fiche produit
+  (rétrocompatible avec `medias.video`).
+- Vérifications : `node --input-type=module --check < data/catalogue.js` ✅,
+  `node tools/check-contenu.js` ✅ (6/15 complètes, 11/63 couples), les 32
+  images référencées existent dans `img/`, cache SW passé en `kifftech-v11`.
+
 ## Prochaines actions (Étapes suivantes)
 
 1. **Tests manuels Android/iOS** (cf. liste ci-dessus)
@@ -114,7 +157,7 @@
 ## Notes
 
 - **Architecture** : SPA vanilla ES module, CSS custom properties, IndexedDB/localStorage pour persistance démo
-- **Données** : 100% démo (générées `generateDemoProducts()`), images Unsplash (commercial free), pas de vraies clés API
+- **Données** : catalogue éditorial dans `data/catalogue.js`, fiches vérifiées fabricant avec sources datées ; médias Wikimedia Commons sous licence libre et vidéos officielles YouTube ; aucune commande ni paiement réel, pas de vraies clés API
 - **Design** : Bioluminescent sci-fi, #03050a bg, #00ffc8 accent, glassmorphism, particules, glow subtils
 - **Sécurité** : Pas de paiement réel, pas de secrets en dur, CSP ready, HTTPS requis pour PWA
 - **Accessibilité** : ARIA labels, roles, focus-visible, contrastes, reduced-motion, sémantique HTML5
@@ -165,3 +208,49 @@ Vérifications du 13/11/2026 :
   - Aucun URL fabriqué : chaque paramètre vient d'une page officielle du fabricant
 - [ ] `node tools/check-pwa.js` : non exécutable dans cet environnement (module npm `canvas` absent, pas de npm) — à relancer sur un poste avec npm
 - [ ] Tests manuels téléphone / navigateur réel (rendu, SW, installation)
+
+## Catalogue vérifié fabricant — fiches 2020 (2026-11-14)
+
+Neuf fiches 2020 ajoutées à `data/catalogue.js`, une par marque imposée. Chaque
+produit est réellement sorti en 2020 et vérifié par une source fabricant datée.
+
+| Marque | Produit | Sortie | État |
+|---|---|---|---|
+| Samsung | Galaxy S20 5G | 06/03/2020 (US), 13/03/2020 (FR) | ✅ complète |
+| Apple | iPhone 12 | 23/10/2020 | ✅ complète |
+| Linux | Raspberry Pi 400 | 02/11/2020 | ✅ complète |
+| Microsoft | Xbox Series X | 10/11/2020 | ✅ complète |
+| Steam (Valve) | Half-Life: Alyx | 23/03/2020 | ⚠️ 0/3 images |
+| Meta | Quest 2 | 13/10/2020 | ✅ complète |
+| HP | Reverb G2 | automne 2020 | ⚠️ 0/3 images, 0/1 vidéo |
+| Alienware | m15 R3 | 21/05/2020 | ⚠️ 0/3 images, 0/1 vidéo |
+| MSI | Bravo 17 | avril/mai 2020 | ✅ complète |
+
+Règles appliquées pour 2020 :
+
+- Chaque fiche a un article de 6 paragraphes, 12–13 occasions d'utilisation,
+  un tableau de 9–15 caractéristiques et des sources datées.
+- 18 photographies sous licence libre téléchargées dans `img/` (Wikimedia
+  Commons : CC0, CC BY 2.0/4.0, CC BY-SA 4.0), avec auteur, licence,
+  attribution et page source sur chaque image.
+- 6 vidéos officielles intégrées (Samsung, Apple, Raspberry Pi, Xbox, Valve,
+  Meta, MSI) ; aucune vidéo officielle HP/Alienware retrouvée.
+- Aucune photo libre du HP Reverb G2, de l'Alienware m15 R3 ni de
+  Half-Life: Alyx : `images: []` plutôt qu'une photo d'un autre modèle, raison
+  documentée dans `manquants[]`.
+- Prix affichés dans la devise publiée par le fabricant (USD pour la plupart) ;
+  l'absence de prix EUR officiel est listée dans `manquants[]`.
+- MSI Bravo 17 : aucun prix public sur la fiche constructeur → `prix: null`,
+  affiché « Information à confirmer ».
+- HP Reverb G2 : pas de jour exact de disponibilité → `dateSortie: null`, la
+  fiche affiche l'année.
+
+Vérifications du 14/11/2026 :
+
+- [x] `node --input-type=module --check < data/catalogue.js` ✅
+- [x] `node tools/check-contenu.js` : 15 fiches, 6/15 complètes, 11/63 couples ✅
+- [x] Les 32 images référencées existent dans `img/` (aucun chemin cassé) ✅
+- [x] En-têtes des 18 nouvelles images contrôlés (JPEG/PNG valides) ✅
+- [x] Cache service worker incrémenté `kifftech-v9` → `kifftech-v11` (devises) ✅
+- [ ] `--strict` et `--complete` échouent volontairement (fiches et couples
+  restants à compléter) — attendu à ce stade

@@ -11,11 +11,41 @@ Catalogue de démonstration en PWA (Progressive Web App) : objets connectés et 
 
 - HTML, CSS et JavaScript sans framework ni étape de build. Tous les chemins sont relatifs (`./`).
 - Service worker `sw.js` : le code (HTML, JS, CSS) passe toujours par le réseau d'abord ; les icônes sont mises en cache.
-- Données : catalogue dans `data/catalogue.js` — produits sortis entre 2023 et 2026, caractéristiques et prix vérifiés auprès des sources fabricant (Valve, Nintendo, Sony), chaque fiche listant ses sources et sa date de vérification. L'app reste en **démonstration** : aucune commande ni paiement n'est possible ; les informations non confirmées sont affichées « Information à confirmer » (badge « Fiche incomplète »).
+- Données : catalogue dans `data/catalogue.js` — produits sortis entre 2020 et 2026, caractéristiques et prix vérifiés auprès des sources fabricant (Samsung, Apple, Raspberry Pi, Microsoft, Valve, Meta, HP, Alienware, MSI, Nintendo, Sony), chaque fiche listant ses sources et sa date de vérification. L'app reste en **démonstration** : aucune commande ni paiement n'est possible ; les informations non confirmées sont affichées « Information à confirmer » (badge « Fiche incomplète »).
 - Liens officiels : dans chaque fiche, le bouton « Boutique officielle du fabricant » ouvre la page officielle correspondant à la configuration sélectionnée (URL vérifiées et datées). Si aucune page officielle directe n'existe pour la configuration (ex. pack Mario Kart World, variantes de batterie Switch 2), le bouton est désactivé avec la mention « Lien officiel précis introuvable » ; aucun lien de remplacement (accueil, recherche, plateforme générique, modèle ressemblant) n'est utilisé.
 - Médias : photographies sous licence libre (Wikimedia Commons, auteur et licence vérifiés, attribution affichée sous chaque image) et vidéos officielles fabricant intégrées via YouTube (embed `youtube-nocookie.com`).
+- Devises : chaque prix est affiché dans la devise publiée par le fabricant (`EUR`, `USD`…), sans conversion. Le panier calcule un sous-total par devise et n'affiche aucun total global lorsque plusieurs devises sont présentes.
 - Panier et abonnements : enregistrés dans le navigateur (`localStorage`). Aucun paiement n'est traité.
 - Aucune dépendance à un service externe pour fonctionner.
+
+## Cahier des charges du contenu
+
+Le contenu attendu pour chaque fiche est défini dans **`data/CONTENU.md`** :
+
+- **3 à 5 images minimum** (3 au minimum, licence libre vérifiée et attribution visible) ;
+- **1 à 2 vidéos minimum** (1 au minimum, officielles fabricant, embed `youtube-nocookie`) ;
+- **un tableau de caractéristiques** vérifiées ;
+- **un article** rédigé par produit ;
+- **10 à 20 occasions d'utilisation minimum** (10 au minimum).
+
+Couverture visée : **une fiche par marque et par année de 2020 à 2026**, soit
+**9 marques × 7 années = 63 fiches**, avec Samsung, Apple, Linux, Microsoft,
+Steam, Meta, HP, Alienware et MSI (voir `data/CONTENU.md`).
+
+Audit de l'état courant :
+
+```bash
+node tools/check-contenu.js            # rapport, ne bloque pas
+node tools/check-contenu.js --strict   # échoue si une fiche existante est incomplète
+node tools/check-contenu.js --complete # échoue si un des 63 couples manque
+```
+
+État au 14/11/2026 : **15 fiches**, **11 couples marque × année couverts sur 63**.
+Les neuf fiches 2020 sont en place (Samsung Galaxy S20 5G, iPhone 12,
+Raspberry Pi 400, Xbox Series X, Half-Life: Alyx, Quest 2, Reverb G2,
+Alienware m15 R3, MSI Bravo 17). Six sont complètes ; Half-Life: Alyx,
+Reverb G2 et m15 R3 restent incomplètes faute de photos sous licence libre
+(et de vidéo officielle pour les deux derniers).
 
 ## Lancer en local
 

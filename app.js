@@ -32,6 +32,7 @@ function normalizeProduct(raw) {
     brand: raw.marque,
     category: raw.rayon,
     price: prix ? prix.montant : null,
+    currency: prix?.devise || 'EUR',
     images: (raw.medias?.images || []).map(m => m.fichier),
     isNew: raw.annee === 2026,
     incomplete: (raw.manquants || []).length > 0
@@ -46,7 +47,15 @@ const FALLBACK_PRODUCTS = DEMO_PRODUCTS;
 
 // ---------- UTILITIES ----------
 function sanitizeHTML(str){return String(str ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-function formatPrice(val,currency='€'){return val.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})+' '+currency;}
+function formatPrice(val,devise='EUR'){
+  if(typeof val!=='number'||!Number.isFinite(val)) return 'Information à confirmer';
+  devise = devise || 'EUR';
+  try{
+    return new Intl.NumberFormat('fr-FR',{style:'currency',currency:devise,minimumFractionDigits:2,maximumFractionDigits:2}).format(val);
+  }catch(e){
+    return val.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2})+' '+devise;
+  }
+}
 function debounce(fn,ms){let t;return(...args)=>{clearTimeout(t);t=setTimeout(()=>fn(...args),ms);};}
 function whatsappHTML(){
   const label = 'Contacter via WhatsApp Business';
@@ -94,7 +103,7 @@ const state = {
   mappings: {globalDiscount:10,targetMargin:35,autoPriceUpdate:true,verifyRefPrice:true},
   cart: readJSON(STORE_KEYS.cart, [])
     .filter(i => i && i.productId && i.quantity > 0 && DEMO_PRODUCTS.some(p => p.id === i.productId))
-    .map(i => ({ productId: i.productId, variant: i.variant || '', quantity: i.quantity })),
+    .map(i => ({ productId: i.productId, variant: i.variant || '', prix: i.prix ?? null, devise: i.devise || 'EUR', quantity: i.quantity })),
   variantChoice: {},
   imageIndex: 0,
   toastQueue: [],
@@ -109,10 +118,10 @@ const cartManager = {
     writeJSON(STORE_KEYS.cart, state.cart);
     window.dispatchEvent(new Event('cart:change'));
   },
-  add(productId, variant = '', prix = null, qty = 1) {
-    const item = state.cart.find(i => i.productId === productId && i.variant === variant);
+  add(productId, variant = '', prix = null, devise = 'EUR', qty = 1) {
+    const item = state.cart.find(i => i.productId === productId && i.variant === variant && (i.devise || 'EUR') === devise);
     if (item) item.quantity = Math.min(item.quantity + qty, 99);
-    else state.cart.push({ productId, variant, prix, quantity: qty });
+    else state.cart.push({ productId, variant, prix, devise, quantity: qty });
     this.save();
   },
   updateQuantity(index, quantity) {
@@ -128,16 +137,28 @@ const cartManager = {
     this.save();
   },
   calculateTotals(productsMap) {
-    let totalItems = 0, uniqueItems = 0, subtotal = 0;
+    let totalItems = 0, uniqueItems = 0;
+    const parDevise = new Map();
     for (const item of state.cart) {
       const p = productsMap.get(item.productId);
       if (!p) continue;
+      const devise = item.devise || p.currency || 'EUR';
       totalItems += item.quantity;
       uniqueItems += 1;
-      subtotal += (item.prix ?? p.price ?? 0) * item.quantity;
+      const montant = (item.prix ?? p.price ?? 0) * item.quantity;
+      parDevise.set(devise, Math.round(((parDevise.get(devise) || 0) + montant) * 100) / 100);
     }
-    subtotal = Math.round(subtotal * 100) / 100;
-    return { totalItems, uniqueItems, subtotal, shipping: null, finalTotal: subtotal, details: [] };
+    const devises = [...parDevise.keys()];
+    // Les prix proviennent de marchés différents : aucune conversion n'est inventée.
+    const deviseUnique = devises.length === 1 ? devises[0] : null;
+    const subtotal = deviseUnique ? parDevise.get(deviseUnique) : null;
+    return {
+      totalItems, uniqueItems, devises,
+      devise: deviseUnique,
+      parDevise: Object.fromEntries(parDevise),
+      mixedCurrencies: devises.length > 1,
+      subtotal, shipping: null, finalTotal: subtotal, details: []
+    };
   }
 };
 
@@ -220,7 +241,7 @@ class KiffTech{
       this.showToast('Variante non disponible : contacter via WhatsApp Business', 'error');
       return;
     }
-    cartManager.add(productId, sel.label, sel.prix, 1);
+    cartManager.add(productId, sel.label, sel.prix, p.currency, 1);
     this.showToast(`${p.title} ajouté au panier (démonstration)`);
   }
 
@@ -611,8 +632,8 @@ class KiffTech{
           </div>
           <h3 class="product-title">${sanitizeHTML(p.title)}</h3>
           <div class="product-price-row">
-            <span class="product-price">${p.price !== null ? formatPrice(p.price) : 'Prix à confirmer'}</span>
-            <span class="product-price-note">Prix public officiel (France)</span>
+            <span class="product-price">${p.price !== null ? formatPrice(p.price, p.currency) : 'Prix à confirmer'}</span>
+            <span class="product-price-note">Prix public officiel (devise du fabricant)</span>
           </div>
           ${extra}
           <div class="product-actions">
@@ -704,6 +725,7 @@ class KiffTech{
         <h4>Situations d’utilisation</h4>
         ${this.usagesHTML(p)}
       </section>
+      ${this.articleHTML(p)}
       <section class="detail-block">
         <h4>Prix et disponibilité</h4>
         ${this.priceBlockHTML(p)}
@@ -750,8 +772,8 @@ class KiffTech{
       <div class="variant-box">
         ${groups}
         <div class="variant-price">
-          <span class="variant-price-value">${sel.prix !== null ? formatPrice(sel.prix) : 'Information à confirmer'}</span>
-          <span class="variant-price-note">${sanitizeHTML(sel.label)}${sel.label ? ' · ' : ''}Prix public officiel (France)</span>
+          <span class="variant-price-value">${sel.prix !== null ? formatPrice(sel.prix, p.currency) : 'Information à confirmer'}</span>
+          <span class="variant-price-note">${sanitizeHTML(sel.label)}${sel.label ? ' · ' : ''}Prix public officiel (devise du fabricant)</span>
         </div>
         <div class="detail-actions">
           <button type="button" class="btn-primary" data-action="add" ${sel.prix === null || !sel.disponible ? 'disabled' : ''}>${addLabel}</button>
@@ -788,11 +810,27 @@ class KiffTech{
       : '<p class="empty-note">Information à confirmer</p>';
   }
 
+  articleHTML(p){
+    const article = p.article;
+    if(!article) return '';
+    const titre = typeof article === 'string' ? '' : (article.titre || '');
+    const contenu = typeof article === 'string' ? article : article.contenu;
+    const paragraphs = Array.isArray(contenu)
+      ? contenu.map(x => String(x).trim()).filter(Boolean)
+      : String(contenu || '').split(/\n{2,}/).map(x => x.trim()).filter(Boolean);
+    if(!paragraphs.length) return '';
+    return `
+      <section class="detail-block detail-article">
+        <h4>Article${titre ? ` — ${sanitizeHTML(titre)}` : ''}</h4>
+        ${paragraphs.map(x => `<p class="detail-desc">${sanitizeHTML(x)}</p>`).join('')}
+      </section>`;
+  }
+
   priceBlockHTML(p){
     const prix = p.prix;
     const dispo = p.disponibilite;
     const prixLigne = prix
-      ? `<div><span class="price-label">Prix public officiel</span> <strong>${formatPrice(prix.montant)}</strong> (${sanitizeHTML(prix.marche)}, ${sanitizeHTML(prix.libelle)}), vérifié le ${this.formatDate(prix.date)} ${this.sourceLink(prix.source)}</div>`
+      ? `<div><span class="price-label">Prix public officiel</span> <strong>${formatPrice(prix.montant, prix.devise)}</strong> (${sanitizeHTML(prix.marche)}, ${sanitizeHTML(prix.libelle)}), vérifié le ${this.formatDate(prix.date)} ${this.sourceLink(prix.source)}</div>`
       : '<div><span class="price-label">Prix public officiel</span> Information à confirmer</div>';
     const dispoLigne = dispo && dispo.statut === 'disponible'
       ? `<div><span class="price-label">Disponibilité officielle</span> ${sanitizeHTML(dispo.libelle)}, vérifiée le ${this.formatDate(dispo.date)} ${this.sourceLink(dispo.source)}</div>`
@@ -807,10 +845,12 @@ class KiffTech{
 
   mediaHTML(p){
     const imgs = p.medias?.images || [];
-    const video = p.medias?.video;
-    const videoHTML = video
-      ? `<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/${sanitizeHTML(video.id)}" title="${sanitizeHTML(video.titre)}" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-        <p class="media-credit">Vidéo officielle : ${sanitizeHTML(video.titre)}, ${sanitizeHTML(video.chaine)} · <a href="${sanitizeHTML(video.url)}" target="_blank" rel="noopener">YouTube</a></p>`
+    const videos = Array.isArray(p.medias?.videos) && p.medias.videos.length
+      ? p.medias.videos
+      : (p.medias?.video ? [p.medias.video] : []);
+    const videoHTML = videos.length
+      ? videos.map(video => `<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/${sanitizeHTML(video.id)}" title="${sanitizeHTML(video.titre)}" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <p class="media-credit">Vidéo officielle : ${sanitizeHTML(video.titre)}, ${sanitizeHTML(video.chaine)} · <a href="${sanitizeHTML(video.url)}" target="_blank" rel="noopener">YouTube</a></p>`).join('')
       : '<p class="empty-note">Vidéo officielle : Information à confirmer.</p>';
     const imgHTML = imgs.length
       ? `<ul class="media-list">${imgs.map((m, k) => `<li><strong>Image ${k + 1}</strong> : ${sanitizeHTML(m.alt)}<span class="media-credit">${sanitizeHTML(m.attribution)} · ${this.sourceLink(m.source)}</span></li>`).join('')}</ul>`
@@ -881,6 +921,7 @@ class KiffTech{
       const product = state.productsMap.get(item.productId);
       if (!product) return '';
       const unit = item.prix ?? product.price ?? 0;
+      const devise = item.devise || product.currency || 'EUR';
       const thumb = product.images[0];
       return `
         <article class="cart-item" style="display:flex;gap:1rem;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:.75rem;align-items:center;">
@@ -888,18 +929,37 @@ class KiffTech{
           <div style="flex:1;min-width:0;">
             <h4 style="font-size:.9rem;font-weight:600;margin-bottom:.25rem;">${sanitizeHTML(product.title)}</h4>
             ${item.variant ? `<p style="font-size:.7rem;color:var(--fg-muted);">${sanitizeHTML(item.variant)}</p>` : ''}
-            <p style="font-size:.7rem;color:var(--fg-muted);">${sanitizeHTML(product.brand)} • ${formatPrice(unit)} x ${item.quantity}</p>
+            <p style="font-size:.7rem;color:var(--fg-muted);">${sanitizeHTML(product.brand)} • ${formatPrice(unit, devise)} x ${item.quantity}</p>
             <div style="display:flex;align-items:center;gap:.5rem;margin-top:.5rem;">
               <button onclick="window.keffTech.updateCartQty(${index}, ${item.quantity - 1})" class="icon-btn-sm" style="width:32px;height:32px;">−</button>
               <span style="min-width:2rem;text-align:center;font-weight:600;">${item.quantity}</span>
               <button onclick="window.keffTech.updateCartQty(${index}, ${item.quantity + 1})" class="icon-btn-sm" style="width:32px;height:32px;">+</button>
-              <span style="margin-left:auto;font-weight:700;color:var(--accent);">${formatPrice(unit * item.quantity)}</span>
+              <span style="margin-left:auto;font-weight:700;color:var(--accent);">${formatPrice(unit * item.quantity, devise)}</span>
               <button onclick="window.keffTech.removeFromCart(${index})" class="icon-btn-sm" style="color:var(--danger);" aria-label="Supprimer">🗑️</button>
             </div>
           </div>
         </article>
       `;
     }).join('');
+
+    const sousTotauxHTML = Object.entries(totals.parDevise).map(([devise, montant]) => `
+        <div style="display:flex;justify-content:space-between;padding:.5rem 0;">
+          <span>Sous-total ${sanitizeHTML(devise)} (prix publics officiels)</span>
+          <span>${formatPrice(montant, devise)}</span>
+        </div>`).join('');
+    const totalHTML = totals.mixedCurrencies
+      ? `<div style="display:flex;justify-content:space-between;padding:.5rem 0;border-top:2px solid var(--accent);margin-top:1rem;font-size:1.1rem;font-weight:800;">
+          <span>TOTAL indicatif</span>
+          <span style="color:var(--accent);">Non calculable</span>
+        </div>
+        <p style="font-size:.7rem;color:var(--fg-muted);margin-top:.5rem;">Le panier contient des prix publiés dans plusieurs devises : aucune conversion de change n’est effectuée.</p>`
+      : `<div style="display:flex;justify-content:space-between;padding:.5rem 0;border-top:2px solid var(--accent);margin-top:1rem;font-size:1.1rem;font-weight:800;">
+          <span>TOTAL indicatif</span>
+          <span style="color:var(--accent);">${formatPrice(totals.finalTotal, totals.devise || 'EUR')}</span>
+        </div>`;
+    const checkoutLabel = totals.mixedCurrencies
+      ? 'Commander (démonstration)'
+      : `Commander (démonstration) - ${formatPrice(totals.finalTotal, totals.devise || 'EUR')}`;
 
     const content = panel.querySelector('.panel-content');
     content.innerHTML = `
@@ -909,24 +969,18 @@ class KiffTech{
       </div>
       <div class="cart-items">${itemsHTML}</div>
       <div class="cart-summary" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:1.5rem;margin-top:1.5rem;">
-        <div style="display:flex;justify-content:space-between;padding:.5rem 0;">
-          <span>Sous-total (prix publics officiels)</span>
-          <span>${formatPrice(totals.subtotal)}</span>
-        </div>
+        ${sousTotauxHTML}
         <div style="display:flex;justify-content:space-between;padding:.5rem 0;">
           <span>Livraison</span>
           <span style="color:var(--fg-muted);font-weight:700;">Information à confirmer</span>
         </div>
-        <div style="display:flex;justify-content:space-between;padding:.5rem 0;border-top:2px solid var(--accent);margin-top:1rem;font-size:1.1rem;font-weight:800;">
-          <span>TOTAL indicatif</span>
-          <span style="color:var(--accent);">${formatPrice(totals.finalTotal)}</span>
-        </div>
+        ${totalHTML}
         <div style="margin-top:1rem;padding:1rem;background:rgba(0,255,200,.05);border:1px solid var(--accent);border-radius:var(--radius-md);font-size:.75rem;color:var(--accent);">
           Démonstration : aucune commande ni aucun paiement n’est possible. Les montants sont les prix publics officiels, sans remise.
         </div>
         <div style="display:flex;gap:.75rem;margin-top:1.5rem;">
           <button class="btn-secondary" onclick="window.keffTech.switchTab('catalog')" style="flex:1;">Continuer mes achats</button>
-          <button class="btn-primary" onclick="window.keffTech.checkout()" style="flex:2;padding:1rem;font-size:1rem;">Commander (démonstration) - ${formatPrice(totals.finalTotal)}</button>
+          <button class="btn-primary" onclick="window.keffTech.checkout()" style="flex:2;padding:1rem;font-size:1rem;">${checkoutLabel}</button>
         </div>
       `;
   }
@@ -943,7 +997,10 @@ class KiffTech{
 
   checkout() {
     const totals = cartManager.calculateTotals(state.productsMap);
-    this.showToast(`Commande de ${totals.totalItems} articles pour ${formatPrice(totals.finalTotal)} - Démo seulement`, 'success');
+    const montant = totals.mixedCurrencies
+      ? 'montant non calculable (devises différentes)'
+      : formatPrice(totals.finalTotal, totals.devise || 'EUR');
+    this.showToast(`Commande de ${totals.totalItems} articles pour ${montant} - Démo seulement`, 'success');
   }
 
   closeModal(){this.modal.hidden=true;document.body.style.overflow='';}

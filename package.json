@@ -1,10 +1,13 @@
 {
   "name": "kifftech",
   "version": "1.0.0",
-  "description": "",
+  "description": "Catalogue de démonstration PWA — fiches produits vérifiées auprès des fabricants (2020–2026)",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node tools/check-contenu.js",
+    "check:contenu": "node tools/check-contenu.js",
+    "check:contenu:strict": "node tools/check-contenu.js --strict",
+    "check:contenu:complete": "node tools/check-contenu.js --complete"
   },
   "keywords": [],
   "author": "",
