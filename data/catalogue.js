@@ -2875,7 +2875,16 @@ export const CATALOGUE = {
         "Exploitation des fonctions principales du produit"
       ],
       "medias": {
-        "images": [],
+        "images": [
+          {
+            "fichier": "img/raspberry-pi-pico-1.jpg",
+            "alt": "Raspberry Pi Pico, vues du dessus et du dessous juxtaposées (carte microcontrôleur RP2040)",
+            "licence": "CC BY-SA 4.0",
+            "auteur": "Phiarc",
+            "attribution": "Phiarc, Raspberry Pi Pico top and bottom composite, CC BY-SA 4.0, via Wikimedia Commons",
+            "source": "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_Pico_top_and_bottom_composite.jpg"
+          }
+        ],
         "videos": []
       },
       "article": {
@@ -2898,12 +2907,12 @@ export const CATALOGUE = {
         }
       ],
       "manquants": [
-        "3 à 5 photographies sous licence libre avec attribution/licence vérifiées (fichiers locaux) manquantes ou à confirmer",
         "1 à 2 vidéos officielles fabricant (YouTube, embed) à confirmer",
         "Prix public officiel actuel en EUR/devise, variantes et stock/disponibilité à confirmer sur source officielle",
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
-        "Liste d’usages vérifiés à compléter (objectif 10–20)"
+        "Liste d’usages vérifiés à compléter (objectif 10–20)",
+        "Au moins 2 photographies supplémentaires sous licence libre avec attribution/licence vérifiées (objectif 3–5) à ajouter"
       ]
     },
     {
@@ -3936,7 +3945,16 @@ export const CATALOGUE = {
         "Exploitation des fonctions principales du produit"
       ],
       "medias": {
-        "images": [],
+        "images": [
+          {
+            "fichier": "img/meta-quest-3s-1.jpg",
+            "alt": "Casque Meta Quest 3S posé avec ses deux manettes Touch Plus",
+            "licence": "CC BY 4.0",
+            "auteur": "Loafhouse",
+            "attribution": "Loafhouse, Meta Quest 3s with controllers, CC BY 4.0, via Wikimedia Commons",
+            "source": "https://commons.wikimedia.org/wiki/File:Meta_Quest_3s_with_controllers.jpg"
+          }
+        ],
         "videos": []
       },
       "article": {
@@ -3959,12 +3977,12 @@ export const CATALOGUE = {
         }
       ],
       "manquants": [
-        "3 à 5 photographies sous licence libre avec attribution/licence vérifiées (fichiers locaux) manquantes ou à confirmer",
         "1 à 2 vidéos officielles fabricant (YouTube, embed) à confirmer",
         "Prix public officiel actuel en EUR/devise, variantes et stock/disponibilité à confirmer sur source officielle",
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
-        "Liste d’usages vérifiés à compléter (objectif 10–20)"
+        "Liste d’usages vérifiés à compléter (objectif 10–20)",
+        "Au moins 2 photographies supplémentaires sous licence libre avec attribution/licence vérifiées (objectif 3–5) à ajouter"
       ]
     },
     {
@@ -5990,7 +6008,16 @@ export const CATALOGUE = {
         "Usage comme smartphone principal Android"
       ],
       "medias": {
-        "images": [],
+        "images": [
+          {
+            "fichier": "img/galaxy-s21-5g-1.jpg",
+            "alt": "Samsung Galaxy S21, vue de face de l’écran allumé",
+            "licence": "CC BY-SA 4.0",
+            "auteur": "FatHummus (TGspot.co.il)",
+            "attribution": "FatHummus / TGspot.co.il, Galaxy S21, CC BY-SA 4.0, via Wikimedia Commons (VRT #2019040510008539)",
+            "source": "https://commons.wikimedia.org/wiki/File:Galaxy_S21.jpg"
+          }
+        ],
         "videos": []
       },
       "article": {
@@ -6016,10 +6043,10 @@ export const CATALOGUE = {
         "Prix public officiel actuel en EUR et variante de référence non confirmés sur source FR consultée",
         "Disponibilité/stock actuel à confirmer",
         "Variantes exactes (couleurs/stockage) et liens officiels par configuration à confirmer",
-        "3 à 5 photographies sous licence libre avec attribution vérifiée manquantes",
         "1 à 2 vidéos officielles fabricant (YouTube, embed) à confirmer",
         "Caractéristiques détaillées et contenu de la boîte à confirmer sur fiche officielle",
-        "Article détaillé complet et liste d’usages étendue (10–20) à compléter avec sources"
+        "Article détaillé complet et liste d’usages étendue (10–20) à compléter avec sources",
+        "Au moins 2 photographies supplémentaires sous licence libre avec attribution/licence vérifiées (objectif 3–5) à ajouter"
       ]
     },
     {
