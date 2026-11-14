@@ -1,4 +1,4 @@
-/* ===== KiffTech — Catalogue (démonstration, données vérifiées) ===== */
+/* ===== KiffTech — Catalogue (données vérifiées) ===== */
 import { CATALOGUE } from './data/catalogue.js';
 import { CONTACT } from './data/config.js';
 
@@ -109,7 +109,7 @@ const state = {
   toastQueue: [],
 };
 
-// ---------- PANIER (persistant, démonstration) ----------
+// ---------- PANIER (persistant) ----------
 const cartManager = {
   getItems() {
     return state.cart;
@@ -163,12 +163,12 @@ const cartManager = {
 };
 
 // ---------- SOURCES DE CATALOGUE ----------
-// Aucune source réelle connectée : le catalogue de démonstration est utilisé.
+// Aucune source externe connectée : le catalogue local est utilisé.
 function getCachedProducts() { return null; }
 function setCachedProducts() {}
 const productAgent = {
   async syncAllProducts() {
-    throw new Error('aucune source de catalogue connectée (démonstration)');
+    throw new Error('aucune source de catalogue externe connectée');
   }
 };
 
@@ -242,7 +242,7 @@ class KiffTech{
       return;
     }
     cartManager.add(productId, sel.label, sel.prix, p.currency, 1);
-    this.showToast(`${p.title} ajouté au panier (démonstration)`);
+    this.showToast(`${p.title} ajouté au panier`);
   }
 
   selectedVariant(p) {
@@ -293,7 +293,7 @@ class KiffTech{
     link.click();
     link.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
-    this.showToast(`Catalogue exporté (${products.length} produits de démonstration)`);
+    this.showToast(`Catalogue exporté (${products.length} produits)`);
   }
 
   handleCSVImport(e) {
@@ -303,7 +303,7 @@ class KiffTech{
     reader.onload = () => {
       const lines = String(reader.result || '').split(/\r?\n/).filter(l => l.trim());
       const rows = Math.max(0, lines.length - 1);
-      this.showToast(`${rows} ligne(s) lue(s) — démonstration : rien n'est ajouté au catalogue`, rows ? 'success' : 'error');
+      this.showToast(`${rows} ligne(s) lue(s) — rien n'a été ajouté au catalogue`, rows ? 'success' : 'error');
     };
     reader.onerror = () => this.showToast('Lecture du fichier impossible', 'error');
     reader.readAsText(file);
@@ -316,7 +316,7 @@ class KiffTech{
     state.subscription = { tier, since: new Date().toISOString() };
     writeJSON(STORE_KEYS.subscription, state.subscription);
     this.renderSubscription();
-    this.showToast(`${names[tier]} activé (démonstration : aucun paiement)`);
+    this.showToast(`${names[tier]} activé (aucun paiement)`);
   }
 
   cancelSubscription() {
@@ -336,7 +336,7 @@ class KiffTech{
       return;
     }
     const name = state.subscription.tier === 'tresor' ? 'KiffTech Trésor' : 'KiffTech Basic';
-    label.textContent = `${name} — actif (démonstration)`;
+    label.textContent = `${name} — actif`;
     actions.innerHTML = '<button type="button" class="btn-secondary" id="cancelSubBtn">Annuler l’abonnement</button>';
     document.getElementById('cancelSubBtn').addEventListener('click', () => this.cancelSubscription());
   }
@@ -456,7 +456,16 @@ class KiffTech{
   bindProductCards(container){
     container.querySelectorAll('.catalog-product').forEach(card=>{
       card.addEventListener('click',(e)=>{
-        if(e.target.closest('a')) return;
+        if(e.target.closest('a[data-action="manufacturer"], a[href]')) return;
+        if(e.target.closest('[data-action="add"]')){
+          e.preventDefault();
+          e.stopPropagation();
+          this.addToCart(card.dataset.id);
+          return;
+        }
+        if(e.target.closest('[data-action="detail"]')){
+          e.preventDefault();
+        }
         this.openProduct(card.dataset.id);
       });
     });
@@ -637,8 +646,9 @@ class KiffTech{
           </div>
           ${extra}
           <div class="product-actions">
-            ${p.ficheFabricant ? `<a href="${sanitizeHTML(p.ficheFabricant)}" target="_blank" rel="noopener" class="btn-catalog">Fiche fabricant</a>` : ''}
-            <button type="button" class="btn-catalog secondary">Détails</button>
+            ${p.ficheFabricant ? `<a href="${sanitizeHTML(p.ficheFabricant)}" target="_blank" rel="noopener" class="btn-catalog" data-action="manufacturer">Fiche fabricant</a>` : ''}
+            <button type="button" class="btn-catalog secondary" data-action="detail">Afficher détails</button>
+            <button type="button" class="btn-catalog" data-action="add">Ajouter à la caisse</button>
           </div>
         </div>
       </article>`;
@@ -760,7 +770,7 @@ class KiffTech{
           <span class="variant-label">${sanitizeHTML(groupe.groupe)}</span>
           <div class="variant-options">${groupe.options.map((o, k) => `<button type="button" class="variant-chip${k === (choice[g] ?? 0) ? ' is-selected' : ''}${o.dispo === false ? ' is-unavailable' : ''}" data-variant-group="${g}" data-variant-option="${k}" aria-pressed="${k === (choice[g] ?? 0)}">${sanitizeHTML(o.libelle)}${o.dispo === false ? ' (indisponible)' : ''}</button>`).join('')}</div>
         </div>`).join('');
-    const addLabel = sel.prix === null ? 'Prix à confirmer' : !sel.disponible ? 'Variante indisponible' : 'Ajouter au panier (démonstration)';
+    const addLabel = sel.prix === null ? 'Prix à confirmer' : !sel.disponible ? 'Variante indisponible' : 'Ajouter au panier';
     const lien = sel.lienOfficiel;
     const lienHTML = sel.lienDefini
       ? (lien
@@ -839,7 +849,7 @@ class KiffTech{
       <div class="price-block">
         ${prixLigne}
         ${dispoLigne}
-        <div><span class="price-label">Prix KiffTech</span> non publié : démonstration, aucune commande ni aucun paiement possible.</div>
+        <div><span class="price-label">Prix KiffTech</span> non publié : aucune commande ni aucun paiement possible.</div>
       </div>`;
   }
 
@@ -958,8 +968,8 @@ class KiffTech{
           <span style="color:var(--accent);">${formatPrice(totals.finalTotal, totals.devise || 'EUR')}</span>
         </div>`;
     const checkoutLabel = totals.mixedCurrencies
-      ? 'Commander (démonstration)'
-      : `Commander (démonstration) - ${formatPrice(totals.finalTotal, totals.devise || 'EUR')}`;
+      ? 'Commander'
+      : `Commander - ${formatPrice(totals.finalTotal, totals.devise || 'EUR')}`;
 
     const content = panel.querySelector('.panel-content');
     content.innerHTML = `
@@ -976,7 +986,7 @@ class KiffTech{
         </div>
         ${totalHTML}
         <div style="margin-top:1rem;padding:1rem;background:rgba(0,255,200,.05);border:1px solid var(--accent);border-radius:var(--radius-md);font-size:.75rem;color:var(--accent);">
-          Démonstration : aucune commande ni aucun paiement n’est possible. Les montants sont les prix publics officiels, sans remise.
+          Aucune commande ni aucun paiement n’est possible. Les montants sont les prix publics officiels, sans remise.
         </div>
         <div style="display:flex;gap:.75rem;margin-top:1.5rem;">
           <button class="btn-secondary" onclick="window.keffTech.switchTab('catalog')" style="flex:1;">Continuer mes achats</button>
@@ -1000,7 +1010,7 @@ class KiffTech{
     const montant = totals.mixedCurrencies
       ? 'montant non calculable (devises différentes)'
       : formatPrice(totals.finalTotal, totals.devise || 'EUR');
-    this.showToast(`Commande de ${totals.totalItems} articles pour ${montant} - Démo seulement`, 'success');
+    this.showToast(`Commande de ${totals.totalItems} articles pour ${montant} — aucune commande réelle`, 'success');
   }
 
   closeModal(){this.modal.hidden=true;document.body.style.overflow='';}

@@ -1,9 +1,9 @@
-/* ===== KiffTech Service Worker v9 =====
+/* ===== KiffTech Service Worker =====
    Règle : incrémenter CACHE_NAME à chaque modification des fichiers pré-cachés.
    Le code (HTML, JS, CSS) passe toujours par le réseau d'abord : une ancienne
    version ne peut pas rester affichée depuis le cache après une mise en ligne. */
 
-const CACHE_NAME='kifftech-v13';
+const CACHE_NAME='kifftech-v14';
 const PRECACHE_ASSETS=[
   './','./index.html','./promotions.html','./style.css','./app.js','./install.js','./bilan.js','./manifest.json',
   './data/catalogue.js','./data/config.js',

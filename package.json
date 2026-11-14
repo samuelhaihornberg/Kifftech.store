@@ -1,7 +1,7 @@
 {
   "name": "kifftech",
   "version": "1.0.0",
-  "description": "Catalogue de démonstration PWA — fiches produits vérifiées auprès des fabricants (2020–2026)",
+  "description": "Catalogue KiffTech PWA — fiches produits vérifiées auprès des fabricants (2020–2026)",
   "main": "app.js",
   "scripts": {
     "test": "node tools/check-contenu.js",

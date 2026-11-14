@@ -1,4 +1,4 @@
-/* ===== KiffTech — bilan des ventes & bénéfices (démonstration) =====
+/* ===== KiffTech — bilan des ventes & bénéfices =====
    Clients et ventes fictifs. Totaux calculés en centimes à partir des achats. */
 (() => {
   'use strict';

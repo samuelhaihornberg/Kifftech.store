@@ -5,7 +5,7 @@
      non confirmés figurent dans `manquants` (badge « Fiche incomplète »).
    - Médias : photographies sous licence libre (Wikimedia Commons, auteur/licence
      vérifiés) + vidéo officielle du fabricant (YouTube, embed uniquement).
-   - Catalogue en démonstration : aucune commande ni paiement n'est possible. */
+   - Aucune commande ni paiement n'est possible. */
 export const CATALOGUE = {
   produits: [
     {

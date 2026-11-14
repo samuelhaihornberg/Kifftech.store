@@ -173,7 +173,7 @@ séparés par une ligne vide.
   montant USD s'affiche en USD, et l'absence de prix EUR va dans `manquants[]`.
   Le panier additionne séparément par devise et n'affiche pas de total unique
   quand plusieurs devises coexistent.
-- Le catalogue reste une **démonstration** : aucune commande ni paiement réel.
+- Aucune commande ni aucun paiement réel.
 - Toute information non confirmée figure dans `manquants[]` et déclenche le
   badge « Fiche incomplète ».
 
