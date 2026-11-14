@@ -747,7 +747,25 @@ body{display:flex;flex-direction:column;min-height:100dvh;overflow-x:hidden}
 .product-actions .btn-catalog{flex:1 1 auto;min-height:44px}
 .detail-actions{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
 .detail-actions .btn-primary,.detail-actions .btn-secondary,.detail-actions .btn-buy-now{min-height:44px}
+.pay-methods{display:flex;flex-direction:column;gap:.75rem;margin-top:.5rem}
+.pay-method{padding:.75rem;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--glass)}
+.pay-method-title{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-muted);margin-bottom:.5rem}
+.pay-divider{display:flex;align-items:center;gap:.5rem;color:var(--fg-muted);font-size:.75rem}
+.pay-divider::before,.pay-divider::after{content:"";flex:1;height:1px;background:var(--border)}
+.card-fields-wrap{display:flex;flex-direction:column;gap:.75rem}
+.card-preview{border-radius:14px;padding:1rem;background:linear-gradient(135deg,#0f2740 0%,#163a5c 45%,#0b1e33 100%);border:1px solid rgba(255,255,255,.12);color:#f4fbff;box-shadow:inset 0 1px 0 rgba(255,255,255,.08);max-width:360px}
+.card-preview-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;font-size:.7rem;letter-spacing:.08em}
+.card-chip{width:36px;height:26px;border-radius:6px;background:linear-gradient(135deg,#d9c27a,#f3e4a2)}
+.card-preview-num{font-size:1rem;letter-spacing:.18em;margin-bottom:.9rem}
+.card-preview-bottom{display:flex;justify-content:space-between;font-size:.65rem;color:rgba(244,251,255,.8);text-transform:uppercase}
+.card-form{display:flex;flex-direction:column;gap:.35rem}
+.card-label{font-size:.72rem;color:var(--fg-muted);font-weight:600}
+.card-field{min-height:44px;padding:.55rem .7rem;border:1px solid var(--border-bright);border-radius:10px;background:rgba(3,8,16,.5)}
+.card-row{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.card-submit{margin-top:.35rem;min-height:44px}
+.card-note{font-size:.68rem;color:var(--fg-muted);margin-top:.15rem}
 @media (max-width:640px){
   .product-actions .btn-catalog{flex:1 1 100%}
   .detail-actions .btn-primary,.detail-actions .btn-secondary,.detail-actions .btn-buy-now{flex:1 1 100%}
+  .card-row{grid-template-columns:1fr}
 }
