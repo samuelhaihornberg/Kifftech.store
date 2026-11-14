@@ -40,12 +40,9 @@ node tools/check-contenu.js --strict   # échoue si une fiche existante est inco
 node tools/check-contenu.js --complete # échoue si un des 63 couples manque
 ```
 
-État au 14/11/2026 : **15 fiches**, **11 couples marque × année couverts sur 63**.
-Les neuf fiches 2020 sont en place (Samsung Galaxy S20 5G, iPhone 12,
-Raspberry Pi 400, Xbox Series X, Half-Life: Alyx, Quest 2, Reverb G2,
-Alienware m15 R3, MSI Bravo 17). Six sont complètes ; Half-Life: Alyx,
-Reverb G2 et m15 R3 restent incomplètes faute de photos sous licence libre
-(et de vidéo officielle pour les deux derniers).
+État au 14/11/2026 : **26 fiches**, **21 fiches complètes**, **22 couples marque × année couverts sur 63**.
+Ajouts récents : iPhone 13/14 Pro/15 Pro/16 Pro, Galaxy S22/S23/S24 Ultra, Raspberry Pi 5, Meta Quest 3.
+Fiches encore incomplètes faute de médias libres/vérifiés : Steam Machine (2/3 images), Steam Deck OLED (1/3), Half-Life: Alyx (2/3), HP Reverb G2 (0/3 images, 0/1 vidéo), Alienware m15 R3 (0/3 images, 0/1 vidéo). `img/airpods-pro-2-1.jpg` reste non intégré (origine/droits non vérifiés). Service worker : `kifftech-v13`.
 
 ## Lancer en local
 

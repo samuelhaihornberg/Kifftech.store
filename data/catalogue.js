@@ -128,6 +128,17 @@ export const CATALOGUE = {
           }
         ]
       },
+      article: {
+        titre: "Steam Machine : la console de salon SteamOS de Valve",
+        contenu: [
+          "Lancée le 22 juin 2026, la Steam Machine est la nouvelle tentative de Valve pour installer Steam dans le salon sous la forme d'un PC de jeu compact. Contrairement à un boîtier Windows, elle démarre directement sur SteamOS 3, un système basé sur Arch qui ouvre Steam en plein écran et donne accès à un bureau KDE Plasma pour les usages plus classiques.",
+          "La machine repose sur un processeur AMD Zen 4 à six cœurs et douze threads, cadencé jusqu'à 4,8 GHz dans une enveloppe de 30 W, associé à un processeur graphique RDNA3 de 28 unités de calcul culminant à 2,45 GHz pour 110 W. Valve précise que ces deux puces sont partiellement sur mesure. La mémoire se compose de 16 Go de DDR5 et de 8 Go de GDDR6 dédiés à la partie vidéo, tandis que le stockage prend la forme d'un SSD NVMe de 512 Go ou de 2 To, extensible par carte microSD ultrarapide.",
+          "Côté image, la Steam Machine dispose d'une sortie DisplayPort 1.4 capable d'atteindre 4K à 240 Hz ou 8K à 60 Hz, et d'une sortie HDMI 2.0 limitée à 4K à 120 Hz. Les deux prennent en charge le HDR et FreeSync, et le HDMI ajoute le CEC. La connectique comprend deux ports USB-A 3.2 Gen 1 à l'avant, deux USB-A 2.0 et un USB-C 3.2 Gen 2 à l'arrière, ainsi qu'un Ethernet Gigabit, du Wi-Fi 6E et un Bluetooth 5.3 dédié.",
+          "Le boîtier mesure 152 × 162,4 × 156 mm pour 2,6 kg et intègre une alimentation interne, ce qui évite un bloc externe encombrant. Une barre de 17 diodes RVB peut afficher l'état du système ou servir à personnaliser l'ambiance. Un adaptateur sans fil 2,4 GHz est intégré, ce qui permet d'appairer le Steam Controller sans Puck supplémentaire.",
+          "Les prix de lancement annoncés par Valve sont de 1 039 € pour le modèle 512 Go et de 1 359 € pour le modèle 2 To, avec des bundles incluant le Steam Controller à 1 108 € et 1 428 €. Les façades tissu rouge et noyer sont offertes avec le modèle 2 To et le bundle correspondant. La commercialisation passe par une file de réservations : Valve envoie les e-mails d'achat dans l'ordre d'inscription.",
+          "La Steam Machine s'adresse aux joueurs qui veulent un accès simple au catalogue Steam sur grand écran, y compris aux titres Windows via Proton, sans assembler ni maintenir un PC. Ses limites tiennent à la puissance contenue de l'APU, à l'absence de lecteur optique et à un catalogue SteamOS qui dépend de la compatibilité des jeux. Pour un joueur déjà équipé d'un PC, elle complète davantage qu'elle ne remplace une tour."
+        ]
+      },
       sourcesVerifiees: [
         { libelle: "Annonce Valve « Steam Machine launches today! » (22/06/2026) : lancement, options et prix TTC", url: "https://steamcommunity.com/groups/steam_hardware/announcements/detail/685257114654870246", date: "2026-11-13" },
         { libelle: "Fiche produit officielle Valve (caractéristiques techniques complètes)", url: "https://store.steampowered.com/hardware/steammachine", date: "2026-11-13" },
@@ -283,6 +294,17 @@ export const CATALOGUE = {
           }
         ]
       },
+      article: {
+        titre: "Steam Frame : la VR Steam sans fil, avec ou sans PC",
+        contenu: [
+          "Disponible depuis le 14 septembre 2026, le Steam Frame est le casque de réalité virtuelle de Valve pensé d'abord pour le streaming depuis un PC. Il se distingue des casques autonomes classiques par sa double approche : il diffuse la bibliothèque Steam d'un ordinateur en Wi-Fi 6E grâce à un adaptateur inclus, et il peut aussi fonctionner seul sous SteamOS 3 pour les titres compatibles.",
+          "Le casque embarque un Snapdragon 8 Gen 3 gravé en 4 nm, 16 Go de mémoire vive LPDDR5X unifiée et un stockage UFS de 256 Go ou 1 To, extensible par carte microSD. L'affichage repose sur deux dalles LCD de 2160 × 2160 pixels par œil, de 72 à 120 Hz, avec un mode 144 Hz expérimental. Les lentilles pancake sur mesure offrent un champ de vision jusqu'à 110 degrés.",
+          "Le confort optique est réglable : l'écart pupillaire va de 60 à 70 mm et le casque accepte les lunettes jusqu'à 140 mm de large. Le suivi est assuré par des caméras internes et quatre caméras monochromes extérieures, complétées par deux caméras intérieures pour les yeux et la transmission fovéale. Des illuminateurs infrarouges permettent de jouer dans une pièce sombre.",
+          "La connectivité combine Wi-Fi 7, l'adaptateur Wi-Fi 6E en 6 GHz pour la liaison directe avec le PC, et Bluetooth 5.4 avec une connexion 2,4 GHz dédiée aux contrôleurs. Un port d'extension librement accessible expose une interface double caméra MIPI 8 voies et une voie PCIe 4. L'audio est assuré par deux haut-parleurs par oreille et un double réseau de microphones.",
+          "La batterie lithium-ion de 21,6 Wh se recharge en USB-C, à 15 V et 3 A maximum. La sangle transversale amovible intègre les haut-parleurs, les microphones et la batterie ; elle pèse 245 g, contre 185 g pour l'unité principale seule, pour un total de 440 g. Les contrôleurs suivent six degrés de liberté et utilisent des joysticks magnétiques TMR à retour tactile capacitif.",
+          "Le Steam Frame est proposé à 1 049 € en 256 Go et à 1 279 € en 1 To, avec un exemplaire de Half-Life: Alyx inclus. Trois accessoires d'origine sont vendus séparément : le bloc d'alimentation 45 W à 39 €, le kit ergonomique à 69 € et le kit de remplacement à 59 €. L'achat passe par des réservations tirées au sort, puis par des e-mails d'achat valables 72 heures. Le casque vise les joueurs PC déjà équipés d'une machine puissante comme ceux qui veulent un casque autonome sous SteamOS ; sa limite principale reste le prix et la dépendance à un PC pour toute la bibliothèque."
+        ]
+      },
       sourcesVerifiees: [
         { libelle: "Annonce Valve « Steam Frame is here! » (14/09/2026) : lancement, prix TTC, accessoires d'origine", url: "https://steamcommunity.com/groups/steam_hardware/announcements/detail/692020124159311888", date: "2026-11-13" },
         { libelle: "Fiche produit officielle Valve (caractéristiques techniques, FAQ réservations)", url: "https://store.steampowered.com/hardware/steamframe", date: "2026-11-13" },
@@ -411,6 +433,17 @@ export const CATALOGUE = {
           }
         ]
       },
+      article: {
+        titre: "Steam Controller : la manette Steam repensée pour 2026",
+        contenu: [
+          "Le Steam Controller revient en 2026 avec une approche différente de la première manette de Valve. Sorti le 4 mai 2026 au prix de 99 € avec son Puck, il est conçu pour Steam Input et pour remplacer à la fois une manette classique et un couple clavier-souris dans les jeux de salon.",
+          "La manette aligne deux pavés tactiles carrés de 34,5 mm à retour haptique, sensibles à la pression, deux grands joysticks magnétiques TMR à retour tactile capacitif, les boutons A/B/X/Y, une croix directionnelle, les boutons Affichage, Menu, Steam et Accès rapide, quatre boutons de poignée affectables, des gâchettes analogiques et des gâchettes hautes. Un IMU 6 axes ajoute la visée gyroscopique, et le Grip Sense détecte la prise en main grâce à deux zones capacitives à l'arrière.",
+          "Le retour haptique repose sur quatre moteurs : deux LRA haute définition par pavé tactile et deux LRA haute puissance dans les poignées. Le Puck inclus fait office de récepteur sans fil 2,4 GHz, avec une latence de bout en bout d'environ 8 ms et une interrogation de 4 ms mesurée à 5 m. Il peut accueillir jusqu'à quatre manettes et sert aussi de station de recharge USB-C.",
+          "La manette peut également se connecter en Bluetooth 4.2 minimum, avec Bluetooth 5.0 ou supérieur recommandé, ou en filaire par USB-C. Sa batterie lithium-ion de 8,39 Wh annonce plus de 35 heures de jeu, une durée réduite lorsque la manette est suivie par le Steam Frame. Ses diodes infrarouges permettent justement aux caméras du casque de la suivre en réalité virtuelle.",
+          "Ses dimensions sont de 111 × 159 × 57 mm pour 292 g, contre 50 × 28 × 9 mm et 16 g pour le Puck. Au 13 novembre 2026, la manette est en rupture de stock et vendue uniquement par réservation : Valve estime les fenêtres de commande selon la date d'inscription, avec des échéances en septembre 2026, décembre 2026 ou 2027 pour les nouvelles réservations.",
+          "Le Steam Controller s'adresse aux joueurs qui veulent profiter des jeux Steam pensés pour la souris et le clavier sans quitter le canapé, et qui acceptent un temps d'adaptation aux pavés tactiles. Il est particulièrement cohérent avec la Steam Machine, le Steam Deck en station d'accueil et le Steam Frame. Ses limites tiennent au prix, à la disponibilité par réservation et à une courbe d'apprentissage réelle pour les joueurs habitués aux manettes classiques."
+        ]
+      },
       sourcesVerifiees: [
         { libelle: "Store Steam — fiche Steam Controller (date de sortie 04/05/2026, prix 99 €)", url: "https://store.steampowered.com/app/4165870/Steam_Controller/", date: "2026-11-13" },
         { libelle: "Fiche produit officielle Valve (caractéristiques techniques complètes)", url: "https://store.steampowered.com/hardware/steamcontroller", date: "2026-11-13" },
@@ -419,6 +452,143 @@ export const CATALOGUE = {
       manquants: [
         "Référence/SKU non publiée par Valve",
         "Contenu de la boîte non confirmé sur les sources officielles consultées (le Puck est bien inclus, confirmé par la fiche produit)"
+      ]
+    },
+    {
+      id: "samsung-galaxy-s26-ultra",
+      marque: "Samsung",
+      modele: "Galaxy S26 Ultra",
+      rayon: "smartphones",
+      annee: 2026,
+      dateSortie: "2026-03-11",
+      sourceAnnee: {
+        url: "https://www.samsungmobilepress.com/articles/galaxy-s26-series-galaxy-buds4-series-available-worldwide",
+        date: "2026-11-14"
+      },
+      sourceFiche: "https://www.samsung.com/fr/smartphones/galaxy-s26-ultra/",
+      ficheFabricant: "https://www.samsung.com/fr/smartphones/galaxy-s26-ultra/specs/",
+      description: "Smartphone haut de gamme Samsung dévoilé le 25 février 2026 lors du Galaxy Unpacked et commercialisé dans le monde à partir du 11 mars 2026. Le Galaxy S26 Ultra associe un écran Dynamic AMOLED 2X de 6,9 pouces QHD+ à rafraîchissement adaptatif de 1 à 120 Hz et jusqu'à 2 600 nits, un Snapdragon 8 Elite Gen 5 pour Galaxy, 12 Go de mémoire vive (16 Go sur la version 1 To), un quadruple appareil photo de 200 + 50 + 50 + 10 Mpx, une batterie de 5 000 mAh avec charge filaire 60 W et le premier Privacy Display intégré à un smartphone.",
+      variantes: [
+        {
+          groupe: "Stockage",
+          options: [
+            { libelle: "256 Go (12 Go de RAM)", prix: 1569, dispo: true, lienOfficiel: { url: "https://www.samsung.com/fr/smartphones/galaxy-s26-ultra/buy/", precision: "Configuration 256 Go / 12 Go de RAM sélectionnée sur la page d'achat officielle Samsung France (référence SM-S948B)", verifie: "2026-11-14" } },
+            { libelle: "512 Go (12 Go de RAM)", prix: 1769, dispo: true, lienOfficiel: { url: "https://www.samsung.com/fr/smartphones/galaxy-s26-ultra/buy/", precision: "Configuration 512 Go / 12 Go de RAM sélectionnée sur la page d'achat officielle Samsung France (référence SM-S948B)", verifie: "2026-11-14" } },
+            { libelle: "1 To (16 Go de RAM)", prix: 2169, dispo: true, lienOfficiel: { url: "https://www.samsung.com/fr/smartphones/galaxy-s26-ultra/buy/", precision: "Configuration 1 To / 16 Go de RAM sélectionnée sur la page d'achat officielle Samsung France (référence SM-S948B)", verifie: "2026-11-14" } }
+          ]
+        }
+      ],
+      caracteristiques: [
+        { libelle: "Écran", valeur: "6,9 pouces QHD+ Dynamic AMOLED 2X, rafraîchissement adaptatif 1–120 Hz, Vision Booster, jusqu'à 2 600 nits" },
+        { libelle: "Privacy Display", valeur: "Premier écran de confidentialité intégré à un smartphone, activable dans les réglages avec plusieurs niveaux de protection" },
+        { libelle: "Processeur", valeur: "Snapdragon 8 Elite Gen 5 pour Galaxy (CPU +19 %, GPU +24 %, NPU +39 % par rapport au Galaxy S25 Ultra selon Samsung)" },
+        { libelle: "Refroidissement", valeur: "Chambre à vapeur redessinée avec matériau d'interface thermique latéral, dissipation améliorée de 21 %" },
+        { libelle: "Mémoire vive", valeur: "12 Go (256 et 512 Go) ou 16 Go (1 To)" },
+        { libelle: "Stockage", valeur: "256 Go, 512 Go ou 1 To" },
+        { libelle: "Appareil photo arrière", valeur: "200 Mpx grand-angle f/1.4 (zoom de qualité optique 2x) + 50 Mpx ultra grand-angle f/1.9 + 50 Mpx téléobjectif f/2.9 (zoom optique 5x, qualité optique 10x) + 10 Mpx téléobjectif f/2.4 (zoom optique 3x)" },
+        { libelle: "Appareil photo avant", valeur: "12 Mpx f/2.2" },
+        { libelle: "Batterie", valeur: "5 000 mAh (valeur typique, 4 855 mAh minimum), jusqu'à 31 h de lecture vidéo" },
+        { libelle: "Recharge", valeur: "Filaire jusqu'à 75 % en environ 30 min avec adaptateur 60 W vendu séparément ; recharge sans fil rapide ; Wireless PowerShare" },
+        { libelle: "Résistance", valeur: "IP68 (immersion jusqu'à 1,5 m d'eau douce pendant 30 min)" },
+        { libelle: "Châssis", valeur: "Armor Aluminum, Corning Gorilla Armor 2 à l'avant et Gorilla Glass Victus 2 à l'arrière" },
+        { libelle: "Réseau", valeur: "5G, LTE, Wi-Fi 7, Wi-Fi Direct, Bluetooth 6.0" },
+        { libelle: "Système", valeur: "Android 16 avec One UI 8.5, sept ans de mises à jour de sécurité annoncées" },
+        { libelle: "Dimensions", valeur: "163,6 × 78,1 × 7,9 mm" },
+        { libelle: "Poids", valeur: "214 g" },
+        { libelle: "Coloris", valeur: "Cobalt Violet, Noir, Bleu Ciel et Blanc ; Or Rose et Argent Ombré en exclusivité sur Samsung.com" }
+      ],
+      contenuBoite: "Non détaillé sur la page officielle consultée ; l'adaptateur secteur 60 W est vendu séparément",
+      prix: {
+        montant: 1569,
+        devise: "EUR",
+        marche: "France (Union européenne), TTC",
+        libelle: "Galaxy S26 Ultra 256 Go / 12 Go de RAM",
+        date: "2026-11-14",
+        source: "https://www.samsung.com/fr/smartphones/galaxy-s26-ultra/buy/"
+      },
+      disponibilite: {
+        statut: "disponible",
+        libelle: "Précommandes ouvertes le 25 février 2026, commercialisation mondiale le 11 mars 2026",
+        date: "2026-11-14",
+        source: "https://www.samsungmobilepress.com/articles/galaxy-s26-series-galaxy-buds4-series-available-worldwide"
+      },
+      accessoires: [],
+      bundles: [],
+      usages: [
+        "Profiter d'un écran 6,9 pouces QHD+ à 120 Hz pour les jeux et la vidéo",
+        "Activer le Privacy Display dans les transports ou les lieux publics",
+        "Photographier en basse lumière avec le capteur principal de 200 Mpx et son ouverture f/1.4",
+        "Cadrer un sujet éloigné au zoom optique 5x, ou en qualité optique jusqu'à 10x",
+        "Prendre des selfies avec le capteur avant de 12 Mpx",
+        "Filmer avec la stabilisation Super Steady et son verrouillage horizontal",
+        "Recharger jusqu'à 75 % en environ 30 minutes avec un chargeur 60 W compatible",
+        "Partager de l'énergie avec des écouteurs ou une montre compatibles via Wireless PowerShare",
+        "Annoter des documents et prendre des notes avec le S Pen",
+        "Stocker jusqu'à 1 To de photos et de vidéos, avec 16 Go de RAM sur cette version",
+        "Rester connecté en 5G et Wi-Fi 7 sur les réseaux compatibles",
+        "Résister aux éclaboussures et à une immersion courte grâce à la certification IP68",
+        "Retoucher des photos en langage naturel avec Photo Assist",
+        "Lancer des tâches multi-étapes avec Bixby, Gemini ou Perplexity",
+        "Scanner des documents et les regrouper en PDF avec l'outil Document Scan",
+        "Enchaîner de longues sessions de jeu grâce à la chambre à vapeur redessinée"
+      ],
+      medias: {
+        videos: [
+          {
+            id: "SA93zbnoR4U",
+            titre: "Official Replay | Galaxy Unpacked February 2026 | Samsung",
+            chaine: "Samsung",
+            url: "https://www.youtube.com/watch?v=SA93zbnoR4U"
+          }
+        ],
+        images: [
+          {
+            fichier: "img/galaxy-s26-ultra-1.jpg",
+            alt: "Samsung Galaxy S26 Ultra exposé dans un magasin d'électronique à Nagoya, Japon",
+            licence: "CC BY-SA 4.0",
+            auteur: "Kyu3a",
+            attribution: "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Galaxy_S26_Ultra_-_1.jpg"
+          },
+          {
+            fichier: "img/galaxy-s26-ultra-2.jpg",
+            alt: "Samsung Galaxy S26 Ultra, autre vue en magasin",
+            licence: "CC BY-SA 4.0",
+            auteur: "Kyu3a",
+            attribution: "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Galaxy_S26_Ultra_-_2.jpg"
+          },
+          {
+            fichier: "img/galaxy-s26-ultra-3.jpg",
+            alt: "Samsung Galaxy S26 Ultra en coloris lavande",
+            licence: "CC BY 4.0",
+            auteur: "เวียร์",
+            attribution: "Photo : เวียร์ — licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Galaxy_S26_Ultra_lavender.jpg"
+          }
+        ]
+      },
+      article: {
+        titre: "Galaxy S26 Ultra : l'écran de confidentialité et le 200 Mpx en vedette",
+        contenu: [
+          "Dévoilé le 25 février 2026 lors du Galaxy Unpacked, le Galaxy S26 Ultra est le troisième smartphone « AI » de Samsung et le modèle le plus abouti de la gamme S26. Il arrive en France à partir du 11 mars 2026, date de commercialisation mondiale annoncée par le constructeur, avec trois capacités de stockage et six coloris, dont deux réservés à la boutique en ligne.",
+          "Le design reste fidèle à la lignée Ultra, mais s'affine : 163,6 mm de haut, 78,1 mm de large et 7,9 mm d'épaisseur pour 214 g, avec un cadre en Armor Aluminum et des coins arrondis. L'écran Dynamic AMOLED 2X de 6,9 pouces affiche une définition QHD+ et un rafraîchissement adaptatif de 1 à 120 Hz, avec une luminosité maximale annoncée de 2 600 nits. Surtout, Samsung y intègre le premier Privacy Display du marché mobile : un filtre logiciel et matériel qui limite la visibilité latérale sans film adhésif, avec des niveaux partiels ou maximaux réglables.",
+          "La partie performance repose sur un Snapdragon 8 Elite Gen 5 pour Galaxy, décliné avec 12 Go de RAM sur les versions 256 et 512 Go, et 16 Go sur la version 1 To. Samsung annonce des gains de 19 % pour le processeur, 24 % pour le GPU et 39 % pour le NPU par rapport au Galaxy S25 Ultra, ainsi qu'une chambre à vapeur redessinée qui améliore la dissipation thermique de 21 %. La batterie de 5 000 mAh promet jusqu'à 31 heures de lecture vidéo et une charge filaire à 75 % en une trentaine de minutes avec un adaptateur 60 W, vendu séparément.",
+          "Le système photo aligne quatre capteurs à l'arrière : un grand-angle de 200 Mpx à f/1.4, un ultra grand-angle de 50 Mpx à f/1.9, un téléobjectif de 50 Mpx à f/2.9 offrant un zoom optique 5x et une qualité optique jusqu'à 10x, et un téléobjectif de 10 Mpx à f/2.4 pour le zoom 3x. L'avant se contente d'un capteur de 12 Mpx à f/2.2. Samsung met en avant une captation de lumière accrue de 47 % sur le capteur principal et de 37 % sur le téléobjectif 5x, ainsi que la prise en charge du codec APV pour les vidéos professionnelles.",
+          "Sous Android 16 et One UI 8.5, le Galaxy S26 Ultra déploie les fonctions Galaxy AI de troisième génération : Now Nudge, Now Brief, Circle to Search enrichi, Bixby conversationnel et accès à Gemini ou Perplexity. La sécurité occupe une place importante avec Knox Matrix, le chiffrement post-quantique, des alertes de confidentialité et un album privé intégré. La connectivité comprend la 5G, le Wi-Fi 7, le Bluetooth 6.0 et une certification IP68, pour une immersion limitée à 1,5 mètre d'eau douce pendant 30 minutes.",
+          "En France, le Galaxy S26 Ultra est affiché à 1 569 € en 256 Go, 1 769 € en 512 Go et 2 169 € en 1 To sur la page d'achat Samsung au 14 novembre 2026. Il s'adresse aux utilisateurs qui veulent le meilleur de la photo mobile, un écran très lumineux et une confidentialité matérielle, quitte à accepter un prix élevé, un chargeur non fourni et un encombrement de 214 g. Face au S26+, il justifie son supplément par le zoom 5x, le capteur de 200 Mpx et le Privacy Display."
+        ]
+      },
+      sourcesVerifiees: [
+        { libelle: "Samsung Newsroom UK « Samsung Unveils Galaxy S26 Series » (25/02/2026) : fiche technique complète, coloris, disponibilité au 11/03/2026 et prix RRP britanniques", url: "https://news.samsung.com/uk/samsung-unveils-galaxy-s26-series-the-most-intuitive-galaxy-ai-phone-yet", date: "2026-11-14" },
+        { libelle: "Samsung Mobile Press « Galaxy S26 Series and Galaxy Buds4 Series Now Available Worldwide » (11/03/2026) : commercialisation mondiale", url: "https://www.samsungmobilepress.com/articles/galaxy-s26-series-galaxy-buds4-series-available-worldwide", date: "2026-11-14" },
+        { libelle: "Samsung France — page d'achat officielle Galaxy S26 Ultra (prix 1 569 € / 1 769 € / 2 169 €, références SM-S948B, coloris)", url: "https://www.samsung.com/fr/smartphones/galaxy-s26-ultra/buy/", date: "2026-11-14" },
+        { libelle: "Samsung France — page produit Galaxy S26 Ultra (Privacy Display, 2 600 nits, charge 60 W, refroidissement +21 %)", url: "https://www.samsung.com/fr/smartphones/galaxy-s26-ultra/", date: "2026-11-14" }
+      ],
+      manquants: [
+        "Contenu exact de la boîte non détaillé par Samsung France (l'adaptateur secteur 60 W est vendu séparément)",
+        "Autonomie communiquée uniquement en lecture vidéo (31 h) : durées d'usage mixte non publiées",
+        "Prix relevés sur la page d'achat Samsung France au 14/11/2026, susceptibles d'évoluer"
       ]
     },
     {
@@ -559,6 +729,17 @@ export const CATALOGUE = {
           }
         ]
       },
+      article: {
+        titre: "Nintendo Switch 2 : l'hybride passe à la 4K et au 120 Hz",
+        contenu: [
+          "Sortie le 5 juin 2025, la Nintendo Switch 2 succède à l'hybride le plus vendu de Nintendo avec une promesse de continuité : mêmes usages nomade et salon, mais des performances revues à la hausse. Elle conserve un écran tactile, désormais un LCD de 7,9 pouces en 1920 × 1080 avec HDR10 et VRR jusqu'à 120 Hz, et ajoute une sortie TV en 4K à 60 images/s via sa station d'accueil.",
+          "La console embarque un processeur personnalisé fabriqué par NVIDIA, 256 Go de stockage UFS et un port pour carte microSD Express jusqu'à 2 To. Le mode TV atteint 3840 × 2160 à 60 images/s avec HDR10, et le 120 images/s est pris en charge en 1920 × 1080 et 2560 × 1440. Le réseau repose sur le Wi-Fi 6 et le Bluetooth, avec un port Ethernet sur la station d'accueil.",
+          "Les Joy-Con 2 s'attachent par aimantation et intègrent un accéléromètre, un gyroscope et un capteur de souris, ce qui ouvre des usages proches du PC pour certains jeux. Chaque manette dispose d'une batterie de 500 mAh et des Vibrations HD 2. La console mesure environ 116 × 272 × 13,9 mm avec les Joy-Con attachés et propose deux ports USB Type-C ainsi qu'une prise mini-jack 3,5 mm quatre pôles.",
+          "Nintendo commercialise deux variantes de batterie : un modèle de lancement à batterie intégrée non remplaçable de 5 220 mAh, et un modèle 2026 à batterie remplaçable par l'utilisateur de 5 172 mAh. L'audio repose sur des haut-parleurs stéréo, un microphone intégré avec suppression du bruit et de l'écho, et une sortie PCM linéaire 5.1. La station d'accueil pèse environ 383 g et ajoute deux ports USB 2.0, un port HDMI et un port Ethernet.",
+          "La console est rétrocompatible avec les cartes de jeu Nintendo Switch 2 et Nintendo Switch. Au lancement, elle était proposée à 469,99 € en console seule et à 509,99 € dans un pack avec un code de téléchargement de Mario Kart World. Nintendo a annoncé une hausse de prix en 2026 : le tarif actuel n'a pas pu être re-vérifié sur une page officielle statique et reste donc à confirmer.",
+          "La Switch 2 s'adresse aux familles et aux joueurs qui veulent une seule machine pour le salon et le nomade, avec un vrai gain de définition sur télévision. Ses limites tiennent à son écran LCD plutôt qu'OLED, à un stockage de 256 Go qu'il faut souvent étendre, à l'abonnement en ligne nécessaire pour le multijoueur et à un prix qui a évolué depuis le lancement. Elle reste la voie la plus simple pour jouer aux licences Nintendo en 4K."
+        ]
+      },
       sourcesVerifiees: [
         { libelle: "Page produit Nintendo France officielle (sortie le 05/06/2025)", url: "https://www.nintendo.com/fr-fr/Hardware/Nintendo-Switch-2/Nintendo-Switch-2-2785301.html", date: "2026-11-13" },
         { libelle: "Page caractéristiques officielle Nintendo France (specs complètes, deux variantes de batterie)", url: "https://www.nintendo.com/fr-fr/Hardware/Nintendo-Switch-2/Nintendo-Switch-2-Caracteristiques-2785627.html", date: "2026-11-13" },
@@ -571,6 +752,1063 @@ export const CATALOGUE = {
         "Lien officiel précis introuvable pour le pack Mario Kart World et pour les deux variantes de batterie (aucune page officielle dédiée ; boutique en ligne Nintendo, store.nintendo.com, non vérifiable : file d'attente anti-bot)"
       ]
     },
+    {
+      id: "apple-iphone-17-pro",
+      marque: "Apple",
+      modele: "iPhone 17 Pro",
+      rayon: "smartphones",
+      annee: 2025,
+      dateSortie: "2025-09-19",
+      sourceAnnee: {
+        url: "https://www.apple.com/fr/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max-the-most-powerful-and-advanced-pro-models-ever/",
+        date: "2026-11-14"
+      },
+      sourceFiche: "https://www.apple.com/fr/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max-the-most-powerful-and-advanced-pro-models-ever/",
+      ficheFabricant: "https://www.apple.com/fr/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max-the-most-powerful-and-advanced-pro-models-ever/",
+      description: "Smartphone haut de gamme Apple annoncé le 9 septembre 2025, précommandé à partir du 12 septembre et commercialisé le 19 septembre 2025. L'iPhone 17 Pro inaugure un design unibody en aluminium brossé, un écran Super Retina XDR OLED de 6,3 pouces ProMotion 120 Hz culminant à 3 000 nits, la puce A19 Pro, trois caméras Fusion de 48 Mpx avec un zoom de qualité optique 8x, une caméra avant Center Stage de 18 Mpx et un dos protégé par Ceramic Shield. Il est proposé en 256 Go, 512 Go et 1 To, à partir de 1 329 € en France.",
+      variantes: [
+        {
+          groupe: "Stockage",
+          options: [
+            { libelle: "256 Go", prix: 1329, dispo: true, lienOfficiel: { url: "https://www.apple.com/fr/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max-the-most-powerful-and-advanced-pro-models-ever/", precision: "Prix de revente Apple de l'iPhone 17 Pro 256 Go annoncé par Apple France", verifie: "2026-11-14" } }
+          ]
+        }
+      ],
+      caracteristiques: [
+        { libelle: "Écran", valeur: "Super Retina XDR OLED tout écran de 6,3 pouces, 2 622 × 1 206 px (460 ppp), ProMotion adaptatif jusqu'à 120 Hz, Always-On, HDR, True Tone, large gamme P3" },
+        { libelle: "Luminosité", valeur: "Jusqu'à 3 000 nits en pic à l'extérieur, contraste extérieur 2x supérieur" },
+        { libelle: "Protection", valeur: "Ceramic Shield 2 à l'avant (3x plus résistant aux rayures), dos Ceramic Shield" },
+        { libelle: "Puce", valeur: "A19 Pro : CPU 6 cœurs (2 performance + 4 efficacité), GPU 6 cœurs avec accélérateurs neuronaux, Neural Engine 16 cœurs, ray tracing matériel" },
+        { libelle: "Stockage", valeur: "256 Go, 512 Go ou 1 To" },
+        { libelle: "Caméra principale", valeur: "Fusion 48 Mpx, 24 mm, ouverture ƒ/1,78, stabilisation optique 2e génération, photos 24 et 48 Mpx" },
+        { libelle: "Ultra grand-angle", valeur: "Fusion 48 Mpx, 13 mm, ouverture ƒ/2,2, champ de vision 120°" },
+        { libelle: "Téléobjectif", valeur: "Fusion 48 Mpx, 100 mm (zoom optique 4x), ouverture ƒ/2,8, stabilisation 3D ; zoom de qualité optique 8x à 200 mm (12 Mpx), zoom numérique jusqu'à 40x" },
+        { libelle: "Caméra avant", valeur: "Center Stage 18 Mpx, ouverture ƒ/1,9, autofocus, cadre centré, double capture" },
+        { libelle: "Autonomie", valeur: "Lecture vidéo jusqu'à 31 h, streaming vidéo jusqu'à 28 h" },
+        { libelle: "Recharge", valeur: "Jusqu'à 50 % en 20 min avec un adaptateur 40 W ou plus vendu séparément ; MagSafe sans fil jusqu'à 25 W ; Qi2 jusqu'à 25 W" },
+        { libelle: "Connectique", valeur: "USB-C avec USB 3 jusqu'à 10 Gbit/s et DisplayPort" },
+        { libelle: "Réseau", valeur: "5G sub-6 GHz, Wi-Fi 7, Bluetooth 6, Thread, puce Ultra Wideband 2e génération, NFC" },
+        { libelle: "Carte SIM", valeur: "Double SIM (nano-SIM et eSIM), double eSIM prise en charge" },
+        { libelle: "Résistance", valeur: "IP68 (immersion jusqu'à 6 m pendant 30 min maximum)" },
+        { libelle: "Dimensions", valeur: "150 × 71,9 × 8,75 mm" },
+        { libelle: "Poids", valeur: "204 g" },
+        { libelle: "Coloris", valeur: "Orange cosmique, bleu intense, argent" }
+      ],
+      contenuBoite: "Non détaillé sur la page officielle consultée ; l'adaptateur secteur et le câble sont vendus séparément selon Apple",
+      prix: {
+        montant: 1329,
+        devise: "EUR",
+        marche: "France (Union européenne), TTC",
+        libelle: "iPhone 17 Pro 256 Go, prix de revente Apple",
+        date: "2025-09-09",
+        source: "https://www.apple.com/fr/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max-the-most-powerful-and-advanced-pro-models-ever/"
+      },
+      disponibilite: {
+        statut: "disponible",
+        libelle: "Précommandes le 12 septembre 2025, disponibilité le 19 septembre 2025 dans plus de 63 pays et régions",
+        date: "2026-11-14",
+        source: "https://www.apple.com/fr/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max-the-most-powerful-and-advanced-pro-models-ever/"
+      },
+      accessoires: [],
+      bundles: [],
+      usages: [
+        "Photographier avec les trois capteurs Fusion de 48 Mpx",
+        "Cadrer un portrait au téléobjectif 4x de 100 mm",
+        "Aller chercher un sujet lointain avec le zoom de qualité optique 8x à 200 mm",
+        "Filmer en ProRes ou ProRes RAW pour un montage professionnel",
+        "Prendre des selfies avec la caméra Center Stage de 18 Mpx",
+        "Utiliser le cadre centré pour les appels vidéo",
+        "Jouer à des jeux exigeants grâce au GPU 6 cœurs et au ray tracing matériel",
+        "Profiter d'un écran 120 Hz et de 3 000 nits en extérieur",
+        "Recharger 50 % de la batterie en 20 minutes avec un adaptateur 40 W ou plus",
+        "Recharger sans fil en MagSafe ou Qi2 jusqu'à 25 W",
+        "Transférer des vidéos ProRes par USB-C en USB 3 à 10 Gbit/s",
+        "Garder l'écran toujours activé pour les widgets et l'heure",
+        "Résister à une immersion jusqu'à 6 mètres pendant 30 minutes (IP68)",
+        "Utiliser Apple Intelligence pour résumer, retoucher ou traduire",
+        "Se connecter en Wi-Fi 7, Bluetooth 6 ou Thread selon les accessoires",
+        "Voyager avec une double SIM nano-SIM et eSIM"
+      ],
+      medias: {
+        videos: [
+          {
+            id: "TNhX1uR2vO8",
+            titre: "iPhone 17 Pro: The most powerful iPhone ever",
+            chaine: "Apple",
+            url: "https://www.youtube.com/watch?v=TNhX1uR2vO8"
+          }
+        ],
+        images: [
+          {
+            fichier: "img/iphone-17-pro-1.jpg",
+            alt: "iPhone 17 Pro argent, vue générale",
+            licence: "CC0",
+            auteur: "Olgierd Rudak",
+            attribution: "Photo : Olgierd Rudak — domaine public (CC0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:IPhone_17_Pro_(2025-12-28).jpg"
+          },
+          {
+            fichier: "img/iphone-17-pro-2.jpg",
+            alt: "iPhone 17 Pro bleu intense exposé dans un magasin au Japon",
+            licence: "CC BY-SA 4.0",
+            auteur: "Kyu3a",
+            attribution: "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:IPhone_17_Pro_(Deep_Blue_model).jpg"
+          },
+          {
+            fichier: "img/iphone-17-pro-3.jpg",
+            alt: "iPhone 17 Pro orange cosmique, vue arrière",
+            licence: "CC BY-SA 4.0",
+            auteur: "茅野ふたば",
+            attribution: "Photo : 茅野ふたば — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:IPhone_17_Pro_backside_(Cosmic_Orange)_(Oct_1,_2025).jpg"
+          }
+        ]
+      },
+      article: {
+        titre: "iPhone 17 Pro : l'aluminium unibody et le zoom 8x",
+        contenu: [
+          "Présenté le 9 septembre 2025, l'iPhone 17 Pro marque un changement de conception plus net que les générations précédentes. Apple abandonne le châssis en titane pour un design unibody en aluminium brossé, avec un dos désormais protégé par Ceramic Shield. Les précommandes ont ouvert le 12 septembre et les premières livraisons sont arrivées le 19 septembre 2025, dans plus de 63 pays et régions.",
+          "L'écran Super Retina XDR OLED de 6,3 pouces conserve une définition de 2 622 × 1 206 pixels à 460 ppp, mais gagne en luminosité avec un pic annoncé à 3 000 nits en extérieur. ProMotion reste adaptatif jusqu'à 120 Hz, avec Always-On, HDR et True Tone. La face avant reçoit un Ceramic Shield 2 annoncé trois fois plus résistant aux rayures, tandis que le dos passe lui aussi au Ceramic Shield, une première sur iPhone.",
+          "La puce A19 Pro associe un processeur à six cœurs, un GPU à six cœurs doté d'accélérateurs neuronaux et un Neural Engine de seize cœurs, avec ray tracing matériel. Apple met en avant un nouveau système de gestion thermique et une autonomie de 31 heures en lecture vidéo, contre 28 heures en streaming. La charge atteint 50 % en vingt minutes avec un adaptateur de 40 W ou plus, vendu séparément, et MagSafe comme Qi2 plafonnent à 25 W sans fil.",
+          "Le système photo repose sur trois capteurs Fusion de 48 Mpx : un grand-angle de 24 mm à ƒ/1,78, un ultra grand-angle de 13 mm à ƒ/2,2 et un téléobjectif de 100 mm à ƒ/2,8 offrant un zoom optique 4x. Apple ajoute un zoom de qualité optique 8x à 200 mm, le plus long jamais proposé sur un iPhone, ainsi qu'un zoom numérique jusqu'à 40x. À l'avant, la caméra Center Stage de 18 Mpx gagne l'autofocus et le cadre centré, utile pour les appels vidéo et les selfies de groupe.",
+          "Côté connectivité, l'iPhone 17 Pro passe à l'USB-C avec USB 3 jusqu'à 10 Gbit/s et DisplayPort, au Wi-Fi 7, au Bluetooth 6 et au Thread, sans oublier l'Ultra Wideband de deuxième génération. Le marché français conserve une double SIM nano-SIM et eSIM, contrairement aux modèles américains uniquement eSIM. L'appareil est certifié IP68 jusqu'à 6 mètres pendant 30 minutes et fonctionne sous iOS 26 avec les fonctions Apple Intelligence.",
+          "En France, l'iPhone 17 Pro est proposé à partir de 1 329 € en 256 Go, avec des versions 512 Go et 1 To dont les tarifs ne sont pas détaillés dans le communiqué consulté. Il s'adresse aux créateurs et aux utilisateurs exigeants qui veulent le meilleur système photo et vidéo d'Apple, quitte à accepter un prix élevé, un chargeur non fourni et un poids de 204 g. Face à l'iPhone 17 Pro Max, il conserve les mêmes caméras dans un format plus compact, au prix d'une autonomie et d'un écran plus petits."
+        ]
+      },
+      sourcesVerifiees: [
+        { libelle: "Apple Newsroom France « Apple dévoile l'iPhone 17 Pro et l'iPhone 17 Pro Max » (09/09/2025) : prix à partir de 1 329 €, coloris, précommandes et disponibilité au 19/09/2025", url: "https://www.apple.com/fr/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max-the-most-powerful-and-advanced-pro-models-ever/", date: "2026-11-14" },
+        { libelle: "Apple France — caractéristiques officielles iPhone 17 Pro (version archivée du 12/09/2025 : écran, puce, caméras, autonomie, dimensions, connectivité)", url: "http://web.archive.org/web/20250912170755/https://www.apple.com/fr/iphone-17-pro/specs/", date: "2026-11-14" }
+      ],
+      manquants: [
+        "Prix officiels des versions 512 Go et 1 To non détaillés dans le communiqué Apple France consulté",
+        "Page produit Apple France du modèle redirigée vers la gamme iPhone actuelle depuis l'arrivée de l'iPhone 18 Pro : caractéristiques relevées sur la version archivée du 12/09/2025",
+        "Contenu exact de la boîte non détaillé par Apple (adaptateur secteur et câble vendus séparément)"
+      ]
+    },
+    {
+      id: "apple-iphone-13",
+      marque: "Apple",
+      modele: "iPhone 13",
+      rayon: "smartphones",
+      annee: 2021,
+      dateSortie: "2021-09-24",
+      sourceAnnee: {
+        url: "https://www.apple.com/fr/newsroom/2021/09/apple-introduces-iphone-13-and-iphone-13-mini/",
+        date: "2026-11-14"
+      },
+      sourceFiche: "https://www.apple.com/fr/newsroom/2021/09/apple-introduces-iphone-13-and-iphone-13-mini/",
+      ficheFabricant: "http://web.archive.org/web/20211004172525/https://www.apple.com/fr/iphone-13/specs/",
+      description: "Smartphone Apple annoncé le 14 septembre 2021, précommandé à partir du 17 septembre et commercialisé le 24 septembre 2021. L'iPhone 13 conserve le format 6,1 pouces mais gagne un écran Super Retina XDR plus lumineux, la puce A15 Bionic, un double appareil photo de 12 Mpx avec stabilisation du capteur, le mode Cinématique et une autonomie revue à la hausse. Il est proposé en 128, 256 et 512 Go, à partir de 909 € en France.",
+      variantes: [
+        {
+          groupe: "Stockage",
+          options: [
+            { libelle: "128 Go", prix: 909, dispo: true, lienOfficiel: { url: "https://www.apple.com/fr/newsroom/2021/09/apple-introduces-iphone-13-and-iphone-13-mini/", precision: "Prix de revente Apple de l'iPhone 13 128 Go annoncé par Apple France", verifie: "2026-11-14" } }
+          ]
+        }
+      ],
+      caracteristiques: [
+        { libelle: "Écran", valeur: "Super Retina XDR OLED tout écran de 6,1 pouces, 2 532 × 1 170 px (460 ppp), HDR, True Tone, large gamme P3" },
+        { libelle: "Luminosité", valeur: "800 nits en standard, 1 200 nits en pic HDR, contraste 2 000 000:1" },
+        { libelle: "Protection", valeur: "Face avant Ceramic Shield, dos en verre, cadre en aluminium" },
+        { libelle: "Puce", valeur: "A15 Bionic : CPU 6 cœurs (2 performance + 4 efficacité), GPU 4 cœurs, Neural Engine 16 cœurs" },
+        { libelle: "Stockage", valeur: "128 Go, 256 Go ou 512 Go" },
+        { libelle: "Appareil photo arrière", valeur: "Double appareil 12 Mpx : grand-angle ƒ/1,6 avec stabilisation optique par déplacement du capteur + ultra grand-angle ƒ/2,4 et champ de vision de 120°" },
+        { libelle: "Appareil photo avant", valeur: "TrueDepth 12 Mpx, ouverture ƒ/2,2, mode Portrait et Contrôle de la profondeur" },
+        { libelle: "Vidéo", valeur: "4K jusqu'à 60 i/s, mode Cinématique en 1080p à 30 i/s, HDR Dolby Vision, enregistrement stéréo" },
+        { libelle: "Autonomie", valeur: "Lecture vidéo jusqu'à 19 h, streaming vidéo jusqu'à 15 h, lecture audio jusqu'à 75 h" },
+        { libelle: "Recharge", valeur: "MagSafe sans fil jusqu'à 15 W, Qi jusqu'à 7,5 W, 50 % en 30 min avec un adaptateur 20 W ou plus vendu séparément" },
+        { libelle: "Réseau", valeur: "5G, LTE Gigabit, Wi-Fi 6, Bluetooth 5.0, puce Ultra Wideband, NFC" },
+        { libelle: "Carte SIM", valeur: "Double SIM (nano-SIM et eSIM), double eSIM prise en charge" },
+        { libelle: "Résistance", valeur: "IP68 (immersion jusqu'à 6 m pendant 30 min maximum)" },
+        { libelle: "Dimensions", valeur: "146,7 × 71,5 × 7,65 mm" },
+        { libelle: "Poids", valeur: "173 g" },
+        { libelle: "Coloris", valeur: "Rose, bleu, minuit, lumière stellaire et (PRODUCT)RED" }
+      ],
+      contenuBoite: "iPhone avec iOS 15, écouteurs EarPods avec connecteur Lightning, câble USB-C vers Lightning et documentation ; adaptateur secteur vendu séparément",
+      prix: {
+        montant: 909,
+        devise: "EUR",
+        marche: "France (Union européenne), TTC",
+        libelle: "iPhone 13 128 Go, prix de revente Apple",
+        date: "2021-09-14",
+        source: "https://www.apple.com/fr/newsroom/2021/09/apple-introduces-iphone-13-and-iphone-13-mini/"
+      },
+      disponibilite: {
+        statut: "disponible",
+        libelle: "Précommandes le 17 septembre 2021, disponibilité le 24 septembre 2021",
+        date: "2026-11-14",
+        source: "https://www.apple.com/fr/newsroom/2021/09/apple-introduces-iphone-13-and-iphone-13-mini/"
+      },
+      accessoires: [],
+      bundles: [],
+      usages: [
+        "Photographier avec le grand-angle de 12 Mpx et sa stabilisation par déplacement du capteur",
+        "Cadrer large avec l'ultra grand-angle de 120°",
+        "Tourner des vidéos en mode Cinématique avec mise au point automatique",
+        "Filmer en 4K HDR Dolby Vision",
+        "Prendre des selfies avec la caméra TrueDepth de 12 Mpx",
+        "Profiter d'un écran OLED lumineux pour les séries et les films",
+        "Recharger sans fil avec MagSafe jusqu'à 15 W",
+        "Atteindre 50 % de charge en 30 minutes avec un adaptateur 20 W ou plus",
+        "Rester connecté en 5G, Wi-Fi 6 et Bluetooth 5.0",
+        "Utiliser Face ID pour déverrouiller l'appareil et payer avec Apple Pay",
+        "Compter sur l'indice IP68 en cas d'éclaboussure ou de pluie",
+        "Voyager avec une double SIM nano-SIM et eSIM",
+        "Stocker jusqu'à 512 Go de photos et de vidéos"
+      ],
+      medias: {
+        videos: [
+          {
+            id: "EvGOlAkLSLw",
+            titre: "Apple Event — September 14, 2021",
+            chaine: "Apple",
+            url: "https://www.youtube.com/watch?v=EvGOlAkLSLw"
+          }
+        ],
+        images: [
+          {
+            fichier: "img/iphone-13-1.jpg",
+            alt: "iPhone 13 rose, face avant, posé à côté d'un iPhone 4s",
+            licence: "CC BY-SA 4.0",
+            auteur: "CGBR",
+            attribution: "Photo : CGBR — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:IPhone_13_iPhone_4s_frontside.jpg"
+          },
+          {
+            fichier: "img/iphone-13-2.jpg",
+            alt: "iPhone 13, face arrière avec son double appareil photo, à côté d'un iPhone 4s",
+            licence: "CC BY-SA 4.0",
+            auteur: "CGBR",
+            attribution: "Photo : CGBR — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:IPhone_13_iPhone_4s_backside_01.jpg"
+          },
+          {
+            fichier: "img/iphone-13-3.jpg",
+            alt: "Gros plan sur les deux objectifs de l'iPhone 13",
+            licence: "CC BY-SA 4.0",
+            auteur: "人工知能",
+            attribution: "Photo : 人工知能 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:IPhone_13_camera_lens_group.jpg"
+          }
+        ]
+      },
+      article: {
+        titre: "iPhone 13 : un écran plus lumineux et un mode Cinématique",
+        contenu: [
+          "Présenté le 14 septembre 2021, l'iPhone 13 reprend le format 6,1 pouces introduit par l'iPhone 12 tout en corrigeant ses principaux points faibles. Les précommandes ont ouvert le 17 septembre et les livraisons ont débuté le 24 septembre 2021. Apple conserve les bords plats et le cadre en aluminium, mais réduit l'encoche de 20 % et réorganise les deux objectifs arrière en diagonale.",
+          "L'écran Super Retina XDR OLED de 6,1 pouces affiche toujours 2 532 × 1 170 pixels à 460 ppp, avec HDR, True Tone et large gamme P3. Sa luminosité progresse à 800 nits en usage standard et 1 200 nits en pic HDR, ce qui améliore la lisibilité en extérieur. La face avant reste protégée par le Ceramic Shield, un verre renforcé développé avec Corning.",
+          "La puce A15 Bionic associe un processeur à six cœurs, un GPU à quatre cœurs et un Neural Engine de seize cœurs. Apple met en avant un gain de performances et surtout une meilleure efficacité énergétique, qui se traduit par une autonomie de 19 heures en lecture vidéo, contre 17 heures sur l'iPhone 12. La recharge sans fil MagSafe reste limitée à 15 W et la charge filaire atteint 50 % en trente minutes avec un adaptateur de 20 W ou plus, vendu séparément.",
+          "Le double appareil photo de 12 Mpx s'appuie sur un grand-angle à ƒ/1,6 doté d'une stabilisation optique par déplacement du capteur, une technologie jusque-là réservée aux modèles Pro Max. L'ultra grand-angle conserve son ouverture ƒ/2,4 et son champ de vision de 120°. Apple ajoute le mode Cinématique, qui fait varier automatiquement la mise au point dans les vidéos, ainsi que les Styles photographiques et le Smart HDR 4.",
+          "Côté connectivité, l'iPhone 13 prend en charge la 5G, le Wi-Fi 6, le Bluetooth 5.0, l'Ultra Wideband et le NFC. Le marché français conserve une double SIM nano-SIM et eSIM, et l'appareil est certifié IP68 jusqu'à 6 mètres pendant 30 minutes. Le stockage démarre à 128 Go, contre 64 Go auparavant, et grimpe à 256 ou 512 Go. Le contenu de la boîte comprend des EarPods Lightning et un câble USB-C vers Lightning, mais pas d'adaptateur secteur.",
+          "En France, l'iPhone 13 est proposé à 909 € en 128 Go au lancement, avec des versions 256 et 512 Go dont les tarifs ne sont pas détaillés dans le communiqué consulté. Il s'adresse aux utilisateurs qui veulent un iPhone fiable, endurant et doté d'un bon écran, sans payer le supplément des modèles Pro. Ses limites tiennent à son écran 60 Hz, à son double appareil photo sans téléobjectif et à un prix qui reste élevé face aux Android concurrents."
+        ]
+      },
+      sourcesVerifiees: [
+        { libelle: "Apple Newsroom France « Apple présente l'iPhone 13 et l'iPhone 13 mini » (14/09/2021) : prix à partir de 909 €, coloris, précommandes et disponibilité au 24/09/2021", url: "https://www.apple.com/fr/newsroom/2021/09/apple-introduces-iphone-13-and-iphone-13-mini/", date: "2026-11-14" },
+        { libelle: "Apple France — caractéristiques officielles iPhone 13 (version archivée du 04/10/2021 : écran, puce, caméras, autonomie, dimensions, connectivité, contenu de la boîte)", url: "http://web.archive.org/web/20211004172525/https://www.apple.com/fr/iphone-13/specs/", date: "2026-11-14" }
+      ],
+      manquants: [
+        "Prix officiels des versions 256 Go et 512 Go non détaillés dans le communiqué Apple France consulté",
+        "Page produit Apple France du modèle redirigée vers la gamme iPhone actuelle : caractéristiques relevées sur la version archivée du 04/10/2021",
+        "Capacité de la batterie non publiée en mAh par Apple",
+        "Adaptateur secteur non fourni dans la boîte"
+      ]
+    },
+    {
+      id: "apple-iphone-14-pro",
+      marque: "Apple",
+      modele: "iPhone 14 Pro",
+      rayon: "smartphones",
+      annee: 2022,
+      dateSortie: "2022-09-16",
+      sourceAnnee: {
+        url: "https://www.apple.com/fr/newsroom/2022/09/apple-debuts-iphone-14-pro-and-iphone-14-pro-max/",
+        date: "2026-11-14"
+      },
+      sourceFiche: "https://www.apple.com/fr/newsroom/2022/09/apple-debuts-iphone-14-pro-and-iphone-14-pro-max/",
+      ficheFabricant: "http://web.archive.org/web/20221001145020/https://www.apple.com/fr/iphone-14-pro/specs/",
+      description: "Smartphone haut de gamme Apple annoncé le 7 septembre 2022, précommandé à partir du 9 septembre et commercialisé le 16 septembre 2022. L'iPhone 14 Pro inaugure la Dynamic Island, le premier capteur de 48 Mpx sur iPhone, l'écran toujours activé et la détection des accidents. Il embarque la puce A16 Bionic, un châssis en acier inoxydable et trois objectifs arrière, à partir de 1 329 € en France.",
+      variantes: [
+        {
+          groupe: "Stockage",
+          options: [
+            { libelle: "128 Go", prix: 1329, dispo: true, lienOfficiel: { url: "https://www.apple.com/fr/newsroom/2022/09/apple-debuts-iphone-14-pro-and-iphone-14-pro-max/", precision: "Prix de revente Apple de l'iPhone 14 Pro 128 Go annoncé par Apple France", verifie: "2026-11-14" } }
+          ]
+        }
+      ],
+      caracteristiques: [
+        { libelle: "Écran", valeur: "Super Retina XDR OLED tout écran de 6,1 pouces, 2 556 × 1 179 px (460 ppp), ProMotion adaptatif jusqu'à 120 Hz, écran toujours activé, Dynamic Island" },
+        { libelle: "Luminosité", valeur: "1 000 nits en standard, 1 600 nits en pic HDR, 2 000 nits en pic à l'extérieur" },
+        { libelle: "Protection", valeur: "Face avant Ceramic Shield, dos en verre mat texturé, châssis en acier inoxydable chirurgical" },
+        { libelle: "Puce", valeur: "A16 Bionic : CPU 6 cœurs (2 performance + 4 efficacité), GPU 5 cœurs, Neural Engine 16 cœurs" },
+        { libelle: "Stockage", valeur: "128 Go, 256 Go, 512 Go ou 1 To" },
+        { libelle: "Appareil photo principal", valeur: "48 Mpx, 24 mm, ouverture ƒ/1,78, stabilisation optique de 2e génération par déplacement du capteur, photos ProRAW 48 Mpx" },
+        { libelle: "Ultra grand-angle", valeur: "12 Mpx, 13 mm, ouverture ƒ/2,2, champ de vision de 120°, photos macro" },
+        { libelle: "Téléobjectif", valeur: "12 Mpx, 77 mm (zoom optique 3x), ouverture ƒ/2,8, stabilisation optique ; zoom numérique jusqu'à 15x" },
+        { libelle: "Appareil photo avant", valeur: "TrueDepth 12 Mpx, ouverture ƒ/1,9, mise au point automatique" },
+        { libelle: "Vidéo", valeur: "4K jusqu'à 60 i/s, ProRes, Dolby Vision HDR, mode Action, mode Cinématique en 4K à 30 i/s" },
+        { libelle: "Autonomie", valeur: "Lecture vidéo jusqu'à 23 h, streaming vidéo jusqu'à 20 h, lecture audio jusqu'à 75 h" },
+        { libelle: "Recharge", valeur: "MagSafe sans fil jusqu'à 15 W, Qi jusqu'à 7,5 W, 50 % en 30 min avec un adaptateur 20 W ou plus vendu séparément" },
+        { libelle: "Réseau", valeur: "5G, LTE Gigabit, Wi-Fi 6, Bluetooth 5.3, puce Ultra Wideband, NFC" },
+        { libelle: "Sécurité", valeur: "Détection des accidents et SOS d'urgence par satellite (États-Unis et Canada au lancement)" },
+        { libelle: "Carte SIM", valeur: "Double SIM (nano-SIM et eSIM), double eSIM prise en charge" },
+        { libelle: "Résistance", valeur: "IP68 (immersion jusqu'à 6 m pendant 30 min maximum)" },
+        { libelle: "Dimensions", valeur: "147,5 × 71,5 × 7,85 mm" },
+        { libelle: "Poids", valeur: "206 g" },
+        { libelle: "Coloris", valeur: "Violet intense, argent, or et noir sidéral" }
+      ],
+      contenuBoite: "iPhone avec iOS 16, câble USB-C vers Lightning et documentation ; adaptateur secteur vendu séparément",
+      prix: {
+        montant: 1329,
+        devise: "EUR",
+        marche: "France (Union européenne), TTC",
+        libelle: "iPhone 14 Pro 128 Go, prix de revente Apple",
+        date: "2022-09-07",
+        source: "https://www.apple.com/fr/newsroom/2022/09/apple-debuts-iphone-14-pro-and-iphone-14-pro-max/"
+      },
+      disponibilite: {
+        statut: "disponible",
+        libelle: "Précommandes le 9 septembre 2022, disponibilité le 16 septembre 2022",
+        date: "2026-11-14",
+        source: "https://www.apple.com/fr/newsroom/2022/09/apple-debuts-iphone-14-pro-and-iphone-14-pro-max/"
+      },
+      accessoires: [],
+      bundles: [],
+      usages: [
+        "Photographier en 48 Mpx et retoucher en ProRAW",
+        "Cadrer un portrait au téléobjectif 3x de 77 mm",
+        "Exploiter l'ultra grand-angle de 120° pour les paysages",
+        "Réaliser des photos macro grâce à l'ultra grand-angle",
+        "Filmer en mode Action pour stabiliser les mouvements",
+        "Enregistrer en ProRes pour un montage professionnel",
+        "Profiter de l'écran toujours activé pour consulter l'heure et les widgets",
+        "Suivre les activités en cours dans la Dynamic Island",
+        "Bénéficier de la détection des accidents en cas de choc",
+        "Utiliser le SOS d'urgence par satellite hors couverture (selon pays)",
+        "Recharger sans fil en MagSafe jusqu'à 15 W",
+        "Atteindre 50 % de charge en 30 minutes avec un adaptateur 20 W ou plus",
+        "Rester connecté en 5G, Wi-Fi 6 et Bluetooth 5.3",
+        "Résister à une immersion jusqu'à 6 mètres pendant 30 minutes (IP68)",
+        "Stocker jusqu'à 1 To de photos et de vidéos"
+      ],
+      medias: {
+        videos: [
+          {
+            id: "ux6zXguiqxM",
+            titre: "Apple Event — September 7, 2022",
+            chaine: "Apple",
+            url: "https://www.youtube.com/watch?v=ux6zXguiqxM"
+          }
+        ],
+        images: [
+          {
+            fichier: "img/iphone-14-pro-1.jpg",
+            alt: "iPhone 14 Pro exposé dans un Apple Store à Nagoya, vue avant",
+            licence: "CC BY-SA 4.0",
+            auteur: "KKPCW (Kyu3)",
+            attribution: "Photo : KKPCW (Kyu3) — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:IPhone_14_Pro_-_2.jpg"
+          },
+          {
+            fichier: "img/iphone-14-pro-2.jpg",
+            alt: "iPhone 14 Pro, autre vue en Apple Store",
+            licence: "CC BY-SA 4.0",
+            auteur: "KKPCW (Kyu3)",
+            attribution: "Photo : KKPCW (Kyu3) — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:IPhone_14_Pro_-_3.jpg"
+          },
+          {
+            fichier: "img/iphone-14-pro-3.jpg",
+            alt: "iPhone 14 Pro, vue arrière avec ses trois objectifs",
+            licence: "CC BY-SA 4.0",
+            auteur: "Hajoon0102",
+            attribution: "Photo : Hajoon0102 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Back_of_the_iPhone_14_Pro.jpg"
+          }
+        ]
+      },
+      article: {
+        titre: "iPhone 14 Pro : Dynamic Island et premier capteur 48 Mpx",
+        contenu: [
+          "Dévoilé le 7 septembre 2022, l'iPhone 14 Pro marque une rupture visuelle avec l'encoche introduite en 2017. Apple la remplace par la Dynamic Island, une zone d'affichage qui s'étend et se contracte pour les notifications, la musique, les appels ou les activités en cours. Les précommandes ont ouvert le 9 septembre et la commercialisation a débuté le 16 septembre 2022.",
+          "L'écran Super Retina XDR OLED de 6,1 pouces conserve une définition de 2 556 × 1 179 pixels à 460 ppp, mais gagne ProMotion jusqu'à 120 Hz, un mode toujours activé et une luminosité de pointe annoncée à 2 000 nits en extérieur. Le châssis abandonne l'aluminium pour l'acier inoxydable chirurgical, avec un dos en verre mat texturé et une face avant Ceramic Shield. Le poids passe à 206 g.",
+          "La puce A16 Bionic associe un CPU à six cœurs, un GPU à cinq cœurs et un Neural Engine de seize cœurs. Apple met en avant une autonomie d'une journée, avec 23 heures de lecture vidéo et 20 heures de streaming. La recharge sans fil reste à 15 W en MagSafe et 7,5 W en Qi, tandis que la charge filaire atteint 50 % en trente minutes avec un adaptateur de 20 W ou plus, vendu séparément.",
+          "Le système photo constitue la principale évolution : un capteur principal de 48 Mpx à 24 mm et ƒ/1,78, un ultra grand-angle de 12 Mpx à 13 mm et ƒ/2,2, et un téléobjectif de 12 Mpx à 77 mm offrant un zoom optique 3x. Le capteur principal peut produire des photos ProRAW de 48 Mpx ou des images de 12 Mpx en pixel binning. Apple ajoute le mode Action pour stabiliser les vidéos et le Photonic Engine pour améliorer les clichés en basse lumière.",
+          "L'iPhone 14 Pro introduit aussi la détection des accidents, qui alerte les secours en cas de choc grave, et le SOS d'urgence par satellite, disponible aux États-Unis et au Canada au lancement. La connectivité comprend la 5G, le Wi-Fi 6, le Bluetooth 5.3 et l'Ultra Wideband. L'appareil est certifié IP68 jusqu'à 6 mètres pendant 30 minutes et conserve une double SIM nano-SIM et eSIM sur le marché français.",
+          "En France, l'iPhone 14 Pro est proposé à 1 329 € en 128 Go, avec des versions 256 Go, 512 Go et 1 To. Il s'adresse aux utilisateurs qui veulent le meilleur de la photo et de l'affichage sur un format compact, quitte à accepter un poids de 206 g, un chargeur non fourni et un prix élevé. Face à l'iPhone 14, il justifie son supplément par la Dynamic Island, l'écran 120 Hz, le capteur de 48 Mpx et le téléobjectif."
+        ]
+      },
+      sourcesVerifiees: [
+        { libelle: "Apple Newsroom France « Apple dévoile l'iPhone 14 Pro et l'iPhone 14 Pro Max » (07/09/2022) : prix de 1 329 €, coloris, précommandes et disponibilité au 16/09/2022", url: "https://www.apple.com/fr/newsroom/2022/09/apple-debuts-iphone-14-pro-and-iphone-14-pro-max/", date: "2026-11-14" },
+        { libelle: "Apple France — caractéristiques officielles iPhone 14 Pro (version archivée du 01/10/2022 : écran, puce, caméras, autonomie, dimensions, connectivité)", url: "http://web.archive.org/web/20221001145020/https://www.apple.com/fr/iphone-14-pro/specs/", date: "2026-11-14" }
+      ],
+      manquants: [
+        "Prix officiels des versions 256 Go, 512 Go et 1 To non détaillés dans le communiqué Apple France consulté",
+        "Page produit Apple France du modèle redirigée vers la gamme iPhone actuelle : caractéristiques relevées sur la version archivée du 01/10/2022",
+        "Capacité de la batterie non publiée en mAh par Apple",
+        "SOS d'urgence par satellite limité à certains pays au lancement",
+        "Adaptateur secteur non fourni dans la boîte"
+      ]
+    },
+    {
+      id: "apple-iphone-15-pro",
+      marque: "Apple",
+      modele: "iPhone 15 Pro",
+      rayon: "smartphones",
+      annee: 2023,
+      dateSortie: "2023-09-22",
+      sourceAnnee: {
+        url: "https://www.apple.com/fr/newsroom/2023/09/apple-unveils-iphone-15-pro-and-iphone-15-pro-max/",
+        date: "2026-11-14"
+      },
+      sourceFiche: "https://www.apple.com/fr/newsroom/2023/09/apple-unveils-iphone-15-pro-and-iphone-15-pro-max/",
+      ficheFabricant: "http://web.archive.org/web/20231001200400/https://www.apple.com/fr/iphone-15-pro/specs/",
+      description: "Smartphone haut de gamme Apple annoncé le 12 septembre 2023, précommandé à partir du 15 septembre et commercialisé le 22 septembre 2023. L'iPhone 15 Pro inaugure un châssis en titane, le bouton Action, le connecteur USB-C avec USB 3 et la puce A17 Pro avec ray tracing matériel. Il conserve un écran 6,1 pouces ProMotion et un triple appareil photo de 48 Mpx, à partir de 1 229 € en France.",
+      variantes: [
+        {
+          groupe: "Stockage",
+          options: [
+            { libelle: "128 Go", prix: 1229, dispo: true, lienOfficiel: { url: "https://www.apple.com/fr/newsroom/2023/09/apple-unveils-iphone-15-pro-and-iphone-15-pro-max/", precision: "Prix de revente Apple de l'iPhone 15 Pro 128 Go annoncé par Apple France", verifie: "2026-11-14" } }
+          ]
+        }
+      ],
+      caracteristiques: [
+        { libelle: "Écran", valeur: "Super Retina XDR OLED tout écran de 6,1 pouces, 2 556 × 1 179 px (460 ppp), ProMotion adaptatif jusqu'à 120 Hz, écran toujours activé, Dynamic Island" },
+        { libelle: "Luminosité", valeur: "1 000 nits en standard, 1 600 nits en pic HDR, 2 000 nits en pic à l'extérieur" },
+        { libelle: "Châssis", valeur: "Titane de qualité aérospatiale avec sous-structure en aluminium 100 % recyclé, face avant Ceramic Shield, dos en verre mat texturé" },
+        { libelle: "Puce", valeur: "A17 Pro : CPU 6 cœurs (2 performance + 4 efficacité), GPU 6 cœurs avec ray tracing matériel, Neural Engine 16 cœurs" },
+        { libelle: "Stockage", valeur: "128 Go, 256 Go, 512 Go ou 1 To" },
+        { libelle: "Appareil photo principal", valeur: "48 Mpx, 24 mm, ouverture ƒ/1,78, stabilisation optique de 2e génération par déplacement du capteur, photos 24 et 48 Mpx" },
+        { libelle: "Ultra grand-angle", valeur: "12 Mpx, 13 mm, ouverture ƒ/2,2, champ de vision de 120°" },
+        { libelle: "Téléobjectif", valeur: "12 Mpx, 77 mm (zoom optique 3x), ouverture ƒ/2,8, stabilisation optique ; zoom numérique jusqu'à 15x" },
+        { libelle: "Appareil photo avant", valeur: "TrueDepth 12 Mpx, ouverture ƒ/1,9, mise au point automatique" },
+        { libelle: "Vidéo", valeur: "4K jusqu'à 60 i/s, ProRes, Dolby Vision HDR, mode Action, mode Cinématique, enregistrement spatial" },
+        { libelle: "Autonomie", valeur: "Lecture vidéo jusqu'à 23 h, streaming vidéo jusqu'à 20 h, lecture audio jusqu'à 75 h" },
+        { libelle: "Recharge et port", valeur: "USB-C avec USB 3 jusqu'à 10 Gbit/s et DisplayPort ; MagSafe 15 W ; Qi 7,5 W ; 50 % en 30 min avec un adaptateur 20 W ou plus vendu séparément" },
+        { libelle: "Réseau", valeur: "5G, Wi-Fi 6E, Bluetooth 5.3, Thread, puce Ultra Wideband de 2e génération, NFC" },
+        { libelle: "Bouton Action", valeur: "Bouton programmable remplaçant le bouton silence, avec retour haptique et options dans la Dynamic Island" },
+        { libelle: "Carte SIM", valeur: "Double SIM (nano-SIM et eSIM), double eSIM prise en charge" },
+        { libelle: "Résistance", valeur: "IP68 (immersion jusqu'à 6 m pendant 30 min maximum)" },
+        { libelle: "Dimensions", valeur: "146,6 × 70,6 × 8,25 mm" },
+        { libelle: "Poids", valeur: "187 g" },
+        { libelle: "Coloris", valeur: "Titane noir, titane blanc, titane bleu et titane naturel" }
+      ],
+      contenuBoite: "iPhone avec iOS 17, câble USB-C et documentation ; adaptateur secteur vendu séparément",
+      prix: {
+        montant: 1229,
+        devise: "EUR",
+        marche: "France (Union européenne), TTC",
+        libelle: "iPhone 15 Pro 128 Go, prix de revente Apple",
+        date: "2023-09-12",
+        source: "https://www.apple.com/fr/newsroom/2023/09/apple-unveils-iphone-15-pro-and-iphone-15-pro-max/"
+      },
+      disponibilite: {
+        statut: "disponible",
+        libelle: "Précommandes le 15 septembre 2023, disponibilité le 22 septembre 2023 dans plus de 40 pays et régions",
+        date: "2026-11-14",
+        source: "https://www.apple.com/fr/newsroom/2023/09/apple-unveils-iphone-15-pro-and-iphone-15-pro-max/"
+      },
+      accessoires: [],
+      bundles: [],
+      usages: [
+        "Photographier en 48 Mpx et en ProRAW",
+        "Cadrer un portrait au téléobjectif 3x de 77 mm",
+        "Filmer en ProRes et transférer les fichiers par USB-C en USB 3",
+        "Brancher un écran externe via DisplayPort sur USB-C",
+        "Profiter du ray tracing matériel dans les jeux compatibles",
+        "Utiliser le bouton Action pour lancer l'appareil photo ou une raccourci",
+        "Consulter l'heure et les widgets grâce à l'écran toujours activé",
+        "Suivre les activités dans la Dynamic Island",
+        "Recharger sans fil en MagSafe jusqu'à 15 W",
+        "Atteindre 50 % de charge en 30 minutes avec un adaptateur 20 W ou plus",
+        "Se connecter en Wi-Fi 6E et Bluetooth 5.3",
+        "Utiliser Thread pour les accessoires domotiques compatibles",
+        "Localiser un objet grâce à l'Ultra Wideband de 2e génération",
+        "Résister à une immersion jusqu'à 6 mètres pendant 30 minutes (IP68)",
+        "Stocker jusqu'à 1 To de vidéos ProRes"
+      ],
+      medias: {
+        videos: [
+          {
+            id: "ZiP1l7jlIIA",
+            titre: "Apple Event — September 12, 2023",
+            chaine: "Apple",
+            url: "https://www.youtube.com/watch?v=ZiP1l7jlIIA"
+          }
+        ],
+        images: [
+          {
+            fichier: "img/iphone-15-pro-1.jpg",
+            alt: "iPhone 15 Pro en titane naturel, vue avant",
+            licence: "CC BY-SA 4.0",
+            auteur: "Kyu3",
+            attribution: "Photo : Kyu3 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:IPhone_15_Pro.jpg"
+          },
+          {
+            fichier: "img/iphone-15-pro-2.jpg",
+            alt: "iPhone 15 Pro, autre vue en magasin",
+            licence: "CC BY-SA 4.0",
+            auteur: "Kyu3",
+            attribution: "Photo : Kyu3 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:IPhone_15_Pro_-_2.jpg"
+          },
+          {
+            fichier: "img/iphone-15-pro-3.jpg",
+            alt: "iPhone 15 Pro et iPhone 15 Pro Max présentés côte à côte en Apple Store",
+            licence: "CC BY-SA 4.0",
+            auteur: "Kyu3",
+            attribution: "Photo : Kyu3 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:IPhone_15_Pro_and_Pro_Max_in_Apple_Store_-_1.jpg"
+          }
+        ]
+      },
+      article: {
+        titre: "iPhone 15 Pro : le titane, l'USB-C et la puce A17 Pro",
+        contenu: [
+          "Présenté le 12 septembre 2023, l'iPhone 15 Pro est le premier iPhone doté d'un châssis en titane. Apple abandonne l'acier inoxydable au profit d'un alliage de qualité aérospatiale, assemblé par soudage par diffusion à une sous-structure en aluminium 100 % recyclé. Résultat : un poids de 187 g, contre 206 g pour l'iPhone 14 Pro, et des bords profilés plus agréables en main. Les précommandes ont ouvert le 15 septembre et les livraisons ont débuté le 22 septembre 2023.",
+          "L'écran Super Retina XDR OLED de 6,1 pouces reste à 2 556 × 1 179 pixels et 460 ppp, avec ProMotion jusqu'à 120 Hz, mode toujours activé et Dynamic Island. La luminosité de pointe atteint 2 000 nits en extérieur. La face avant conserve le Ceramic Shield, tandis que le dos adopte un verre mat texturé. Le grand changement ergonomique est le bouton Action, qui remplace le bouton silence et peut être affecté à l'appareil photo, à la lampe, à un raccourci ou à l'accessibilité.",
+          "La puce A17 Pro est gravée en 3 nm et associe un CPU à six cœurs, un GPU à six cœurs et un Neural Engine de seize cœurs. Son GPU prend en charge le ray tracing matériel, quatre fois plus rapide que l'implémentation logicielle selon Apple, ce qui ouvre la voie à des jeux de console sur iPhone. L'autonomie reste annoncée à 23 heures de lecture vidéo et 20 heures de streaming, avec une charge à 50 % en trente minutes via un adaptateur de 20 W ou plus.",
+          "Le système photo conserve trois capteurs : un principal de 48 Mpx à 24 mm et ƒ/1,78, un ultra grand-angle de 12 Mpx à 13 mm et ƒ/2,2, et un téléobjectif de 12 Mpx à 77 mm offrant un zoom optique 3x sur l'iPhone 15 Pro. Le modèle Pro Max se distingue avec un téléobjectif 5x à 120 mm. Apple ajoute l'enregistrement ProRes, le mode Action, le mode Cinématique et la possibilité de filmer en spatial pour le Vision Pro.",
+          "Le connecteur Lightning cède la place à l'USB-C, avec une vitesse USB 3 jusqu'à 10 Gbit/s et la prise en charge de DisplayPort, ce qui facilite le transfert de fichiers ProRes et la connexion à un écran. La connectivité progresse avec le Wi-Fi 6E, le Bluetooth 5.3, le Thread et l'Ultra Wideband de deuxième génération. L'iPhone 15 Pro est certifié IP68 jusqu'à 6 mètres pendant 30 minutes et conserve une double SIM nano-SIM et eSIM en France.",
+          "En France, l'iPhone 15 Pro est proposé à partir de 1 229 € en 128 Go, avec des versions 256 Go, 512 Go et 1 To. Il s'adresse aux créateurs et aux joueurs qui veulent un format compact, un châssis léger et un port universel, quitte à accepter un chargeur non fourni et un prix élevé. Face à l'iPhone 15 Pro Max, il perd le téléobjectif 5x et une partie de l'autonomie, mais gagne en compacité et en prix."
+        ]
+      },
+      sourcesVerifiees: [
+        { libelle: "Apple Newsroom France « Apple dévoile l'iPhone 15 Pro et l'iPhone 15 Pro Max » (12/09/2023) : prix à partir de 1 229 €, coloris, précommandes et disponibilité au 22/09/2023", url: "https://www.apple.com/fr/newsroom/2023/09/apple-unveils-iphone-15-pro-and-iphone-15-pro-max/", date: "2026-11-14" },
+        { libelle: "Apple France — caractéristiques officielles iPhone 15 Pro (version archivée du 01/10/2023 : écran, puce, caméras, autonomie, dimensions, connectivité)", url: "http://web.archive.org/web/20231001200400/https://www.apple.com/fr/iphone-15-pro/specs/", date: "2026-11-14" }
+      ],
+      manquants: [
+        "Prix officiels des versions 256 Go, 512 Go et 1 To non détaillés dans le communiqué Apple France consulté",
+        "Page produit Apple France du modèle redirigée vers la gamme iPhone actuelle : caractéristiques relevées sur la version archivée du 01/10/2023",
+        "Capacité de la batterie non publiée en mAh par Apple",
+        "Adaptateur secteur non fourni dans la boîte"
+      ]
+    },
+    {
+      id: "apple-iphone-16-pro",
+      marque: "Apple",
+      modele: "iPhone 16 Pro",
+      rayon: "smartphones",
+      annee: 2024,
+      dateSortie: "2024-09-20",
+      sourceAnnee: {
+        url: "https://www.apple.com/fr/newsroom/2024/09/apple-debuts-iphone-16-pro-iphone-16-pro-max/",
+        date: "2026-11-14"
+      },
+      sourceFiche: "https://www.apple.com/fr/newsroom/2024/09/apple-debuts-iphone-16-pro-iphone-16-pro-max/",
+      ficheFabricant: "http://web.archive.org/web/20241003064853/https://www.apple.com/fr/iphone-16-pro/specs/",
+      description: "Smartphone haut de gamme Apple annoncé le 9 septembre 2024, précommandé à partir du 13 septembre et commercialisé le 20 septembre 2024. L'iPhone 16 Pro passe à un écran de 6,3 pouces, inaugure le bouton Commande de l'appareil photo, un ultra grand-angle de 48 Mpx et un téléobjectif 5x sur les deux modèles Pro. Il embarque la puce A18 Pro et reste proposé à partir de 1 229 € en France.",
+      variantes: [
+        {
+          groupe: "Stockage",
+          options: [
+            { libelle: "128 Go", prix: 1229, dispo: true, lienOfficiel: { url: "https://www.apple.com/fr/newsroom/2024/09/apple-debuts-iphone-16-pro-iphone-16-pro-max/", precision: "Prix de revente Apple de l'iPhone 16 Pro 128 Go annoncé par Apple France", verifie: "2026-11-14" } }
+          ]
+        }
+      ],
+      caracteristiques: [
+        { libelle: "Écran", valeur: "Super Retina XDR OLED tout écran de 6,3 pouces, 2 622 × 1 206 px (460 ppp), ProMotion adaptatif jusqu'à 120 Hz, écran toujours activé, Dynamic Island" },
+        { libelle: "Luminosité", valeur: "1 000 nits en standard, 1 600 nits en pic HDR, 2 000 nits en pic à l'extérieur, luminosité minimale de 1 nit" },
+        { libelle: "Châssis", valeur: "Titane avec structure interne en aluminium 100 % recyclé, face avant Ceramic Shield de dernière génération, dos en verre mat texturé" },
+        { libelle: "Puce", valeur: "A18 Pro : CPU 6 cœurs (2 performance + 4 efficacité), GPU 6 cœurs, Neural Engine 16 cœurs" },
+        { libelle: "Stockage", valeur: "128 Go, 256 Go, 512 Go ou 1 To" },
+        { libelle: "Caméra Fusion", valeur: "48 Mpx, 24 mm, ouverture ƒ/1,78, stabilisation optique de 2e génération par déplacement du capteur, vidéo 4K à 120 i/s en Dolby Vision" },
+        { libelle: "Ultra grand-angle", valeur: "48 Mpx, 13 mm, ouverture ƒ/2,2, champ de vision de 120°, photos macro et super haute résolution" },
+        { libelle: "Téléobjectif", valeur: "12 Mpx, 120 mm (zoom optique 5x), ouverture ƒ/2,8, stabilisation optique 3D par déplacement du capteur, tétraprisme" },
+        { libelle: "Appareil photo avant", valeur: "TrueDepth 12 Mpx, ouverture ƒ/1,9, mise au point automatique" },
+        { libelle: "Vidéo", valeur: "4K jusqu'à 120 i/s en Dolby Vision, ProRes, mode Action, mode Cinématique, audio spatial et mix audio" },
+        { libelle: "Autonomie", valeur: "Lecture vidéo jusqu'à 27 h, streaming vidéo jusqu'à 22 h, lecture audio jusqu'à 85 h" },
+        { libelle: "Recharge et port", valeur: "USB-C avec USB 3 jusqu'à 10 Gbit/s et DisplayPort ; MagSafe 25 W avec adaptateur 30 W ou plus ; Qi 7,5 W ; 50 % en 30 min" },
+        { libelle: "Réseau", valeur: "5G, Wi-Fi 7, Bluetooth 5.3, Thread, puce Ultra Wideband de 2e génération, NFC" },
+        { libelle: "Commande de l'appareil photo", valeur: "Bouton tactile dédié à la prise de vue, avec pression légère, pression forte et glissement pour régler le zoom ou l'exposition" },
+        { libelle: "Carte SIM", valeur: "Double SIM (nano-SIM et eSIM), double eSIM prise en charge" },
+        { libelle: "Résistance", valeur: "IP68 (immersion jusqu'à 6 m pendant 30 min maximum)" },
+        { libelle: "Dimensions", valeur: "149,6 × 71,5 × 8,25 mm" },
+        { libelle: "Poids", valeur: "199 g" },
+        { libelle: "Coloris", valeur: "Titane noir, titane blanc, titane naturel et titane sable" }
+      ],
+      contenuBoite: "iPhone avec iOS 18, câble USB-C et documentation ; adaptateur secteur vendu séparément",
+      prix: {
+        montant: 1229,
+        devise: "EUR",
+        marche: "France (Union européenne), TTC",
+        libelle: "iPhone 16 Pro 128 Go, prix de revente Apple",
+        date: "2024-09-09",
+        source: "https://www.apple.com/fr/newsroom/2024/09/apple-debuts-iphone-16-pro-iphone-16-pro-max/"
+      },
+      disponibilite: {
+        statut: "disponible",
+        libelle: "Précommandes le 13 septembre 2024, disponibilité le 20 septembre 2024",
+        date: "2026-11-14",
+        source: "https://www.apple.com/fr/newsroom/2024/09/apple-debuts-iphone-16-pro-iphone-16-pro-max/"
+      },
+      accessoires: [],
+      bundles: [],
+      usages: [
+        "Filmer en 4K à 120 i/s en Dolby Vision",
+        "Photographier avec les trois capteurs, dont l'ultra grand-angle de 48 Mpx",
+        "Cadrer un sujet éloigné au téléobjectif 5x de 120 mm",
+        "Réaliser des photos macro avec l'ultra grand-angle",
+        "Utiliser le bouton Commande de l'appareil photo pour déclencher et zoomer",
+        "Enregistrer en ProRes pour un montage professionnel",
+        "Profiter de l'écran 6,3 pouces et de ses 2 000 nits en extérieur",
+        "Consulter l'heure et les widgets grâce à l'écran toujours activé",
+        "Suivre les activités dans la Dynamic Island",
+        "Recharger sans fil en MagSafe jusqu'à 25 W avec un adaptateur 30 W ou plus",
+        "Atteindre 50 % de charge en 30 minutes",
+        "Se connecter en Wi-Fi 7 et Bluetooth 5.3",
+        "Utiliser Thread pour la domotique et l'Ultra Wideband pour la localisation",
+        "Transférer des fichiers par USB-C en USB 3 à 10 Gbit/s",
+        "Résister à une immersion jusqu'à 6 mètres pendant 30 minutes (IP68)",
+        "Stocker jusqu'à 1 To de vidéos et de photos"
+      ],
+      medias: {
+        videos: [
+          {
+            id: "uarNiSl_uh4",
+            titre: "Apple Event — September 9, 2024",
+            chaine: "Apple",
+            url: "https://www.youtube.com/watch?v=uarNiSl_uh4"
+          }
+        ],
+        images: [
+          {
+            fichier: "img/iphone-16-pro-1.jpg",
+            alt: "iPhone 16 Pro, vue arrière, exposé en Apple Store",
+            licence: "CC BY-SA 4.0",
+            auteur: "Kyu3a",
+            attribution: "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Back_of_iPhone_16_Pro_-_1.jpg"
+          },
+          {
+            fichier: "img/iphone-16-pro-2.jpg",
+            alt: "iPhone 16 Pro argent, vue arrière",
+            licence: "CC BY-SA 4.0",
+            auteur: "Kyu3a",
+            attribution: "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Back_of_iPhone_16_Pro_Silver_model.jpg"
+          },
+          {
+            fichier: "img/iphone-16-pro-3.jpg",
+            alt: "Bouton Commande de l'appareil photo sur le flanc d'un iPhone 16 Pro",
+            licence: "CC BY-SA 4.0",
+            auteur: "Kyu3a",
+            attribution: "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Camera_control_of_iPhone_16_Pro.jpg"
+          }
+        ]
+      },
+      article: {
+        titre: "iPhone 16 Pro : écran 6,3 pouces et téléobjectif 5x",
+        contenu: [
+          "Dévoilé le 9 septembre 2024, l'iPhone 16 Pro introduit plusieurs changements attendus de longue date. Les précommandes ont ouvert le 13 septembre et les livraisons ont débuté le 20 septembre 2024. Apple agrandit l'écran à 6,3 pouces, réduit les bordures et ajoute un bouton Commande de l'appareil photo sur le flanc droit, sensible à la pression et au glissement.",
+          "L'écran Super Retina XDR OLED affiche 2 622 × 1 206 pixels à 460 ppp, avec ProMotion jusqu'à 120 Hz, mode toujours activé et Dynamic Island. Sa luminosité de pointe atteint 2 000 nits en extérieur et peut descendre à 1 nit dans l'obscurité. Le châssis reste en titane, avec une structure interne en aluminium recyclé et un dos en verre mat texturé. Le poids passe à 199 g, contre 187 g pour l'iPhone 15 Pro.",
+          "La puce A18 Pro associe un CPU à six cœurs, un GPU à six cœurs et un Neural Engine de seize cœurs. Apple met en avant des performances accrues et une meilleure efficacité, avec une autonomie de 27 heures en lecture vidéo et 22 heures en streaming. La recharge sans fil progresse à 25 W en MagSafe avec un adaptateur de 30 W ou plus, tandis que la charge filaire atteint toujours 50 % en trente minutes.",
+          "Le système photo évolue sur les trois capteurs. La caméra Fusion de 48 Mpx conserve son ouverture ƒ/1,78 et gagne la vidéo 4K à 120 i/s en Dolby Vision. L'ultra grand-angle passe à 48 Mpx pour améliorer la résolution et les photos macro. Le téléobjectif 5x de 120 mm, jusque-là réservé au Pro Max, équipe désormais les deux modèles Pro. À l'avant, la caméra TrueDepth de 12 Mpx conserve l'autofocus.",
+          "Côté connectivité, l'iPhone 16 Pro adopte le Wi-Fi 7, conserve le Bluetooth 5.3, le Thread et l'Ultra Wideband de deuxième génération, et garde l'USB-C avec USB 3 à 10 Gbit/s et DisplayPort. L'appareil est certifié IP68 jusqu'à 6 mètres pendant 30 minutes et propose une double SIM nano-SIM et eSIM en France. iOS 18 apporte les fonctions Apple Intelligence, les messages par satellite et le mix audio.",
+          "En France, l'iPhone 16 Pro est proposé à partir de 1 229 € en 128 Go, avec des versions 256 Go, 512 Go et 1 To. Il s'adresse aux créateurs qui veulent un format compact sans sacrifier le téléobjectif 5x ni la vidéo 4K120, quitte à accepter un prix élevé, un chargeur non fourni et un poids de 199 g. Face à l'iPhone 16 Pro Max, il conserve les mêmes caméras dans un châssis plus maniable, avec un écran et une autonomie plus petits."
+        ]
+      },
+      sourcesVerifiees: [
+        { libelle: "Apple Newsroom France « Apple lance l'iPhone 16 Pro et l'iPhone 16 Pro Max » (09/09/2024) : prix à partir de 1 229 €, coloris, précommandes et disponibilité au 20/09/2024", url: "https://www.apple.com/fr/newsroom/2024/09/apple-debuts-iphone-16-pro-iphone-16-pro-max/", date: "2026-11-14" },
+        { libelle: "Apple France — caractéristiques officielles iPhone 16 Pro (version archivée du 03/10/2024 : écran, puce, caméras, autonomie, dimensions, connectivité)", url: "http://web.archive.org/web/20241003064853/https://www.apple.com/fr/iphone-16-pro/specs/", date: "2026-11-14" }
+      ],
+      manquants: [
+        "Prix officiels des versions 256 Go, 512 Go et 1 To non détaillés dans le communiqué Apple France consulté",
+        "Page produit Apple France du modèle redirigée vers la gamme iPhone actuelle : caractéristiques relevées sur la version archivée du 03/10/2024",
+        "Capacité de la batterie non publiée en mAh par Apple",
+        "Adaptateur secteur non fourni dans la boîte"
+      ]
+    },
+    {
+      id: "samsung-galaxy-s22-ultra",
+      marque: "Samsung",
+      modele: "Galaxy S22 Ultra",
+      rayon: "smartphones",
+      annee: 2022,
+      dateSortie: "2022-02-25",
+      sourceAnnee: {
+        url: "https://news.samsung.com/global/samsung-galaxy-s22-ultra-offers-the-ultimate-and-most-premium-s-series-experience-yet",
+        date: "2026-11-14"
+      },
+      sourceFiche: "https://news.samsung.com/global/samsung-galaxy-s22-ultra-offers-the-ultimate-and-most-premium-s-series-experience-yet",
+      ficheFabricant: "https://news.samsung.com/global/samsung-galaxy-s22-ultra-offers-the-ultimate-and-most-premium-s-series-experience-yet",
+      description: "Smartphone haut de gamme Samsung dévoilé en février 2022, le Galaxy S22 Ultra fusionne l'héritage de la gamme Note avec la série S en intégrant un S Pen. Il propose un écran 6,8 pouces QHD+ Dynamic AMOLED 2X à 120 Hz, un capteur principal de 108 Mpx, deux téléobjectifs 3x et 10x, une batterie de 5 000 mAh et une certification IP68.",
+      variantes: [],
+      caracteristiques: [
+        { libelle: "Écran", valeur: "6,8 pouces Edge QHD+ Dynamic AMOLED 2X, taux de rafraîchissement adaptatif 1-120 Hz, Vision Booster" },
+        { libelle: "Luminosité", valeur: "Jusqu'à 1 750 nits en pic, contraste 3 000 000:1" },
+        { libelle: "Processeur", valeur: "Gravure 4 nm (selon marché et opérateur)" },
+        { libelle: "Mémoire et stockage", valeur: "8 Go + 128 Go ; 12 Go + 256/512 Go ; 12 Go + 1 To" },
+        { libelle: "Appareil photo principal", valeur: "108 Mpx, ouverture ƒ/1,8, champ de vision 85°" },
+        { libelle: "Ultra grand-angle", valeur: "12 Mpx, ouverture ƒ/2,2, champ de vision 120°" },
+        { libelle: "Téléobjectif", valeur: "10 Mpx zoom optique 3x (ƒ/2,4, 36°) + 10 Mpx zoom optique 10x (ƒ/4,9, 11°), Space Zoom jusqu'à 100x" },
+        { libelle: "Appareil photo avant", valeur: "40 Mpx, ouverture ƒ/2,2, champ de vision 80°" },
+        { libelle: "S Pen", valeur: "S Pen intégré avec prise en charge de l'écriture et du dessin" },
+        { libelle: "Batterie", valeur: "5 000 mAh (typique)" },
+        { libelle: "Recharge", valeur: "Filaire jusqu'à 45 W, sans fil 15 W, Wireless PowerShare ; chargeur vendu séparément" },
+        { libelle: "Réseau", valeur: "5G, LTE, Wi-Fi 6E, Wi-Fi Direct, Bluetooth 5.2" },
+        { libelle: "Résistance", valeur: "IP68 (eau douce jusqu'à 1,5 m pendant 30 min) ; S Pen également classé IP68" },
+        { libelle: "Dimensions", valeur: "163,3 × 77,9 × 8,9 mm" },
+        { libelle: "Poids", valeur: "229 g" },
+        { libelle: "Système", valeur: "Android 12 avec One UI 4.1 au lancement ; jusqu'à quatre générations de mises à jour Android annoncées" },
+        { libelle: "Sécurité", valeur: "Samsung Knox, Samsung Knox Vault" },
+        { libelle: "Coloris", valeur: "Phantom Black, Phantom White, Green et Burgundy" }
+      ],
+      contenuBoite: "Non détaillé dans la fiche officielle consultée",
+      prix: null,
+      disponibilite: {
+        statut: "disponible",
+        libelle: "Commercialisation annoncée à partir du 25 février 2022",
+        date: "2026-11-14",
+        source: "https://news.samsung.com/global/samsung-galaxy-s22-ultra-offers-the-ultimate-and-most-premium-s-series-experience-yet"
+      },
+      accessoires: [],
+      bundles: [],
+      usages: [
+        "Prendre des notes et dessiner avec le S Pen intégré",
+        "Photographier avec le capteur principal de 108 Mpx",
+        "Zoomer à longue distance avec les téléobjectifs optiques 3x et 10x",
+        "Cadrer large avec l'ultra grand-angle de 120°",
+        "Filmer et créer des contenus photo/vidéo de jour comme de nuit",
+        "Profiter d'un grand écran 6,8 pouces QHD+ à 120 Hz pour le multimédia",
+        "Jouer et utiliser des applications exigeantes grâce au processeur 4 nm",
+        "Recharger rapidement en filaire jusqu'à 45 W",
+        "Partager de l'énergie avec Wireless PowerShare",
+        "Utiliser le smartphone sous la pluie grâce à la certification IP68",
+        "Se connecter en 5G, Wi-Fi 6E et Bluetooth 5.2",
+        "Stocker jusqu'à 1 To de photos et de vidéos"
+      ],
+      medias: {
+        videos: [
+          {
+            id: "FqFPk4SxH68",
+            titre: "Official Introduction | Galaxy S22 Ultra | Samsung",
+            chaine: "Samsung US",
+            url: "https://www.youtube.com/watch?v=FqFPk4SxH68"
+          }
+        ],
+        images: [
+          {
+            fichier: "img/galaxy-s22-ultra-1.jpg",
+            alt: "Samsung Galaxy S22 Ultra, vue avant avec S Pen",
+            licence: "CC BY-SA 3.0",
+            auteur: "Striker9498",
+            attribution: "Photo : Striker9498 — licence CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:20220210_%EC%82%BC%EC%84%B1_%EA%B0%A4%EB%9F%AD%EC%8B%9Cs22_%EC%9A%B8%ED%8A%B8%EB%9D%BC_(cropped).jpg"
+          },
+          {
+            fichier: "img/galaxy-s22-ultra-2.jpg",
+            alt: "Samsung Galaxy S22 Ultra, face arrière avec ses objectifs photo",
+            licence: "CC BY-SA 4.0",
+            auteur: "Hajoon0102",
+            attribution: "Photo : Hajoon0102 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Back_of_the_Samsung_Galaxy_S22_Ultra.jpg"
+          },
+          {
+            fichier: "img/galaxy-s22-ultra-3.jpg",
+            alt: "Gros plan sur les modules photo arrière du Samsung Galaxy S22 Ultra",
+            licence: "CC BY-SA 4.0",
+            auteur: "Dinkun Chen",
+            attribution: "Photo : Dinkun Chen — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:SAMSUNG_Galaxy_S22_Ultra_REAR_CAMERA_MODULES.jpg"
+          }
+        ]
+      },
+      article: {
+        titre: "Galaxy S22 Ultra : le S Pen s'invite dans la série S",
+        contenu: [
+          "Dévoilé en février 2022, le Samsung Galaxy S22 Ultra marque une étape importante pour la gamme Galaxy S. Il reprend l'esprit de la série Note en intégrant un S Pen directement dans le châssis, tout en conservant les ambitions photographiques et l'écran premium attendus d'un modèle Ultra. Samsung le présente comme l'expérience S Series la plus aboutie de l'époque.",
+          "L'écran est un élément central : 6,8 pouces en définition QHD+ avec dalle Dynamic AMOLED 2X, il offre un taux de rafraîchissement adaptatif de 1 à 120 Hz et une luminosité de pointe annoncée à 1 750 nits. Le constructeur met en avant un contraste élevé et une meilleure visibilité en extérieur grâce à Vision Booster, pour un usage confortable en vidéo, en jeu ou en navigation.",
+          "Côté photo, le Galaxy S22 Ultra combine un capteur principal de 108 Mpx, un ultra grand-angle de 12 Mpx à 120° et deux téléobjectifs de 10 Mpx offrant des zooms optiques 3x et 10x. Samsung annonce également un Space Zoom jusqu'à 100x, avec recours au traitement numérique au-delà des plages optiques. À l'avant, un capteur de 40 Mpx prend en charge les selfies et les appels vidéo.",
+          "Le S Pen intégré apporte des usages orientés productivité et créativité : prise de notes, annotations, croquis ou navigation plus précise. L'appareil embarque une batterie de 5 000 mAh avec recharge filaire jusqu'à 45 W, recharge sans fil 15 W et Wireless PowerShare. Comme souvent, le chargeur secteur n'est pas inclus et doit être acheté séparément.",
+          "Sur le plan de la connectivité et de la durabilité, le smartphone prend en charge la 5G, le Wi-Fi 6E et le Bluetooth 5.2. Il est certifié IP68 pour une immersion temporaire en eau douce, et le S Pen bénéficie également de cette certification selon Samsung. Les options mémoire vont jusqu'à 12 Go de RAM et 1 To de stockage, et le système au lancement est Android 12 avec One UI 4.1.",
+          "Le Galaxy S22 Ultra s'adresse aux utilisateurs qui veulent un grand écran, un S Pen intégré et un ensemble photo polyvalent centré sur le zoom optique. Son format de 229 g et ses dimensions imposantes le destinent davantage à ceux qui privilégient l'écran et les fonctions avancées qu'à la compacité. Le prix de lancement officiel en euros pour la France n'a pas pu être confirmé sur une source Samsung FR archivée consultée et est donc laissé en absence de donnée vérifiée."
+        ]
+      },
+      sourcesVerifiees: [
+        { libelle: "Samsung Global Newsroom — Galaxy S22 Ultra (09/02/2022) : écran, photo, S Pen, batterie, connectivité, dimensions, disponibilité", url: "https://news.samsung.com/global/samsung-galaxy-s22-ultra-offers-the-ultimate-and-most-premium-s-series-experience-yet", date: "2026-11-14" },
+        { libelle: "Samsung US (YouTube) — « Official Introduction | Galaxy S22 Ultra »", url: "https://www.youtube.com/watch?v=FqFPk4SxH68", date: "2026-11-14" }
+      ],
+      manquants: [
+        "Prix de lancement officiel en France non retrouvé sur une source Samsung FR archivée consultée",
+        "Contenu de la boîte non détaillé dans la fiche officielle consultée",
+        "Certaines caractéristiques détaillées (modem, bandes, débit USB exact) non précisées dans la source consultée"
+      ]
+    },
+
+    {
+      id: "samsung-galaxy-s23-ultra",
+      marque: "Samsung",
+      modele: "Galaxy S23 Ultra",
+      rayon: "smartphones",
+      annee: 2023,
+      dateSortie: "2023-02-17",
+      sourceAnnee: {
+        url: "https://news.samsung.com/global/take-your-passions-further-with-the-new-samsung-galaxy-s23-series-designed-for-a-premium-experience-today-and-beyond",
+        date: "2026-11-14"
+      },
+      sourceFiche: "https://news.samsung.com/global/take-your-passions-further-with-the-new-samsung-galaxy-s23-series-designed-for-a-premium-experience-today-and-beyond",
+      ficheFabricant: "https://news.samsung.com/global/take-your-passions-further-with-the-new-samsung-galaxy-s23-series-designed-for-a-premium-experience-today-and-beyond",
+      description: "Smartphone premium Samsung lancé le 17 février 2023, le Galaxy S23 Ultra introduit un capteur photo de 200 Mpx, la plateforme Snapdragon 8 Gen 2 for Galaxy et un écran 6,8 pouces QHD+ à 120 Hz. Il conserve le S Pen intégré, une batterie de 5 000 mAh et une certification IP68, avec des prix de lancement en France à partir de 1 419 €.",
+      variantes: [
+        {
+          groupe: "Stockage",
+          options: [
+            { libelle: "256 Go", prix: 1419, dispo: true, lienOfficiel: { url: "http://web.archive.org/web/20230210213324/https://www.samsung.com/fr/smartphones/galaxy-s23-ultra/buy/", precision: "Prix de lancement relevé sur la page d'achat Samsung France archivée (256 Go)", verifie: "2026-11-14" } },
+            { libelle: "512 Go", prix: 1599, dispo: true, lienOfficiel: { url: "http://web.archive.org/web/20230210213324/https://www.samsung.com/fr/smartphones/galaxy-s23-ultra/buy/", precision: "Prix de lancement relevé sur la page d'achat Samsung France archivée (512 Go)", verifie: "2026-11-14" } },
+            { libelle: "1 To", prix: 1839, dispo: true, lienOfficiel: { url: "http://web.archive.org/web/20230210213324/https://www.samsung.com/fr/smartphones/galaxy-s23-ultra/buy/", precision: "Prix de lancement relevé sur la page d'achat Samsung France archivée (1 To)", verifie: "2026-11-14" } }
+          ]
+        }
+      ],
+      caracteristiques: [
+        { libelle: "Écran", valeur: "6,8 pouces QHD+ Edge Dynamic AMOLED 2X, taux de rafraîchissement adaptatif 1-120 Hz, Vision Booster" },
+        { libelle: "Processeur", valeur: "Snapdragon 8 Gen 2 Mobile Platform for Galaxy" },
+        { libelle: "Mémoire et stockage", valeur: "8 Go + 256 Go ; 12 Go + 256/512 Go ; 12 Go + 1 To" },
+        { libelle: "Appareil photo principal", valeur: "200 Mpx, ouverture ƒ/1,7, champ de vision 85°, pixel binning adaptatif" },
+        { libelle: "Ultra grand-angle", valeur: "12 Mpx, ouverture ƒ/2,2, champ de vision 120°" },
+        { libelle: "Téléobjectifs", valeur: "10 Mpx zoom optique 3x (ƒ/2,4, 36°) + 10 Mpx zoom optique 10x (ƒ/4,9, 11°), Space Zoom jusqu'à 100x" },
+        { libelle: "Appareil photo avant", valeur: "12 Mpx, ouverture ƒ/2,2, champ de vision 80°" },
+        { libelle: "S Pen", valeur: "S Pen intégré" },
+        { libelle: "Batterie", valeur: "5 000 mAh (typique)" },
+        { libelle: "Recharge", valeur: "Filaire jusqu'à 65 % en environ 30 min avec adaptateur 45 W et câble USB-C 5A ; recharge sans fil rapide 2.0 ; Wireless PowerShare ; chargeur vendu séparément" },
+        { libelle: "Réseau", valeur: "5G, LTE, Wi-Fi 6E, Wi-Fi Direct, Bluetooth 5.3" },
+        { libelle: "Résistance", valeur: "IP68 (eau douce jusqu'à 1,5 m pendant 30 min)" },
+        { libelle: "Dimensions", valeur: "163,4 × 78,1 × 8,9 mm" },
+        { libelle: "Poids", valeur: "234 g" },
+        { libelle: "Verre", valeur: "Corning Gorilla Glass Victus 2 (avant et arrière)" },
+        { libelle: "Système", valeur: "Android 13 avec One UI 5.1 au lancement ; 4 générations d'OS et 5 ans de mises à jour de sécurité annoncés" },
+        { libelle: "Sécurité", valeur: "Samsung Knox, Samsung Knox Vault" },
+        { libelle: "Coloris", valeur: "Phantom Black, Cream, Green et Lavender" }
+      ],
+      contenuBoite: "Non détaillé dans la fiche officielle consultée",
+      prix: {
+        montant: 1419,
+        devise: "EUR",
+        marche: "France (Union européenne), TTC",
+        libelle: "Galaxy S23 Ultra 256 Go, prix de lancement relevé sur la page d'achat Samsung France archivée",
+        date: "2023-02-10",
+        source: "http://web.archive.org/web/20230210213324/https://www.samsung.com/fr/smartphones/galaxy-s23-ultra/buy/"
+      },
+      disponibilite: {
+        statut: "disponible",
+        libelle: "Commercialisation à partir du 17 février 2023",
+        date: "2026-11-14",
+        source: "https://news.samsung.com/global/take-your-passions-further-with-the-new-samsung-galaxy-s23-series-designed-for-a-premium-experience-today-and-beyond"
+      },
+      accessoires: [],
+      bundles: [],
+      usages: [
+        "Photographier en très haute résolution avec le capteur de 200 Mpx",
+        "Réaliser des photos nocturnes et vidéos en faible luminosité",
+        "Zoomer avec les téléobjectifs optiques 3x et 10x",
+        "Cadrer des scènes larges avec l'ultra grand-angle de 120°",
+        "Prendre des notes et dessiner avec le S Pen intégré",
+        "Jouer grâce au Snapdragon 8 Gen 2 for Galaxy",
+        "Profiter d'un écran 6,8 pouces QHD+ à 120 Hz pour le multimédia",
+        "Recharger rapidement jusqu'à 65 % en environ 30 minutes avec un adaptateur 45 W",
+        "Partager de l'énergie avec Wireless PowerShare",
+        "Utiliser le smartphone sous la pluie grâce à la certification IP68",
+        "Se connecter en 5G, Wi-Fi 6E et Bluetooth 5.3",
+        "Stocker jusqu'à 1 To de contenus"
+      ],
+      medias: {
+        videos: [
+          {
+            id: "6B-XSY7PkxI",
+            titre: "Galaxy S23 Ultra: Official Introduction Film | Samsung",
+            chaine: "Samsung Malaysia",
+            url: "https://www.youtube.com/watch?v=6B-XSY7PkxI"
+          }
+        ],
+        images: [
+          {
+            fichier: "img/galaxy-s23-ultra-1.png",
+            alt: "Samsung Galaxy S23 Ultra, face arrière couleur lavande",
+            licence: "CC BY 4.0",
+            auteur: "PantheraLeo1359531",
+            attribution: "Photo : PantheraLeo1359531 — licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S23_Ultra,_512_GB,_Lavender_20230416_HOF00318_RAW-Export_cens.png"
+          },
+          {
+            fichier: "img/galaxy-s23-ultra-2.png",
+            alt: "S Pen du Samsung Galaxy S23 Ultra",
+            licence: "CC BY 4.0",
+            auteur: "PantheraLeo1359531",
+            attribution: "Photo : PantheraLeo1359531 — licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:S-Pen_des_Samsung_Galaxy_S23_Ultra,_512_GB,_Lavender_20230416_HOF00340_RAW-Export.png"
+          },
+          {
+            fichier: "img/galaxy-s23-ultra-3.jpg",
+            alt: "Samsung Galaxy S23 Ultra exposé en magasin Samsung",
+            licence: "CC BY-SA 4.0",
+            auteur: "Captainmorlypogi1959",
+            attribution: "Photo : Captainmorlypogi1959 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S23_Ultra_2024.jpg"
+          }
+        ]
+      },
+      article: {
+        titre: "Galaxy S23 Ultra : capteur 200 Mpx et Snapdragon pour Galaxy",
+        contenu: [
+          "Lancé le 17 février 2023, le Samsung Galaxy S23 Ultra fait évoluer la formule Ultra avec un nouveau capteur photo de 200 Mpx et la plateforme Snapdragon 8 Gen 2 Mobile Platform for Galaxy. Il conserve les marqueurs de la gamme : grand écran 6,8 pouces, S Pen intégré, batterie de 5 000 mAh et châssis certifié IP68.",
+          "L'écran QHD+ Edge Dynamic AMOLED 2X offre un taux de rafraîchissement adaptatif de 1 à 120 Hz et des fonctions d'amélioration du confort visuel comme Vision Booster. Samsung met l'accent sur la photographie en conditions difficiles, avec un traitement amélioré en basse lumière et des outils vidéo avancés, tout en conservant une dalle pensée pour la consommation de contenus et le jeu.",
+          "Le système photo arrière associe un capteur principal de 200 Mpx à ƒ/1,7, un ultra grand-angle de 12 Mpx à 120°, et deux téléobjectifs de 10 Mpx pour des zooms optiques 3x et 10x, avec un Space Zoom numérique jusqu'à 100x. La caméra avant passe à 12 Mpx. Le S Pen intégré reste au cœur des usages productifs, de la prise de notes à la retouche précise.",
+          "La batterie de 5 000 mAh prend en charge la charge filaire rapide annoncée jusqu'à 65 % en environ 30 minutes avec un adaptateur 45 W et un câble USB-C 5A, ainsi que la recharge sans fil rapide 2.0 et le Wireless PowerShare. L'adaptateur secteur est vendu séparément. L'ensemble repose sur Android 13 avec One UI 5.1 au lancement, avec une promesse de quatre générations d'OS et cinq ans de mises à jour de sécurité.",
+          "Côté connectivité, le Galaxy S23 Ultra prend en charge la 5G, le Wi-Fi 6E, le Bluetooth 5.3 et le Wi-Fi Direct. Il est protégé par Samsung Knox et Knox Vault, et sa résistance à l'eau et à la poussière est certifiée IP68 dans les conditions de test indiquées par Samsung. Le téléphone est disponible en configurations allant jusqu'à 12 Go de RAM et 1 To de stockage.",
+          "En France, les prix de lancement relevés sur la page d'achat Samsung archivée du 10 février 2023 sont de 1 419 € pour 256 Go, 1 599 € pour 512 Go et 1 839 € pour 1 To. Le Galaxy S23 Ultra vise les utilisateurs exigeants en photo, performance et polyvalence, au prix d'un format imposant de 234 g et d'un positionnement tarifaire très élevé."
+        ]
+      },
+      sourcesVerifiees: [
+        { libelle: "Samsung Global Newsroom — Galaxy S23 Series (01/02/2023) : écran, photo 200 Mpx, Snapdragon 8 Gen 2 for Galaxy, batterie, dimensions, disponibilité", url: "https://news.samsung.com/global/take-your-passions-further-with-the-new-samsung-galaxy-s23-series-designed-for-a-premium-experience-today-and-beyond", date: "2026-11-14" },
+        { libelle: "Samsung France — page d'achat Galaxy S23 Ultra (archivée le 10/02/2023) : prix de lancement 256/512 Go/1 To", url: "http://web.archive.org/web/20230210213324/https://www.samsung.com/fr/smartphones/galaxy-s23-ultra/buy/", date: "2026-11-14" },
+        { libelle: "Samsung Malaysia (YouTube) — « Galaxy S23 Ultra: Official Introduction Film »", url: "https://www.youtube.com/watch?v=6B-XSY7PkxI", date: "2026-11-14" }
+      ],
+      manquants: [
+        "Contenu de la boîte non détaillé dans la fiche officielle consultée",
+        "Luminosité de pointe en nits non précisée dans le communiqué consulté",
+        "Page d'achat Samsung France actuelle charge les prix dynamiquement ; prix relevés via archive Wayback du 10/02/2023"
+      ]
+    },
+
+    {
+      id: "samsung-galaxy-s24-ultra",
+      marque: "Samsung",
+      modele: "Galaxy S24 Ultra",
+      rayon: "smartphones",
+      annee: 2024,
+      dateSortie: "2024-01-31",
+      sourceAnnee: {
+        url: "https://news.samsung.com/global/enter-the-new-era-of-mobile-ai-with-samsung-galaxy-s24-series",
+        date: "2026-11-14"
+      },
+      sourceFiche: "https://news.samsung.com/global/enter-the-new-era-of-mobile-ai-with-samsung-galaxy-s24-series",
+      ficheFabricant: "https://news.samsung.com/global/enter-the-new-era-of-mobile-ai-with-samsung-galaxy-s24-series",
+      description: "Smartphone premium Samsung lancé fin janvier 2024, le Galaxy S24 Ultra inaugure l'ère Galaxy AI avec un châssis en titane, un écran 6,8 pouces QHD+ atteignant 2 600 nits, un capteur 200 Mpx et un téléobjectif 5x de 50 Mpx. Il conserve le S Pen, une batterie de 5 000 mAh et une certification IP68, avec des prix de lancement en France à partir de 1 469 €.",
+      variantes: [
+        {
+          groupe: "Stockage",
+          options: [
+            { libelle: "256 Go", prix: 1469, dispo: true, lienOfficiel: { url: "http://web.archive.org/web/20240120072444/https://www.samsung.com/fr/smartphones/galaxy-s24-ultra/buy/", precision: "Prix de lancement relevé sur la page d'achat Samsung France archivée (256 Go)", verifie: "2026-11-14" } },
+            { libelle: "512 Go", prix: 1589, dispo: true, lienOfficiel: { url: "http://web.archive.org/web/20240120072444/https://www.samsung.com/fr/smartphones/galaxy-s24-ultra/buy/", precision: "Prix de lancement relevé sur la page d'achat Samsung France archivée (512 Go)", verifie: "2026-11-14" } },
+            { libelle: "1 To", prix: 1829, dispo: true, lienOfficiel: { url: "http://web.archive.org/web/20240120072444/https://www.samsung.com/fr/smartphones/galaxy-s24-ultra/buy/", precision: "Prix de lancement relevé sur la page d'achat Samsung France archivée (1 To)", verifie: "2026-11-14" } }
+          ]
+        }
+      ],
+      caracteristiques: [
+        { libelle: "Écran", valeur: "6,8 pouces QHD+ Dynamic AMOLED 2X, taux de rafraîchissement adaptatif 1-120 Hz, Vision Booster" },
+        { libelle: "Luminosité", valeur: "Jusqu'à 2 600 nits en pic, contraste 5 000 000:1" },
+        { libelle: "Protection écran", valeur: "Corning Gorilla Armor" },
+        { libelle: "Châssis", valeur: "Cadre en titane" },
+        { libelle: "Mémoire et stockage", valeur: "12 Go + 256 Go, 512 Go ou 1 To" },
+        { libelle: "Appareil photo principal", valeur: "200 Mpx, ouverture ƒ/1,7, champ de vision 85°, stabilisation optique" },
+        { libelle: "Ultra grand-angle", valeur: "12 Mpx, ouverture ƒ/2,2, champ de vision 120°" },
+        { libelle: "Téléobjectifs", valeur: "50 Mpx zoom optique 5x (ƒ/3,4, 22°) + 10 Mpx zoom optique 3x (ƒ/2,4, 36°), stabilisation optique" },
+        { libelle: "Appareil photo avant", valeur: "12 Mpx, ouverture ƒ/2,2, champ de vision 80°" },
+        { libelle: "S Pen", valeur: "S Pen intégré" },
+        { libelle: "Batterie", valeur: "5 000 mAh (typique)" },
+        { libelle: "Recharge", valeur: "Filaire jusqu'à 65 % en environ 30 min avec adaptateur 45 W et câble USB-C 5A ; recharge sans fil rapide 2.0 ; Wireless PowerShare ; chargeur vendu séparément" },
+        { libelle: "Réseau", valeur: "5G, LTE, Wi-Fi 7, Wi-Fi Direct, Bluetooth 5.3" },
+        { libelle: "Résistance", valeur: "IP68 (eau douce jusqu'à 1,5 m pendant 30 min)" },
+        { libelle: "Dimensions", valeur: "162,3 × 79,0 × 8,6 mm" },
+        { libelle: "Poids", valeur: "232 g (Sub6) / 233 g (mmWave)" },
+        { libelle: "Système", valeur: "Android 14 avec One UI 6.1 au lancement ; 7 générations d'OS et 7 ans de mises à jour de sécurité annoncés" },
+        { libelle: "Fonctions IA", valeur: "Galaxy AI (traduction, assistance à la rédaction, retouche photo, etc. selon disponibilité)" },
+        { libelle: "Coloris", valeur: "Titanium Gray, Titanium Black, Titanium Violet et Titanium Yellow" }
+      ],
+      contenuBoite: "Non détaillé dans la fiche officielle consultée",
+      prix: {
+        montant: 1469,
+        devise: "EUR",
+        marche: "France (Union européenne), TTC",
+        libelle: "Galaxy S24 Ultra 256 Go, prix de lancement relevé sur la page d'achat Samsung France archivée",
+        date: "2024-01-20",
+        source: "http://web.archive.org/web/20240120072444/https://www.samsung.com/fr/smartphones/galaxy-s24-ultra/buy/"
+      },
+      disponibilite: {
+        statut: "disponible",
+        libelle: "Disponibilité mondiale annoncée à partir du 31 janvier 2024",
+        date: "2026-11-14",
+        source: "https://news.samsung.com/global/enter-the-new-era-of-mobile-ai-with-samsung-galaxy-s24-series"
+      },
+      accessoires: [],
+      bundles: [],
+      usages: [
+        "Utiliser les fonctions Galaxy AI pour la traduction et l'assistance à la rédaction",
+        "Photographier avec le capteur principal de 200 Mpx",
+        "Zoomer avec le téléobjectif 5x de 50 Mpx et le téléobjectif 3x de 10 Mpx",
+        "Cadrer des scènes larges avec l'ultra grand-angle de 120°",
+        "Prendre des notes et dessiner avec le S Pen intégré",
+        "Profiter d'un écran très lumineux (jusqu'à 2 600 nits) en extérieur",
+        "Consommer des contenus sur un écran 6,8 pouces QHD+ à 120 Hz",
+        "Se connecter en Wi-Fi 7 et Bluetooth 5.3",
+        "Recharger rapidement jusqu'à 65 % en environ 30 minutes avec un adaptateur 45 W",
+        "Partager de l'énergie avec Wireless PowerShare",
+        "Utiliser le smartphone sous la pluie grâce à la certification IP68",
+        "Stocker jusqu'à 1 To de photos et vidéos"
+      ],
+      medias: {
+        videos: [
+          {
+            id: "jrz4HJTs8PU",
+            titre: "Galaxy S24 Ultra: Official Introduction Film | Samsung",
+            chaine: "Samsung US",
+            url: "https://www.youtube.com/watch?v=jrz4HJTs8PU"
+          }
+        ],
+        images: [
+          {
+            fichier: "img/galaxy-s24-ultra-1.jpg",
+            alt: "Samsung Galaxy S24 Ultra, vue avant",
+            licence: "CC BY-SA 4.0",
+            auteur: "Vis M",
+            attribution: "Photo : Vis M — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Galaxy_S24_Ultra.jpg"
+          },
+          {
+            fichier: "img/galaxy-s24-ultra-2.jpg",
+            alt: "Samsung Galaxy S24 Ultra, vue de trois quarts",
+            licence: "CC BY-SA 4.0",
+            auteur: "Vis M",
+            attribution: "Photo : Vis M — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Galaxy_S24_Ultra_02.jpg"
+          },
+          {
+            fichier: "img/galaxy-s24-ultra-3.jpg",
+            alt: "Samsung Galaxy S24 Ultra noir, face arrière avec objectifs photo",
+            licence: "CC BY-SA 4.0",
+            auteur: "メイド理世",
+            attribution: "Photo : メイド理世 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Back_view_of_Samsung_Galaxy_S24_Ultra_Black.jpg"
+          }
+        ]
+      },
+      article: {
+        titre: "Galaxy S24 Ultra : Galaxy AI, titane et écran 2 600 nits",
+        contenu: [
+          "Présenté en janvier 2024, le Samsung Galaxy S24 Ultra ouvre une nouvelle phase pour la série Galaxy S en mettant l'accent sur l'intelligence artificielle embarquée, regroupée sous le nom Galaxy AI. Le smartphone adopte également un cadre en titane et un écran annoncé comme le plus lumineux de la gamme, tout en conservant le S Pen intégré et la batterie de 5 000 mAh.",
+          "L'écran de 6,8 pouces QHD+ Dynamic AMOLED 2X offre un taux de rafraîchissement adaptatif de 1 à 120 Hz et une luminosité de pointe pouvant atteindre 2 600 nits selon Samsung, avec un contraste annoncé de 5 000 000:1. La dalle est protégée par Corning Gorilla Armor, conçu pour améliorer la résistance aux rayures et réduire les reflets dans les situations du quotidien.",
+          "Le bloc photo associe un capteur principal de 200 Mpx, un ultra grand-angle de 12 Mpx et deux téléobjectifs : un 50 Mpx avec zoom optique 5x et un 10 Mpx avec zoom optique 3x. Cette combinaison vise à offrir une plus grande polyvalence entre grand-angle, portraits et cadrages éloignés. La caméra avant est un capteur de 12 Mpx. Les fonctions Galaxy AI peuvent assister la retouche, la traduction et certaines tâches de communication selon les langues et disponibilités.",
+          "Le Galaxy S24 Ultra prend en charge la 5G, le Wi-Fi 7, le Bluetooth 5.3 et le Wi-Fi Direct. Il conserve la certification IP68 et des fonctions de sécurité Samsung Knox. La recharge filaire atteint jusqu'à 65 % en environ 30 minutes avec un adaptateur 45 W, complétée par la recharge sans fil rapide 2.0 et le Wireless PowerShare ; l'adaptateur secteur est vendu séparément.",
+          "Au lancement, l'appareil fonctionne sous Android 14 avec One UI 6.1. Samsung annonce une politique de suivi logiciel étendue, avec sept générations de mises à jour d'OS et sept ans de mises à jour de sécurité. Les configurations proposées vont jusqu'à 12 Go de RAM et 1 To de stockage, dans un châssis de 232 à 233 g selon les variantes réseau.",
+          "En France, les prix de lancement relevés sur la page d'achat Samsung archivée du 20 janvier 2024 sont de 1 469 € (256 Go), 1 589 € (512 Go) et 1 829 € (1 To). Le Galaxy S24 Ultra s'adresse aux utilisateurs recherchant un grand smartphone orienté photo, zoom, S Pen et fonctions IA, au prix d'un encombrement notable et d'un tarif premium."
+        ]
+      },
+      sourcesVerifiees: [
+        { libelle: "Samsung Global Newsroom — Galaxy S24 Series (17/01/2024) : Galaxy AI, écran 2 600 nits, titane, photo, connectivité, disponibilité", url: "https://news.samsung.com/global/enter-the-new-era-of-mobile-ai-with-samsung-galaxy-s24-series", date: "2026-11-14" },
+        { libelle: "Samsung France — page d'achat Galaxy S24 Ultra (archivée le 20/01/2024) : prix de lancement 256/512 Go/1 To", url: "http://web.archive.org/web/20240120072444/https://www.samsung.com/fr/smartphones/galaxy-s24-ultra/buy/", date: "2026-11-14" },
+        { libelle: "Samsung US (YouTube) — « Galaxy S24 Ultra: Official Introduction Film »", url: "https://www.youtube.com/watch?v=jrz4HJTs8PU", date: "2026-11-14" }
+      ],
+      manquants: [
+        "Contenu de la boîte non détaillé dans la fiche officielle consultée",
+        "Certaines caractéristiques régionales (bandes, variantes mmWave/Sub6 en France) non détaillées",
+        "Page d'achat Samsung France actuelle charge les prix dynamiquement ; prix relevés via archive Wayback du 20/01/2024"
+      ]
+    },
+
     {
       id: "sony-ps5-pro",
       marque: "Sony",
@@ -640,7 +1878,34 @@ export const CATALOGUE = {
             auteur: "BeatEmUps",
             attribution: "Photo : BeatEmUps — licence CC BY 3.0 (https://creativecommons.org/licenses/by/3.0), via Wikimedia Commons",
             source: "https://commons.wikimedia.org/wiki/File:PlayStation_5_Pro_no_disc_drive.jpg"
+          },
+          {
+            fichier: "img/ps5pro-2.png",
+            alt: "Capture d'une vidéo de présentation de la PlayStation 5 Pro",
+            licence: "CC BY 3.0",
+            auteur: "阿金生活",
+            attribution: "Capture : 阿金生活 — licence CC BY 3.0 (https://creativecommons.org/licenses/by/3.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:%E3%80%90%E9%98%BF%E9%87%91%E7%94%9F%E6%B4%BB%E3%80%91%E6%9C%80%E6%96%B0PS5_Pro_%E9%96%8B%E7%AE%B1%E5%A4%96%E8%A7%80%E4%BB%8B%E7%B4%B9!%C2%BF_%E5%92%8CPS5%E7%9A%84%E5%B7%AE%E7%95%B0!%C2%BF_(2160p_60fps_AV1-128kbit_AAC)-00.06.12.000.png"
+          },
+          {
+            fichier: "img/ps5pro-3.png",
+            alt: "PlayStation 5 Pro comparée aux autres modèles de la cinquième génération PlayStation",
+            licence: "CC BY 3.0",
+            auteur: "小宁子 XNZ",
+            attribution: "Capture : 小宁子 XNZ — licence CC BY 3.0 (https://creativecommons.org/licenses/by/3.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:%E3%80%90PS5_Pro%E5%BC%80%E7%AE%B1%E8%AF%84%E6%B5%8B%E3%80%917000%E5%85%83%EF%BC%81%E4%B8%96%E7%95%8C%E6%9C%80%E5%BC%BA%E4%B8%BB%E6%9C%BA%EF%BC%8C%E5%80%BC%E5%BE%97%E4%B9%B0%E5%90%97%EF%BC%9F%E4%B8%A8%E5%B0%8F%E5%AE%81%E5%AD%90_(2160p_60fps_AV1-128kbit_AAC)-00.01.52.400.png"
           }
+        ]
+      },
+      article: {
+        titre: "PlayStation 5 Pro : plus de puissance, du ray-tracing et le PSSR",
+        contenu: [
+          "Lancée le 7 novembre 2024, la PlayStation 5 Pro est la version haut de gamme de la PS5. Sony conserve l'architecture AMD Zen 2 mais pousse le processeur graphique RDNA3 à 60 unités de calcul pour 16,7 TFLOPS, avec un ray-tracing matériel revu et une mise à l'échelle PSSR (PlayStation Spectral Super Resolution) destinée à améliorer la netteté sans sacrifier la fluidité.",
+          "Le SoC est gravé en 4 nm. Le processeur compte huit cœurs et seize threads à 3,8 GHz, le GPU RDNA3 culmine à 2,35 GHz en fréquence variable, et la mémoire associe 16 Go de GDDR6 à 576 Go/s et 2 Go de DDR5. Le stockage interne est un SSD NVMe PCIe 4.0 de 2 To, complété par le son spatial Tempest 3D AudioTech et le Wi-Fi 7.",
+          "L'édition présentée ici est sans lecteur de disque : les jeux s'installent depuis le PlayStation Store, ou depuis un lecteur externe compatible vendu séparément. Le SSD de 2 To offre un espace confortable pour les jeux PS5, dont les tailles dépassent souvent 100 Go. La console reste rétrocompatible avec la quasi-totalité des jeux PS4 et lit les jeux PS5 standard, ce qui permet de conserver sa bibliothèque.",
+          "Les titres « PS5 Pro Enhanced » bénéficient de réglages spécifiques : résolution plus élevée, ray-tracing plus dense ou mode 120 Hz selon les jeux. Le PSSR intervient pour reconstruire une image nette à partir d'une résolution interne plus basse, une approche comparable aux technologies de mise à l'échelle du PC. Le gain réel dépend donc du titre et de l'écran utilisé.",
+          "Sony ne publie pas de prix statique vérifiable sur la page consultée, et la fiche reste donc sans montant plutôt que d'afficher une valeur non confirmée. La console est en vente depuis novembre 2024. Son intérêt est maximal sur un téléviseur 4K HDR compatible 120 Hz ; sur un écran 1080p, l'écart avec une PS5 standard se réduit nettement.",
+          "La PS5 Pro s'adresse aux joueurs qui veulent la meilleure version console de leurs jeux sans passer au PC, et qui possèdent déjà un écran adapté. Ses limites tiennent au prix, à l'absence de lecteur sur l'édition présentée, à la consommation et à la nécessité d'un téléviseur haut de gamme pour exploiter pleinement la machine. Face à une PS5 standard, elle se justifie surtout par la constance des performances et le confort du SSD de 2 To."
         ]
       },
       sourcesVerifiees: [
@@ -650,11 +1915,133 @@ export const CATALOGUE = {
       ],
       manquants: [
         "Prix public officiel actuel non vérifiable sur les sources consultées (page Sony non statique) : aucun montant affiché par prudence",
-        "Deux photographies sous licence libre supplémentaires manquantes (1 photo Commons vérifiée disponible)",
         "Référence/SKU (CFI-…) non confirmée",
         "Caractéristiques complémentaires (poids exact, connectique détaillée, ventirad) à confirmer sur une source fabricant lisible"
       ]
     },
+    {
+      id: "meta-quest-3",
+      marque: "Meta",
+      modele: "Quest 3",
+      rayon: "vr",
+      annee: 2023,
+      dateSortie: "2023-10-10",
+      sourceAnnee: {
+        url: "https://about.fb.com/news/2023/09/meet-meta-quest-3-mixed-reality-headset/",
+        date: "2026-11-14"
+      },
+      sourceFiche: "https://about.fb.com/news/2023/09/meet-meta-quest-3-mixed-reality-headset/",
+      ficheFabricant: "https://www.meta.com/quest/quest-3/",
+      description: "Casque autonome de réalité mixte annoncé le 27 septembre 2023 et commercialisé le 10 octobre 2023. Le Meta Quest 3 combine réalité virtuelle et passthrough couleur haute fidélité, avec la plateforme Snapdragon XR2 Gen 2, un affichage 4K+ Infinite Display, des lentilles pancake plus fines et les manettes Touch Plus, à partir de 499,99 $ en version 128 Go.",
+      variantes: [
+        {
+          groupe: "Stockage",
+          options: [
+            { libelle: "128 Go", prix: 499.99, dispo: true, lienOfficiel: { url: "https://about.fb.com/news/2023/09/meet-meta-quest-3-mixed-reality-headset/", precision: "Prix de lancement annoncé par Meta (128 Go)", verifie: "2026-11-14" } },
+            { libelle: "512 Go", prix: 649.99, dispo: true, lienOfficiel: { url: "https://about.fb.com/news/2023/09/meet-meta-quest-3-mixed-reality-headset/", precision: "Prix de lancement annoncé par Meta (512 Go)", verifie: "2026-11-14" } }
+          ]
+        }
+      ],
+      caracteristiques: [
+        { libelle: "Type", valeur: "Casque autonome de réalité virtuelle et réalité mixte" },
+        { libelle: "Processeur", valeur: "Snapdragon XR2 Gen 2 (développé en collaboration avec Qualcomm Technologies)" },
+        { libelle: "Affichage", valeur: "4K+ Infinite Display, 2 064 × 2 208 pixels par œil" },
+        { libelle: "Résolution", valeur: "25 pixels par degré et 1 218 pixels par pouce (annoncé par Meta)" },
+        { libelle: "Optique", valeur: "Lentilles pancake de nouvelle génération, profil optique environ 40 % plus fin que Quest 2" },
+        { libelle: "Réalité mixte", valeur: "Passthrough couleur haute fidélité, transition par double tapotement sur le casque" },
+        { libelle: "Stockage", valeur: "128 Go ou 512 Go" },
+        { libelle: "Audio", valeur: "Audio spatial intégré, plage audio annoncée 40 % plus forte que Quest 2" },
+        { libelle: "Manettes", valeur: "Meta Quest Touch Plus (incluses)" },
+        { libelle: "Confort", valeur: "Profil plus fin et répartition du poids revue par rapport au Quest 2, sangle ajustable" }
+      ],
+      contenuBoite: "Casque Meta Quest 3, manettes Touch Plus, câble de charge et alimentation (contenu détaillé non exhaustif dans la source consultée)",
+      prix: {
+        montant: 499.99,
+        devise: "USD",
+        marche: "États-Unis, prix de lancement annoncé",
+        libelle: "Meta Quest 3 128 Go, prix de lancement",
+        date: "2023-09-27",
+        source: "https://about.fb.com/news/2023/09/meet-meta-quest-3-mixed-reality-headset/"
+      },
+      disponibilite: {
+        statut: "disponible",
+        libelle: "Précommandes ouvertes le 27 septembre 2023, commercialisation le 10 octobre 2023",
+        date: "2026-11-14",
+        source: "https://about.fb.com/news/2023/09/meet-meta-quest-3-mixed-reality-headset/"
+      },
+      accessoires: [],
+      bundles: [],
+      usages: [
+        "Jouer à des jeux en réalité virtuelle autonome",
+        "Découvrir des expériences de réalité mixte avec passthrough couleur",
+        "Regarder des contenus immersifs et vidéos spatialisées",
+        "Faire du fitness et des applications sportives en VR",
+        "Participer à des expériences sociales et multijoueurs",
+        "Utiliser des applications de productivité et de créativité en MR",
+        "Profiter d'un affichage haute résolution pour les jeux détaillés",
+        "Utiliser les manettes Touch Plus pour les interactions et le jeu",
+        "Alterner entre immersion totale et environnement réel par double tapotement",
+        "Explorer le catalogue Meta Quest sans PC ni console"
+      ],
+      medias: {
+        videos: [
+          {
+            id: "5AKl_cEB26c",
+            titre: "Introducing Meta Quest 3 | Coming This Fall",
+            chaine: "Meta Quest",
+            url: "https://www.youtube.com/watch?v=5AKl_cEB26c"
+          }
+        ],
+        images: [
+          {
+            fichier: "img/meta-quest-3-1.jpg",
+            alt: "Meta Quest 3, vue avant",
+            licence: "CC BY-SA 4.0",
+            auteur: "Roy.wonder.cohen",
+            attribution: "Photo : Roy.wonder.cohen — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Meta_Quest_3_front_View.jpg"
+          },
+          {
+            fichier: "img/meta-quest-3-2.jpg",
+            alt: "Meta Quest 3, vue arrière avec sangle",
+            licence: "CC BY-SA 4.0",
+            auteur: "Roy.wonder.cohen",
+            attribution: "Photo : Roy.wonder.cohen — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Meta_Quest_3_back_View.jpg"
+          },
+          {
+            fichier: "img/meta-quest-3-3.jpg",
+            alt: "Meta Quest 3, vue latérale",
+            licence: "CC BY-SA 4.0",
+            auteur: "Roy.wonder.cohen",
+            attribution: "Photo : Roy.wonder.cohen — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Meta_Quest_3_side_View.jpg"
+          }
+        ]
+      },
+      article: {
+        titre: "Meta Quest 3 : la réalité mixte grand public",
+        contenu: [
+          "Annoncé le 27 septembre 2023 lors de Meta Connect et commercialisé le 10 octobre 2023, le Meta Quest 3 est le casque autonome de réalité mixte de Meta destiné au grand public. Il est proposé à partir de 499,99 $ en version 128 Go, avec une option 512 Go à 649,99 $. Meta le présente comme son casque le plus puissant à ce moment-là, avec un accent mis sur la fusion entre mondes virtuel et physique.",
+          "Le Quest 3 introduit une plateforme Snapdragon XR2 Gen 2, développée en collaboration avec Qualcomm Technologies, que Meta associe à un doublement de la puissance graphique par rapport au Quest 2. L'affichage 4K+ Infinite Display atteint 2 064 × 2 208 pixels par œil, avec des lentilles pancake offrant un profil optique environ 40 % plus fin que la génération précédente et une meilleure netteté sur l'ensemble de l'image.",
+          "La réalité mixte repose sur un passthrough couleur haute fidélité permettant de superposer des éléments virtuels à l'environnement réel. Meta met en avant la possibilité de basculer rapidement entre immersion totale et vue mixte par un double tapotement sur le casque. Cette approche ouvre des usages allant du jeu aux applications créatives et de productivité, en gardant une conscience de l'espace physique.",
+          "Côté confort et audio, le casque adopte un profil plus fin et une répartition du poids revue, avec une sangle ajustable. L'audio spatial intégré promet une plage plus forte et plus claire que celle du Quest 2. Les manettes fournies sont des Meta Quest Touch Plus, conçues pour les interactions et les jeux en VR comme en réalité mixte.",
+          "Le Meta Quest 3 fonctionne de manière autonome, sans PC ni console obligatoire, et s'appuie sur le catalogue d'applications et de jeux de la plateforme Meta Quest. Les deux capacités de stockage proposées au lancement répondent à des besoins différents selon la taille des jeux et contenus téléchargés. Comme pour tout casque, le confort sur de longues sessions dépend aussi des accessoires et des réglages choisis.",
+          "En se positionnant entre immersion VR et expériences mixtes ancrées dans le réel, le Quest 3 cible aussi bien les joueurs que les curieux de réalité mixte. Son principal compromis reste l'autonomie et l'échauffement inhérents aux casques autonomes, ainsi qu'un tarif supérieur à celui du Quest 2 à son époque. La fiche retient les informations publiées par Meta lors de l'annonce et documente les éléments non détaillés dans les sources consultées."
+        ]
+      },
+      sourcesVerifiees: [
+        { libelle: "Meta Newsroom — « Meet Meta Quest 3, Our Mixed Reality Headset Starting at $499.99 » (27/09/2023) : prix, date de commercialisation, Snapdragon XR2 Gen 2, affichage, passthrough, audio", url: "https://about.fb.com/news/2023/09/meet-meta-quest-3-mixed-reality-headset/", date: "2026-11-14" },
+        { libelle: "Meta — page produit Meta Quest 3", url: "https://www.meta.com/quest/quest-3/", date: "2026-11-14" },
+        { libelle: "Meta Quest (YouTube) — « Introducing Meta Quest 3 | Coming This Fall »", url: "https://www.youtube.com/watch?v=5AKl_cEB26c", date: "2026-11-14" }
+      ],
+      manquants: [
+        "Caractéristiques détaillées non précisées dans les sources consultées (RAM, capacité batterie exacte en mAh, champ de vision exact, poids exact, Wi-Fi/Bluetooth détaillés)",
+        "Prix en euros non indiqués dans la source d'annonce consultée (prix annoncés en USD)",
+        "Contenu de boîte détaillé non exhaustif dans les sources consultées"
+      ]
+    },
+
     {
       id: "valve-steam-deck-oled",
       marque: "Valve",
@@ -727,7 +2114,27 @@ export const CATALOGUE = {
           chaine: "Valve",
           url: "https://www.youtube.com/watch?v=_vTsZMvjJ-A"
         },
-        images: []
+        images: [
+          {
+            fichier: "img/steam-deck-oled-1.jpg",
+            alt: "Steam Deck OLED de Valve, vue de face avec l'écran d'accueil allumé",
+            licence: "CC BY-SA 4.0",
+            auteur: "SparklesTrainNerd",
+            attribution: "Photo : SparklesTrainNerd — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Steam_Deck_OLED_framsida_hemsk%C3%A4rm.jpg"
+          }
+        ]
+      },
+      article: {
+        titre: "Steam Deck OLED : l'écran qui change la console portable de Valve",
+        contenu: [
+          "Dévoilée en novembre 2023, la Steam Deck OLED n'est pas une nouvelle génération mais une révision profonde du Steam Deck. Valve remplace l'écran LCD par une dalle OLED HDR de 7,4 pouces en 1280 × 800, monte la fréquence jusqu'à 90 Hz, passe l'APU en 6 nm et augmente la batterie à 50 Wh. Le résultat : une console plus autonome et plus agréable à regarder, sans changer fondamentalement la puissance.",
+          "La configuration présentée ici est le modèle 512 Go, proposé à 779 €, et le modèle 1 To à 919 €. Ce dernier ajoute un verre antireflet de qualité supérieure et un étui à doublure amovible. Les deux embarquent 16 Go de LPDDR5, un SSD NVMe, le Wi-Fi 6E et SteamOS 3.",
+          "L'écran OLED est le principal argument : contraste élevé, noirs profonds et couleurs plus vives que sur la dalle LCD d'origine. Le HDR et les 90 Hz améliorent les jeux compatibles, tandis que la définition de 1280 × 800 reste adaptée à la taille de l'écran et à la puissance de l'APU. Valve fournit une alimentation de 45 W avec un câble de 2,5 m.",
+          "L'autonomie annoncée va de 3 à 12 heures selon le contenu, un progrès rendu possible par la batterie de 50 Wh et la gravure en 6 nm. La console joue aux jeux Steam natifs et aux titres Windows via Proton, et peut être connectée à un écran externe. Elle partage sa bibliothèque avec un PC, une Steam Machine ou le Steam Frame sans migration.",
+          "Valve ne publie pas de référence SKU, et les photographies libres du modèle OLED restent rares : la fiche s'appuie sur une photo sous licence CC BY-SA 4.0 et reste signalée comme incomplète pour ses médias. Les prix de 779 € et 919 € correspondent au retour en stock du 27 mai 2026, après une période de rupture.",
+          "La Steam Deck OLED s'adresse aux joueurs qui veulent une console PC portable sans compromis sur l'écran, et qui acceptent une puissance modérée et un catalogue dépendant de la compatibilité Proton. Elle complète bien un PC de bureau ou une Steam Machine, et reste la référence de Valve pour le jeu nomade sous SteamOS. Face au modèle LCD, l'OLED justifie surtout son supplément par le confort visuel et l'autonomie."
+        ]
       },
       sourcesVerifiees: [
         { libelle: "Annonce Valve « Steam Deck back in stock, with updated pricing » (27/05/2026) : 512 Go 779 €, 1 To 919 € TTC", url: "https://steamcommunity.com/groups/steam_hardware/announcements/detail/672869045073085539", date: "2026-11-13" },
@@ -735,7 +2142,7 @@ export const CATALOGUE = {
         { libelle: "Wikipédia EN « Steam Deck » (sortie OLED le 16 novembre 2023 ; RAM 16 Go LPDDR5)", url: "https://en.wikipedia.org/wiki/Steam_Deck", date: "2026-11-13" }
       ],
       manquants: [
-        "Aucune photographie du modèle OLED sous licence libre vérifiée (les photos Commons disponibles montrent le modèle LCD) : 3 images requises pour une fiche complète",
+        "Une seule photographie du modèle OLED sous licence libre vérifiée (Wikimedia Commons) : deux images supplémentaires sont nécessaires pour une fiche complète",
         "Référence/SKU non publiée par Valve"
       ]
     },
@@ -1001,6 +2408,134 @@ export const CATALOGUE = {
         "Autonomie en usage réel non communiquée au-delà des valeurs de lecture vidéo, streaming et audio"
       ]
     },
+    {
+      id: "raspberry-pi-5",
+      marque: "Linux",
+      modele: "Raspberry Pi 5",
+      rayon: "ordinateurs",
+      annee: 2023,
+      dateSortie: null,
+      sourceAnnee: {
+        url: "https://www.raspberrypi.com/news/introducing-raspberry-pi-5/",
+        date: "2026-11-14"
+      },
+      sourceFiche: "https://www.raspberrypi.com/news/introducing-raspberry-pi-5/",
+      ficheFabricant: "https://www.raspberrypi.com/products/raspberry-pi-5/",
+      description: "Ordinateur monocarte Raspberry Pi annoncé le 28 septembre 2023, avec une disponibilité annoncée pour fin octobre 2023. Le Raspberry Pi 5 apporte un processeur quadricœur Arm Cortex-A76 à 2,4 GHz, un GPU VideoCore VII, une sortie double écran 4Kp60, le Wi-Fi double bande, le Bluetooth 5.0, l'USB 3.0, un port PCIe 2.0 x1 et un bouton d'alimentation, en versions 4 Go et 8 Go.",
+      variantes: [
+        {
+          groupe: "Mémoire",
+          options: [
+            { libelle: "4 Go", prix: 60, dispo: true, lienOfficiel: { url: "https://www.raspberrypi.com/news/introducing-raspberry-pi-5/", precision: "Prix annoncé par Raspberry Pi (hors taxes locales)", verifie: "2026-11-14" } },
+            { libelle: "8 Go", prix: 80, dispo: true, lienOfficiel: { url: "https://www.raspberrypi.com/news/introducing-raspberry-pi-5/", precision: "Prix annoncé par Raspberry Pi (hors taxes locales)", verifie: "2026-11-14" } }
+          ]
+        }
+      ],
+      caracteristiques: [
+        { libelle: "Processeur", valeur: "Quadricœur 64 bits Arm Cortex-A76 à 2,4 GHz" },
+        { libelle: "GPU", valeur: "VideoCore VII, OpenGL ES 3.1, Vulkan 1.2" },
+        { libelle: "Mémoire", valeur: "4 Go ou 8 Go LPDDR4X SDRAM" },
+        { libelle: "Affichage", valeur: "Double sortie micro-HDMI, jusqu'à 4Kp60" },
+        { libelle: "Décodage vidéo", valeur: "Décodeur HEVC 4Kp60" },
+        { libelle: "Sans fil", valeur: "Wi-Fi 802.11ac double bande, Bluetooth 5.0 / BLE" },
+        { libelle: "Stockage", valeur: "Interface carte microSD haute vitesse avec prise en charge du mode SDR104" },
+        { libelle: "USB", valeur: "2 ports USB 3.0 (5 Gbit/s simultanés) et 2 ports USB 2.0" },
+        { libelle: "Réseau filaire", valeur: "Gigabit Ethernet, prise en charge PoE+ (HAT PoE+ séparé requis)" },
+        { libelle: "Caméra/écran", valeur: "2 émetteurs-récepteurs MIPI 4 voies (caméra/écran)" },
+        { libelle: "Extension", valeur: "Interface PCIe 2.0 x1 pour périphériques rapides" },
+        { libelle: "GPIO", valeur: "Connecteur GPIO standard Raspberry Pi 40 broches" },
+        { libelle: "Horloge et alimentation", valeur: "Horloge temps réel (RTC) et bouton d'alimentation" }
+      ],
+      contenuBoite: "Carte Raspberry Pi 5 seule (alimentation, boîtier, carte microSD, câbles et accessoires vendus séparément)",
+      prix: {
+        montant: 60,
+        devise: "USD",
+        marche: "International, hors taxes locales",
+        libelle: "Raspberry Pi 5 4 Go, prix annoncé",
+        date: "2023-09-28",
+        source: "https://www.raspberrypi.com/news/introducing-raspberry-pi-5/"
+      },
+      disponibilite: {
+        statut: "disponible",
+        libelle: "Précommandes ouvertes le 28 septembre 2023, premières unités annoncées pour fin octobre 2023",
+        date: "2026-11-14",
+        source: "https://www.raspberrypi.com/news/introducing-raspberry-pi-5/"
+      },
+      accessoires: [],
+      bundles: [],
+      usages: [
+        "Créer un mini-PC de bureau sous Linux",
+        "Apprendre la programmation et l'informatique",
+        "Piloter des projets électroniques via le GPIO 40 broches",
+        "Connecter deux écrans 4K à 60 Hz en micro-HDMI",
+        "Monter un serveur domestique ou un NAS léger avec PCIe/USB 3.0",
+        "Utiliser des caméras ou écrans MIPI via les deux connecteurs 4 voies",
+        "Prototyper des objets connectés en Wi-Fi et Bluetooth",
+        "Lire des médias grâce au décodage HEVC 4Kp60",
+        "Développer et tester des applications embarquées",
+        "Mettre en place des projets d'éducation STEM",
+        "Expérimenter avec des périphériques PCIe 2.0 x1",
+        "Remplacer ou compléter un poste léger pour la bureautique et le web"
+      ],
+      medias: {
+        videos: [
+          {
+            id: "yul4gq_LrOI",
+            titre: "Introducing Raspberry Pi 5",
+            chaine: "Raspberry Pi",
+            url: "https://www.youtube.com/watch?v=yul4gq_LrOI"
+          }
+        ],
+        images: [
+          {
+            fichier: "img/raspberry-pi-5-1.jpg",
+            alt: "Raspberry Pi 5 8 Go, vue de dessus",
+            licence: "CC BY 2.0",
+            auteur: "SparkFun Electronics",
+            attribution: "Photo : SparkFun Electronics — licence CC BY 2.0 (https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:23551-Raspberry-Pi-5-8G-feature.jpg"
+          },
+          {
+            fichier: "img/raspberry-pi-5-2.jpg",
+            alt: "Raspberry Pi 5, vue arrière montrant les connecteurs",
+            licence: "CC BY 2.0",
+            auteur: "SparkFun Electronics",
+            attribution: "Photo : SparkFun Electronics — licence CC BY 2.0 (https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:23550-Raspberry-Pi-5-back.jpg"
+          },
+          {
+            fichier: "img/raspberry-pi-5-3.jpg",
+            alt: "Raspberry Pi 5 8 Go, vue rapprochée de la carte",
+            licence: "CC BY 2.0",
+            auteur: "SparkFun Electronics",
+            attribution: "Photo : SparkFun Electronics — licence CC BY 2.0 (https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:23551-Raspberry-Pi-5-8G_(cropped).jpg"
+          }
+        ]
+      },
+      article: {
+        titre: "Raspberry Pi 5 : un bond de performance pour l'ordinateur monocarte",
+        contenu: [
+          "Annoncé le 28 septembre 2023, le Raspberry Pi 5 représente une évolution majeure de la gamme d'ordinateurs monocarte de Raspberry Pi. Les précommandes ont été ouvertes dès l'annonce, avec des premières expéditions annoncées pour fin octobre 2023. Proposé à 60 $ pour 4 Go et 80 $ pour 8 Go (hors taxes locales), il vise à offrir une expérience plus proche d'un PC tout en conservant le format compact et accessible de la marque.",
+          "Au cœur de la carte se trouve un processeur quadricœur 64 bits Arm Cortex-A76 cadencé à 2,4 GHz, accompagné d'un GPU VideoCore VII compatible OpenGL ES 3.1 et Vulkan 1.2. Raspberry Pi met en avant des performances plus de deux fois supérieures à celles du Raspberry Pi 4, avec des améliorations sur le CPU, le GPU, la mémoire et les entrées/sorties. La carte introduit également du silicium conçu en interne, notamment le contrôleur d'E/S RP1.",
+          "Côté multimédia et affichage, le Raspberry Pi 5 prend en charge deux sorties micro-HDMI jusqu'à 4Kp60 et dispose d'un décodeur HEVC 4Kp60. La connectivité sans fil comprend le Wi-Fi 802.11ac double bande et le Bluetooth 5.0 / BLE, tandis que le réseau filaire passe par un port Gigabit Ethernet avec prise en charge du PoE+ via un HAT séparé. Deux ports USB 3.0 et deux ports USB 2.0 complètent l'ensemble.",
+          "Pour les makers et projets avancés, la carte conserve le connecteur GPIO 40 broches et ajoute deux interfaces MIPI 4 voies pour caméras ou écrans, ainsi qu'un port PCIe 2.0 x1 destiné aux périphériques rapides. L'interface microSD prend en charge le mode SDR104 pour des accès plus rapides, et un bouton d'alimentation ainsi qu'une horloge temps réel font leur apparition, répondant à des demandes récurrentes de la communauté.",
+          "Le Raspberry Pi 5 est vendu comme carte seule : alimentation, boîtier, stockage, câbles et accessoires sont à prévoir en complément. Cette modularité permet d'adapter la configuration à chaque usage, du poste de bureau léger au serveur domestique, en passant par la robotique, l'éducation ou le prototypage IoT. La gestion thermique peut nécessiter un dissipateur ou un refroidissement actif selon la charge.",
+          "En résumé, le Raspberry Pi 5 s'adresse à ceux qui veulent plus de puissance dans un format familier, sans abandonner l'écosystème GPIO et les usages éducatifs. Son positionnement reste agressif en prix de base, mais le coût total dépend des accessoires choisis. La date exacte de première disponibilité n'étant pas précisée au-delà de « fin octobre 2023 » dans l'annonce officielle, la fiche retient l'année et documente cette incertitude."
+        ]
+      },
+      sourcesVerifiees: [
+        { libelle: "Raspberry Pi — « Introducing: Raspberry Pi 5! » (28/09/2023) : caractéristiques, prix 4/8 Go, précommandes et disponibilité fin octobre 2023", url: "https://www.raspberrypi.com/news/introducing-raspberry-pi-5/", date: "2026-11-14" },
+        { libelle: "Raspberry Pi — page produit Raspberry Pi 5", url: "https://www.raspberrypi.com/products/raspberry-pi-5/", date: "2026-11-14" },
+        { libelle: "Raspberry Pi (YouTube) — « Introducing Raspberry Pi 5 »", url: "https://www.youtube.com/watch?v=yul4gq_LrOI", date: "2026-11-14" }
+      ],
+      manquants: [
+        "Date de disponibilité exacte non précisée dans l'annonce officielle (fin octobre 2023 indiquée)",
+        "Prix en euros non indiqués par le fabricant dans la source consultée (prix annoncés en USD, hors taxes locales)",
+        "Accessoires (alimentation, boîtier, carte microSD, câbles) vendus séparément"
+      ]
+    },
+
     {
       id: "linux-raspberry-pi-400",
       marque: "Raspberry Pi",
@@ -1343,7 +2878,24 @@ export const CATALOGUE = {
             url: "https://www.youtube.com/watch?v=O2W0N3uKXmo"
           }
         ],
-        images: []
+        images: [
+          {
+            fichier: "img/half-life-alyx-1.png",
+            alt: "Logotype officiel de Half-Life: Alyx",
+            licence: "Domaine public",
+            auteur: "Valve Corporation",
+            attribution: "Logotype : Valve Corporation — domaine public, via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Half-Life_Alyx_Logo.png"
+          },
+          {
+            fichier: "img/half-life-alyx-2.jpg",
+            alt: "Capture d'écran en jeu de Half-Life: Alyx avec l'outil d'enregistrement Holoswitch",
+            licence: "CC BY 2.0",
+            auteur: "Felix Schaefer",
+            attribution: "Capture : Felix Schaefer — licence CC BY 2.0 (https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:Holoswitch_Recorder_HL-Alyx.jpg"
+          }
+        ]
       },
       article: {
         titre: "Half-Life: Alyx : le retour de Half-Life en réalité virtuelle",
@@ -1360,7 +2912,7 @@ export const CATALOGUE = {
         { libelle: "Fiche Steam officielle de Half-Life: Alyx : date de sortie (23/03/2020), prix, plateforme Windows, configuration minimum et compatibilité SteamVR", url: "https://store.steampowered.com/app/546560/Half_Life_Alyx/", date: "2026-11-14" }
       ],
       manquants: [
-        "Aucune photographie du jeu sous licence libre vérifiée : seul le logo est disponible sur Wikimedia Commons, insuffisant pour atteindre 3 images",
+        "Deux visuels libres vérifiés seulement (logotype officiel domaine public et une capture en jeu CC BY 2.0) : une troisième image est nécessaire pour une fiche complète",
         "Configuration recommandée non publiée sur la fiche Steam consultée",
         "Contenu détaillé des mises à jour et des éventuels contenus additionnels non vérifié"
       ]

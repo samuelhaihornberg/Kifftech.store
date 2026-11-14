@@ -3,7 +3,7 @@
    Le code (HTML, JS, CSS) passe toujours par le réseau d'abord : une ancienne
    version ne peut pas rester affichée depuis le cache après une mise en ligne. */
 
-const CACHE_NAME='kifftech-v11';
+const CACHE_NAME='kifftech-v13';
 const PRECACHE_ASSETS=[
   './','./index.html','./promotions.html','./style.css','./app.js','./install.js','./bilan.js','./manifest.json',
   './data/catalogue.js','./data/config.js',
