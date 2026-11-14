@@ -6068,7 +6068,16 @@ export const CATALOGUE = {
       ],
       "medias": {
         "images": [],
-        "videos": []
+        "videos": [
+          {
+            "id": "1I4AAWjFxCo",
+            "titre": "Raider 16 Max HX B2W - Light 'em Up | MSI",
+            "chaine": "MSI Gaming",
+            "url": "https://www.youtube.com/watch?v=1I4AAWjFxCo",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
+          }
+        ]
       },
       "article": {
         "titre": "MSI Raider 16 Max (2026) (2026)",
@@ -8713,6 +8722,16 @@ export const CATALOGUE = {
             "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Steam_machine_back.jpg",
             "attributionDemandee": "Photo : Masem — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
             "modeleCorrespondant": "Valve Steam Machine",
+            "dateVerification": "2026-11-14"
+          }
+        ],
+        "videos": [
+          {
+            "id": "OmKrKTwtukE",
+            "titre": "Steam Hardware Announcement",
+            "chaine": "Valve",
+            "url": "https://www.youtube.com/watch?v=OmKrKTwtukE",
+            "type": "officielle-fabricant-editeur",
             "dateVerification": "2026-11-14"
           }
         ]
