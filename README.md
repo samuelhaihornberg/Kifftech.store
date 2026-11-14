@@ -40,8 +40,8 @@ node tools/check-contenu.js --strict   # échoue si une fiche existante est inco
 node tools/check-contenu.js --complete # échoue si un des 63 couples manque
 ```
 
-État au 14/11/2026 : **26 fiches**, **21 fiches complètes**, **22 couples marque × année couverts sur 63**.
-Ajouts récents : iPhone 13/14 Pro/15 Pro/16 Pro, Galaxy S22/S23/S24 Ultra, Raspberry Pi 5, Meta Quest 3.
+État au 14/11/2026 : **27 fiches**, **22 fiches complètes**, **23 couples marque × année couverts sur 63**.
+Ajouts récents : iPhone 13/14 Pro/15 Pro/16 Pro/17e, Galaxy S22/S23/S24 Ultra, Raspberry Pi 5, Meta Quest 3.
 Fiches encore incomplètes faute de médias libres/vérifiés : Steam Machine (2/3 images), Steam Deck OLED (1/3), Half-Life: Alyx (2/3), HP Reverb G2 (0/3 images, 0/1 vidéo), Alienware m15 R3 (0/3 images, 0/1 vidéo). `img/airpods-pro-2-1.jpg` reste non intégré (origine/droits non vérifiés). Service worker : `kifftech-v13`.
 
 ## Lancer en local

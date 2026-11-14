@@ -753,6 +753,131 @@ export const CATALOGUE = {
       ]
     },
     {
+      id: "apple-iphone-17e",
+      marque: "Apple",
+      modele: "iPhone 17e",
+      rayon: "smartphones",
+      annee: 2026,
+      dateSortie: "2026-03-11",
+      sourceAnnee: {
+        url: "https://www.apple.com/fr/newsroom/2026/03/apple-introduces-iphone-17e/",
+        date: "2026-11-14"
+      },
+      sourceFiche: "https://www.apple.com/fr/newsroom/2026/03/apple-introduces-iphone-17e/",
+      ficheFabricant: "https://www.apple.com/fr/iphone-17e/",
+      description: "Smartphone Apple annoncé le 2 mars 2026, avec précommandes le 4 mars et disponibilité le 11 mars 2026. L'iPhone 17e intègre la puce A19, le modem C1X, un écran Super Retina XDR de 6,1 pouces protégé par Ceramic Shield 2, une caméra Fusion 48 Mpx avec téléobjectif 2x de qualité optique, MagSafe, une résistance IP68 et un stockage de départ de 256 Go, à partir de 719 € en France.",
+      variantes: [
+        {
+          groupe: "Stockage",
+          options: [
+            { libelle: "256 Go", prix: 719, dispo: true, lienOfficiel: { url: "https://www.apple.com/fr/newsroom/2026/03/apple-introduces-iphone-17e/", precision: "Prix de revente Apple France de l'iPhone 17e 256 Go", verifie: "2026-11-14" } }
+          ]
+        }
+      ],
+      caracteristiques: [
+        { libelle: "Écran", valeur: "Super Retina XDR OLED de 6,1 pouces (diagonale), luminosité HDR de pointe jusqu'à 1 200 nits" },
+        { libelle: "Protection écran", valeur: "Ceramic Shield 2, résistance aux rayures annoncée trois fois supérieure à la génération précédente, faible réflectance" },
+        { libelle: "Puce", valeur: "A19 : CPU 6 cœurs, GPU 4 cœurs avec Neural Accelerators, Neural Engine 16 cœurs" },
+        { libelle: "Modem", valeur: "C1X conçu par Apple" },
+        { libelle: "Stockage", valeur: "256 Go ou 512 Go" },
+        { libelle: "Appareil photo", valeur: "Caméra Fusion 48 Mpx avec téléobjectif 2x de qualité optique, photos 24 Mpx par défaut et 48 Mpx, portraits nouvelle génération, mode Nuit, HDR nouvelle génération" },
+        { libelle: "Vidéo", valeur: "Enregistrement Dolby Vision 4K jusqu'à 60 i/s, Audio spatial, Mix audio, réduction du bruit du vent" },
+        { libelle: "Recharge", valeur: "MagSafe et Qi2 jusqu'à 15 W, charge filaire rapide USB-C jusqu'à 50 % en environ 30 min avec adaptateur 20 W ou plus" },
+        { libelle: "Connectivité et fonctions", valeur: "Face ID, bouton Action, Messages/Localiser/Assistance routière/SOS d'urgence par satellite (selon disponibilité), Détection des accidents" },
+        { libelle: "Résistance", valeur: "Châssis en aluminium de qualité aérospatiale, indice IP68 (éclaboussures, eau et poussière)" },
+        { libelle: "Système", valeur: "iOS 26 avec Apple Intelligence (selon disponibilité des fonctionnalités)" },
+        { libelle: "Coloris", valeur: "Noir, blanc et rose pastel (finition mate)" }
+      ],
+      contenuBoite: "Non détaillé dans le communiqué consulté",
+      prix: {
+        montant: 719,
+        devise: "EUR",
+        marche: "France (Union européenne), TTC",
+        libelle: "iPhone 17e 256 Go, prix de revente Apple",
+        date: "2026-03-02",
+        source: "https://www.apple.com/fr/newsroom/2026/03/apple-introduces-iphone-17e/"
+      },
+      disponibilite: {
+        statut: "disponible",
+        libelle: "Précommandes le 4 mars 2026 à 15 h 15, disponibilité le 11 mars 2026 (selon pays et zones)",
+        date: "2026-11-14",
+        source: "https://www.apple.com/fr/newsroom/2026/03/apple-introduces-iphone-17e/"
+      },
+      accessoires: [],
+      bundles: [],
+      usages: [
+        "Photographier au quotidien avec la caméra Fusion 48 Mpx",
+        "Utiliser le téléobjectif 2x de qualité optique pour se rapprocher du sujet",
+        "Prendre des portraits nouvelle génération avec flou d'arrière-plan ajustable",
+        "Filmer en Dolby Vision 4K jusqu'à 60 i/s",
+        "Profiter d'un écran 6,1 pouces Super Retina XDR pour vidéos et jeux",
+        "Jouer avec les graphismes accélérés par la puce A19",
+        "Recharger rapidement en USB-C ou sans fil via MagSafe/Qi2",
+        "Utiliser Face ID et le bouton Action pour des raccourcis rapides",
+        "Bénéficier de fonctions de sécurité comme Détection des accidents et SOS d'urgence par satellite (selon disponibilité)",
+        "Utiliser Apple Intelligence et iOS 26 pour la traduction, la retouche et la productivité (selon disponibilité)",
+        "Stocker plus de photos et vidéos grâce au stockage de départ de 256 Go"
+      ],
+      medias: {
+        videos: [
+          {
+            id: "TiE2F1V841A",
+            titre: "iPhone 17e: A Powerful iPhone at a Great Price",
+            chaine: "Apple",
+            url: "https://www.youtube.com/watch?v=TiE2F1V841A"
+          }
+        ],
+        images: [
+          {
+            fichier: "img/iphone-17e-1.jpg",
+            alt: "iPhone 17e rose pastel, vue avant et arrière",
+            licence: "CC BY-SA 4.0",
+            auteur: "Kyu3a",
+            attribution: "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:IPhone_17e_Soft_Pink_Model_-_1.jpg"
+          },
+          {
+            fichier: "img/iphone-17e-2.jpg",
+            alt: "iPhone 17e rose pastel, autre vue",
+            licence: "CC BY-SA 4.0",
+            auteur: "Kyu3a",
+            attribution: "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:IPhone_17e_Soft_Pink_Model_-_2.jpg"
+          },
+          {
+            fichier: "img/iphone-17e-3.jpg",
+            alt: "iPhone 17e, vue arrière",
+            licence: "CC BY-SA 4.0",
+            auteur: "茅野ふたば",
+            attribution: "Photo : 茅野ふたば — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            source: "https://commons.wikimedia.org/wiki/File:IPhone_17e_backside.jpg"
+          }
+        ]
+      },
+      article: {
+        titre: "iPhone 17e : l'entrée de gamme de la famille iPhone 17",
+        contenu: [
+          "Présenté le 2 mars 2026, l'iPhone 17e vient compléter la gamme iPhone 17 avec un modèle plus abordable. Apple annonce des précommandes à partir du 4 mars 2026 et une disponibilité le 11 mars. En France, le prix de revente Apple démarre à 719 € avec un stockage de base doublé à 256 Go par rapport à la génération précédente, avec une option 512 Go également proposée.",
+          "L'appareil est équipé de la puce A19, gravée en 3 nm selon Apple, associant un CPU 6 cœurs, un GPU 4 cœurs avec Neural Accelerators et un Neural Engine 16 cœurs. Il intègre aussi le modem cellulaire C1X conçu par Apple. L'écran Super Retina XDR OLED de 6,1 pouces est protégé par Ceramic Shield 2, avec une résistance aux rayures annoncée comme supérieure et une réflectance réduite.",
+          "Côté photo, l'iPhone 17e dispose d'une caméra Fusion 48 Mpx offrant un téléobjectif 2x de qualité optique, des photos en 24 Mpx par défaut ou 48 Mpx, le mode Nuit, les portraits nouvelle génération et un HDR amélioré. La vidéo prend en charge le Dolby Vision 4K jusqu'à 60 images par seconde, avec Audio spatial, Mix audio et réduction du bruit du vent.",
+          "L'autonomie est annoncée sur une journée, avec prise en charge de MagSafe et Qi2 jusqu'à 15 W, ainsi qu'une charge filaire rapide USB-C permettant d'atteindre 50 % en environ 30 minutes avec un adaptateur 20 W ou plus. L'iPhone 17e conserve Face ID, ajoute le bouton Action et propose des fonctions de sécurité et de communication par satellite ainsi que la Détection des accidents, selon disponibilité des services.",
+          "Le châssis en aluminium de qualité aérospatiale est certifié IP68 pour la résistance aux éclaboussures, à l'eau et à la poussière dans les conditions de test indiquées par Apple. Le téléphone est disponible en noir, blanc et rose pastel, avec une finition mate. Il fonctionne sous iOS 26 et prend en charge Apple Intelligence selon les langues, régions et fonctionnalités disponibles.",
+          "L'iPhone 17e s'adresse aux utilisateurs qui veulent accéder à la famille iPhone 17 avec un budget plus contenu, sans renoncer aux fonctions récentes comme la puce A19, MagSafe ou un stockage de départ généreux. Certaines caractéristiques détaillées (dimensions, poids, capacité batterie, détails de la caméra avant) ne sont pas reprises dans le communiqué consulté et sont donc laissées en éléments manquants."
+        ]
+      },
+      sourcesVerifiees: [
+        { libelle: "Apple Newsroom France « Apple présente l'iPhone 17e » (02/03/2026) : prix à partir de 719 € (256 Go), précommandes 04/03, disponibilité 11/03, caractéristiques principales", url: "https://www.apple.com/fr/newsroom/2026/03/apple-introduces-iphone-17e/", date: "2026-11-14" },
+        { libelle: "Apple France — page produit iPhone 17e", url: "https://www.apple.com/fr/iphone-17e/", date: "2026-11-14" },
+        { libelle: "Apple (YouTube) — « iPhone 17e: A Powerful iPhone at a Great Price »", url: "https://www.youtube.com/watch?v=TiE2F1V841A", date: "2026-11-14" }
+      ],
+      manquants: [
+        "Prix officiel de la version 512 Go non précisé dans le communiqué Apple France consulté",
+        "Caractéristiques détaillées non précisées dans le communiqué consulté (dimensions, poids, capacité batterie en mAh, détails caméra avant, mémoire vive)",
+        "Contenu de la boîte non détaillé dans le communiqué consulté"
+      ]
+    },
+
+    {
       id: "apple-iphone-17-pro",
       marque: "Apple",
       modele: "iPhone 17 Pro",

@@ -106,26 +106,28 @@
 Référence : **`data/CONTENU.md`**. Contrôle : `node tools/check-contenu.js` (`--strict` pour bloquer).
 
 ### Minimum par fiche (état 2026-11-14, après extension)
-- [x] **3 à 5 images** (minimum 3), licence libre vérifiée, attribution visible — 21 fiches sur 26
-- [x] **1 à 2 vidéos** (minimum 1), officielles fabricant, embed `youtube-nocookie` — 26 fiches sur 26
-- [x] **1 tableau de caractéristiques** vérifiées — 26 fiches sur 26
-- [x] **1 article** rédigé (`article: { titre, contenu }`) — 26 fiches sur 26
-- [x] **10 à 20 occasions d'utilisation** (minimum 10) — 26 fiches sur 26
+- [x] **3 à 5 images** (minimum 3), licence libre vérifiée, attribution visible — 22 fiches sur 27
+- [x] **1 à 2 vidéos** (minimum 1), officielles fabricant, embed `youtube-nocookie` — 27 fiches sur 27
+- [x] **1 tableau de caractéristiques** vérifiées — 27 fiches sur 27
+- [x] **1 article** rédigé (`article: { titre, contenu }`) — 27 fiches sur 27
+- [x] **10 à 20 occasions d'utilisation** (minimum 10) — 27 fiches sur 27
 - [ ] Atteindre les minimums sur **toutes** les fiches (5 fiches encore incomplètes : médias/images manquants)
 
 ### Couverture
 - [ ] **Une fiche par marque et par année**, 2020 → 2026 : **63 fiches** (9 × 7)
 - [x] Marques représentées : **Samsung, Apple, Linux, Microsoft, Steam, Meta, HP, Alienware, MSI**
-- [ ] Chaque couple marque × année confirmé par une source fabricant datée — **22 couples sur 63**
+- [ ] Chaque couple marque × année confirmé par une source fabricant datée — **23 couples sur 63**
 
 ### Ajouts de cette session
 - [x] Apple iPhone 13 (2021), iPhone 14 Pro (2022), iPhone 15 Pro (2023), iPhone 16 Pro (2024) — fiches complètes
+- [x] Apple iPhone 17e (2026) — fiche complète (Apple 2026 couvert)
 - [x] Samsung Galaxy S22 Ultra (2022), Galaxy S23 Ultra (2023), Galaxy S24 Ultra (2024) — fiches complètes (prix S22 FR non retrouvé sur source officielle archivée)
 - [x] Raspberry Pi 5 (2023, Linux) — fiche complète
 - [x] Meta Quest 3 (2023) — fiche complète
 - [x] `sw.js` porté à `kifftech-v13`
 - [ ] Médias/images encore manquants : Steam Machine 2026 (1 image), Steam Deck OLED 2023 (2 images), Half-Life: Alyx 2020 (1 image), HP Reverb G2 2020 (3 images + vidéo), Alienware m15 R3 2020 (3 images + vidéo)
 - [ ] `img/airpods-pro-2-1.jpg` non intégré (origine/droits non vérifiés)
+- [ ] Samsung Galaxy S25 Ultra (2025) investigué (images Commons préparées) mais non ajouté faute de récupération fiable de caractéristiques/prix officiels vérifiables dans cette session (pages officielles JS/timeouts, quota de recherche web atteint)
 
 ### État au 2026-11-14
 - **15 fiches** au catalogue : 9 nouvelles fiches 2020 + 6 fiches historiques (2023–2026).
