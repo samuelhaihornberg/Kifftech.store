@@ -12,7 +12,7 @@ export const CATALOGUE = {
       "id": "alienware-m15-r3",
       "marque": "Alienware",
       "modele": "m15 R3",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2020,
       "dateSortie": "2020-05-21",
       "sourceAnnee": {
@@ -150,7 +150,7 @@ export const CATALOGUE = {
       "id": "alienware-m15-r4",
       "marque": "Alienware",
       "modele": "m15 R4",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2021,
       "dateSortie": "2021-01-26",
       "sourceAnnee": {
@@ -253,7 +253,7 @@ export const CATALOGUE = {
       "id": "alienware-x14",
       "marque": "Alienware",
       "modele": "x14",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2022,
       "dateSortie": "2022-01-04",
       "sourceAnnee": {
@@ -357,7 +357,7 @@ export const CATALOGUE = {
       "id": "alienware-m16",
       "marque": "Alienware",
       "modele": "m16",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2023,
       "dateSortie": "2023-01-03",
       "sourceAnnee": {
@@ -461,7 +461,7 @@ export const CATALOGUE = {
       "id": "alienware-m16-r2",
       "marque": "Alienware",
       "modele": "m16 R2",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2024,
       "dateSortie": "2024-01-08",
       "sourceAnnee": {
@@ -565,7 +565,7 @@ export const CATALOGUE = {
       "id": "alienware-area-51-16-2025",
       "marque": "Alienware",
       "modele": "16 Area-51 (2025)",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2025,
       "dateSortie": "2025-01-06",
       "sourceAnnee": {
@@ -669,7 +669,7 @@ export const CATALOGUE = {
       "id": "alienware-16x-aurora-2026",
       "marque": "Alienware",
       "modele": "16X Aurora (2026)",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2026,
       "dateSortie": "2026-01-06",
       "sourceAnnee": {
@@ -897,7 +897,9 @@ export const CATALOGUE = {
             "id": "KR0g-1hnQPA",
             "titre": "Apple Event — October 13, 2020 (présentation de l'iPhone 12)",
             "chaine": "Apple",
-            "url": "https://www.youtube.com/watch?v=KR0g-1hnQPA"
+            "url": "https://www.youtube.com/watch?v=KR0g-1hnQPA",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -907,7 +909,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "KKPCW",
             "attribution": "Photo : KKPCW — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_12_-_2.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_12_-_2.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_12_-_2.jpg",
+            "attributionDemandee": "Photo : KKPCW — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 12",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/iphone-12-2.jpg",
@@ -915,7 +921,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "KKPCW",
             "attribution": "Photo : KKPCW — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_12_-_3.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_12_-_3.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_12_-_3.jpg",
+            "attributionDemandee": "Photo : KKPCW — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 12",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/iphone-12-3.jpg",
@@ -923,7 +933,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "茅野ふたば",
             "attribution": "Photo : 茅野ふたば — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_12_Black_256g.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_12_Black_256g.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_12_Black_256g.jpg",
+            "attributionDemandee": "Photo : 茅野ふたば — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 12",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -1100,7 +1114,9 @@ export const CATALOGUE = {
             "id": "EvGOlAkLSLw",
             "titre": "Apple Event — September 14, 2021",
             "chaine": "Apple",
-            "url": "https://www.youtube.com/watch?v=EvGOlAkLSLw"
+            "url": "https://www.youtube.com/watch?v=EvGOlAkLSLw",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -1110,7 +1126,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "CGBR",
             "attribution": "Photo : CGBR — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_13_iPhone_4s_frontside.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_13_iPhone_4s_frontside.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_13_iPhone_4s_frontside.jpg",
+            "attributionDemandee": "Photo : CGBR — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 13",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/iphone-13-2.jpg",
@@ -1118,7 +1138,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "CGBR",
             "attribution": "Photo : CGBR — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_13_iPhone_4s_backside_01.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_13_iPhone_4s_backside_01.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_13_iPhone_4s_backside_01.jpg",
+            "attributionDemandee": "Photo : CGBR — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 13",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/iphone-13-3.jpg",
@@ -1126,7 +1150,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "人工知能",
             "attribution": "Photo : 人工知能 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_13_camera_lens_group.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_13_camera_lens_group.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_13_camera_lens_group.jpg",
+            "attributionDemandee": "Photo : 人工知能 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 13",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -1317,7 +1345,9 @@ export const CATALOGUE = {
             "id": "ux6zXguiqxM",
             "titre": "Apple Event — September 7, 2022",
             "chaine": "Apple",
-            "url": "https://www.youtube.com/watch?v=ux6zXguiqxM"
+            "url": "https://www.youtube.com/watch?v=ux6zXguiqxM",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -1327,7 +1357,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "KKPCW (Kyu3)",
             "attribution": "Photo : KKPCW (Kyu3) — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_14_Pro_-_2.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_14_Pro_-_2.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_14_Pro_-_2.jpg",
+            "attributionDemandee": "Photo : KKPCW (Kyu3) — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 14 Pro",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/iphone-14-pro-2.jpg",
@@ -1335,7 +1369,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "KKPCW (Kyu3)",
             "attribution": "Photo : KKPCW (Kyu3) — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_14_Pro_-_3.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_14_Pro_-_3.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_14_Pro_-_3.jpg",
+            "attributionDemandee": "Photo : KKPCW (Kyu3) — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 14 Pro",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/iphone-14-pro-3.jpg",
@@ -1343,7 +1381,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Hajoon0102",
             "attribution": "Photo : Hajoon0102 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Back_of_the_iPhone_14_Pro.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Back_of_the_iPhone_14_Pro.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Back_of_the_iPhone_14_Pro.jpg",
+            "attributionDemandee": "Photo : Hajoon0102 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 14 Pro",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -1535,7 +1577,9 @@ export const CATALOGUE = {
             "id": "ZiP1l7jlIIA",
             "titre": "Apple Event — September 12, 2023",
             "chaine": "Apple",
-            "url": "https://www.youtube.com/watch?v=ZiP1l7jlIIA"
+            "url": "https://www.youtube.com/watch?v=ZiP1l7jlIIA",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -1545,7 +1589,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Kyu3",
             "attribution": "Photo : Kyu3 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_15_Pro.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_15_Pro.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_15_Pro.jpg",
+            "attributionDemandee": "Photo : Kyu3 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 15 Pro",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/iphone-15-pro-2.jpg",
@@ -1553,7 +1601,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Kyu3",
             "attribution": "Photo : Kyu3 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_15_Pro_-_2.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_15_Pro_-_2.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_15_Pro_-_2.jpg",
+            "attributionDemandee": "Photo : Kyu3 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 15 Pro",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/iphone-15-pro-3.jpg",
@@ -1561,7 +1613,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Kyu3",
             "attribution": "Photo : Kyu3 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_15_Pro_and_Pro_Max_in_Apple_Store_-_1.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_15_Pro_and_Pro_Max_in_Apple_Store_-_1.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_15_Pro_and_Pro_Max_in_Apple_Store_-_1.jpg",
+            "attributionDemandee": "Photo : Kyu3 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 15 Pro",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -1753,7 +1809,9 @@ export const CATALOGUE = {
             "id": "uarNiSl_uh4",
             "titre": "Apple Event — September 9, 2024",
             "chaine": "Apple",
-            "url": "https://www.youtube.com/watch?v=uarNiSl_uh4"
+            "url": "https://www.youtube.com/watch?v=uarNiSl_uh4",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -1763,7 +1821,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Kyu3a",
             "attribution": "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Back_of_iPhone_16_Pro_-_1.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Back_of_iPhone_16_Pro_-_1.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Back_of_iPhone_16_Pro_-_1.jpg",
+            "attributionDemandee": "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 16 Pro",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/iphone-16-pro-2.jpg",
@@ -1771,7 +1833,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Kyu3a",
             "attribution": "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Back_of_iPhone_16_Pro_Silver_model.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Back_of_iPhone_16_Pro_Silver_model.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Back_of_iPhone_16_Pro_Silver_model.jpg",
+            "attributionDemandee": "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 16 Pro",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/iphone-16-pro-3.jpg",
@@ -1779,7 +1845,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Kyu3a",
             "attribution": "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Camera_control_of_iPhone_16_Pro.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Camera_control_of_iPhone_16_Pro.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Camera_control_of_iPhone_16_Pro.jpg",
+            "attributionDemandee": "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 16 Pro",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -1967,7 +2037,9 @@ export const CATALOGUE = {
             "id": "TNhX1uR2vO8",
             "titre": "iPhone 17 Pro: The most powerful iPhone ever",
             "chaine": "Apple",
-            "url": "https://www.youtube.com/watch?v=TNhX1uR2vO8"
+            "url": "https://www.youtube.com/watch?v=TNhX1uR2vO8",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -1977,7 +2049,11 @@ export const CATALOGUE = {
             "licence": "CC0",
             "auteur": "Olgierd Rudak",
             "attribution": "Photo : Olgierd Rudak — domaine public (CC0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_17_Pro_(2025-12-28).jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_17_Pro_(2025-12-28).jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_17_Pro_(2025-12-28).jpg",
+            "attributionDemandee": "Photo : Olgierd Rudak — domaine public (CC0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 17 Pro",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/iphone-17-pro-2.jpg",
@@ -1985,7 +2061,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Kyu3a",
             "attribution": "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_17_Pro_(Deep_Blue_model).jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_17_Pro_(Deep_Blue_model).jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_17_Pro_(Deep_Blue_model).jpg",
+            "attributionDemandee": "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 17 Pro",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/iphone-17-pro-3.jpg",
@@ -1993,7 +2073,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "茅野ふたば",
             "attribution": "Photo : 茅野ふたば — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_17_Pro_backside_(Cosmic_Orange)_(Oct_1,_2025).jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_17_Pro_backside_(Cosmic_Orange)_(Oct_1,_2025).jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_17_Pro_backside_(Cosmic_Orange)_(Oct_1,_2025).jpg",
+            "attributionDemandee": "Photo : 茅野ふたば — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 17 Pro",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -2151,7 +2235,9 @@ export const CATALOGUE = {
             "id": "TiE2F1V841A",
             "titre": "iPhone 17e: A Powerful iPhone at a Great Price",
             "chaine": "Apple",
-            "url": "https://www.youtube.com/watch?v=TiE2F1V841A"
+            "url": "https://www.youtube.com/watch?v=TiE2F1V841A",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -2161,7 +2247,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Kyu3a",
             "attribution": "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_17e_Soft_Pink_Model_-_1.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_17e_Soft_Pink_Model_-_1.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_17e_Soft_Pink_Model_-_1.jpg",
+            "attributionDemandee": "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 17e",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/iphone-17e-2.jpg",
@@ -2169,7 +2259,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Kyu3a",
             "attribution": "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_17e_Soft_Pink_Model_-_2.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_17e_Soft_Pink_Model_-_2.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_17e_Soft_Pink_Model_-_2.jpg",
+            "attributionDemandee": "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 17e",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/iphone-17e-3.jpg",
@@ -2177,7 +2271,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "茅野ふたば",
             "attribution": "Photo : 茅野ふたば — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:IPhone_17e_backside.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:IPhone_17e_backside.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:IPhone_17e_backside.jpg",
+            "attributionDemandee": "Photo : 茅野ふたば — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Apple iPhone 17e",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -2227,7 +2325,7 @@ export const CATALOGUE = {
       "id": "hp-reverb-g2",
       "marque": "HP",
       "modele": "Reverb G2",
-      "rayon": "vr",
+      "rayon": "montres-wearables",
       "annee": 2020,
       "dateSortie": null,
       "sourceAnnee": {
@@ -2375,7 +2473,7 @@ export const CATALOGUE = {
       "id": "hp-spectre-x360-14-2021",
       "marque": "HP",
       "modele": "Spectre x360 14 (2021)",
-      "rayon": "ordinateurs",
+      "rayon": "ordinateurs-composants",
       "annee": 2021,
       "dateSortie": "2021-01-10",
       "sourceAnnee": {
@@ -2479,7 +2577,7 @@ export const CATALOGUE = {
       "id": "hp-spectre-x360-13-5-2022",
       "marque": "HP",
       "modele": "Spectre x360 13.5 (2022)",
-      "rayon": "ordinateurs",
+      "rayon": "ordinateurs-composants",
       "annee": 2022,
       "dateSortie": "2022-05-19",
       "sourceAnnee": {
@@ -2578,7 +2676,7 @@ export const CATALOGUE = {
       "id": "hp-spectre-x360-14-2024",
       "marque": "HP",
       "modele": "Spectre x360 14 (2024)",
-      "rayon": "ordinateurs",
+      "rayon": "ordinateurs-composants",
       "annee": 2024,
       "dateSortie": "2024-01-08",
       "sourceAnnee": {
@@ -2677,7 +2775,7 @@ export const CATALOGUE = {
       "id": "hp-omnibook-ultra-2026",
       "marque": "HP",
       "modele": "OmniBook Ultra (2026)",
-      "rayon": "ordinateurs",
+      "rayon": "ordinateurs-composants",
       "annee": 2026,
       "dateSortie": "2026-01-05",
       "sourceAnnee": {
@@ -2778,7 +2876,7 @@ export const CATALOGUE = {
       "marque": "Linux",
       "modele": "400",
       "plateforme": "Linux",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2020,
       "dateSortie": "2020-11-02",
       "sourceAnnee": {
@@ -2918,7 +3016,9 @@ export const CATALOGUE = {
             "id": "ZSvHJ97d8n8",
             "titre": "NEW Raspberry Pi 400: a computer in a keyboard | Raspberry Pi",
             "chaine": "Raspberry Pi",
-            "url": "https://www.youtube.com/watch?v=ZSvHJ97d8n8"
+            "url": "https://www.youtube.com/watch?v=ZSvHJ97d8n8",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -2928,7 +3028,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "SimonWaldherr",
             "attribution": "Photo : SimonWaldherr — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_400.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_400.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_400.jpg",
+            "attributionDemandee": "Photo : SimonWaldherr — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Linux 400",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/rpi400-2.jpg",
@@ -2936,7 +3040,11 @@ export const CATALOGUE = {
             "licence": "CC0 1.0",
             "auteur": "Abdulla Al Muhairi",
             "attribution": "Photo : Abdulla Al Muhairi — licence CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_400_(50586757772).jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_400_(50586757772).jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_400_(50586757772).jpg",
+            "attributionDemandee": "Photo : Abdulla Al Muhairi — licence CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/), via Wikimedia Commons",
+            "modeleCorrespondant": "Linux 400",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/rpi400-3.jpg",
@@ -2944,7 +3052,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Oscar Wai",
             "attribution": "Photo : Oscar Wai — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:20210309_Raspberry_Pi_400.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:20210309_Raspberry_Pi_400.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:20210309_Raspberry_Pi_400.jpg",
+            "attributionDemandee": "Photo : Oscar Wai — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Linux 400",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -2996,7 +3108,7 @@ export const CATALOGUE = {
       "id": "linux-raspberry-pi-pico",
       "marque": "Linux",
       "modele": "Raspberry Pi Pico",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2021,
       "dateSortie": "2021-01-21",
       "sourceAnnee": {
@@ -3066,7 +3178,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Phiarc",
             "attribution": "Phiarc, Raspberry Pi Pico top and bottom composite, CC BY-SA 4.0, via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_Pico_top_and_bottom_composite.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_Pico_top_and_bottom_composite.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Raspberry_Pi_Pico_top_and_bottom_composite.jpg",
+            "attributionDemandee": "Phiarc, Raspberry Pi Pico top and bottom composite, CC BY-SA 4.0, via Wikimedia Commons",
+            "modeleCorrespondant": "Linux Raspberry Pi Pico",
+            "dateVerification": "2026-11-14"
           }
         ],
         "videos": []
@@ -3113,7 +3229,7 @@ export const CATALOGUE = {
       "id": "linux-raspberry-pi-pico-w",
       "marque": "Linux",
       "modele": "Raspberry Pi Pico W",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2022,
       "dateSortie": "2022-06-30",
       "sourceAnnee": {
@@ -3221,7 +3337,7 @@ export const CATALOGUE = {
       "id": "raspberry-pi-5",
       "marque": "Linux",
       "modele": "Raspberry Pi 5",
-      "rayon": "ordinateurs",
+      "rayon": "ordinateurs-composants",
       "annee": 2023,
       "dateSortie": null,
       "sourceAnnee": {
@@ -3349,7 +3465,9 @@ export const CATALOGUE = {
             "id": "yul4gq_LrOI",
             "titre": "Introducing Raspberry Pi 5",
             "chaine": "Raspberry Pi",
-            "url": "https://www.youtube.com/watch?v=yul4gq_LrOI"
+            "url": "https://www.youtube.com/watch?v=yul4gq_LrOI",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -3359,7 +3477,11 @@ export const CATALOGUE = {
             "licence": "CC BY 2.0",
             "auteur": "SparkFun Electronics",
             "attribution": "Photo : SparkFun Electronics — licence CC BY 2.0 (https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:23551-Raspberry-Pi-5-8G-feature.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:23551-Raspberry-Pi-5-8G-feature.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:23551-Raspberry-Pi-5-8G-feature.jpg",
+            "attributionDemandee": "Photo : SparkFun Electronics — licence CC BY 2.0 (https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Linux Raspberry Pi 5",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/raspberry-pi-5-2.jpg",
@@ -3367,7 +3489,11 @@ export const CATALOGUE = {
             "licence": "CC BY 2.0",
             "auteur": "SparkFun Electronics",
             "attribution": "Photo : SparkFun Electronics — licence CC BY 2.0 (https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:23550-Raspberry-Pi-5-back.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:23550-Raspberry-Pi-5-back.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:23550-Raspberry-Pi-5-back.jpg",
+            "attributionDemandee": "Photo : SparkFun Electronics — licence CC BY 2.0 (https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Linux Raspberry Pi 5",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/raspberry-pi-5-3.jpg",
@@ -3375,7 +3501,11 @@ export const CATALOGUE = {
             "licence": "CC BY 2.0",
             "auteur": "SparkFun Electronics",
             "attribution": "Photo : SparkFun Electronics — licence CC BY 2.0 (https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:23551-Raspberry-Pi-5-8G_(cropped).jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:23551-Raspberry-Pi-5-8G_(cropped).jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:23551-Raspberry-Pi-5-8G_(cropped).jpg",
+            "attributionDemandee": "Photo : SparkFun Electronics — licence CC BY 2.0 (https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Linux Raspberry Pi 5",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -3425,7 +3555,7 @@ export const CATALOGUE = {
       "id": "linux-raspberry-pi-pico-2",
       "marque": "Linux",
       "modele": "Raspberry Pi Pico 2",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2024,
       "dateSortie": "2024-08-08",
       "sourceAnnee": {
@@ -3533,7 +3663,7 @@ export const CATALOGUE = {
       "id": "linux-raspberry-pi-500-plus",
       "marque": "Linux",
       "modele": "Raspberry Pi 500+",
-      "rayon": "ordinateurs",
+      "rayon": "ordinateurs-composants",
       "annee": 2025,
       "dateSortie": "2025-09-25",
       "sourceAnnee": {
@@ -3645,7 +3775,7 @@ export const CATALOGUE = {
       "id": "meta-quest-2",
       "marque": "Meta",
       "modele": "Quest 2",
-      "rayon": "vr",
+      "rayon": "montres-wearables",
       "annee": 2020,
       "dateSortie": "2020-10-13",
       "sourceAnnee": {
@@ -3770,7 +3900,9 @@ export const CATALOGUE = {
             "id": "P_V68E-hnZc",
             "titre": "Introducing Oculus Quest 2",
             "chaine": "Meta VR",
-            "url": "https://www.youtube.com/watch?v=P_V68E-hnZc"
+            "url": "https://www.youtube.com/watch?v=P_V68E-hnZc",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -3780,7 +3912,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Wasiul Bahar",
             "attribution": "Photo : Wasiul Bahar — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Meta_quest_2_01.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Meta_quest_2_01.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Meta_quest_2_01.jpg",
+            "attributionDemandee": "Photo : Wasiul Bahar — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Meta Quest 2",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/quest-2-2.jpg",
@@ -3788,7 +3924,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Wasiul Bahar",
             "attribution": "Photo : Wasiul Bahar — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Meta_quest_2_02.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Meta_quest_2_02.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Meta_quest_2_02.jpg",
+            "attributionDemandee": "Photo : Wasiul Bahar — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Meta Quest 2",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/quest-2-3.jpg",
@@ -3796,7 +3936,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Wasiul Bahar",
             "attribution": "Photo : Wasiul Bahar — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Meta_quest_2_03.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Meta_quest_2_03.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Meta_quest_2_03.jpg",
+            "attributionDemandee": "Photo : Wasiul Bahar — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Meta Quest 2",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -3843,7 +3987,7 @@ export const CATALOGUE = {
       "id": "meta-quest-pro",
       "marque": "Meta",
       "modele": "Meta Quest Pro",
-      "rayon": "vr",
+      "rayon": "montres-wearables",
       "annee": 2022,
       "dateSortie": "2022-10-25",
       "sourceAnnee": {
@@ -3951,7 +4095,7 @@ export const CATALOGUE = {
       "id": "meta-quest-3",
       "marque": "Meta",
       "modele": "Quest 3",
-      "rayon": "vr",
+      "rayon": "montres-wearables",
       "annee": 2023,
       "dateSortie": "2023-10-10",
       "sourceAnnee": {
@@ -4065,7 +4209,9 @@ export const CATALOGUE = {
             "id": "5AKl_cEB26c",
             "titre": "Introducing Meta Quest 3 | Coming This Fall",
             "chaine": "Meta Quest",
-            "url": "https://www.youtube.com/watch?v=5AKl_cEB26c"
+            "url": "https://www.youtube.com/watch?v=5AKl_cEB26c",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -4075,7 +4221,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Roy.wonder.cohen",
             "attribution": "Photo : Roy.wonder.cohen — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Meta_Quest_3_front_View.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Meta_Quest_3_front_View.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Meta_Quest_3_front_View.jpg",
+            "attributionDemandee": "Photo : Roy.wonder.cohen — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Meta Quest 3",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/meta-quest-3-2.jpg",
@@ -4083,7 +4233,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Roy.wonder.cohen",
             "attribution": "Photo : Roy.wonder.cohen — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Meta_Quest_3_back_View.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Meta_Quest_3_back_View.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Meta_Quest_3_back_View.jpg",
+            "attributionDemandee": "Photo : Roy.wonder.cohen — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Meta Quest 3",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/meta-quest-3-3.jpg",
@@ -4091,7 +4245,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Roy.wonder.cohen",
             "attribution": "Photo : Roy.wonder.cohen — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Meta_Quest_3_side_View.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Meta_Quest_3_side_View.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Meta_Quest_3_side_View.jpg",
+            "attributionDemandee": "Photo : Roy.wonder.cohen — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Meta Quest 3",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -4141,7 +4299,7 @@ export const CATALOGUE = {
       "id": "meta-quest-3s",
       "marque": "Meta",
       "modele": "Meta Quest 3S",
-      "rayon": "vr",
+      "rayon": "montres-wearables",
       "annee": 2024,
       "dateSortie": "2024-10-15",
       "sourceAnnee": {
@@ -4211,7 +4369,11 @@ export const CATALOGUE = {
             "licence": "CC BY 4.0",
             "auteur": "Loafhouse",
             "attribution": "Loafhouse, Meta Quest 3s with controllers, CC BY 4.0, via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Meta_Quest_3s_with_controllers.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Meta_Quest_3s_with_controllers.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Meta_Quest_3s_with_controllers.jpg",
+            "attributionDemandee": "Loafhouse, Meta Quest 3s with controllers, CC BY 4.0, via Wikimedia Commons",
+            "modeleCorrespondant": "Meta Meta Quest 3S",
+            "dateVerification": "2026-11-14"
           }
         ],
         "videos": []
@@ -4258,7 +4420,7 @@ export const CATALOGUE = {
       "id": "microsoft-xbox-series-x",
       "marque": "Microsoft",
       "modele": "Xbox Series X",
-      "rayon": "gaming",
+      "rayon": "jeux-video",
       "annee": 2020,
       "dateSortie": "2020-11-10",
       "sourceAnnee": {
@@ -4370,7 +4532,9 @@ export const CATALOGUE = {
             "id": "0tUqIHwHDEc",
             "titre": "Xbox Series X - World Premiere - 4K Trailer",
             "chaine": "XBOX",
-            "url": "https://www.youtube.com/watch?v=0tUqIHwHDEc"
+            "url": "https://www.youtube.com/watch?v=0tUqIHwHDEc",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -4380,7 +4544,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Der. Bellemer",
             "attribution": "Photo : Der. Bellemer — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Xbox_Series_(X).jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Xbox_Series_(X).jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Xbox_Series_(X).jpg",
+            "attributionDemandee": "Photo : Der. Bellemer — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Microsoft Xbox Series X",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/xbox-series-x-2.jpg",
@@ -4388,7 +4556,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Der. Bellemer",
             "attribution": "Photo : Der. Bellemer — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Xbox_Series_(X)_1.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Xbox_Series_(X)_1.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Xbox_Series_(X)_1.jpg",
+            "attributionDemandee": "Photo : Der. Bellemer — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Microsoft Xbox Series X",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/xbox-series-x-3.jpg",
@@ -4396,7 +4568,11 @@ export const CATALOGUE = {
             "licence": "CC BY 2.0",
             "auteur": "Ian Hughes",
             "attribution": "Photo : Ian Hughes — licence CC BY 2.0 (https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Xbox_series_X_(50648118708).jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Xbox_series_X_(50648118708).jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Xbox_series_X_(50648118708).jpg",
+            "attributionDemandee": "Photo : Ian Hughes — licence CC BY 2.0 (https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Microsoft Xbox Series X",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -4442,7 +4618,7 @@ export const CATALOGUE = {
       "id": "microsoft-surface-laptop-4",
       "marque": "Microsoft",
       "modele": "Surface Laptop 4",
-      "rayon": "ordinateurs",
+      "rayon": "ordinateurs-composants",
       "annee": 2021,
       "dateSortie": "2021-04-15",
       "sourceAnnee": {
@@ -4550,7 +4726,7 @@ export const CATALOGUE = {
       "id": "microsoft-surface-laptop-5",
       "marque": "Microsoft",
       "modele": "Surface Laptop 5",
-      "rayon": "ordinateurs",
+      "rayon": "ordinateurs-composants",
       "annee": 2022,
       "dateSortie": "2022-10-25",
       "sourceAnnee": {
@@ -4658,7 +4834,7 @@ export const CATALOGUE = {
       "id": "microsoft-surface-laptop-studio-2",
       "marque": "Microsoft",
       "modele": "Surface Laptop Studio 2",
-      "rayon": "ordinateurs",
+      "rayon": "ordinateurs-composants",
       "annee": 2023,
       "dateSortie": "2023-10-03",
       "sourceAnnee": {
@@ -4766,7 +4942,7 @@ export const CATALOGUE = {
       "id": "microsoft-surface-laptop-7th-edition",
       "marque": "Microsoft",
       "modele": "Surface Laptop (7th Edition)",
-      "rayon": "ordinateurs",
+      "rayon": "ordinateurs-composants",
       "annee": 2024,
       "dateSortie": "2024-06-18",
       "sourceAnnee": {
@@ -4874,7 +5050,7 @@ export const CATALOGUE = {
       "id": "microsoft-surface-laptop-13-inch",
       "marque": "Microsoft",
       "modele": "Surface Laptop 13-inch (1st Edition)",
-      "rayon": "ordinateurs",
+      "rayon": "ordinateurs-composants",
       "annee": 2025,
       "dateSortie": "2025-05-20",
       "sourceAnnee": {
@@ -4982,7 +5158,7 @@ export const CATALOGUE = {
       "id": "microsoft-surface-laptop-8th-edition",
       "marque": "Microsoft",
       "modele": "Surface Laptop (8th Edition)",
-      "rayon": "ordinateurs",
+      "rayon": "ordinateurs-composants",
       "annee": 2026,
       "dateSortie": "2026-06-16",
       "sourceAnnee": {
@@ -5090,7 +5266,7 @@ export const CATALOGUE = {
       "id": "msi-bravo-17",
       "marque": "MSI",
       "modele": "Bravo 17",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2020,
       "dateSortie": "2020-04-21",
       "sourceAnnee": {
@@ -5219,7 +5395,9 @@ export const CATALOGUE = {
             "id": "AQtgO_w7fZI",
             "titre": "Introducing The Brand New Bravo 15/17 – Tutorial and Know-How Ep. 20 | MSI",
             "chaine": "MSI Gaming",
-            "url": "https://www.youtube.com/watch?v=AQtgO_w7fZI"
+            "url": "https://www.youtube.com/watch?v=AQtgO_w7fZI",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -5229,7 +5407,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "D-Kuru",
             "attribution": "Photo : D-Kuru — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:MSI_Bravo_17_(0017FK-007)-front_oblique_PNr%C2%B00757.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:MSI_Bravo_17_(0017FK-007)-front_oblique_PNr%C2%B00757.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:MSI_Bravo_17_(0017FK-007)-front_oblique_PNr%C2%B00757.jpg",
+            "attributionDemandee": "Photo : D-Kuru — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "MSI Bravo 17",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/msi-bravo-17-2.jpg",
@@ -5237,7 +5419,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "D-Kuru",
             "attribution": "Photo : D-Kuru — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:MSI_Bravo_17_(0017FK-007)-top_cover_PNr%C2%B00759.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:MSI_Bravo_17_(0017FK-007)-top_cover_PNr%C2%B00759.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:MSI_Bravo_17_(0017FK-007)-top_cover_PNr%C2%B00759.jpg",
+            "attributionDemandee": "Photo : D-Kuru — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "MSI Bravo 17",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/msi-bravo-17-3.jpg",
@@ -5245,7 +5431,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "D-Kuru",
             "attribution": "Photo : D-Kuru — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:MSI_Bravo_17_(0017FK-007)-top_keyboard_PNr%C2%B00758.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:MSI_Bravo_17_(0017FK-007)-top_keyboard_PNr%C2%B00758.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:MSI_Bravo_17_(0017FK-007)-top_keyboard_PNr%C2%B00758.jpg",
+            "attributionDemandee": "Photo : D-Kuru — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "MSI Bravo 17",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -5298,7 +5488,7 @@ export const CATALOGUE = {
       "id": "msi-ge76-raider-2021",
       "marque": "MSI",
       "modele": "GE76 Raider (2021)",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2021,
       "dateSortie": "2021-01-13",
       "sourceAnnee": {
@@ -5402,7 +5592,7 @@ export const CATALOGUE = {
       "id": "msi-raider-ge67hx-2022",
       "marque": "MSI",
       "modele": "Raider GE67 HX (2022)",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2022,
       "dateSortie": "2022-01-04",
       "sourceAnnee": {
@@ -5506,7 +5696,7 @@ export const CATALOGUE = {
       "id": "msi-titan-gt77-hx-2023",
       "marque": "MSI",
       "modele": "Titan GT77 HX (2023)",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2023,
       "dateSortie": "2023-01-03",
       "sourceAnnee": {
@@ -5610,7 +5800,7 @@ export const CATALOGUE = {
       "id": "msi-titan-18-hx-2024",
       "marque": "MSI",
       "modele": "Titan 18 HX (2024)",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2024,
       "dateSortie": "2024-01-08",
       "sourceAnnee": {
@@ -5714,7 +5904,7 @@ export const CATALOGUE = {
       "id": "msi-titan-18-hx-dragon-edition-2025",
       "marque": "MSI",
       "modele": "Titan 18 HX Dragon Edition Norse Myth (2025)",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2025,
       "dateSortie": "2025-01-07",
       "sourceAnnee": {
@@ -5818,7 +6008,7 @@ export const CATALOGUE = {
       "id": "msi-raider-16-max-2026",
       "marque": "MSI",
       "modele": "Raider 16 Max (2026)",
-      "rayon": "informatique",
+      "rayon": "ordinateurs-composants",
       "annee": 2026,
       "dateSortie": "2026-04-15",
       "sourceAnnee": {
@@ -5922,7 +6112,7 @@ export const CATALOGUE = {
       "id": "nintendo-switch-2",
       "marque": "Nintendo",
       "modele": "Nintendo Switch 2",
-      "rayon": "gaming",
+      "rayon": "jeux-video",
       "annee": 2025,
       "dateSortie": "2025-06-05",
       "sourceAnnee": {
@@ -6086,7 +6276,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Crisco 1492",
             "attribution": "Photo : Crisco 1492 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2_in_Docking_Console.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2_in_Docking_Console.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2_in_Docking_Console.jpg",
+            "attributionDemandee": "Photo : Crisco 1492 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Nintendo Nintendo Switch 2",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/switch-2-2.png",
@@ -6094,7 +6288,11 @@ export const CATALOGUE = {
             "licence": "CC0",
             "auteur": "AOMAF2024",
             "attribution": "Photo : AOMAF2024 — domaine public (CC0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2_console_in_handheld_mode.png"
+            "source": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2_console_in_handheld_mode.png",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2_console_in_handheld_mode.png",
+            "attributionDemandee": "Photo : AOMAF2024 — domaine public (CC0), via Wikimedia Commons",
+            "modeleCorrespondant": "Nintendo Nintendo Switch 2",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/switch-2-3.png",
@@ -6102,7 +6300,11 @@ export const CATALOGUE = {
             "licence": "CC BY 4.0",
             "auteur": "PantheraLeo1359531",
             "attribution": "Photo : PantheraLeo1359531 — licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2_von_oben_20250605_HOF4734-HDR_RAW-Export.png"
+            "source": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2_von_oben_20250605_HOF4734-HDR_RAW-Export.png",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2_von_oben_20250605_HOF4734-HDR_RAW-Export.png",
+            "attributionDemandee": "Photo : PantheraLeo1359531 — licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Nintendo Nintendo Switch 2",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/switch-2-4.png",
@@ -6110,7 +6312,11 @@ export const CATALOGUE = {
             "licence": "CC BY 4.0",
             "auteur": "PantheraLeo1359531",
             "attribution": "Photo : PantheraLeo1359531 — licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2-Konsole_von_hinten_20250605_HOF4680-HDR_RAW-Export.png"
+            "source": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2-Konsole_von_hinten_20250605_HOF4680-HDR_RAW-Export.png",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2-Konsole_von_hinten_20250605_HOF4680-HDR_RAW-Export.png",
+            "attributionDemandee": "Photo : PantheraLeo1359531 — licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Nintendo Nintendo Switch 2",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -6282,7 +6488,9 @@ export const CATALOGUE = {
             "id": "sqtQDqhpiVQ",
             "titre": "Introducing the Galaxy S20 | Samsung",
             "chaine": "Samsung Philippines (chaîne officielle Samsung)",
-            "url": "https://www.youtube.com/watch?v=sqtQDqhpiVQ"
+            "url": "https://www.youtube.com/watch?v=sqtQDqhpiVQ",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -6292,7 +6500,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Danish971",
             "attribution": "Photo : Danish971 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S20.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S20.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S20.jpg",
+            "attributionDemandee": "Photo : Danish971 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Samsung Galaxy S20 5G",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/galaxy-s20-2.jpg",
@@ -6300,7 +6512,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Giryyf 233",
             "attribution": "Photo : Giryyf 233 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:HK_TST_%E5%B0%96%E6%B2%99%E5%92%80_Tsim_Sha_Tsui_%E6%B5%B7%E6%B8%AF%E5%9F%8E_Harbour_City_mall_shop_S20_mobile_smartphone_August_2020_SS2_10.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:HK_TST_%E5%B0%96%E6%B2%99%E5%92%80_Tsim_Sha_Tsui_%E6%B5%B7%E6%B8%AF%E5%9F%8E_Harbour_City_mall_shop_S20_mobile_smartphone_August_2020_SS2_10.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:HK_TST_%E5%B0%96%E6%B2%99%E5%92%80_Tsim_Sha_Tsui_%E6%B5%B7%E6%B8%AF%E5%9F%8E_Harbour_City_mall_shop_S20_mobile_smartphone_August_2020_SS2_10.jpg",
+            "attributionDemandee": "Photo : Giryyf 233 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Samsung Galaxy S20 5G",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/galaxy-s20-3.png",
@@ -6308,7 +6524,11 @@ export const CATALOGUE = {
             "licence": "CC BY 4.0",
             "auteur": "GadgetsGuy",
             "attribution": "Image : GadgetsGuy — licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Galaxy_S20.png"
+            "source": "https://commons.wikimedia.org/wiki/File:Galaxy_S20.png",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Galaxy_S20.png",
+            "attributionDemandee": "Image : GadgetsGuy — licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Samsung Galaxy S20 5G",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -6441,7 +6661,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "FatHummus (TGspot.co.il)",
             "attribution": "FatHummus / TGspot.co.il, Galaxy S21, CC BY-SA 4.0, via Wikimedia Commons (VRT #2019040510008539)",
-            "source": "https://commons.wikimedia.org/wiki/File:Galaxy_S21.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Galaxy_S21.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Galaxy_S21.jpg",
+            "attributionDemandee": "FatHummus / TGspot.co.il, Galaxy S21, CC BY-SA 4.0, via Wikimedia Commons (VRT #2019040510008539)",
+            "modeleCorrespondant": "Samsung Galaxy S21 5G",
+            "dateVerification": "2026-11-14"
           }
         ],
         "videos": []
@@ -6604,7 +6828,9 @@ export const CATALOGUE = {
             "id": "FqFPk4SxH68",
             "titre": "Official Introduction | Galaxy S22 Ultra | Samsung",
             "chaine": "Samsung US",
-            "url": "https://www.youtube.com/watch?v=FqFPk4SxH68"
+            "url": "https://www.youtube.com/watch?v=FqFPk4SxH68",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -6614,7 +6840,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 3.0",
             "auteur": "Striker9498",
             "attribution": "Photo : Striker9498 — licence CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:20220210_%EC%82%BC%EC%84%B1_%EA%B0%A4%EB%9F%AD%EC%8B%9Cs22_%EC%9A%B8%ED%8A%B8%EB%9D%BC_(cropped).jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:20220210_%EC%82%BC%EC%84%B1_%EA%B0%A4%EB%9F%AD%EC%8B%9Cs22_%EC%9A%B8%ED%8A%B8%EB%9D%BC_(cropped).jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:20220210_%EC%82%BC%EC%84%B1_%EA%B0%A4%EB%9F%AD%EC%8B%9Cs22_%EC%9A%B8%ED%8A%B8%EB%9D%BC_(cropped).jpg",
+            "attributionDemandee": "Photo : Striker9498 — licence CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Samsung Galaxy S22 Ultra",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/galaxy-s22-ultra-2.jpg",
@@ -6622,7 +6852,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Hajoon0102",
             "attribution": "Photo : Hajoon0102 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Back_of_the_Samsung_Galaxy_S22_Ultra.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Back_of_the_Samsung_Galaxy_S22_Ultra.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Back_of_the_Samsung_Galaxy_S22_Ultra.jpg",
+            "attributionDemandee": "Photo : Hajoon0102 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Samsung Galaxy S22 Ultra",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/galaxy-s22-ultra-3.jpg",
@@ -6630,7 +6864,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Dinkun Chen",
             "attribution": "Photo : Dinkun Chen — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:SAMSUNG_Galaxy_S22_Ultra_REAR_CAMERA_MODULES.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:SAMSUNG_Galaxy_S22_Ultra_REAR_CAMERA_MODULES.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:SAMSUNG_Galaxy_S22_Ultra_REAR_CAMERA_MODULES.jpg",
+            "attributionDemandee": "Photo : Dinkun Chen — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Samsung Galaxy S22 Ultra",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -6834,7 +7072,9 @@ export const CATALOGUE = {
             "id": "6B-XSY7PkxI",
             "titre": "Galaxy S23 Ultra: Official Introduction Film | Samsung",
             "chaine": "Samsung Malaysia",
-            "url": "https://www.youtube.com/watch?v=6B-XSY7PkxI"
+            "url": "https://www.youtube.com/watch?v=6B-XSY7PkxI",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -6844,7 +7084,11 @@ export const CATALOGUE = {
             "licence": "CC BY 4.0",
             "auteur": "PantheraLeo1359531",
             "attribution": "Photo : PantheraLeo1359531 — licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S23_Ultra,_512_GB,_Lavender_20230416_HOF00318_RAW-Export_cens.png"
+            "source": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S23_Ultra,_512_GB,_Lavender_20230416_HOF00318_RAW-Export_cens.png",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S23_Ultra,_512_GB,_Lavender_20230416_HOF00318_RAW-Export_cens.png",
+            "attributionDemandee": "Photo : PantheraLeo1359531 — licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Samsung Galaxy S23 Ultra",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/galaxy-s23-ultra-2.png",
@@ -6852,7 +7096,11 @@ export const CATALOGUE = {
             "licence": "CC BY 4.0",
             "auteur": "PantheraLeo1359531",
             "attribution": "Photo : PantheraLeo1359531 — licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:S-Pen_des_Samsung_Galaxy_S23_Ultra,_512_GB,_Lavender_20230416_HOF00340_RAW-Export.png"
+            "source": "https://commons.wikimedia.org/wiki/File:S-Pen_des_Samsung_Galaxy_S23_Ultra,_512_GB,_Lavender_20230416_HOF00340_RAW-Export.png",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:S-Pen_des_Samsung_Galaxy_S23_Ultra,_512_GB,_Lavender_20230416_HOF00340_RAW-Export.png",
+            "attributionDemandee": "Photo : PantheraLeo1359531 — licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Samsung Galaxy S23 Ultra",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/galaxy-s23-ultra-3.jpg",
@@ -6860,7 +7108,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Captainmorlypogi1959",
             "attribution": "Photo : Captainmorlypogi1959 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S23_Ultra_2024.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S23_Ultra_2024.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S23_Ultra_2024.jpg",
+            "attributionDemandee": "Photo : Captainmorlypogi1959 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Samsung Galaxy S23 Ultra",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -7072,7 +7324,9 @@ export const CATALOGUE = {
             "id": "jrz4HJTs8PU",
             "titre": "Galaxy S24 Ultra: Official Introduction Film | Samsung",
             "chaine": "Samsung US",
-            "url": "https://www.youtube.com/watch?v=jrz4HJTs8PU"
+            "url": "https://www.youtube.com/watch?v=jrz4HJTs8PU",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -7082,7 +7336,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Vis M",
             "attribution": "Photo : Vis M — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Galaxy_S24_Ultra.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Galaxy_S24_Ultra.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Galaxy_S24_Ultra.jpg",
+            "attributionDemandee": "Photo : Vis M — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Samsung Galaxy S24 Ultra",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/galaxy-s24-ultra-2.jpg",
@@ -7090,7 +7348,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Vis M",
             "attribution": "Photo : Vis M — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Galaxy_S24_Ultra_02.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Galaxy_S24_Ultra_02.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Galaxy_S24_Ultra_02.jpg",
+            "attributionDemandee": "Photo : Vis M — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Samsung Galaxy S24 Ultra",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/galaxy-s24-ultra-3.jpg",
@@ -7098,7 +7360,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "メイド理世",
             "attribution": "Photo : メイド理世 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Back_view_of_Samsung_Galaxy_S24_Ultra_Black.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Back_view_of_Samsung_Galaxy_S24_Ultra_Black.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Back_view_of_Samsung_Galaxy_S24_Ultra_Black.jpg",
+            "attributionDemandee": "Photo : メイド理世 — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Samsung Galaxy S24 Ultra",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -7419,7 +7685,9 @@ export const CATALOGUE = {
             "id": "SA93zbnoR4U",
             "titre": "Official Replay | Galaxy Unpacked February 2026 | Samsung",
             "chaine": "Samsung",
-            "url": "https://www.youtube.com/watch?v=SA93zbnoR4U"
+            "url": "https://www.youtube.com/watch?v=SA93zbnoR4U",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -7429,7 +7697,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Kyu3a",
             "attribution": "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Galaxy_S26_Ultra_-_1.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Galaxy_S26_Ultra_-_1.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Galaxy_S26_Ultra_-_1.jpg",
+            "attributionDemandee": "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Samsung Galaxy S26 Ultra",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/galaxy-s26-ultra-2.jpg",
@@ -7437,7 +7709,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Kyu3a",
             "attribution": "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Galaxy_S26_Ultra_-_2.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Galaxy_S26_Ultra_-_2.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Galaxy_S26_Ultra_-_2.jpg",
+            "attributionDemandee": "Photo : Kyu3a — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Samsung Galaxy S26 Ultra",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/galaxy-s26-ultra-3.jpg",
@@ -7445,7 +7721,11 @@ export const CATALOGUE = {
             "licence": "CC BY 4.0",
             "auteur": "เวียร์",
             "attribution": "Photo : เวียร์ — licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Galaxy_S26_Ultra_lavender.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Galaxy_S26_Ultra_lavender.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Galaxy_S26_Ultra_lavender.jpg",
+            "attributionDemandee": "Photo : เวียร์ — licence CC BY 4.0 (https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Samsung Galaxy S26 Ultra",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -7500,7 +7780,7 @@ export const CATALOGUE = {
       "id": "sony-ps5-pro",
       "marque": "Sony",
       "modele": "PlayStation 5 Pro",
-      "rayon": "gaming",
+      "rayon": "jeux-video",
       "annee": 2024,
       "dateSortie": "2024-11-07",
       "sourceAnnee": {
@@ -7600,7 +7880,11 @@ export const CATALOGUE = {
             "licence": "CC BY 3.0",
             "auteur": "BeatEmUps",
             "attribution": "Photo : BeatEmUps — licence CC BY 3.0 (https://creativecommons.org/licenses/by/3.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:PlayStation_5_Pro_no_disc_drive.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:PlayStation_5_Pro_no_disc_drive.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:PlayStation_5_Pro_no_disc_drive.jpg",
+            "attributionDemandee": "Photo : BeatEmUps — licence CC BY 3.0 (https://creativecommons.org/licenses/by/3.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Sony PlayStation 5 Pro",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/ps5pro-2.png",
@@ -7608,7 +7892,11 @@ export const CATALOGUE = {
             "licence": "CC BY 3.0",
             "auteur": "阿金生活",
             "attribution": "Capture : 阿金生活 — licence CC BY 3.0 (https://creativecommons.org/licenses/by/3.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:%E3%80%90%E9%98%BF%E9%87%91%E7%94%9F%E6%B4%BB%E3%80%91%E6%9C%80%E6%96%B0PS5_Pro_%E9%96%8B%E7%AE%B1%E5%A4%96%E8%A7%80%E4%BB%8B%E7%B4%B9!%C2%BF_%E5%92%8CPS5%E7%9A%84%E5%B7%AE%E7%95%B0!%C2%BF_(2160p_60fps_AV1-128kbit_AAC)-00.06.12.000.png"
+            "source": "https://commons.wikimedia.org/wiki/File:%E3%80%90%E9%98%BF%E9%87%91%E7%94%9F%E6%B4%BB%E3%80%91%E6%9C%80%E6%96%B0PS5_Pro_%E9%96%8B%E7%AE%B1%E5%A4%96%E8%A7%80%E4%BB%8B%E7%B4%B9!%C2%BF_%E5%92%8CPS5%E7%9A%84%E5%B7%AE%E7%95%B0!%C2%BF_(2160p_60fps_AV1-128kbit_AAC)-00.06.12.000.png",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:%E3%80%90%E9%98%BF%E9%87%91%E7%94%9F%E6%B4%BB%E3%80%91%E6%9C%80%E6%96%B0PS5_Pro_%E9%96%8B%E7%AE%B1%E5%A4%96%E8%A7%80%E4%BB%8B%E7%B4%B9!%C2%BF_%E5%92%8CPS5%E7%9A%84%E5%B7%AE%E7%95%B0!%C2%BF_(2160p_60fps_AV1-128kbit_AAC)-00.06.12.000.png",
+            "attributionDemandee": "Capture : 阿金生活 — licence CC BY 3.0 (https://creativecommons.org/licenses/by/3.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Sony PlayStation 5 Pro",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/ps5pro-3.png",
@@ -7616,7 +7904,11 @@ export const CATALOGUE = {
             "licence": "CC BY 3.0",
             "auteur": "小宁子 XNZ",
             "attribution": "Capture : 小宁子 XNZ — licence CC BY 3.0 (https://creativecommons.org/licenses/by/3.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:%E3%80%90PS5_Pro%E5%BC%80%E7%AE%B1%E8%AF%84%E6%B5%8B%E3%80%917000%E5%85%83%EF%BC%81%E4%B8%96%E7%95%8C%E6%9C%80%E5%BC%BA%E4%B8%BB%E6%9C%BA%EF%BC%8C%E5%80%BC%E5%BE%97%E4%B9%B0%E5%90%97%EF%BC%9F%E4%B8%A8%E5%B0%8F%E5%AE%81%E5%AD%90_(2160p_60fps_AV1-128kbit_AAC)-00.01.52.400.png"
+            "source": "https://commons.wikimedia.org/wiki/File:%E3%80%90PS5_Pro%E5%BC%80%E7%AE%B1%E8%AF%84%E6%B5%8B%E3%80%917000%E5%85%83%EF%BC%81%E4%B8%96%E7%95%8C%E6%9C%80%E5%BC%BA%E4%B8%BB%E6%9C%BA%EF%BC%8C%E5%80%BC%E5%BE%97%E4%B9%B0%E5%90%97%EF%BC%9F%E4%B8%A8%E5%B0%8F%E5%AE%81%E5%AD%90_(2160p_60fps_AV1-128kbit_AAC)-00.01.52.400.png",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:%E3%80%90PS5_Pro%E5%BC%80%E7%AE%B1%E8%AF%84%E6%B5%8B%E3%80%917000%E5%85%83%EF%BC%81%E4%B8%96%E7%95%8C%E6%9C%80%E5%BC%BA%E4%B8%BB%E6%9C%BA%EF%BC%8C%E5%80%BC%E5%BE%97%E4%B9%B0%E5%90%97%EF%BC%9F%E4%B8%A8%E5%B0%8F%E5%AE%81%E5%AD%90_(2160p_60fps_AV1-128kbit_AAC)-00.01.52.400.png",
+            "attributionDemandee": "Capture : 小宁子 XNZ — licence CC BY 3.0 (https://creativecommons.org/licenses/by/3.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Sony PlayStation 5 Pro",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -7667,7 +7959,7 @@ export const CATALOGUE = {
       "id": "valve-half-life-alyx",
       "marque": "Valve",
       "modele": "Half-Life: Alyx",
-      "rayon": "gaming",
+      "rayon": "jeux-video",
       "annee": 2020,
       "dateSortie": "2020-03-23",
       "sourceAnnee": {
@@ -7772,7 +8064,9 @@ export const CATALOGUE = {
             "id": "O2W0N3uKXmo",
             "titre": "Half-Life: Alyx Announcement Trailer",
             "chaine": "Valve",
-            "url": "https://www.youtube.com/watch?v=O2W0N3uKXmo"
+            "url": "https://www.youtube.com/watch?v=O2W0N3uKXmo",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
           }
         ],
         "images": [
@@ -7782,7 +8076,11 @@ export const CATALOGUE = {
             "licence": "Domaine public",
             "auteur": "Valve Corporation",
             "attribution": "Logotype : Valve Corporation — domaine public, via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Half-Life_Alyx_Logo.png"
+            "source": "https://commons.wikimedia.org/wiki/File:Half-Life_Alyx_Logo.png",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Half-Life_Alyx_Logo.png",
+            "attributionDemandee": "Logotype : Valve Corporation — domaine public, via Wikimedia Commons",
+            "modeleCorrespondant": "Valve Half-Life: Alyx",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/half-life-alyx-2.jpg",
@@ -7790,7 +8088,11 @@ export const CATALOGUE = {
             "licence": "CC BY 2.0",
             "auteur": "Felix Schaefer",
             "attribution": "Capture : Felix Schaefer — licence CC BY 2.0 (https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Holoswitch_Recorder_HL-Alyx.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Holoswitch_Recorder_HL-Alyx.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Holoswitch_Recorder_HL-Alyx.jpg",
+            "attributionDemandee": "Capture : Felix Schaefer — licence CC BY 2.0 (https://creativecommons.org/licenses/by/2.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Valve Half-Life: Alyx",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -7830,7 +8132,7 @@ export const CATALOGUE = {
       "id": "valve-index",
       "marque": "Valve",
       "modele": "Valve Index (kit VR)",
-      "rayon": "vr",
+      "rayon": "montres-wearables",
       "annee": 2021,
       "dateSortie": "2019-06-28",
       "sourceAnnee": {
@@ -7935,7 +8237,7 @@ export const CATALOGUE = {
       "id": "valve-steam-deck-lcd",
       "marque": "Valve",
       "modele": "Steam Deck (LCD)",
-      "rayon": "gaming",
+      "rayon": "jeux-video",
       "annee": 2022,
       "dateSortie": "2022-02-25",
       "sourceAnnee": {
@@ -8043,7 +8345,7 @@ export const CATALOGUE = {
       "id": "valve-steam-deck-oled",
       "marque": "Valve",
       "modele": "Steam Deck OLED",
-      "rayon": "gaming",
+      "rayon": "jeux-video",
       "annee": 2023,
       "dateSortie": "2023-11-16",
       "sourceAnnee": {
@@ -8163,7 +8465,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "SparklesTrainNerd",
             "attribution": "Photo : SparklesTrainNerd — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Steam_Deck_OLED_framsida_hemsk%C3%A4rm.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Steam_Deck_OLED_framsida_hemsk%C3%A4rm.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Steam_Deck_OLED_framsida_hemsk%C3%A4rm.jpg",
+            "attributionDemandee": "Photo : SparklesTrainNerd — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Valve Steam Deck OLED",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -8212,7 +8518,7 @@ export const CATALOGUE = {
       "id": "valve-steam-machine",
       "marque": "Valve",
       "modele": "Steam Machine",
-      "rayon": "gaming",
+      "rayon": "jeux-video",
       "annee": 2026,
       "dateSortie": "2026-06-22",
       "sourceAnnee": {
@@ -8391,7 +8697,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Masem",
             "attribution": "Photo : Masem — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Steam_machine_front.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Steam_machine_front.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Steam_machine_front.jpg",
+            "attributionDemandee": "Photo : Masem — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Valve Steam Machine",
+            "dateVerification": "2026-11-14"
           },
           {
             "fichier": "img/steam-machine-2.jpg",
@@ -8399,7 +8709,11 @@ export const CATALOGUE = {
             "licence": "CC BY-SA 4.0",
             "auteur": "Masem",
             "attribution": "Photo : Masem — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
-            "source": "https://commons.wikimedia.org/wiki/File:Steam_machine_back.jpg"
+            "source": "https://commons.wikimedia.org/wiki/File:Steam_machine_back.jpg",
+            "sourceOriginale": "https://commons.wikimedia.org/wiki/File:Steam_machine_back.jpg",
+            "attributionDemandee": "Photo : Masem — licence CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0), via Wikimedia Commons",
+            "modeleCorrespondant": "Valve Steam Machine",
+            "dateVerification": "2026-11-14"
           }
         ]
       },
@@ -8449,7 +8763,7 @@ export const CATALOGUE = {
       "id": "apple-watch-series-6",
       "marque": "Apple",
       "modele": "Apple Watch Series 6",
-      "rayon": "montres",
+      "rayon": "montres-wearables",
       "annee": 2020,
       "dateSortie": "2020-09-18",
       "sourceAnnee": {
@@ -8604,7 +8918,7 @@ export const CATALOGUE = {
       "id": "samsung-galaxy-watch3",
       "marque": "Samsung",
       "modele": "Galaxy Watch3",
-      "rayon": "montres",
+      "rayon": "montres-wearables",
       "annee": 2020,
       "dateSortie": "2020-08-06",
       "sourceAnnee": {
@@ -8754,7 +9068,7 @@ export const CATALOGUE = {
       "id": "sony-wh-1000xm4",
       "marque": "Sony",
       "modele": "WH-1000XM4",
-      "rayon": "audio",
+      "rayon": "smart-tech",
       "annee": 2020,
       "dateSortie": "2020-08-06",
       "sourceAnnee": {

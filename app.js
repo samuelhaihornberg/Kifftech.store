@@ -5,18 +5,14 @@ import { resolveSelection, sellability, formatSellabilityReason, buildOrder } fr
 
 // ---------- RAYONS (Catégories de produits) ----------
 const RAYONS = [
+  { id: 'jeux-video', label: 'Jeux vidéo', icon: '🎮', color: '#ff6b00', desc: 'Consoles, jeux et accessoires gaming' },
   { id: 'smartphones', label: 'Smartphones', icon: '📱', color: '#00d4ff', desc: 'Smartphones et accessoires' },
-  { id: 'montres', label: 'Montres connectées', icon: '⌚', color: '#00ff88', desc: 'Smartwatches et trackers fitness' },
-  { id: 'audio', label: 'Audio', icon: '🎧', color: '#ff2d95', desc: 'Écouteurs, casques et enceintes' },
-  { id: 'maison', label: 'Maison connectée', icon: '🏠', color: '#ff6b00', desc: 'Objets connectés pour la maison' },
-  { id: 'securite', label: 'Sécurité', icon: '🔒', color: '#b84dff', desc: 'Caméras, alarmes et serrures connectées' },
-  { id: 'gaming', label: 'Gaming', icon: '🎮', color: '#ff6b00', desc: 'Consoles, consoles portables et périphériques gaming' },
-  { id: 'robots', label: 'Robots', icon: '🤖', color: '#00ffc8', desc: 'Robots aspirateurs, assistants et robots à pattes' },
-  { id: 'drones', label: 'Drones', icon: '🚁', color: '#ffd23f', desc: 'Drones et caméras d’action ou de poche' },
-  { id: 'informatique', label: 'Informatique', icon: '💻', color: '#0066ff', desc: 'Ordinateurs, tablettes, claviers, souris et hubs' },
-  { id: 'energie', label: 'Énergie', icon: '🔋', color: '#00ff88', desc: 'Chargeurs, batteries et énergie portable' },
-  { id: 'auto', label: 'Auto', icon: '🚗', color: '#ff6b00', desc: 'Gadgets et accessoires auto' },
-  { id: 'vr', label: 'Réalité Virtuelle', icon: '🥽', color: '#b84dff', desc: 'Casques VR et lunettes AR' }
+  { id: 'ordinateurs-composants', label: 'Ordinateurs et composants', icon: '💻', color: '#0066ff', desc: 'Ordinateurs, composants et périphériques' },
+  { id: 'tablettes', label: 'Tablettes', icon: '📲', color: '#00ffc8', desc: 'Tablettes et accessoires' },
+  { id: 'montres-wearables', label: 'Montres connectées et wearables', icon: '⌚', color: '#00ff88', desc: 'Montres connectées, bracelets et wearables' },
+  { id: 'maison-securite', label: 'Maison connectée et sécurité', icon: '🏠', color: '#b84dff', desc: 'Maison connectée, sécurité et surveillance' },
+  { id: 'smart-car', label: 'Smart car et mobilité connectée', icon: '🚗', color: '#ff6b00', desc: 'Smart car, mobilité et accessoires connectés' },
+  { id: 'smart-tech', label: 'Smart tech', icon: '🤖', color: '#ffd23f', desc: 'Robots, drones, assistants, énergie et objets connectés' }
 ];
 
 const RAYONS_MAP = Object.fromEntries(RAYONS.map(r => [r.id, r]));
