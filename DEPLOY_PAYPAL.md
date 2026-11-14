@@ -17,15 +17,25 @@ Les fonctions serveur lisent uniquement des variables d’environnement (jamais 
 - `PAYPAL_CLIENT_SECRET` (**secret**, serveur uniquement)
 - `PAYPAL_API_BASE` (optionnel) : `https://api-m.paypal.com` (production) ou `https://api-m.sandbox.paypal.com` (sandbox)
 
-## Réglages de déploiement à compléter (configuration externe indispensable)
-GitHub Pages ne peut pas exécuter `functions/`. Pour rendre le paiement fonctionnel en production, choisir et configurer un hébergement serverless (ex. **Cloudflare Pages** avec Functions, recommandé car les fichiers `functions/api/*` sont compatibles) :
+## Option A — Serveur Node (recommandé si vous choisissez Node)
+Le dépôt inclut `server.js` (Node, ESM) qui sert le site statique **et** les endpoints `/api/paypal/config|create-order|capture-order` sur la même origine, en recalculant les montants côté serveur (`buildOrder`, `lib/payment-core.js`).
 
-1. **Créer/relier un projet Cloudflare Pages** au dépôt/branche publié (ou déployer le même contenu incluant `functions/`).
-2. **Variables d’environnement du projet** (Settings → Environment variables, Production/Preview selon besoin) : définir `PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET`, et si test `PAYPAL_API_BASE=https://api-m.sandbox.paypal.com`.
-   - Si le déploiement Cloudflare est piloté par GitHub Actions, mapper les secrets Actions existants vers ces variables (sans afficher leurs valeurs). Si déploiement natif Cloudflare Pages, renseigner les variables dans le dashboard Cloudflare.
-3. **URL de l’application** : servir le front et `/api/paypal/*` sur la même origine (Cloudflare Pages le fait nativement). Si le front reste sur GitHub Pages et l’API ailleurs, il faudra configurer une URL d’API + CORS côté serveur (non configuré par défaut ici) — **préférer même origine**.
-4. **Domaine/Pages** : basculer le trafic public vers le déploiement Cloudflare Pages (ou l’hébergement choisi) pour que `./api/paypal/*` soit résolu. GitHub Pages seul ne servira pas les endpoints.
-5. **Vendabilité catalogue** : pour autoriser un paiement réel, compléter par produit/offre les champs requis côté catalogue/données canoniques : prix final confirmé, disponibilité, devise, **livraison** (montant/détail) et **taxes** (montant/taux/inclus) — puis recalcul/validation serveur s’appuiera dessus.
+1. **Prérequis** : Node.js (version supportant `fetch` natif, ex. Node 18+).
+2. **Variables d’environnement** (à définir dans l’environnement de l’hébergeur, **jamais** dans le dépôt) :
+   - `PAYPAL_CLIENT_ID`
+   - `PAYPAL_CLIENT_SECRET` (serveur uniquement)
+   - `PAYPAL_API_BASE` (optionnel) : `https://api-m.sandbox.paypal.com` (test) ou `https://api-m.paypal.com` (production)
+   - `PORT` (optionnel, défaut `3000`)
+   - Voir `.env.example` (placeholders uniquement).
+3. **Démarrage** : `npm install` (si nécessaire) puis `npm start` (ou `node server.js`) avec les variables définies.
+4. **Déploiement** : héberger ce service Node sur un fournisseur exposant le port HTTP (Render, Railway, Fly.io, VPS, etc.) et faire pointer le domaine KiffTech vers cette instance afin que le front et `/api/paypal/*` soient sur la **même origine**. GitHub Pages seul ne peut pas exécuter `server.js`.
+5. **Vérification** : `GET /api/paypal/config` renvoie `{ ok: true, clientId, ... }` quand configuré ; tester le flux sandbox avant production.
+
+## Option B — Cloudflare Pages Functions (alternative)
+GitHub Pages ne peut pas exécuter `functions/`. Pour utiliser les Functions incluses (`functions/api/*`), déployer sur Cloudflare Pages avec les mêmes variables d’environnement (`PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET`, `PAYPAL_API_BASE`) et servir front + API sur la même origine.
+
+## Vendabilité catalogue (condition métier)
+Pour autoriser un paiement réel, compléter par produit/offre les champs requis côté catalogue/données canoniques : prix final confirmé, disponibilité, devise, **livraison** (montant/détail) et **taxes** (montant/taux/inclus) — puis recalcul/validation serveur s’appuiera dessus.
 
 ## Vérifications effectuées ici
 - Implémentation côté code : création/capture via endpoints serveur, recalcul serveur, états UI (chargement/annulation/refus/erreur/succès après capture confirmée), désactivation + motif quand non vendable.
