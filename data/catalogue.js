@@ -4376,7 +4376,16 @@ export const CATALOGUE = {
             "dateVerification": "2026-11-14"
           }
         ],
-        "videos": []
+        "videos": [
+          {
+            "id": "oAf5M4Q0Pu8",
+            "titre": "Introducing Meta Quest 3S",
+            "chaine": "Meta Quest",
+            "url": "https://www.youtube.com/watch?v=oAf5M4Q0Pu8",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
+          }
+        ]
       },
       "article": {
         "titre": "Meta Meta Quest 3S (2024)",
@@ -4398,7 +4407,6 @@ export const CATALOGUE = {
         }
       ],
       "manquants": [
-        "1 à 2 vidéos officielles fabricant (YouTube, embed) à confirmer",
         "Prix public officiel actuel en EUR/devise, variantes et stock/disponibilité à confirmer sur source officielle",
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
@@ -6327,6 +6335,16 @@ export const CATALOGUE = {
             "modeleCorrespondant": "Nintendo Nintendo Switch 2",
             "dateVerification": "2026-11-14"
           }
+        ],
+        "videos": [
+          {
+            "id": "itpcsQQvgAQ",
+            "titre": "Nintendo Switch 2 – First-look trailer",
+            "chaine": "Nintendo of America",
+            "url": "https://www.youtube.com/watch?v=itpcsQQvgAQ",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
+          }
         ]
       },
       "article": {
@@ -7919,6 +7937,16 @@ export const CATALOGUE = {
             "modeleCorrespondant": "Sony PlayStation 5 Pro",
             "dateVerification": "2026-11-14"
           }
+        ],
+        "videos": [
+          {
+            "id": "6HaRMiTfvks",
+            "titre": "PlayStation 5 Pro Console - Reveal Trailer",
+            "chaine": "PlayStation",
+            "url": "https://www.youtube.com/watch?v=6HaRMiTfvks",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
+          }
         ]
       },
       "article": {
@@ -8480,6 +8508,16 @@ export const CATALOGUE = {
             "modeleCorrespondant": "Valve Steam Deck OLED",
             "dateVerification": "2026-11-14"
           }
+        ],
+        "videos": [
+          {
+            "id": "_vTsZMvjJ-A",
+            "titre": "Introducing Steam Deck OLED - Now Available",
+            "chaine": "Valve",
+            "url": "https://www.youtube.com/watch?v=_vTsZMvjJ-A",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
+          }
         ]
       },
       "article": {
@@ -8893,7 +8931,16 @@ export const CATALOGUE = {
       ],
       "medias": {
         "images": [],
-        "videos": []
+        "videos": [
+          {
+            "id": "TCMnrssX1NE",
+            "titre": "Introducing Apple Watch Series 6 — It Already Does That",
+            "chaine": "Apple",
+            "url": "https://www.youtube.com/watch?v=TCMnrssX1NE",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
+          }
+        ]
       },
       "article": {
         "titre": "Apple Watch Series 6 : capteur d’oxygène sanguin et puce S6",
@@ -8918,7 +8965,6 @@ export const CATALOGUE = {
       ],
       "manquants": [
         "3 à 5 photographies sous licence libre avec attribution/licence vérifiées (fichiers locaux) manquantes",
-        "1 à 2 vidéos officielles fabricant (YouTube, embed) à confirmer/ajouter",
         "Prix public officiel actuel et variantes détaillées (marché/devise, finitions, bracelets) à confirmer",
         "Disponibilité/stock actuel à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)"
@@ -9044,7 +9090,16 @@ export const CATALOGUE = {
       ],
       "medias": {
         "images": [],
-        "videos": []
+        "videos": [
+          {
+            "id": "ei03XweBm8M",
+            "titre": "Galaxy Watch3 | Official Unboxing | Samsung",
+            "chaine": "Samsung",
+            "url": "https://www.youtube.com/watch?v=ei03XweBm8M",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
+          }
+        ]
       },
       "article": {
         "titre": "Samsung Galaxy Watch3 : lunette rotative et suivi santé",
@@ -9068,7 +9123,6 @@ export const CATALOGUE = {
       ],
       "manquants": [
         "3 à 5 photographies sous licence libre avec attribution/licence vérifiées (fichiers locaux) manquantes",
-        "1 à 2 vidéos officielles fabricant (YouTube, embed) à confirmer/ajouter",
         "Prix public officiel actuel en EUR et disponibilités marché France/UE à confirmer",
         "Disponibilité/stock actuel à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)"
