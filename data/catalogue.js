@@ -3292,7 +3292,19 @@ export const CATALOGUE = {
         "Exploitation des fonctions principales du produit"
       ],
       "medias": {
-        "images": [],
+        "images": [
+          {
+            "fichier": "img/raspberry-pi-pico-w-1.jpg",
+            "alt": "Raspberry Pi Pico W, carte microcontrôleur avec connectivité sans fil",
+            "licence": "CC BY-SA 2.0",
+            "auteur": "Thomas Amberg",
+            "attribution": "Thomas Amberg, CC BY-SA 2.0, via Wikimedia Commons (source Flickr)",
+            "source": "https://commons.wikimedia.org/wiki/File:PXL_20220703_104606437.PORTRAIT.jpg",
+            "sourceOriginale": "https://www.flickr.com/photos/tamberg/52190287398/",
+            "modeleCorrespondant": "Raspberry Pi Pico W",
+            "dateVerification": "2026-11-14"
+          }
+        ],
         "videos": []
       },
       "article": {
@@ -3315,7 +3327,6 @@ export const CATALOGUE = {
         }
       ],
       "manquants": [
-        "3 à 5 photographies sous licence libre avec attribution/licence vérifiées (fichiers locaux) manquantes ou à confirmer",
         "1 à 2 vidéos officielles fabricant (YouTube, embed) à confirmer",
         "Prix public officiel actuel en EUR/devise, variantes et stock/disponibilité à confirmer sur source officielle",
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
@@ -3618,7 +3629,19 @@ export const CATALOGUE = {
         "Exploitation des fonctions principales du produit"
       ],
       "medias": {
-        "images": [],
+        "images": [
+          {
+            "fichier": "img/raspberry-pi-pico-2-1.jpg",
+            "alt": "Raspberry Pi Pico 2, vue de dessus de la carte microcontrôleur",
+            "licence": "CC BY-SA 4.0",
+            "auteur": "Suyash Dwivedi",
+            "attribution": "Suyash Dwivedi, CC BY-SA 4.0, via Wikimedia Commons",
+            "source": "https://commons.wikimedia.org/wiki/File:Raspberry_PI_Pico_2-01.jpg",
+            "sourceOriginale": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Raspberry_PI_Pico_2-01.jpg",
+            "modeleCorrespondant": "Raspberry Pi Pico 2",
+            "dateVerification": "2026-11-14"
+          }
+        ],
         "videos": []
       },
       "article": {
@@ -3641,7 +3664,6 @@ export const CATALOGUE = {
         }
       ],
       "manquants": [
-        "3 à 5 photographies sous licence libre avec attribution/licence vérifiées (fichiers locaux) manquantes ou à confirmer",
         "1 à 2 vidéos officielles fabricant (YouTube, embed) à confirmer",
         "Prix public officiel actuel en EUR/devise, variantes et stock/disponibilité à confirmer sur source officielle",
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
@@ -7508,7 +7530,30 @@ export const CATALOGUE = {
         "Usage comme smartphone premium Android"
       ],
       "medias": {
-        "images": [],
+        "images": [
+          {
+            "fichier": "img/samsung-galaxy-s25-ultra-1.jpg",
+            "alt": "Samsung Galaxy S25 Ultra, vue latérale du smartphone",
+            "licence": "CC0 1.0",
+            "auteur": "HuangWending18072009",
+            "attribution": "HuangWending18072009, CC0 1.0, via Wikimedia Commons",
+            "source": "https://commons.wikimedia.org/wiki/File:Samsung_Galaxy_S25_Ultra_smartphone_-_side_view.jpg",
+            "sourceOriginale": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Samsung_Galaxy_S25_Ultra_smartphone_-_side_view.jpg",
+            "modeleCorrespondant": "Samsung Galaxy S25 Ultra",
+            "dateVerification": "2026-11-14"
+          },
+          {
+            "fichier": "img/samsung-galaxy-s25-ultra-2.jpg",
+            "alt": "Samsung Galaxy S25 Ultra, vue arrière du smartphone",
+            "licence": "CC0 1.0",
+            "auteur": "HuangWending18072009",
+            "attribution": "HuangWending18072009, CC0 1.0, via Wikimedia Commons",
+            "source": "https://commons.wikimedia.org/wiki/File:Rear_view_of_the_Samsung_Galaxy_S25_Ultra_smartphone.jpg",
+            "sourceOriginale": "https://upload.wikimedia.org/wikipedia/commons/6/60/Rear_view_of_the_Samsung_Galaxy_S25_Ultra_smartphone.jpg",
+            "modeleCorrespondant": "Samsung Galaxy S25 Ultra",
+            "dateVerification": "2026-11-14"
+          }
+        ],
         "videos": []
       },
       "article": {
@@ -7534,7 +7579,6 @@ export const CATALOGUE = {
         "Prix public officiel actuel en EUR et variante de référence non confirmés",
         "Disponibilité/stock actuel à confirmer",
         "Variantes exactes et liens officiels par configuration à confirmer",
-        "3 à 5 photographies sous licence libre avec attribution vérifiée manquantes",
         "1 à 2 vidéos officielles fabricant (YouTube, embed) à confirmer",
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Liste d’usages étendue (10–20) à compléter avec sources"
@@ -8337,8 +8381,29 @@ export const CATALOGUE = {
         "Exploitation des fonctions principales du produit"
       ],
       "medias": {
-        "images": [],
-        "videos": []
+        "images": [
+          {
+            "fichier": "img/steam-deck-lcd-1.png",
+            "alt": "Steam Deck (LCD), vue de face de la console portable PC",
+            "licence": "CC BY-SA 4.0",
+            "auteur": "Liam Dawe / GamingOnLinux (dérivé PNG par VulcanSphere)",
+            "attribution": "Liam Dawe/GamingOnLinux, CC BY-SA 4.0, via Wikimedia Commons (dérivé par VulcanSphere)",
+            "source": "https://commons.wikimedia.org/wiki/File:Steam_Deck_(front).png",
+            "sourceOriginale": "https://www.gamingonlinux.com/2022/02/steam-deck-initial-review/",
+            "modeleCorrespondant": "Valve Steam Deck (LCD, modèle original)",
+            "dateVerification": "2026-11-14"
+          }
+        ],
+        "videos": [
+          {
+            "id": "AlWgZhMtlWo",
+            "titre": "Introducing Steam Deck",
+            "chaine": "Valve",
+            "url": "https://www.youtube.com/watch?v=AlWgZhMtlWo",
+            "type": "officielle-fabricant-editeur",
+            "dateVerification": "2026-11-14"
+          }
+        ]
       },
       "article": {
         "titre": "Valve Steam Deck (LCD) (2022)",
@@ -8360,7 +8425,6 @@ export const CATALOGUE = {
         }
       ],
       "manquants": [
-        "3 à 5 photographies sous licence libre avec attribution/licence vérifiées (fichiers locaux) manquantes ou à confirmer",
         "1 à 2 vidéos officielles fabricant (YouTube, embed) à confirmer",
         "Prix public officiel actuel en EUR/devise, variantes et stock/disponibilité à confirmer sur source officielle",
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
