@@ -734,3 +734,20 @@ body{display:flex;flex-direction:column;min-height:100dvh;overflow-x:hidden}
   .detail-gallery{width:220px;}
   .usage-list{grid-template-columns:1fr 1fr;}
 }
+
+/* ===== Paiement PayPal / caisse ===== */
+.paypal-container{min-height:42px;margin-top:.5rem}
+.pay-status{font-size:.8rem;color:var(--fg-muted);min-height:1.2em}
+.pay-status.error{color:var(--danger,#ff6b6b)}
+.pay-status.success{color:var(--accent,#00ffc8)}
+.pay-status.info{color:var(--fg-muted)}
+.pay-unavailable{font-size:.78rem;color:var(--gold,#ffd23f);margin:.5rem 0 0;line-height:1.4}
+.btn-buy-now{white-space:nowrap}
+.product-actions{display:flex;flex-wrap:wrap;gap:.5rem}
+.product-actions .btn-catalog{flex:1 1 auto;min-height:44px}
+.detail-actions{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.detail-actions .btn-primary,.detail-actions .btn-secondary,.detail-actions .btn-buy-now{min-height:44px}
+@media (max-width:640px){
+  .product-actions .btn-catalog{flex:1 1 100%}
+  .detail-actions .btn-primary,.detail-actions .btn-secondary,.detail-actions .btn-buy-now{flex:1 1 100%}
+}

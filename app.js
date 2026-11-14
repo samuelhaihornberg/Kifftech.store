@@ -1,6 +1,7 @@
 /* ===== KiffTech — Catalogue (données vérifiées) ===== */
 import { CATALOGUE } from './data/catalogue.js';
 import { CONTACT } from './data/config.js';
+import { resolveSelection, sellability, formatSellabilityReason, buildOrder } from './lib/payment-core.js';
 
 // ---------- RAYONS (Catégories de produits) ----------
 const RAYONS = [
@@ -118,10 +119,11 @@ const cartManager = {
     writeJSON(STORE_KEYS.cart, state.cart);
     window.dispatchEvent(new Event('cart:change'));
   },
-  add(productId, variant = '', prix = null, devise = 'EUR', qty = 1) {
-    const item = state.cart.find(i => i.productId === productId && i.variant === variant && (i.devise || 'EUR') === devise);
+  add(productId, choiceIndices = [], qty = 1) {
+    const key = JSON.stringify(Array.isArray(choiceIndices) ? choiceIndices : []);
+    const item = state.cart.find(i => i.productId === productId && JSON.stringify(i.choiceIndices || []) === key);
     if (item) item.quantity = Math.min(item.quantity + qty, 99);
-    else state.cart.push({ productId, variant, prix, devise, quantity: qty });
+    else state.cart.push({ productId, choiceIndices: Array.isArray(choiceIndices) ? choiceIndices : [], quantity: qty });
     this.save();
   },
   updateQuantity(index, quantity) {
@@ -142,14 +144,15 @@ const cartManager = {
     for (const item of state.cart) {
       const p = productsMap.get(item.productId);
       if (!p) continue;
-      const devise = item.devise || p.currency || 'EUR';
+      const sel = resolveSelection(p, item.choiceIndices || []);
+      const devise = sel.devise || 'EUR';
       totalItems += item.quantity;
       uniqueItems += 1;
-      const montant = (item.prix ?? p.price ?? 0) * item.quantity;
+      const unit = (sel.prix != null ? sel.prix : 0);
+      const montant = unit * item.quantity;
       parDevise.set(devise, Math.round(((parDevise.get(devise) || 0) + montant) * 100) / 100);
     }
     const devises = [...parDevise.keys()];
-    // Les prix proviennent de marchés différents : aucune conversion n'est inventée.
     const deviseUnique = devises.length === 1 ? devises[0] : null;
     const subtotal = deviseUnique ? parDevise.get(deviseUnique) : null;
     return {
@@ -232,21 +235,28 @@ class KiffTech{
   addToCart(productId) {
     const p = state.productsMap.get(productId) || state.products.find(x => x.id === productId);
     if (!p) return;
-    const sel = this.selectedVariant(p);
+    const choice = this.currentChoice(p);
+    const sel = resolveSelection(p, choice);
     if (sel.prix === null) {
       this.showToast('Prix public officiel à confirmer : ajout impossible', 'error');
       return;
     }
     if (!sel.disponible) {
-      this.showToast('Variante non disponible : contacter via WhatsApp Business', 'error');
+      this.showToast('Variante non disponible : ajout impossible', 'error');
       return;
     }
-    cartManager.add(productId, sel.label, sel.prix, p.currency, 1);
-    this.showToast(`${p.title} ajouté au panier`);
+    cartManager.add(productId, choice, 1);
+    this.showToast(`${p.title} ajouté à la caisse`);
+  }
+
+  currentChoice(p) {
+    const choice = state.variantChoice[p.id];
+    if (Array.isArray(choice)) return choice.slice();
+    return (p.variantes || []).map(() => 0);
   }
 
   selectedVariant(p) {
-    const choice = state.variantChoice[p.id] || [];
+    const choice = this.currentChoice(p);
     const labels = [];
     let prix = p.price;
     let disponible = true;
@@ -254,7 +264,7 @@ class KiffTech{
     let lienManquant = false;
     let lienDefini = false;
     (p.variantes || []).forEach((groupe, g) => {
-      const option = groupe.options[choice[g] ?? 0];
+      const option = (groupe.options || [])[choice[g] ?? 0];
       if (!option) return;
       labels.push(option.libelle);
       if (option.prix != null) prix = option.prix;
@@ -266,7 +276,7 @@ class KiffTech{
       }
     });
     const lienOfficiel = lienManquant ? null : lien;
-    return { label: labels.join(' · '), prix, disponible, lienOfficiel, lienManquant, lienDefini };
+    return { label: labels.join(' · '), prix, disponible, lienOfficiel, lienManquant, lienDefini, choiceIndices: choice };
   }
 
   exportCatalog(format) {
@@ -763,14 +773,16 @@ class KiffTech{
   }
 
   variantBoxHTML(p){
+    const choice = this.currentChoice(p);
     const sel = this.selectedVariant(p);
-    const choice = state.variantChoice[p.id] || [];
+    const sell = sellability(p, { ...resolveSelection(p, choice) });
     const groups = (p.variantes || []).map((groupe, g) => `
         <div class="variant-group">
           <span class="variant-label">${sanitizeHTML(groupe.groupe)}</span>
-          <div class="variant-options">${groupe.options.map((o, k) => `<button type="button" class="variant-chip${k === (choice[g] ?? 0) ? ' is-selected' : ''}${o.dispo === false ? ' is-unavailable' : ''}" data-variant-group="${g}" data-variant-option="${k}" aria-pressed="${k === (choice[g] ?? 0)}">${sanitizeHTML(o.libelle)}${o.dispo === false ? ' (indisponible)' : ''}</button>`).join('')}</div>
+          <div class="variant-options">${(groupe.options || []).map((o, k) => `<button type="button" class="variant-chip${k === (choice[g] ?? 0) ? ' is-selected' : ''}${o.dispo === false ? ' is-unavailable' : ''}" data-variant-group="${g}" data-variant-option="${k}" aria-pressed="${k === (choice[g] ?? 0)}">${sanitizeHTML(o.libelle)}${o.dispo === false ? ' (indisponible)' : ''}</button>`).join('')}</div>
         </div>`).join('');
-    const addLabel = sel.prix === null ? 'Prix à confirmer' : !sel.disponible ? 'Variante indisponible' : 'Ajouter au panier';
+    const addDisabled = sel.prix === null || !sel.disponible;
+    const addLabel = sel.prix === null ? 'Prix à confirmer' : !sel.disponible ? 'Variante indisponible' : 'Ajouter à la caisse';
     const lien = sel.lienOfficiel;
     const lienHTML = sel.lienDefini
       ? (lien
@@ -778,6 +790,7 @@ class KiffTech{
            <span class="lien-official-note">Vérifié le ${sanitizeHTML(lien.verifie || '')} · ${sanitizeHTML(lien.precision || '')}</span>`
         : '<button type="button" class="btn-official btn-official--off" disabled>Lien officiel précis introuvable pour cette configuration</button>')
       : '';
+    const buyTitle = sell.ok ? 'Payer cet article avec PayPal' : formatSellabilityReason(sell.reasons);
     return `
       <div class="variant-box">
         ${groups}
@@ -786,9 +799,12 @@ class KiffTech{
           <span class="variant-price-note">${sanitizeHTML(sel.label)}${sel.label ? ' · ' : ''}Prix public officiel (devise du fabricant)</span>
         </div>
         <div class="detail-actions">
-          <button type="button" class="btn-primary" data-action="add" ${sel.prix === null || !sel.disponible ? 'disabled' : ''}>${addLabel}</button>
+          <button type="button" class="btn-primary" data-action="add" ${addDisabled ? 'disabled' : ''}>${addLabel}</button>
+          <button type="button" class="btn-secondary btn-buy-now" data-action="buy-now" ${sell.ok ? '' : 'disabled'} title="${sanitizeHTML(buyTitle)}">Acheter maintenant</button>
           ${sel.disponible ? '' : whatsappHTML()}
         </div>
+        ${sell.ok ? '' : `<p class="pay-unavailable" role="note">${sanitizeHTML(formatSellabilityReason(sell.reasons))}</p>`}
+        <div id="paypalDirectContainer" class="paypal-container" aria-live="polite"></div>
         ${lienHTML ? `<div class="lien-official">${lienHTML}</div>` : ''}
       </div>`;
   }
@@ -895,7 +911,8 @@ class KiffTech{
       this.productDetail.querySelector('.detail-gallery').innerHTML = this.galleryHTML(p);
       return;
     }
-    if(e.target.closest('[data-action="add"]')) this.addToCart(p.id);
+    if(e.target.closest('[data-action="add"]')) { this.addToCart(p.id); return; }
+    if(e.target.closest('[data-action="buy-now"]')) { this.buyNow(p.id, this.currentChoice(p), '#paypalDirectContainer'); return; }
   }
 
   bindCartEvents() {
@@ -912,15 +929,15 @@ class KiffTech{
   renderCartPanel() {
     const panel = document.getElementById('panel-cart');
     if (!panel) return;
-    
+
     const items = cartManager.getItems();
-    
+
     if (items.length === 0) {
       panel.querySelector('.panel-content').innerHTML = `
         <div class="empty-state" style="text-align:center;padding:3rem 1rem;color:var(--fg-muted);">
           <div style="font-size:3rem;margin-bottom:1rem;">🛒</div>
-          <h3 style="margin-bottom:.5rem;">Panier vide</h3>
-          <p>Ajoutez des produits depuis le catalogue</p>
+          <h3 style="margin-bottom:.5rem;">Caisse vide</h3>
+          <p>Ajoutez des produits à la caisse depuis le catalogue</p>
           <button class="btn-primary" onclick="window.keffTech.switchTab('catalog')" style="margin-top:1rem;">Aller au catalogue</button>
         </div>`;
       return;
@@ -930,21 +947,23 @@ class KiffTech{
     const itemsHTML = items.map((item, index) => {
       const product = state.productsMap.get(item.productId);
       if (!product) return '';
-      const unit = item.prix ?? product.price ?? 0;
-      const devise = item.devise || product.currency || 'EUR';
+      const sel = resolveSelection(product, item.choiceIndices || []);
+      const unit = sel.prix;
+      const devise = sel.devise || 'EUR';
+      const line = unit !== null && unit !== undefined ? unit * item.quantity : null;
       const thumb = product.images[0];
       return `
         <article class="cart-item" style="display:flex;gap:1rem;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:.75rem;align-items:center;">
           ${thumb ? `<img src="${sanitizeHTML(thumb)}" alt="" style="width:80px;height:80px;object-fit:cover;border-radius:var(--radius-md);">` : '<div class="cart-thumb-empty" aria-hidden="true">Image à confirmer</div>'}
           <div style="flex:1;min-width:0;">
             <h4 style="font-size:.9rem;font-weight:600;margin-bottom:.25rem;">${sanitizeHTML(product.title)}</h4>
-            ${item.variant ? `<p style="font-size:.7rem;color:var(--fg-muted);">${sanitizeHTML(item.variant)}</p>` : ''}
-            <p style="font-size:.7rem;color:var(--fg-muted);">${sanitizeHTML(product.brand)} • ${formatPrice(unit, devise)} x ${item.quantity}</p>
+            ${sel.label ? `<p style="font-size:.7rem;color:var(--fg-muted);">${sanitizeHTML(sel.label)}</p>` : ''}
+            <p style="font-size:.7rem;color:var(--fg-muted);">${sanitizeHTML(product.brand)} • ${unit !== null ? formatPrice(unit, devise) : 'Prix à confirmer'} x ${item.quantity}</p>
             <div style="display:flex;align-items:center;gap:.5rem;margin-top:.5rem;">
               <button onclick="window.keffTech.updateCartQty(${index}, ${item.quantity - 1})" class="icon-btn-sm" style="width:32px;height:32px;">−</button>
               <span style="min-width:2rem;text-align:center;font-weight:600;">${item.quantity}</span>
               <button onclick="window.keffTech.updateCartQty(${index}, ${item.quantity + 1})" class="icon-btn-sm" style="width:32px;height:32px;">+</button>
-              <span style="margin-left:auto;font-weight:700;color:var(--accent);">${formatPrice(unit * item.quantity, devise)}</span>
+              <span style="margin-left:auto;font-weight:700;color:var(--accent);">${line !== null ? formatPrice(line, devise) : 'Prix à confirmer'}</span>
               <button onclick="window.keffTech.removeFromCart(${index})" class="icon-btn-sm" style="color:var(--danger);" aria-label="Supprimer">🗑️</button>
             </div>
           </div>
@@ -962,19 +981,19 @@ class KiffTech{
           <span>TOTAL indicatif</span>
           <span style="color:var(--accent);">Non calculable</span>
         </div>
-        <p style="font-size:.7rem;color:var(--fg-muted);margin-top:.5rem;">Le panier contient des prix publiés dans plusieurs devises : aucune conversion de change n’est effectuée.</p>`
+        <p style="font-size:.7rem;color:var(--fg-muted);margin-top:.5rem;">Le panier contient des prix publiés dans plusieurs devises : aucune conversion de change n’est effectuée. Réglez séparément par devise.</p>`
       : `<div style="display:flex;justify-content:space-between;padding:.5rem 0;border-top:2px solid var(--accent);margin-top:1rem;font-size:1.1rem;font-weight:800;">
-          <span>TOTAL indicatif</span>
+          <span>TOTAL (prix officiels)</span>
           <span style="color:var(--accent);">${formatPrice(totals.finalTotal, totals.devise || 'EUR')}</span>
         </div>`;
-    const checkoutLabel = totals.mixedCurrencies
-      ? 'Commander'
-      : `Commander - ${formatPrice(totals.finalTotal, totals.devise || 'EUR')}`;
+
+    const orderItems = items.map(i => ({ productId: i.productId, choiceIndices: i.choiceIndices || [], quantity: i.quantity }));
+    const cartOrder = buildOrder(CATALOGUE, orderItems);
 
     const content = panel.querySelector('.panel-content');
     content.innerHTML = `
       <div style="margin-bottom:1.5rem;">
-        <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:.5rem;">Panier (${totals.totalItems} articles)</h2>
+        <h2 style="font-size:1.3rem;font-weight:800;margin-bottom:.5rem;">Caisse (${totals.totalItems} article${totals.totalItems > 1 ? 's' : ''})</h2>
         <p style="color:var(--fg-muted);font-size:.8rem;">${totals.uniqueItems} produit${totals.uniqueItems > 1 ? 's' : ''} différent${totals.uniqueItems > 1 ? 's' : ''}</p>
       </div>
       <div class="cart-items">${itemsHTML}</div>
@@ -982,17 +1001,21 @@ class KiffTech{
         ${sousTotauxHTML}
         <div style="display:flex;justify-content:space-between;padding:.5rem 0;">
           <span>Livraison</span>
-          <span style="color:var(--fg-muted);font-weight:700;">Information à confirmer</span>
+          <span style="color:var(--fg-muted);font-weight:700;">À définir (requis pour le paiement)</span>
         </div>
         ${totalHTML}
-        <div style="margin-top:1rem;padding:1rem;background:rgba(0,255,200,.05);border:1px solid var(--accent);border-radius:var(--radius-md);font-size:.75rem;color:var(--accent);">
-          Aucune commande ni aucun paiement n’est possible. Les montants sont les prix publics officiels, sans remise.
-        </div>
+        <p style="font-size:.7rem;color:var(--fg-muted);margin-top:.5rem;">Montant recalculé côté serveur à partir du catalogue. Le paiement n’est possible que pour une offre vendable (prix final, disponibilité, devise, livraison et taxes définis).</p>
+        ${cartOrder.ok ? '' : `<p class="pay-unavailable" role="note" style="margin-top:.75rem">${sanitizeHTML(cartOrder.error || 'Paiement indisponible pour ce panier.')}</p>`}
+        <div id="paypalCartStatus" class="pay-status" aria-live="polite" style="margin-top:.75rem;"></div>
+        <div id="paypalCartContainer" class="paypal-container" aria-live="polite" style="margin-top:.75rem;"></div>
         <div style="display:flex;gap:.75rem;margin-top:1.5rem;">
           <button class="btn-secondary" onclick="window.keffTech.switchTab('catalog')" style="flex:1;">Continuer mes achats</button>
-          <button class="btn-primary" onclick="window.keffTech.checkout()" style="flex:2;padding:1rem;font-size:1rem;">${checkoutLabel}</button>
         </div>
+      </div>
       `;
+    if (cartOrder.ok) {
+      this.renderPayPalButtons('#paypalCartContainer', orderItems, { mode: 'cart' });
+    }
   }
 
   updateCartQty(index, quantity) {
@@ -1006,14 +1029,148 @@ class KiffTech{
   }
 
   checkout() {
-    const totals = cartManager.calculateTotals(state.productsMap);
-    const montant = totals.mixedCurrencies
-      ? 'montant non calculable (devises différentes)'
-      : formatPrice(totals.finalTotal, totals.devise || 'EUR');
-    this.showToast(`Commande de ${totals.totalItems} articles pour ${montant} — aucune commande réelle`, 'success');
+    this.showToast('Utilisez le bouton PayPal pour régler la caisse.', 'error');
   }
 
-  closeModal(){this.modal.hidden=true;document.body.style.overflow='';}
+  async buyNow(productId, choiceIndices = null, containerSelector = null) {
+    const p = state.productsMap.get(productId) || state.products.find(x => x.id === productId);
+    if (!p) return;
+    const choice = Array.isArray(choiceIndices) ? choiceIndices : this.currentChoice(p);
+    const sel = resolveSelection(p, choice);
+    const sell = sellability(p, sel);
+    if (!sell.ok) {
+      this.showToast(formatSellabilityReason(sell.reasons), 'error');
+      return;
+    }
+    const items = [{ productId, choiceIndices: choice, quantity: 1 }];
+    if (containerSelector) {
+      const el = document.querySelector(containerSelector);
+      if (el) {
+        el.innerHTML = '<div class="pay-status">Chargement du paiement sécurisé…</div>';
+        await this.renderPayPalButtons(containerSelector, items, { mode: 'direct', productTitle: p.title });
+        return;
+      }
+    }
+    // fallback: show modal with PayPal buttons
+    this.modalBody.innerHTML = `
+      <h3 style="margin-bottom:.5rem;">Acheter maintenant</h3>
+      <p style="margin-bottom:1rem;color:var(--fg-muted);font-size:.85rem;">${sanitizeHTML(p.title)}${sel.label ? ' — ' + sanitizeHTML(sel.label) : ''}</p>
+      <p style="margin-bottom:1rem;font-weight:700;">${formatPrice(sel.prix, sel.devise || p.currency || 'EUR')}</p>
+      <div id="paypalModalStatus" class="pay-status" aria-live="polite"></div>
+      <div id="paypalModalContainer" class="paypal-container"></div>
+    `;
+    this.modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    await this.renderPayPalButtons('#paypalModalContainer', items, { mode: 'direct', productTitle: p.title });
+  }
+
+  async ensurePayPalSDK() {
+    if (window.paypal) return window.paypal;
+    if (this._paypalLoading) return this._paypalLoading;
+    this._paypalLoading = (async () => {
+      const res = await fetch('./api/paypal/config', { headers: { 'Accept': 'application/json' } });
+      let cfg = null;
+      try { cfg = await res.json(); } catch {}
+      if (!res.ok || !cfg || !cfg.ok || !cfg.clientId) {
+        throw new Error((cfg && cfg.error) || 'Paiement non configuré.');
+      }
+      await new Promise((resolve, reject) => {
+        const s = document.createElement('script');
+        const params = new URLSearchParams({ 'client-id': cfg.clientId, currency: cfg.currency || 'EUR', intent: 'capture', components: 'buttons' });
+        s.src = `https://www.paypal.com/sdk/js?${params.toString()}`;
+        s.async = true;
+        s.onload = resolve;
+        s.onerror = () => reject(new Error('Impossible de charger le SDK PayPal.'));
+        document.head.appendChild(s);
+      });
+      if (!window.paypal) throw new Error('SDK PayPal indisponible.');
+      return window.paypal;
+    })().catch(err => { this._paypalLoading = null; throw err; });
+    return this._paypalLoading;
+  }
+
+  async renderPayPalButtons(containerSelector, items, opts = {}) {
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
+    container.innerHTML = '';
+    const statusSel = opts.mode === 'cart' ? '#paypalCartStatus' : (opts.mode === 'direct' ? (containerSelector === '#paypalModalContainer' ? '#paypalModalStatus' : '#paypalDirectContainer') : null);
+    const setStatus = (msg, type) => {
+      const el = statusSel ? document.querySelector(statusSel) : null;
+      if (el) { el.textContent = msg || ''; el.className = 'pay-status' + (type ? ' ' + type : ''); }
+    };
+    try {
+      setStatus('Chargement du paiement sécurisé…');
+      const paypal = await this.ensurePayPalSDK();
+      setStatus('');
+      container.innerHTML = '';
+      paypal.Buttons({
+        style: { layout: 'vertical', shape: 'rect', label: 'pay' },
+        onClick: (data, actions) => {
+          const order = buildOrder(CATALOGUE, items);
+          if (!order.ok) {
+            setStatus(order.error || 'Paiement indisponible.', 'error');
+            this.showToast(order.error || 'Paiement indisponible.', 'error');
+            return actions.reject();
+          }
+          setStatus('');
+          return actions.resolve();
+        },
+        createOrder: async () => {
+          setStatus('Création de la commande sécurisée…');
+          const res = await fetch('./api/paypal/create-order', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ items }),
+          });
+          const data = await res.json().catch(() => ({}));
+          if (!res.ok || !data.ok || !data.id) {
+            const msg = data.error || 'Impossible de créer la commande.';
+            setStatus(msg, 'error');
+            throw new Error(msg);
+          }
+          setStatus('Commande créée. Finalisez le paiement dans la fenêtre PayPal.');
+          return data.id;
+        },
+        onApprove: async (data) => {
+          setStatus('Confirmation du paiement en cours…');
+          const res = await fetch('./api/paypal/capture-order', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ orderID: data.orderID }),
+          });
+          const result = await res.json().catch(() => ({}));
+          if (!res.ok || !result.ok || result.status !== 'COMPLETED') {
+            const msg = result.error || 'Le paiement n’a pas été confirmé.';
+            setStatus(msg, 'error');
+            this.showToast(msg, 'error');
+            return;
+          }
+          setStatus('Paiement confirmé. Merci pour votre achat.', 'success');
+          this.showToast('Paiement confirmé.', 'success');
+          if (opts.mode === 'cart') {
+            state.cart = [];
+            cartManager.save();
+            this.updateCartDisplay();
+            this.renderCartPanel();
+          }
+        },
+        onCancel: () => {
+          setStatus('Paiement annulé. Aucun montant n’a été débité.', 'info');
+          this.showToast('Paiement annulé.', 'error');
+        },
+        onError: (err) => {
+          console.warn('PayPal error', err);
+          setStatus('Erreur lors du paiement. Aucun débit confirmé.', 'error');
+          this.showToast('Erreur lors du paiement. Réessayez.', 'error');
+        },
+      }).render(container);
+    } catch (err) {
+      container.innerHTML = '';
+      setStatus(err && err.message ? err.message : 'Paiement indisponible.', 'error');
+    }
+  }
+
+    closeModal(){this.modal.hidden=true;document.body.style.overflow='';}
 
   bindCartEvents() {
     window.addEventListener('cart:change', () => this.updateCartDisplay());
