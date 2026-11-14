@@ -636,10 +636,12 @@ class KiffTech{
     const color = RAYONS_MAP[p.category]?.color || '#00ffc8';
     const brandColor = this.getBrandColor(p.brand);
     const img = p.images[0];
+    const etat = this.getEtatCatalogue(p);
     return `
       <article class="catalog-product" data-id="${sanitizeHTML(p.id)}" style="--rayon-color:${color};">
         <div class="product-thumb${img ? '' : ' product-thumb--empty'}"${img ? ` style="background-image:url('${sanitizeHTML(img)}')"` : ''} aria-hidden="true">
           ${p.isNew ? '<span class="product-badge badge-new">Nouveauté 2026</span>' : ''}
+          ${etat.achetable ? '<span class="product-badge badge-buyable">Achetable maintenant</span>' : '<span class="product-badge badge-present">Présent au catalogue</span>'}
           ${p.incomplete ? '<span class="product-badge badge-info">Fiche incomplète</span>' : ''}
           ${img ? '' : '<span class="thumb-missing">Image à confirmer</span>'}
         </div>
@@ -658,7 +660,7 @@ class KiffTech{
           <div class="product-actions">
             ${p.ficheFabricant ? `<a href="${sanitizeHTML(p.ficheFabricant)}" target="_blank" rel="noopener" class="btn-catalog" data-action="manufacturer">Fiche fabricant</a>` : ''}
             <button type="button" class="btn-catalog secondary" data-action="detail">Afficher détails</button>
-            <button type="button" class="btn-catalog" data-action="add">Ajouter à la caisse</button>
+            <button type="button" class="btn-catalog" data-action="add" ${!etat.achetable && p.price === null ? '' : ''}>Ajouter à la caisse</button>
           </div>
         </div>
       </article>`;
@@ -709,12 +711,22 @@ class KiffTech{
     return url ? `<a href="${sanitizeHTML(url)}" target="_blank" rel="noopener">source</a>` : '';
   }
 
+  getEtatCatalogue(p){
+    const sell = sellability(p, resolveSelection(p, this.currentChoice ? this.currentChoice(p) : []));
+    return {
+      present: true,
+      achetable: !!sell.ok,
+      raisons: sell.reasons || []
+    };
+  }
+
   renderProductDetail(){
     if(!state.currentProduct){this.productDetail.innerHTML='<p class="empty">Aucun produit sélectionné</p>';return;}
     const p = state.currentProduct;
     const rayon = RAYONS_MAP[p.category];
     const color = rayon?.color || '#00ffc8';
     const brandColor = this.getBrandColor(p.brand);
+    const etat = this.getEtatCatalogue(p);
 
     this.productDetail.innerHTML = `
       <div class="detail-header" style="--rayon-color:${color};">
@@ -723,12 +735,17 @@ class KiffTech{
           <div class="detail-badges">
             <span class="detail-brand" style="background:${brandColor}20;color:${brandColor};border-color:${brandColor}40;">${sanitizeHTML(p.brand)}</span>
             <span class="detail-category">${sanitizeHTML(rayon?.label || p.category)}</span>
+            <span class="product-badge ${etat.achetable ? 'badge-buyable' : 'badge-present'}">${etat.achetable ? 'Achetable maintenant' : 'Présent au catalogue'}</span>
             ${p.isNew ? '<span class="product-badge badge-new">Nouveauté 2026</span>' : ''}
             ${p.incomplete ? '<span class="product-badge badge-info">Fiche incomplète</span>' : ''}
           </div>
           <h2 class="detail-title">${sanitizeHTML(p.title)}</h2>
           <div class="detail-ref">Modèle : ${sanitizeHTML(p.reference || 'Information à confirmer')}</div>
           <div class="detail-ref">Sortie officielle : ${sanitizeHTML(p.dateSortie ? this.formatDate(p.dateSortie) : String(p.annee))}</div>
+          <div class="etat-catalogue ${etat.achetable ? 'is-buyable' : 'is-present'}">
+            <strong>${etat.achetable ? 'Achetable maintenant' : 'Présent au catalogue'}</strong>
+            <p>${etat.achetable ? 'Prix final, variante, disponibilité, livraison et taxes confirmés.' : 'Fiche réelle consultable. Achat impossible tant que prix final, variante, disponibilité, livraison et taxes ne sont pas confirmés.'}${!etat.achetable && etat.raisons.length ? ' ' + sanitizeHTML(etat.raisons.join(', ')) + '.' : ''}</p>
+          </div>
         </div>
       </div>
       <p class="detail-desc">${sanitizeHTML(p.description)}</p>

@@ -769,3 +769,12 @@ body{display:flex;flex-direction:column;min-height:100dvh;overflow-x:hidden}
   .detail-actions .btn-primary,.detail-actions .btn-secondary,.detail-actions .btn-buy-now{flex:1 1 100%}
   .card-row{grid-template-columns:1fr}
 }
+
+
+/* Etats catalogue */
+.badge-present{background:rgba(0,212,255,.15);color:#7fefff;border:1px solid rgba(0,212,255,.35);}
+.badge-buyable{background:rgba(0,255,136,.18);color:#7dffb8;border:1px solid rgba(0,255,136,.4);}
+.etat-catalogue{margin-top:.75rem;padding:.6rem .75rem;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.03);font-size:.78rem;line-height:1.4;}
+.etat-catalogue.is-buyable{border-color:rgba(0,255,136,.35);background:rgba(0,255,136,.06);}
+.etat-catalogue.is-present{border-color:rgba(0,212,255,.25);}
+.etat-catalogue strong{display:block;margin-bottom:.2rem;}

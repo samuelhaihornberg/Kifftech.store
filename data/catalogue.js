@@ -135,7 +135,16 @@ export const CATALOGUE = {
         "Prix public officiel en euros non publié dans la source consultée : le montant affiché est le prix de départ américain",
         "Autonomie et niveau sonore non détaillés dans la fiche consultée",
         "Référence/SKU dépend de la configuration, non détaillée dans la source consultée"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "alienware-m15-r4",
@@ -228,7 +237,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "alienware-x14",
@@ -322,7 +341,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "alienware-m16",
@@ -416,7 +445,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "alienware-m16-r2",
@@ -510,7 +549,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "alienware-area-51-16-2025",
@@ -604,7 +653,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "alienware-16x-aurora-2026",
@@ -698,7 +757,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "apple-iphone-12",
@@ -885,7 +954,16 @@ export const CATALOGUE = {
         "Prix des capacités 128 Go et 256 Go non détaillé dans la source consultée",
         "Référence/SKU non publiée par Apple dans les sources consultées",
         "Autonomie en usage réel non communiquée au-delà des valeurs de lecture vidéo, streaming et audio"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "apple-iphone-13",
@@ -1080,7 +1158,15 @@ export const CATALOGUE = {
         "Page produit Apple France du modèle redirigée vers la gamme iPhone actuelle : caractéristiques relevées sur la version archivée du 04/10/2021",
         "Capacité de la batterie non publiée en mAh par Apple",
         "Adaptateur secteur non fourni dans la boîte"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "apple-iphone-14-pro",
@@ -1290,7 +1376,15 @@ export const CATALOGUE = {
         "Capacité de la batterie non publiée en mAh par Apple",
         "SOS d'urgence par satellite limité à certains pays au lancement",
         "Adaptateur secteur non fourni dans la boîte"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "apple-iphone-15-pro",
@@ -1499,7 +1593,15 @@ export const CATALOGUE = {
         "Page produit Apple France du modèle redirigée vers la gamme iPhone actuelle : caractéristiques relevées sur la version archivée du 01/10/2023",
         "Capacité de la batterie non publiée en mAh par Apple",
         "Adaptateur secteur non fourni dans la boîte"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "apple-iphone-16-pro",
@@ -1709,7 +1811,15 @@ export const CATALOGUE = {
         "Page produit Apple France du modèle redirigée vers la gamme iPhone actuelle : caractéristiques relevées sur la version archivée du 03/10/2024",
         "Capacité de la batterie non publiée en mAh par Apple",
         "Adaptateur secteur non fourni dans la boîte"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "apple-iphone-17-pro",
@@ -1914,7 +2024,15 @@ export const CATALOGUE = {
         "Prix officiels des versions 512 Go et 1 To non détaillés dans le communiqué Apple France consulté",
         "Page produit Apple France du modèle redirigée vers la gamme iPhone actuelle depuis l'arrivée de l'iPhone 18 Pro : caractéristiques relevées sur la version archivée du 12/09/2025",
         "Contenu exact de la boîte non détaillé par Apple (adaptateur secteur et câble vendus séparément)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "apple-iphone-17e",
@@ -2095,7 +2213,15 @@ export const CATALOGUE = {
         "Prix officiel de la version 512 Go non précisé dans le communiqué Apple France consulté",
         "Caractéristiques détaillées non précisées dans le communiqué consulté (dimensions, poids, capacité batterie en mAh, détails caméra avant, mémoire vive)",
         "Contenu de la boîte non détaillé dans le communiqué consulté"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "hp-reverb-g2",
@@ -2234,7 +2360,16 @@ export const CATALOGUE = {
         "Jour exact de disponibilité non communiqué par HP (annonce d'une disponibilité à l'automne 2020)",
         "Fréquence de rafraîchissement, poids et longueur de câble non relevés dans le communiqué consulté",
         "Prix public officiel en euros non publié dans la source consultée : le montant affiché est le prix de lancement américain"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "hp-spectre-x360-14-2021",
@@ -2328,7 +2463,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "hp-spectre-x360-13-5-2022",
@@ -2417,7 +2562,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "hp-spectre-x360-14-2024",
@@ -2506,7 +2661,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "hp-omnibook-ultra-2026",
@@ -2596,7 +2761,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "linux-raspberry-pi-400",
@@ -2806,7 +2981,16 @@ export const CATALOGUE = {
         "Poids non indiqué dans la fiche de spécifications consultée",
         "Référence/SKU régionale non détaillée dans les sources consultées",
         "Autonomie sans objet : l'appareil fonctionne sur secteur via une alimentation 5 V"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "linux-raspberry-pi-pico",
@@ -2913,7 +3097,17 @@ export const CATALOGUE = {
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)",
         "Au moins 2 photographies supplémentaires sous licence libre avec attribution/licence vérifiées (objectif 3–5) à ajouter"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "linux-raspberry-pi-pico-w",
@@ -3011,7 +3205,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "raspberry-pi-5",
@@ -3207,7 +3411,15 @@ export const CATALOGUE = {
         "Date de disponibilité exacte non précisée dans l'annonce officielle (fin octobre 2023 indiquée)",
         "Prix en euros non indiqués par le fabricant dans la source consultée (prix annoncés en USD, hors taxes locales)",
         "Accessoires (alimentation, boîtier, carte microSD, câbles) vendus séparément"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "linux-raspberry-pi-pico-2",
@@ -3305,7 +3517,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "linux-raspberry-pi-500-plus",
@@ -3407,7 +3629,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "meta-quest-2",
@@ -3596,7 +3828,16 @@ export const CATALOGUE = {
         "Autonomie annoncée non relevée dans la source consultée",
         "Référence/SKU détaillée non publiée dans les sources consultées",
         "Fiche produit Meta actuelle remplacée par les modèles suivants, certaines informations du Quest 2 ne sont plus accessibles"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "meta-quest-pro",
@@ -3694,7 +3935,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "meta-quest-3",
@@ -3876,7 +4127,15 @@ export const CATALOGUE = {
         "Caractéristiques détaillées non précisées dans les sources consultées (RAM, capacité batterie exacte en mAh, champ de vision exact, poids exact, Wi-Fi/Bluetooth détaillés)",
         "Prix en euros non indiqués dans la source d'annonce consultée (prix annoncés en USD)",
         "Contenu de boîte détaillé non exhaustif dans les sources consultées"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "meta-quest-3s",
@@ -3983,7 +4242,17 @@ export const CATALOGUE = {
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)",
         "Au moins 2 photographies supplémentaires sous licence libre avec attribution/licence vérifiées (objectif 3–5) à ajouter"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "microsoft-xbox-series-x",
@@ -4158,7 +4427,16 @@ export const CATALOGUE = {
         "Prix public officiel en euros non publié dans la source consultée : le montant affiché est le prix de lancement américain",
         "Capacité réelle du SSD après formatage non indiquée par Microsoft dans la source consultée",
         "Référence/SKU non publiée dans les sources consultées"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "microsoft-surface-laptop-4",
@@ -4256,7 +4534,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "microsoft-surface-laptop-5",
@@ -4354,7 +4642,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "microsoft-surface-laptop-studio-2",
@@ -4452,7 +4750,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "microsoft-surface-laptop-7th-edition",
@@ -4550,7 +4858,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "microsoft-surface-laptop-13-inch",
@@ -4648,7 +4966,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "microsoft-surface-laptop-8th-edition",
@@ -4746,7 +5074,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "msi-bravo-17",
@@ -4944,7 +5282,17 @@ export const CATALOGUE = {
         "Autonomie annoncée non détaillée dans les sources consultées",
         "Référence/SKU dépend de la configuration (A4DDR ou A4DDK), non détaillée dans la source consultée",
         "Jour exact de mise en vente non communiqué (annonce le 21 avril 2020, disponibilité annoncée en mai 2020)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "msi-ge76-raider-2021",
@@ -5038,7 +5386,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "msi-raider-ge67hx-2022",
@@ -5132,7 +5490,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "msi-titan-gt77-hx-2023",
@@ -5226,7 +5594,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "msi-titan-18-hx-2024",
@@ -5320,7 +5698,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "msi-titan-18-hx-dragon-edition-2025",
@@ -5414,7 +5802,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "msi-raider-16-max-2026",
@@ -5508,7 +5906,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "nintendo-switch-2",
@@ -5739,7 +6147,16 @@ export const CATALOGUE = {
         "Référence/SKU non confirmée",
         "Contenu de la boîte exact non confirmé sur les sources officielles consultées",
         "Lien officiel précis introuvable pour le pack Mario Kart World et pour les deux variantes de batterie (aucune page officielle dédiée ; boutique en ligne Nintendo, store.nintendo.com, non vérifiable : file d'attente anti-bot)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "samsung-galaxy-s20-5g",
@@ -5923,7 +6340,16 @@ export const CATALOGUE = {
         "Autonomie annoncée non détaillée dans les sources consultées",
         "Référence/SKU européenne non confirmée (les caractéristiques varient selon le pays et l'opérateur)",
         "Détail de la connectivité filaire et sans fil (Wi-Fi, Bluetooth, USB) non relevé dans la source consultée"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "samsung-galaxy-s21-5g",
@@ -6047,7 +6473,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées et contenu de la boîte à confirmer sur fiche officielle",
         "Article détaillé complet et liste d’usages étendue (10–20) à compléter avec sources",
         "Au moins 2 photographies supplémentaires sous licence libre avec attribution/licence vérifiées (objectif 3–5) à ajouter"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "samsung-galaxy-s22-ultra",
@@ -6225,7 +6661,16 @@ export const CATALOGUE = {
         "Prix de lancement officiel en France non retrouvé sur une source Samsung FR archivée consultée",
         "Contenu de la boîte non détaillé dans la fiche officielle consultée",
         "Certaines caractéristiques détaillées (modem, bandes, débit USB exact) non précisées dans la source consultée"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "samsung-galaxy-s23-ultra",
@@ -6451,7 +6896,15 @@ export const CATALOGUE = {
         "Contenu de la boîte non détaillé dans la fiche officielle consultée",
         "Luminosité de pointe en nits non précisée dans le communiqué consulté",
         "Page d'achat Samsung France actuelle charge les prix dynamiquement ; prix relevés via archive Wayback du 10/02/2023"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "samsung-galaxy-s24-ultra",
@@ -6681,7 +7134,15 @@ export const CATALOGUE = {
         "Contenu de la boîte non détaillé dans la fiche officielle consultée",
         "Certaines caractéristiques régionales (bandes, variantes mmWave/Sub6 en France) non détaillées",
         "Page d'achat Samsung France actuelle charge les prix dynamiquement ; prix relevés via archive Wayback du 20/01/2024"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "samsung-galaxy-s25-ultra",
@@ -6784,7 +7245,17 @@ export const CATALOGUE = {
         "1 à 2 vidéos officielles fabricant (YouTube, embed) à confirmer",
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Liste d’usages étendue (10–20) à compléter avec sources"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "samsung-galaxy-s26-ultra",
@@ -7015,7 +7486,15 @@ export const CATALOGUE = {
         "Contenu exact de la boîte non détaillé par Samsung France (l'adaptateur secteur 60 W est vendu séparément)",
         "Autonomie communiquée uniquement en lecture vidéo (31 h) : durées d'usage mixte non publiées",
         "Prix relevés sur la page d'achat Samsung France au 14/11/2026, susceptibles d'évoluer"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "sony-ps5-pro",
@@ -7173,7 +7652,16 @@ export const CATALOGUE = {
         "Prix public officiel actuel non vérifiable sur les sources consultées (page Sony non statique) : aucun montant affiché par prudence",
         "Référence/SKU (CFI-…) non confirmée",
         "Caractéristiques complémentaires (poids exact, connectique détaillée, ventirad) à confirmer sur une source fabricant lisible"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "valve-half-life-alyx",
@@ -7328,7 +7816,15 @@ export const CATALOGUE = {
         "Deux visuels libres vérifiés seulement (logotype officiel domaine public et une capture en jeu CC BY 2.0) : une troisième image est nécessaire pour une fiche complète",
         "Configuration recommandée non publiée sur la fiche Steam consultée",
         "Contenu détaillé des mises à jour et des éventuels contenus additionnels non vérifié"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "valve-index",
@@ -7423,7 +7919,17 @@ export const CATALOGUE = {
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Prix public officiel actuel en EUR/devise, variantes et stock/disponibilité à confirmer sur source officielle",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "valve-steam-deck-lcd",
@@ -7521,7 +8027,17 @@ export const CATALOGUE = {
         "Caractéristiques détaillées complètes, contenu de la boîte et compatibilités à confirmer",
         "Livraison et taxes non définies (paiement non autorisé tant que non complété)",
         "Liste d’usages vérifiés à compléter (objectif 10–20)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Prix final à confirmer",
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "valve-steam-deck-oled",
@@ -7682,7 +8198,15 @@ export const CATALOGUE = {
       "manquants": [
         "Une seule photographie du modèle OLED sous licence libre vérifiée (Wikimedia Commons) : deux images supplémentaires sont nécessaires pour une fiche complète",
         "Référence/SKU non publiée par Valve"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     },
     {
       "id": "valve-steam-machine",
@@ -7911,7 +8435,460 @@ export const CATALOGUE = {
         "Référence/SKU non publiée par Valve",
         "Contenu de la boîte non confirmé sur les sources officielles consultées",
         "Troisième photographie sous licence libre non trouvée (2 photos Commons vérifiées disponibles)"
-      ]
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
+    },
+    {
+      "id": "apple-watch-series-6",
+      "marque": "Apple",
+      "modele": "Apple Watch Series 6",
+      "rayon": "montres",
+      "annee": 2020,
+      "dateSortie": "2020-09-18",
+      "sourceAnnee": {
+        "url": "https://www.apple.com/newsroom/2020/09/apple-watch-series-6-delivers-breakthrough-wellness-and-fitness-capabilities/",
+        "date": "2026-11-14"
+      },
+      "sourceFiche": "https://support.apple.com/en-euro/111918",
+      "ficheFabricant": "https://support.apple.com/en-euro/111918",
+      "description": "Montre connectée Apple annoncée le 15 septembre 2020 et disponible le 18 septembre 2020. L'Apple Watch Series 6 introduit un capteur et une app Oxygène sanguin, une puce S6 SiP, un altimètre toujours activé, un écran Retina toujours activé jusqu'à 2,5 fois plus lumineux au poignet baissé en extérieur, la recharge rapide et watchOS 7.",
+      "variantes": [
+        {
+          "groupe": "Boîtier / connectivité",
+          "options": [
+            {
+              "libelle": "GPS 40 mm aluminium",
+              "prix": 399,
+              "dispo": null,
+              "lienOfficiel": {
+                "url": "https://www.apple.com/newsroom/2020/09/apple-watch-series-6-delivers-breakthrough-wellness-and-fitness-capabilities/",
+                "precision": "Prix de départ annoncé par Apple (GPS)",
+                "verifie": "2026-11-14"
+              }
+            },
+            {
+              "libelle": "GPS + Cellular 40 mm aluminium",
+              "prix": 499,
+              "dispo": null,
+              "lienOfficiel": {
+                "url": "https://www.apple.com/newsroom/2020/09/apple-watch-series-6-delivers-breakthrough-wellness-and-fitness-capabilities/",
+                "precision": "Prix de départ annoncé par Apple (GPS + Cellular)",
+                "verifie": "2026-11-14"
+              }
+            }
+          ]
+        }
+      ],
+      "caracteristiques": [
+        {
+          "libelle": "Puce",
+          "valeur": "S6 SiP avec processeur bicœur 64 bits ; puce W3 ; puce U1 (Ultra Wideband)"
+        },
+        {
+          "libelle": "Écran",
+          "valeur": "Écran Retina LTPO OLED toujours activé ; 40 mm 324×394 px (759 mm²) ou 44 mm 368×448 px (977 mm²) ; luminosité 1000 nits"
+        },
+        {
+          "libelle": "Santé / capteurs",
+          "valeur": "Capteur d’oxygène sanguin (app Oxygène sanguin), capteur électrique cardiaque (app ECG), capteur optique cardiaque 3e génération, altimètre toujours activé, accéléromètre, gyroscope, capteur de luminosité ambiante"
+        },
+        {
+          "libelle": "Résistance à l’eau",
+          "valeur": "Étanche jusqu’à 50 m (ISO 22810:2010)"
+        },
+        {
+          "libelle": "Connectivité",
+          "valeur": "Modèles GPS et GPS + Cellular ; Wi-Fi 802.11b/g/n 2,4 GHz et 5 GHz ; Bluetooth 5.0 ; LTE/UMTS sur modèles cellulaires"
+        },
+        {
+          "libelle": "Capacité",
+          "valeur": "32 Go"
+        },
+        {
+          "libelle": "Autonomie",
+          "valeur": "Jusqu’à 18 heures (usage typique, selon Apple)"
+        },
+        {
+          "libelle": "Recharge",
+          "valeur": "Batterie lithium-ion rechargeable ; câble de charge magnétique ; recharge plus rapide (charge complète en moins de 1,5 h, selon Apple)"
+        },
+        {
+          "libelle": "Dimensions",
+          "valeur": "40 mm : 40 × 34 × 10,7 mm ; 44 mm : 44 × 38 × 10,7 mm"
+        },
+        {
+          "libelle": "Compatibilité",
+          "valeur": "Requiert iPhone 6s ou ultérieur avec iOS 14 ou ultérieur (selon fiche technique Apple)"
+        }
+      ],
+      "prix": {
+        "montant": 399,
+        "devise": "USD",
+        "marche": "États-Unis, prix de départ (GPS)",
+        "libelle": "Apple Watch Series 6 (GPS), prix de départ annoncé",
+        "date": "2020-09-15",
+        "source": "https://www.apple.com/newsroom/2020/09/apple-watch-series-6-delivers-breakthrough-wellness-and-fitness-capabilities/"
+      },
+      "disponibilite": {
+        "statut": "archive",
+        "libelle": "Disponible à partir du 18 septembre 2020 (modèle de génération antérieure, disponibilité actuelle à confirmer)",
+        "date": "2026-11-14",
+        "source": "https://www.apple.com/newsroom/2020/09/apple-watch-series-6-delivers-breakthrough-wellness-and-fitness-capabilities/"
+      },
+      "accessoires": [],
+      "bundles": [],
+      "usages": [
+        "Mesurer la saturation en oxygène du sang à la demande ou en arrière-plan avec l’app Oxygène sanguin",
+        "Suivre l’activité quotidienne (anneaux Bouger, Exercice, Se tenir debout) et les entraînements",
+        "Enregistrer un électrocardiogramme (ECG) lorsque la fonctionnalité est disponible et prise en charge",
+        "Consulter l’altitude en temps réel grâce à l’altimètre toujours activé",
+        "Recevoir notifications, appels et messages depuis l’iPhone jumelé",
+        "Utiliser Apple Pay au poignet selon disponibilité régionale",
+        "Suivre le sommeil et le lavage des mains avec watchOS 7",
+        "Nager en eau peu profonde grâce à l’étanchéité 50 m (usage non destiné à la plongée)",
+        "Utiliser Siri et les apps watchOS pour des tâches rapides",
+        "Partager des cadrans et utiliser la configuration familiale (Family Setup) selon conditions",
+        "Recharger rapidement la montre pour un usage quotidien",
+        "Suivre des entraînements en intérieur/extérieur avec GPS sur modèles compatibles"
+      ],
+      "medias": {
+        "images": [],
+        "videos": []
+      },
+      "article": {
+        "titre": "Apple Watch Series 6 : capteur d’oxygène sanguin et puce S6",
+        "contenu": [
+          "Annoncée le 15 septembre 2020, l’Apple Watch Series 6 ajoute un capteur et une application dédiés à la mesure de l’oxygène sanguin (SpO2), en complément des fonctions de santé déjà présentes comme l’ECG et la détection de fréquence cardiaque. Apple met en avant une approche bien-être et des études de recherche associées, sans en faire un dispositif de diagnostic médical.",
+          "Côté matériel, la Series 6 embarque la puce S6 SiP (jusqu’à 20 % plus rapide que la génération précédente selon Apple), un écran Retina toujours activé plus lumineux au poignet baissé en extérieur, un altimètre toujours activé et la puce U1 pour la bande ultra-large. La montre conserve une autonomie annoncée d’une journée (jusqu’à 18 heures) avec une recharge plus rapide.",
+          "La Series 6 est proposée en boîtiers 40 mm et 44 mm, en versions GPS et GPS + Cellular, avec plusieurs finitions (aluminium, acier inoxydable, titane selon marché). Elle nécessite un iPhone compatible et fonctionne avec watchOS 7, qui apporte notamment le suivi du sommeil, la configuration familiale et de nouveaux cadrans.",
+          "Les points forts résident dans l’intégration santé/fitness, la luminosité de l’écran et les performances. Les limites à considérer sont la dépendance à l’iPhone, l’autonomie d’une journée et le fait que certaines fonctions (ECG, appels cellulaires, etc.) dépendent de la région, du modèle et des services disponibles."
+        ]
+      },
+      "sourcesVerifiees": [
+        {
+          "libelle": "Communiqué Apple « Apple Watch Series 6 delivers breakthrough wellness and fitness capabilities » (15/09/2020) : capteur Oxygène sanguin, S6, altimètre toujours activé, disponibilité 18/09/2020, prix de départ 399 $ (GPS) / 499 $ (GPS+Cellular)",
+          "url": "https://www.apple.com/newsroom/2020/09/apple-watch-series-6-delivers-breakthrough-wellness-and-fitness-capabilities/",
+          "date": "2026-11-14"
+        },
+        {
+          "libelle": "Fiche technique Apple Support « Apple Watch Series 6 - Technical Specifications » : dimensions, écran, capteurs, connectivité, capacité 32 Go, autonomie, compatibilité",
+          "url": "https://support.apple.com/en-euro/111918",
+          "date": "2026-11-14"
+        }
+      ],
+      "manquants": [
+        "3 à 5 photographies sous licence libre avec attribution/licence vérifiées (fichiers locaux) manquantes",
+        "1 à 2 vidéos officielles fabricant (YouTube, embed) à confirmer/ajouter",
+        "Prix public officiel actuel et variantes détaillées (marché/devise, finitions, bracelets) à confirmer",
+        "Disponibilité/stock actuel à confirmer",
+        "Livraison et taxes non définies (paiement non autorisé tant que non complété)"
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
+    },
+    {
+      "id": "samsung-galaxy-watch3",
+      "marque": "Samsung",
+      "modele": "Galaxy Watch3",
+      "rayon": "montres",
+      "annee": 2020,
+      "dateSortie": "2020-08-06",
+      "sourceAnnee": {
+        "url": "https://news.samsung.com/global/galaxy-watch3-and-galaxy-buds-live-now-available",
+        "date": "2026-11-14"
+      },
+      "sourceFiche": "https://news.samsung.com/us/galaxy-watch3-buds-live-available-unpacked-2020",
+      "ficheFabricant": "https://news.samsung.com/global/galaxy-watch3-and-galaxy-buds-live-now-available",
+      "description": "Montre connectée Samsung annoncée le 5 août 2020 et disponible à partir du 6 août 2020 dans certains marchés. La Galaxy Watch3 combine une lunette rotative, un boîtier plus fin/léger que la Galaxy Watch d’origine, des tailles 41 mm et 45 mm, des variantes Bluetooth et LTE, et des fonctions de suivi santé et forme physique sous Tizen.",
+      "variantes": [
+        {
+          "groupe": "Taille / connectivité",
+          "options": [
+            {
+              "libelle": "41 mm Bluetooth",
+              "prix": 399.99,
+              "dispo": null,
+              "lienOfficiel": {
+                "url": "https://news.samsung.com/us/galaxy-watch3-buds-live-available-unpacked-2020",
+                "precision": "Prix de départ annoncé (États-Unis, Bluetooth 41 mm)",
+                "verifie": "2026-11-14"
+              }
+            },
+            {
+              "libelle": "45 mm Bluetooth",
+              "prix": 429.99,
+              "dispo": null,
+              "lienOfficiel": {
+                "url": "https://news.samsung.com/us/galaxy-watch3-buds-live-available-unpacked-2020",
+                "precision": "Prix de départ annoncé (États-Unis, Bluetooth 45 mm)",
+                "verifie": "2026-11-14"
+              }
+            }
+          ]
+        }
+      ],
+      "caracteristiques": [
+        {
+          "libelle": "Tailles / écran",
+          "valeur": "41 mm : 1,2\" (30 mm) Super AMOLED 360×360 ; 45 mm : 1,4\" (34 mm) Super AMOLED 360×360, affichage toujours actif, verre Corning Gorilla Glass DX"
+        },
+        {
+          "libelle": "Processeur / mémoire",
+          "valeur": "Exynos 9110 double cœur 1,15 GHz ; 1 Go de RAM ; 8 Go de stockage interne"
+        },
+        {
+          "libelle": "Système",
+          "valeur": "Tizen Based Wearable OS 5.5"
+        },
+        {
+          "libelle": "Batterie",
+          "valeur": "41 mm : 247 mAh ; 45 mm : 340 mAh ; recharge sans fil WPC"
+        },
+        {
+          "libelle": "Connectivité",
+          "valeur": "Bluetooth 5.0, Wi-Fi b/g/n, NFC, GPS/Glonass/Beidou/Galileo ; LTE sur modèles LTE"
+        },
+        {
+          "libelle": "Capteurs",
+          "valeur": "Accéléromètre, baromètre, gyroscope, capteur de luminosité, capteur optique de fréquence cardiaque, capteur électrique cardiaque (selon spécifications officielles)"
+        },
+        {
+          "libelle": "Durabilité",
+          "valeur": "5 ATM + IP68 / MIL-STD-810G"
+        },
+        {
+          "libelle": "Dimensions / poids",
+          "valeur": "41 mm : 41 × 42,5 × 11,3 mm, 48,2 g (acier, sans bracelet) ; 45 mm : 45 × 46,2 × 11,1 mm, 53,8 g (acier, sans bracelet)"
+        },
+        {
+          "libelle": "Compatibilité",
+          "valeur": "Android 5.0 ou supérieur (RAM 1,5 Go+) ; iOS : iPhone 5 ou supérieur, iOS 9.0 ou supérieur (selon Samsung)"
+        }
+      ],
+      "prix": {
+        "montant": 399.99,
+        "devise": "USD",
+        "marche": "États-Unis, prix de départ (41 mm Bluetooth)",
+        "libelle": "Galaxy Watch3 41 mm Bluetooth, prix de départ annoncé",
+        "date": "2020-08-05",
+        "source": "https://news.samsung.com/us/galaxy-watch3-buds-live-available-unpacked-2020"
+      },
+      "disponibilite": {
+        "statut": "archive",
+        "libelle": "Disponible à partir du 6 août 2020 dans certains marchés (modèle de génération antérieure, disponibilité actuelle à confirmer)",
+        "date": "2026-11-14",
+        "source": "https://news.samsung.com/global/galaxy-watch3-and-galaxy-buds-live-now-available"
+      },
+      "accessoires": [],
+      "bundles": [],
+      "usages": [
+        "Suivre l’activité physique et les entraînements avec les fonctions Samsung Health",
+        "Utiliser la lunette rotative pour naviguer dans les widgets, apps et notifications",
+        "Mesurer la fréquence cardiaque et utiliser les fonctions de suivi santé disponibles selon région/logiciel",
+        "Recevoir notifications et répondre aux messages depuis la montre",
+        "Passer des appels et utiliser la connectivité LTE sur modèles compatibles",
+        "Suivre le sommeil et consulter des analyses de repos (selon fonctions disponibles)",
+        "Utiliser le GPS pour suivre des parcours en extérieur",
+        "Payer avec Samsung Pay/NFC selon compatibilité et région",
+        "Personnaliser cadrans et bracelets",
+        "Recharger sans fil sur base compatible WPC",
+        "Consulter l’heure et les informations en affichage toujours actif",
+        "Utiliser la montre au quotidien avec résistance 5 ATM/IP68 (selon conditions d’usage)"
+      ],
+      "medias": {
+        "images": [],
+        "videos": []
+      },
+      "article": {
+        "titre": "Samsung Galaxy Watch3 : lunette rotative et suivi santé",
+        "contenu": [
+          "La Samsung Galaxy Watch3, présentée lors de l’événement Unpacked d’août 2020, reprend le design horloger et la lunette rotative appréciés de la gamme, dans un format annoncé comme plus fin et plus léger que la Galaxy Watch originale. Elle est proposée en 41 mm et 45 mm, en versions Bluetooth et LTE, avec boîtier en acier inoxydable (et version titane annoncée ultérieurement selon marché).",
+          "Sous Tizen (Wearable OS 5.5), elle embarque un processeur Exynos 9110, 1 Go de RAM, 8 Go de stockage et des écrans Super AMOLED toujours actifs. Samsung met l’accent sur les fonctions santé et bien-être (suivi d’activité, mesures cardiaques, et autres fonctions selon disponibilité régionale et mises à jour logicielles).",
+          "Les usages couvrent le suivi sportif, les notifications, les appels (notamment en LTE), la navigation via GPS et la personnalisation. Les limites incluent l’autonomie variable selon taille et usage, la dépendance à certaines fonctions/services selon smartphone et région, et le fait qu’il s’agit d’un modèle plus ancien dont la disponibilité et le support doivent être vérifiés."
+        ]
+      },
+      "sourcesVerifiees": [
+        {
+          "libelle": "Samsung Newsroom Global « Galaxy Watch3 and Galaxy Buds Live Now Available » (05/08/2020) : caractéristiques, tailles, disponibilité à partir du 6 août 2020",
+          "url": "https://news.samsung.com/global/galaxy-watch3-and-galaxy-buds-live-now-available",
+          "date": "2026-11-14"
+        },
+        {
+          "libelle": "Samsung Newsroom US « Galaxy Watch3 and Galaxy Buds Live, Available Starting Tomorrow » (05/08/2020) : prix de départ US (Bluetooth/LTE) et spécifications",
+          "url": "https://news.samsung.com/us/galaxy-watch3-buds-live-available-unpacked-2020",
+          "date": "2026-11-14"
+        }
+      ],
+      "manquants": [
+        "3 à 5 photographies sous licence libre avec attribution/licence vérifiées (fichiers locaux) manquantes",
+        "1 à 2 vidéos officielles fabricant (YouTube, embed) à confirmer/ajouter",
+        "Prix public officiel actuel en EUR et disponibilités marché France/UE à confirmer",
+        "Disponibilité/stock actuel à confirmer",
+        "Livraison et taxes non définies (paiement non autorisé tant que non complété)"
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
+    },
+    {
+      "id": "sony-wh-1000xm4",
+      "marque": "Sony",
+      "modele": "WH-1000XM4",
+      "rayon": "audio",
+      "annee": 2020,
+      "dateSortie": "2020-08-06",
+      "sourceAnnee": {
+        "url": "https://www.sony.com/en/SonyInfo/News/Press/202008/20-072E/",
+        "date": "2026-11-14"
+      },
+      "sourceFiche": "https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/wh-1000xm4/specifications",
+      "ficheFabricant": "https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/wh-1000xm4/specifications",
+      "description": "Casque circum-aural sans fil à réduction de bruit Sony WH-1000XM4, annoncé en août 2020. Il propose la réduction de bruit avec processeur HD QN1, la connexion multipoint Bluetooth, jusqu’à 30 heures d’autonomie (NC activé) et des fonctions comme Speak-to-Chat et DSEE Extreme.",
+      "variantes": [
+        {
+          "groupe": "Coloris",
+          "options": [
+            {
+              "libelle": "Noir / Argent (selon disponibilité)",
+              "prix": 349.99,
+              "dispo": null,
+              "lienOfficiel": {
+                "url": "https://www.sony.com/en/SonyInfo/News/Press/202008/20-072E/",
+                "precision": "Prix de vente conseillé annoncé (349,99 $ US)",
+                "verifie": "2026-11-14"
+              }
+            }
+          ]
+        }
+      ],
+      "caracteristiques": [
+        {
+          "libelle": "Type",
+          "valeur": "Casque fermé, dynamique, circum-aural"
+        },
+        {
+          "libelle": "Transducteur",
+          "valeur": "40 mm, diaphragme LCP revêtu aluminium"
+        },
+        {
+          "libelle": "Réduction de bruit",
+          "valeur": "Réduction de bruit numérique avec processeur HD Noise Cancelling QN1 ; modes Ambient Sound, Quick Attention, optimisation pression atmosphérique"
+        },
+        {
+          "libelle": "Bluetooth",
+          "valeur": "Version 5.0 ; profils A2DP/AVRCP/HFP/HSP ; codecs SBC, AAC, LDAC ; portée ~10 m"
+        },
+        {
+          "libelle": "Autonomie",
+          "valeur": "Jusqu’à 30 h (NC activé) / jusqu’à 38 h (NC désactivé) en lecture ; charge complète env. 3 h ; charge rapide (env. 5 h de lecture pour 10 min, selon Sony)"
+        },
+        {
+          "libelle": "Connectique",
+          "valeur": "Entrée mini-jack stéréo ; câble casque détachable ; USB Type-C pour la charge"
+        },
+        {
+          "libelle": "Fonctions",
+          "valeur": "Speak-to-Chat, connexion multipoint, capteur de port (pause/reprise), commande tactile, DSEE Extreme"
+        },
+        {
+          "libelle": "Contenu de la boîte",
+          "valeur": "Étui de transport, adaptateur avion, câble casque (env. 1,2 m), câble USB Type-C (env. 20 cm) — selon fiche Sony"
+        },
+        {
+          "libelle": "Poids",
+          "valeur": "Information à confirmer (voir fiche officielle)"
+        }
+      ],
+      "prix": {
+        "montant": 349.99,
+        "devise": "USD",
+        "marche": "États-Unis, prix de vente conseillé annoncé",
+        "libelle": "WH-1000XM4, prix annoncé au lancement",
+        "date": "2020-08-06",
+        "source": "https://www.sony.com/en/SonyInfo/News/Press/202008/20-072E/"
+      },
+      "disponibilite": {
+        "statut": "archive",
+        "libelle": "Annoncé en août 2020 (modèle de génération antérieure, disponibilité actuelle à confirmer)",
+        "date": "2026-11-14",
+        "source": "https://www.sony.com/en/SonyInfo/News/Press/202008/20-072E/"
+      },
+      "accessoires": [],
+      "bundles": [],
+      "usages": [
+        "Écouter de la musique sans fil en Bluetooth avec réduction de bruit active",
+        "Réduire les bruits ambiants en déplacement, au bureau ou en voyage",
+        "Basculer en mode son ambiant pour entendre les annonces ou son environnement",
+        "Connecter simultanément deux appareils Bluetooth (multipoint)",
+        "Passer des appels mains libres grâce aux microphones intégrés",
+        "Utiliser Speak-to-Chat pour converser sans retirer le casque",
+        "Profiter d’une longue autonomie (jusqu’à 30 h NC activé) sur de longs trajets",
+        "Écouter en filaire via câble mini-jack si nécessaire",
+        "Utiliser la charge rapide pour récupérer plusieurs heures d’écoute",
+        "Ranger et transporter le casque dans son étui de transport",
+        "Ajuster les paramètres audio/NC via l’application Sony | Headphones Connect",
+        "Utiliser l’optimisation selon port/pression atmosphérique (selon fonctions Sony)"
+      ],
+      "medias": {
+        "images": [],
+        "videos": []
+      },
+      "article": {
+        "titre": "Sony WH-1000XM4 : réduction de bruit et fonctions intelligentes",
+        "contenu": [
+          "Le Sony WH-1000XM4, présenté en août 2020, succède au WH-1000XM3 en conservant la base de réduction de bruit de Sony (double capteur de bruit et processeur HD QN1) tout en ajoutant des fonctions logicielles comme Speak-to-Chat, la détection de port pour mettre en pause/reprendre, et la connexion multipoint à deux appareils Bluetooth.",
+          "Sur le plan audio et autonomie, Sony annonce le support de codecs Bluetooth dont LDAC, la technologie DSEE Extreme, et jusqu’à 30 heures d’écoute avec réduction de bruit activée (38 heures sans). La charge rapide permet de récupérer plusieurs heures d’écoute en quelques minutes, selon les conditions indiquées par le fabricant.",
+          "Ce casque vise les utilisateurs recherchant une forte isolation et un usage nomade/quotidien (trajets, télétravail, voyages). Les points d’attention incluent le poids et l’encombrement d’un circum-aural, l’absence d’étanchéité à l’eau/sueur pour le sport intensif, et la nécessité de vérifier la disponibilité/prix actuels et les accessoires inclus selon le marché."
+        ]
+      },
+      "sourcesVerifiees": [
+        {
+          "libelle": "Communiqué Sony « WH-1000XM4 » (06/08/2020) : annonce, fonctions (Speak-to-Chat, multipoint, DSEE Extreme), prix de vente conseillé 349,99 $ US",
+          "url": "https://www.sony.com/en/SonyInfo/News/Press/202008/20-072E/",
+          "date": "2026-11-14"
+        },
+        {
+          "libelle": "Fiche technique Sony Support WH-1000XM4 : spécifications (Bluetooth, autonomie, transducteur, contenu de la boîte, fonctions NC)",
+          "url": "https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/wh-1000xm4/specifications",
+          "date": "2026-11-14"
+        }
+      ],
+      "manquants": [
+        "3 à 5 photographies sous licence libre avec attribution/licence vérifiées (fichiers locaux) manquantes",
+        "1 à 2 vidéos officielles fabricant (YouTube, embed) à confirmer/ajouter",
+        "Prix public officiel actuel en EUR et disponibilité/stock à confirmer",
+        "Poids exact à confirmer sur source officielle",
+        "Livraison et taxes non définies (paiement non autorisé tant que non complété)"
+      ],
+      "etatCatalogue": {
+        "presentAuCatalogue": true,
+        "achetableMaintenant": false,
+        "raisonNonAchetable": [
+          "Disponibilité/stock non confirmée",
+          "Livraison non définie",
+          "Taxes non définies"
+        ]
+      }
     }
   ]
 };
