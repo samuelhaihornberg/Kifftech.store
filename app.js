@@ -633,6 +633,12 @@ class KiffTech{
     const brandColor = this.getBrandColor(p.brand);
     const img = p.images[0];
     const etat = this.getEtatCatalogue(p);
+    const promo = this.getPromoKiffTech(p);
+    const prixHTML = promo && promo.prixPromotionnel != null
+      ? `<span class="product-price"><s>${formatPrice(promo.prixOfficiel, promo.devise)}</s> ${formatPrice(promo.prixPromotionnel, promo.devise)}</span>
+         <span class="product-price-note">Prix officiel vérifié · Promo KiffTech −${promo.pourcentage}%</span>`
+      : `<span class="product-price">${p.price !== null ? formatPrice(p.price, p.currency) : 'Prix officiel à vérifier'}</span>
+         <span class="product-price-note">${p.price !== null ? 'Prix public officiel (devise du fabricant)' : 'Prix promotionnel indisponible (prix officiel non vérifié)'}</span>`;
     return `
       <article class="catalog-product" data-id="${sanitizeHTML(p.id)}" style="--rayon-color:${color};">
         <div class="product-thumb${img ? '' : ' product-thumb--empty'}"${img ? ` style="background-image:url('${sanitizeHTML(img)}')"` : ''} aria-hidden="true">
@@ -648,15 +654,12 @@ class KiffTech{
             <span class="product-year">${p.annee}</span>
           </div>
           <h3 class="product-title">${sanitizeHTML(p.title)}</h3>
-          <div class="product-price-row">
-            <span class="product-price">${p.price !== null ? formatPrice(p.price, p.currency) : 'Prix à confirmer'}</span>
-            <span class="product-price-note">Prix public officiel (devise du fabricant)</span>
-          </div>
+          <div class="product-price-row">${prixHTML}</div>
           ${extra}
           <div class="product-actions">
             ${p.ficheFabricant ? `<a href="${sanitizeHTML(p.ficheFabricant)}" target="_blank" rel="noopener" class="btn-catalog" data-action="manufacturer">Fiche fabricant</a>` : ''}
             <button type="button" class="btn-catalog secondary" data-action="detail">Afficher détails</button>
-            <button type="button" class="btn-catalog" data-action="add" ${!etat.achetable && p.price === null ? '' : ''}>Ajouter à la caisse</button>
+            <button type="button" class="btn-catalog" data-action="add">Ajouter à la caisse</button>
           </div>
         </div>
       </article>`;
@@ -713,6 +716,24 @@ class KiffTech{
       present: true,
       achetable: !!sell.ok,
       raisons: sell.reasons || []
+    };
+  }
+
+  getPromoKiffTech(p){
+    const promo = p && p.promotionKiffTech;
+    if(!promo) return null;
+    const off = Number(promo.prixOfficielVerifie);
+    const pct = Number(promo.pourcentageReduction);
+    const pp = Number(promo.prixPromotionnel);
+    if(!Number.isFinite(off) || !Number.isFinite(pct) || !Number.isFinite(pp)) return null;
+    if(pct < 10 || pct > 25) return null;
+    return {
+      prixOfficiel: off,
+      pourcentage: pct,
+      prixPromotionnel: pp,
+      devise: promo.devise || (p.prix && p.prix.devise) || p.currency || 'EUR',
+      source: promo.source,
+      dateVerification: promo.dateVerification
     };
   }
 
@@ -868,17 +889,22 @@ class KiffTech{
   priceBlockHTML(p){
     const prix = p.prix;
     const dispo = p.disponibilite;
+    const promo = this.getPromoKiffTech(p);
     const prixLigne = prix
-      ? `<div><span class="price-label">Prix public officiel</span> <strong>${formatPrice(prix.montant, prix.devise)}</strong> (${sanitizeHTML(prix.marche)}, ${sanitizeHTML(prix.libelle)}), vérifié le ${this.formatDate(prix.date)} ${this.sourceLink(prix.source)}</div>`
-      : '<div><span class="price-label">Prix public officiel</span> Information à confirmer</div>';
+      ? `<div><span class="price-label">Prix public officiel</span> <strong>${formatPrice(prix.montant, prix.devise)}</strong> (${sanitizeHTML(prix.marche || '')}${prix.libelle ? ', ' + sanitizeHTML(prix.libelle) : ''})${prix.date ? ', vérifié le ' + this.formatDate(prix.date) : ''} ${this.sourceLink(prix.source)}</div>`
+      : '<div><span class="price-label">Prix public officiel</span> Prix officiel à vérifier</div>';
+    const promoLigne = promo
+      ? `<div class="promo-kifftech"><span class="price-label">Promotion KiffTech</span> <strong>−${promo.pourcentage}%</strong> · Prix promotionnel : <strong>${formatPrice(promo.prixPromotionnel, promo.devise)}</strong> (calculé sur le prix officiel vérifié) ${promo.dateVerification ? ' · vérifié le ' + this.formatDate(promo.dateVerification) : ''} ${this.sourceLink(promo.source)}</div>`
+      : `<div class="promo-kifftech"><span class="price-label">Promotion KiffTech</span> Prix promotionnel indisponible (prix officiel du modèle/variante non vérifié)</div>`;
     const dispoLigne = dispo && dispo.statut === 'disponible'
       ? `<div><span class="price-label">Disponibilité officielle</span> ${sanitizeHTML(dispo.libelle)}, vérifiée le ${this.formatDate(dispo.date)} ${this.sourceLink(dispo.source)}</div>`
       : '<div><span class="price-label">Disponibilité officielle</span> Information à confirmer</div>';
     return `
       <div class="price-block">
         ${prixLigne}
+        ${promoLigne}
         ${dispoLigne}
-        <div><span class="price-label">Prix KiffTech</span> non publié : aucune commande ni aucun paiement possible.</div>
+        <div><span class="price-label">Achat</span> ${this.getEtatCatalogue(p).achetable ? 'Offre vendable (prix final, variante, disponibilité, livraison et taxes confirmés).' : 'Non achetable : prix final, disponibilité, livraison et/ou taxes non confirmés.'}</div>
       </div>`;
   }
 

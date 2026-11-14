@@ -1,200 +1,101 @@
 # Cahier des charges — contenu des fiches produit
 
-**Version** : 1.2 — 2026-11-14 (ajout de la règle de devise, sans conversion)
+**Version** : 1.3 — 2026-11-14 (recentrage boutique jeux vidéo & smart tech, promotion KiffTech, état réel)
 **Périmètre** : catalogue KiffTech (`data/catalogue.js`)
 **Contrôle** : `node tools/check-contenu.js` (souple), `--strict` (fiches), `--complete` (couverture)
 
-Ce document est la référence à respecter pour chaque fiche produit. Il prime sur
-les habitudes de rédaction : une fiche qui ne remplit pas ces minimums est
-considérée comme **incomplète**.
+Ce document est la référence à respecter pour chaque fiche produit. Une fiche qui ne remplit pas ces minimums est considérée comme **incomplète**.
 
 ---
 
-## 1. Couverture attendue
+## 1. Positionnement et rayons
 
-- **Une génération de produit par année de sortie, de 2020 à 2026.**
-- **Marques imposées** : Samsung, Apple, Linux, Microsoft, Steam, Meta, HP,
-  Alienware, MSI.
+KiffTech est une boutique spécialisée jeux vidéo et smart tech (nom, style, PWA, fiches, caisse et intégration PayPal conservés). Rayons du catalogue :
+1. **Jeux vidéo** (`jeux-video`) : consoles, jeux et accessoires gaming
+2. **Smartphones** (`smartphones`)
+3. **Ordinateurs et composants** (`ordinateurs-composants`)
+4. **Tablettes** (`tablettes`)
+5. **Montres connectées et wearables** (`montres-wearables`)
+6. **Maison connectée et sécurité** (`maison-securite`)
+7. **Smart car et mobilité connectée** (`smart-car`)
+8. **Smart tech** (`smart-tech`) : robots, drones, assistants, énergie et objets connectés
 
-### Couverture retenue : 63 fiches
+Les produits/contenus existants sont reclassés dans le rayon approprié (sans suppression pour changement de nom, sans doublon entre rayons).
 
-Décision du 2026-11-14 : **une fiche par marque et par année**, soit
-**9 marques × 7 années = 63 fiches**.
+## 2. Couverture attendue (matrice marque × année)
 
-> Chaque case du tableau ci-dessous doit correspondre à un produit réellement
-> sorti cette année-là, vérifié par une source fabricant datée.
+- **Produits réellement commercialisés entre 2020 et 2026**, en mettant en avant les modèles de 2026.
+- **Matrice prévue (référence historique du contrôle)** : 9 marques × 7 années = 63 couples — Samsung, Apple, Linux, Microsoft, Steam/Valve, Meta, HP, Alienware, MSI (2020–2026).
+- **Règle** : chaque case doit correspondre à un produit réellement sorti cette année-là, confirmé par une source fiable/fabricant datée. **N’ajouter que des sorties confirmées.** Si aucune sortie confirmée pour un couple, ne pas inventer : documenter l’absence dans `manquants[]` et laisser la case non couverte.
 
-**Cas sans nouveau produit** : certaines marques ne sortent pas de matériel
-grand public chaque année (ex. Valve/Steam). Dans ce cas, ne pas inventer de
-produit et ne pas décaler artificiellement une sortie : documenter l'absence
-dans `manquants[]` et laisser la case non couverte. Le mode `--complete`
-signale alors le couple manquant, sans bloquer les autres fiches.
+### Cas particuliers
+- **Linux** : appareil vendu avec Linux (PC, console, mini-PC) ; renseigner `plateforme: "Linux"` en plus de `marque`.
+- **Steam/Valve** : matériel/produits Valve/Steam ; absence de nouveauté matérielle grand public certaines années = case non couverte documentée.
+- **Nintendo, Sony (et autres marques pertinentes)** : fiches conservées/ajoutées si sorties confirmées ; hors matrice des 63 couples de base mais présentes au catalogue.
 
-### Cas particulier « Linux »
-
-Linux n'est pas une marque commerciale. Une fiche « Linux » doit désigner un
-appareil vendu avec Linux (PC, console, mini-PC) et renseigner le champ
-`plateforme: "Linux"` en plus de `marque`. Le contrôle reconnaît la couverture
-Linux via `marque`, `modele` ou `plateforme`.
-
-### Tableau de couverture (63 cases)
-
-À remplir au fur et à mesure ; une case = un produit réellement sorti cette
-année-là, avec source fabricant datée.
+### État réel de la matrice (60 fiches au total, au 14/11/2026)
 
 | Marque | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 |
 |---|---|---|---|---|---|---|---|
-| Samsung | Galaxy S20 5G ✅ | à définir | à définir | à définir | à définir | à définir | à définir |
-| Apple | iPhone 12 ✅ | à définir | à définir | à définir | à définir | à définir | à définir |
-| Linux | Raspberry Pi 400 ✅ | à définir | à définir | à définir | à définir | à définir | à définir |
-| Microsoft | Xbox Series X ✅ | à définir | à définir | à définir | à définir | à définir | à définir |
-| Steam (Valve) | Half-Life: Alyx ⚠️ | à définir | à définir | Steam Deck OLED ✅ | à définir | à définir | Steam Machine, Steam Frame, Steam Controller ✅ |
-| Meta | Quest 2 ✅ | à définir | à définir | à définir | à définir | à définir | à définir |
-| HP | Reverb G2 ⚠️ | à définir | à définir | à définir | à définir | à définir | à définir |
-| Alienware | m15 R3 ⚠️ | à définir | à définir | à définir | à définir | à définir | à définir |
-| MSI | Bravo 17 ✅ | à définir | à définir | à définir | à définir | à définir | à définir |
+| Samsung | Galaxy S20 5G, Galaxy Watch3 | Galaxy S21 5G | Galaxy S22 Ultra | Galaxy S23 Ultra | Galaxy S24 Ultra | Galaxy S25 Ultra | Galaxy S26 Ultra |
+| Apple | iPhone 12, Apple Watch Series 6 | iPhone 13 | iPhone 14 Pro | iPhone 15 Pro | iPhone 16 Pro | iPhone 17 Pro | iPhone 17e |
+| Linux | Raspberry Pi 400 | Raspberry Pi Pico | Raspberry Pi Pico W | Raspberry Pi 5 | Raspberry Pi Pico 2 | Raspberry Pi 500+ | — |
+| Microsoft | Xbox Series X | Surface Laptop 4 | Surface Laptop 5 | Surface Laptop Studio 2 | Surface Laptop (7th Edition) | Surface Laptop 13-inch (1st Edition) | Surface Laptop (8th Edition) |
+| Valve/Steam | Half-Life: Alyx | Valve Index (kit VR) | Steam Deck (LCD) | Steam Deck OLED | — | — | Steam Machine |
+| Meta | Quest 2 | — | Meta Quest Pro | Quest 3 | Meta Quest 3S | — | — |
+| HP | Reverb G2 | Spectre x360 14 (2021) | Spectre x360 13.5 (2022) | — | Spectre x360 14 (2024) | — | OmniBook Ultra (2026) |
+| Alienware | m15 R3 | m15 R4 | x14 | m16 | m16 R2 | 16 Area-51 (2025) | 16X Aurora (2026) |
+| MSI | Bravo 17 | GE76 Raider (2021) | Raider GE67 HX (2022) | Titan GT77 HX (2023) | Titan 18 HX (2024) | Titan 18 HX Dragon Edition Norse Myth (2025) | Raider 16 Max (2026) |
 
-> Les cases « à définir » sont des emplacements, pas des produits inventés.
-> Chaque produit doit être confirmé par une source fabricant avant rédaction.
-> ✅ = fiche complète ; ⚠️ = fiche présente mais incomplète (voir `manquants[]`).
->
-> État au 14/11/2026 : **15 fiches**, **11 couples sur 63** couverts
-> (Samsung 2020, Apple 2020, Linux 2020, Microsoft 2020, Steam 2020/2023/2026,
-> Meta 2020, HP 2020, Alienware 2020, MSI 2020). **6 fiches sur 15 sont
-> complètes** : les 6 fiches historiques (2023–2026) restent sans article, et
-> trois fiches 2020 manquent d'images sous licence libre (Half-Life: Alyx,
-> Reverb G2, m15 R3) — les deux dernières manquent aussi de vidéo officielle.
->
-> Les fiches Nintendo et Sony (Switch 2, PS5 Pro) restent hors périmètre : ces
-> marques ne figurent pas dans la liste imposée et ne comptent pas dans les
-> 63 couples, mais elles sont conservées au catalogue.
+> Fiches hors matrice 63 conservées : Nintendo Switch 2 (2025, jeux vidéo), PlayStation 5 Pro (2024, jeux vidéo), Sony WH-1000XM4 (2020, smart tech). Aucune case n’est inventée ; les cases « — » ou années manquantes restent à confirmer/documenter.
 
----
+## 3. Structure obligatoire d’une fiche (produit/variante)
 
-## 2. Minimum obligatoire par fiche
+1. Titre, marque, modèle exact et référence (référence/SKU si confirmée, sinon « à vérifier » dans `manquants`).
+2. Description du modèle et de ses principales caractéristiques.
+3. Variantes réellement disponibles à sélectionner (configuration exacte) ; ne pas inventer de variante.
+4. Tableau détaillé des caractéristiques (`caracteristiques[]`) : processeur, mémoire vive, stockage, carte graphique si applicable, écran et résolution, batterie, chargeur, ports, connectivité, système, clavier et langue lorsqu’il y en a, dimensions, accessoires inclus et compatibilité. Une information non confirmée va dans `manquants[]`, jamais dans le tableau.
+5. De **10 à 20** situations d’utilisation adaptées au produit (`usages[]`), concrètes et distinctes.
+6. Prix officiel vérifié, promotion KiffTech et prix promotionnel calculé (voir §4).
+7. Médias du produit (voir §5).
+8. Bouton/lien **« Fiche fabricant »** menant à la page officielle du modèle exact, et à la configuration exacte lorsqu’elle est proposée (voir §6).
+9. Distinction accessoires inclus / compatibles vendus séparément / bundles réellement proposés (ne pas inventer de bundle). Article rédigé (`article`).
 
-| Élément | Minimum | Cible | Champ `catalogue.js` |
-|---|---|---|---|
-| Images | **3** | 3 à 5 | `medias.images[]` |
-| Vidéos | **1** | 1 à 2 | `medias.videos[]` (ou `medias.video`) |
-| Tableau de caractéristiques | **1 tableau** | complet | `caracteristiques[]` |
-| Article | **1 article** | 1 | `article: { titre, contenu }` |
-| Occasions d'utilisation | **10** | 10 à 20 | `usages[]` |
+**États** : séparer **« Présent au catalogue »** (fiche réelle consultable, même si stock/prix actuel non confirmé) de **« Achetable maintenant »** (uniquement si prix final, variante, disponibilité, livraison et taxes sont confirmés). Le paiement n’est actif que dans ce second cas.
 
-**Règles dures** : jamais moins de 3 images, jamais moins d'1 vidéo, jamais
-moins de 10 occasions d'utilisation, jamais 0 article. Une fiche en dessous est
-signalée par le contrôle et doit rester marquée « Fiche incomplète ».
+## 4. Prix et promotions
 
----
+- Rechercher le **prix public officiel** du fabricant ou de sa boutique officielle pour le modèle/variante concerné. Enregistrer le **lien source**, la **devise** et la **date de vérification**.
+- Calculer le **prix promotionnel KiffTech** en appliquant une réduction de **10 à 25 %** au prix officiel vérifié. Afficher distinctement : **prix officiel**, **pourcentage de réduction** et **prix promotionnel** obtenu. Le prix de référence doit être le prix officiel vérifié du fabricant (jamais estimé, concurrent ou inventé).
+- **Devise** : conserver la devise de la source, sans conversion inventée. Panier multi-devises : conserver le comportement actuel (pas de total unique converti).
+- **Si le prix officiel du modèle/variante n’est pas vérifiable** : ne pas inventer de prix ni de promotion ; indiquer que le prix officiel reste à vérifier et laisser le prix promotionnel indisponible.
 
-## 3. Méthode — images
+## 5. Images et vidéos
 
-1. **3 à 5 photographies minimum** par produit, en fichiers locaux dans `img/`
-   (pas de lien direct vers un site tiers).
-2. Licence libre vérifiée uniquement : Wikimedia Commons, CC BY, CC BY-SA,
-   CC0 ou domaine public. Pas d'image récupérée sans licence explicite.
-3. Chaque image doit renseigner :
-   - `fichier` — chemin relatif (`img/...`) ;
-   - `alt` — description factuelle de ce qui est visible ;
-   - `licence` — nom exact de la licence ;
-   - `auteur` — nom de l'auteur ;
-   - `attribution` — mention complète affichée sous l'image ;
-   - `source` — URL de la page du média.
-4. L'attribution et la licence sont **visibles** dans la fiche, pas seulement
-   dans le code.
-5. Si aucune photo libre n'existe pour un modèle, ne pas inventer et ne pas
-   utiliser une photo d'un autre modèle : laisser `images: []` et l'expliquer
-   dans `manquants[]`. La fiche reste incomplète tant que les 3 images ne sont
-   pas trouvées.
+- **Images** : au moins 3 et jusqu’à 5 images pertinentes par modèle. Google Images peut servir à repérer des sources possibles ; le filtre « droits d’usage » n’est qu’un point de départ. Ouvrir la **page d’origine** et vérifier : licence permettant l’usage prévu (y compris commercial), attribution requise, et correspondance exacte au modèle/variante. Ne pas télécharger une miniature Google ; ne pas considérer une image de boutique officielle comme libre de droits sans preuve.
+- **Préférer** : flux d’affiliation autorisé, licence commerciale explicite, ou licence compatible usage commercial (ex. CC0, CC BY). **Écarter** : licences NC et toute image aux droits non vérifiables. **Interdit** : images générées par IA ; utiliser la seule présence dans Google Images comme preuve de licence ; copier/héberger sans autorisation.
+- **Données à conserver par média utilisé** : URL/source originale, auteur/organisme, licence, attribution exigée, modèle/variante correspondant, date de vérification (et fichier local si hébergé).
+- **Vidéos** : 1 à 2 vidéos correspondant exactement au modèle. Vidéo officielle ou dont les conditions autorisent clairement l’intégration ; privilégier l’intégration depuis la plateforme source (YouTube embed) lorsque le téléchargement/réutilisation du fichier n’est pas autorisé. Ne pas télécharger sans autorisation.
+- **Si droits/modèle non confirmés** : ne pas intégrer le média, garder la fiche sans ce média et indiquer précisément ce qui manque. Ne jamais remplacer par l’image d’un modèle ressemblant.
 
-## 4. Méthode — vidéos
+## 6. Modèles, variantes et liens fabricant
 
-1. **1 à 2 vidéos officielles du fabricant** par produit (chaîne officielle).
-2. Intégration uniquement via `https://www.youtube-nocookie.com/embed/<id>`.
-3. Chaque vidéo renseigne : `id`, `titre`, `chaine`, `url`.
-4. Pas de vidéo tierce, de testeur ou de reupload non officiel.
-5. Le champ historique `medias.video` (une seule vidéo) reste accepté ; le
-   champ cible est `medias.videos[]` pour en autoriser deux.
+- N’ajouter que des produits dont **marque, modèle exact et année de commercialisation** sont confirmés par une source fiable.
+- Le bouton fabricant doit ouvrir le **chemin officiel le plus précis** disponible pour le modèle/configuration de la fiche : page produit exacte, puis variante/configuration correspondante si lien direct fourni. Pas de page d’accueil générale, pas de produit ressemblant, **pas d’URL fabriquée**. Si non vérifiable, le signaler dans la fiche.
+- Distinguer accessoires inclus, compatibles vendus séparément et bundles réellement proposés. Ne pas inventer de bundle.
 
-## 5. Méthode — tableau de caractéristiques
+## 7. Règles de rédaction générales
 
-- Tableau de paires `libelle` / `valeur`, une ligne par caractéristique.
-- Chaque valeur doit être vérifiée auprès du fabricant ou d'une source
-  officielle datée ; aucune valeur inventée ou estimée.
-- Selon la catégorie, couvrir au minimum : processeur, mémoire, stockage,
-  écran, connectique, réseau, système, dimensions, poids, alimentation.
-- Une information non confirmée va dans `manquants[]`, jamais dans le tableau.
+- Français, ton factuel. Toute information non confirmée figure dans `manquants[]` et déclenche le badge « Fiche incomplète ».
+- Aucune modification de la vitrine KeffStation, des DNS, de PayPal ou du backend dans le cadre du contenu.
 
-## 6. Méthode — article
-
-- **Un article rédigé par fiche**, en français, distinct de la `description`
-  courte (pas de simple copier-coller).
-- Structure recommandée :
-  1. accroche et positionnement du produit ;
-  2. présentation et nouveautés par rapport au modèle précédent ;
-  3. public visé et usages principaux ;
-  4. points forts ;
-  5. limites ou points à vérifier ;
-  6. entretien, écosystème et accessoires.
-- Longueur recommandée : **400 à 800 mots** (non bloquant).
-- Toute affirmation technique doit être couverte par `caracteristiques[]` ou
-  `sourcesVerifiees[]`. Pas de comparaison chiffrée non sourcée.
-- Format de données :
-
-```js
-article: {
-  titre: "Titre éditorial de l'article",
-  contenu: [
-    "Premier paragraphe…",
-    "Deuxième paragraphe…"
-  ]
-}
-```
-
-`contenu` peut aussi être une chaîne unique : les paragraphes sont alors
-séparés par une ligne vide.
-
-## 7. Méthode — occasions d'utilisation
-
-- **10 minimum, 20 maximum** par produit.
-- Chaque occasion doit être :
-  - concrète (« brancher sur la TV du salon en HDMI 2.1 », pas « utiliser ») ;
-  - distincte des autres (pas de reformulation) ;
-  - cohérente avec une caractéristique vérifiée du produit ;
-  - rédigée du point de vue de l'utilisateur.
-- Ne pas inventer de compatibilité ou de fonction absente de la fiche.
-
-## 8. Règles de rédaction générales
-
-- Français, ton factuel, pas de superlatif non démontré.
-- Prix : prix public officiel uniquement, TTC, avec date et source.
-- Devise : afficher le montant dans la devise publiée par le fabricant (`prix.devise`,
-  `EUR` par défaut). Ne jamais convertir ni réétiqueter un prix en euros : un
-  montant USD s'affiche en USD, et l'absence de prix EUR va dans `manquants[]`.
-  Le panier additionne séparément par devise et n'affiche pas de total unique
-  quand plusieurs devises coexistent.
-- Aucune commande ni aucun paiement réel.
-- Toute information non confirmée figure dans `manquants[]` et déclenche le
-  badge « Fiche incomplète ».
-
----
-
-## 9. Contrôle automatique
+## 8. Contrôle automatique
 
 ```bash
 node tools/check-contenu.js            # audit, ne bloque pas
 node tools/check-contenu.js --strict   # code 1 si une fiche existante est incomplète
-node tools/check-contenu.js --complete # code 1 si un des 63 couples marque × année manque
+node tools/check-contenu.js --complete # code 1 si un des couples prévus manque
 node tools/check-contenu.js --json     # sortie machine
 ```
 
-Le contrôle vérifie, pour chaque fiche : nombre d'images (3–5), nombre de
-vidéos (1–2), présence du tableau de caractéristiques, présence de l'article,
-nombre d'occasions d'utilisation (10–20), devise et date de vérification du prix
-lorsque celui-ci existe, puis affiche la matrice de couverture des 9 marques ×
-7 années (63 couples).
-
-`--strict` porte sur les fiches existantes ; `--complete` porte sur la
-couverture globale. Les deux peuvent être combinés.
-
-Un écart n'est pas une erreur de code : c'est une fiche à compléter.
+`--strict` porte sur les fiches existantes ; `--complete` porte sur la couverture globale.
